@@ -28,7 +28,7 @@ export function Header() {
         className="relative"
         aria-label="Notifications"
       >
-        <Bell className="h-5 w-5" aria-hidden="true" />
+        <Bell className="h-5 w-5 text-[#4D4D4D]" aria-hidden="true" />
         <span
           className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"
           aria-label="New notifications"
@@ -36,37 +36,37 @@ export function Header() {
         />
       </Button>
 
+      <Avatar className="h-12 w-12">
+        <AvatarImage src={profileImage.src} alt="Profile picture" />
+        <AvatarFallback>GJ</AvatarFallback>
+      </Avatar>
+      <div className="hidden md:block text-left">
+        <div className="text-[14px] text-[#4D4D4D] font-medium">Godwin Jimmy</div>
+        <div className="text-[12px] text-muted-foreground flex items-center">
+          Free Plan ·
+          <Link
+            href="/upgrade"
+            className="text-[#2B85FE] hover:text-blue-600 text-xs ml-1"
+            aria-label="Upgrade to premium plan"
+          >
+            Upgrade
+          </Link>
+        </div>
+      </div>
       <DropdownMenu onOpenChange={setIsOpen}>
         <DropdownMenuTrigger asChild>
-          <Button
+          {/* <Button
             variant="ghost"
-            className="flex items-center gap-2 p-1 md:p-2 hover:bg-accent rounded-md"
+            className="flex items-center gap-2 p-1 md:p-2 hover:bg-accent rounded-md "
             aria-label="User menu"
             aria-expanded={isOpen}
-          >
-            <Avatar className="h-8 w-8">
-              <AvatarImage src={profileImage.src} alt="Profile picture" />
-              <AvatarFallback>GJ</AvatarFallback>
-            </Avatar>
-            <div className="hidden md:block text-left">
-              <div className="text-sm font-medium">Godwin Jimmy</div>
-              <div className="text-xs text-muted-foreground flex items-center">
-                Free Plan ·
-                <Link
-                  href="/upgrade"
-                  className="text-blue-500 hover:text-blue-600 text-xs ml-1"
-                  aria-label="Upgrade to premium plan"
-                >
-                  Upgrade
-                </Link>
-              </div>
-            </div>
+          > */}
             {isOpen ? (
-              <ArrowUp2 className="h-4 w-4" aria-hidden="true" />
+              <ArrowUp2 className="h-4 w-4 cursor-pointer" aria-hidden="true" />
             ) : (
-              <ArrowDown2 className="h-4 w-4" aria-hidden="true" />
+              <ArrowDown2 className="h-4 w-4 cursor-pointer" aria-hidden="true" />
             )}
-          </Button>
+          {/* </Button> */}
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[200px]">
           <DropdownMenuItem>Profile</DropdownMenuItem>

@@ -239,7 +239,7 @@ export function ProgramEditor() {
           </div>
           <div className="border rounded-md p-2 mb-4">
             <div className="flex items-center justify-between gap-1 border-b pb-2 mb-2">
-              <div className="gap-4 w-[104px] h-[32px]  border-e-2 flex items-center justify-center">
+              <div className="gap-4 w-[104px] h-[32px]  border-e-2 flex items-center justify-center cursor-pointer">
                 <Document size={24} variant="Outline" />
                 <ArrowDown2 variant="Bold" size={18} aria-hidden="true" />
               </div>
