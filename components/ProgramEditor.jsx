@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
   ChevronDown,
-  Share2,
   AlignLeft,
   AlignRight,
   AlignCenter,
@@ -27,6 +26,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 
 const iconArray = [
   <Type />,
@@ -47,7 +47,12 @@ const iconArray = [
 
 export default function ProgramEditor() {
   return (
-    <div className="max-w-2xl">
+    <motion.div
+      className="max-w-2xl"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="flex items-center justify-between mb-6">
         <a href="#" className="text-orange-500 flex items-center gap-2">
           <ChevronDown className="w-4 h-4 rotate-90" />
@@ -124,161 +129,184 @@ export default function ProgramEditor() {
         </div>
       </div>
 
-      <Card className="p-6">
-        <h1 className="text-3xl font-extrabold mb-2 text-[#1f0954]">
-          Program Information
-        </h1>
-        <div className="space-y-4">
-          <div>
-            <label className="text-sm text-gray-600 mb-2 block">
-              Describe Section Title
-            </label>
-            <div className="flex gap-2 border border-[#1f0954] p-2 rounded-lg">
-              <span className="w-6 h-6">📝</span>
-              <input
-                type="text"
-                placeholder="Describe Section Title e.g What you stand to learn"
-                className="flex-1 outline-none"
-              />
-            </div>
-          </div>
-
-          <div className="bg-blue-50 flex gap-1 leading-none px-4 py-2 font-light rounded-lg text-sm text-blue-600">
-            <span className="items-center flex">
-              <svg
-                width="25"
-                height="24"
-                viewBox="0 0 25 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.0427 22C17.5545 22 22.0641 17.5 22.0641 12C22.0641 6.5 17.5545 2 12.0427 2C6.53098 2 2.02136 6.5 2.02136 12C2.02136 17.5 6.53098 22 12.0427 22Z"
-                  stroke="#086BED"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M12.0427 8V13"
-                  stroke="#086BED"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M12.0372 16H12.0462"
-                  stroke="#086BED"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </span>
-            Provide your preferred title for this section i.e What's in this
-            Program for you?
-          </div>
-
-          {/* Rich Text Editor */}
-          <div className="border border-[#1f0954] rounded-lg">
-            <div className="border-b border-[#1f0954] p-3 flex gap-2 justify-between">
-              <span className="px-4 flex gap-4">
-                <CloudUpload />
-                <ChevronDown />
-              </span>
-              {iconArray.map((icon, i) => (
-                <button
-                  key={i}
-                  className="w-4 h-4 flex gap-2   hover:bg-gray-100 rounded"
-                >
-                  {icon}
-                </button>
-              ))}
-            </div>
-            <input
-              className="p-1 outline-none min-w-[28.5rem]  min-h-[100px]"
-              type="text"
-              placeholder="Describe Section Title e.g What you stand to learn"
-            />
-          </div>
-
-          <div className="bg-blue-50 flex gap-1 leading-none px-4 py-2 font-light rounded-lg text-sm text-blue-600 ">
-            <span className="items-center flex">
-              <svg
-                width="25"
-                height="24"
-                viewBox="0 0 25 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.0427 22C17.5545 22 22.0641 17.5 22.0641 12C22.0641 6.5 17.5545 2 12.0427 2C6.53098 2 2.02136 6.5 2.02136 12C2.02136 17.5 6.53098 22 12.0427 22Z"
-                  stroke="#086BED"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M12.0427 8V13"
-                  stroke="#086BED"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M12.0372 16H12.0462"
-                  stroke="#086BED"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </span>
-            Provide a clear and concise description/information of your program.
-            This can include objectives, goals, necessary resources, or any
-            specific requirements.
-          </div>
-
-          {/* Section Controls */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <Card className="p-6">
+          <h1 className="text-3xl font-extrabold mb-2 text-[#1f0954]">
+            Program Information
+          </h1>
           <div className="space-y-4">
-            <button className="w-full flex flex-col items-center  text-[#1f0954] px-4 py-2 border border-[#1f0954] rounded-lg hover:bg-gray-50">
-              + Add new section
-              <span className="text-sm font-extralight">
-                (Maximum number of section to add is 3)
-              </span>
-            </button>
-            <div className="flex items-center gap-2">
-              <input type="checkbox" id="show-published" />
-              <label htmlFor="show-published" className="text-sm">
-                Show this section when Published
+            <div>
+              <label className="text-sm text-gray-600 mb-2 block">
+                Describe Section Title
               </label>
+              <div className="flex gap-2 border border-[#1f0954] p-2 rounded-lg">
+                <span className="w-6 h-6">📝</span>
+                <input
+                  type="text"
+                  placeholder="Describe Section Title e.g What you stand to learn"
+                  className="flex-1 outline-none"
+                />
+              </div>
             </div>
+
+            <div className="bg-blue-50 flex gap-1 leading-none px-4 py-2 font-light rounded-lg text-sm text-blue-600">
+              <span className="items-center flex">
+                <svg
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.0427 22C17.5545 22 22.0641 17.5 22.0641 12C22.0641 6.5 17.5545 2 12.0427 2C6.53098 2 2.02136 6.5 2.02136 12C2.02136 17.5 6.53098 22 12.0427 22Z"
+                    stroke="#086BED"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.0427 8V13"
+                    stroke="#086BED"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.0372 16H12.0462"
+                    stroke="#086BED"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Provide your preferred title for this section i.e What's in this
+              Program for you?
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              {/* Rich Text Editor */}
+              <div className="border border-[#1f0954] rounded-lg">
+                <div className="border-b border-[#1f0954] p-3 flex gap-2 justify-between">
+                  <span className="px-4 flex gap-4">
+                    <CloudUpload />
+                    <ChevronDown />
+                  </span>
+                  {iconArray.map((icon, i) => (
+                    <button
+                      key={i}
+                      className="w-4 h-4 flex gap-2   hover:bg-gray-100 rounded"
+                    >
+                      {icon}
+                    </button>
+                  ))}
+                </div>
+                <input
+                  className="p-1 outline-none min-w-[28.5rem]  min-h-[100px]"
+                  type="text"
+                  placeholder="Describe Section Title e.g What you stand to learn"
+                />
+              </div>
+            </motion.div>
+
+            <div className="bg-blue-50 flex gap-1 leading-none px-4 py-2 font-light rounded-lg text-sm text-blue-600 ">
+              <span className="items-center flex">
+                <svg
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.0427 22C17.5545 22 22.0641 17.5 22.0641 12C22.0641 6.5 17.5545 2 12.0427 2C6.53098 2 2.02136 6.5 2.02136 12C2.02136 17.5 6.53098 22 12.0427 22Z"
+                    stroke="#086BED"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.0427 8V13"
+                    stroke="#086BED"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12.0372 16H12.0462"
+                    stroke="#086BED"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Provide a clear and concise description/information of your
+              program. This can include objectives, goals, necessary resources,
+              or any specific requirements.
+            </div>
+
+            {/* Section Controls */}
+            <div className="space-y-4">
+              <button className="w-full flex flex-col items-center  text-[#1f0954] px-4 py-2 border border-[#1f0954] rounded-lg hover:bg-gray-50">
+                + Add new section
+                <span className="text-sm font-extralight">
+                  (Maximum number of section to add is 3)
+                </span>
+              </button>
+              <div className="flex items-center gap-2">
+                <input type="checkbox" id="show-published" />
+                <label htmlFor="show-published" className="text-sm">
+                  Show this section when Published
+                </label>
+              </div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-[#1f0954] font-semibold">
+                    Program Information Text 1
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    Yes. It adheres to the WAI-ARIA design pattern.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-[#1f0954] font-semibold">
+                    Program Information Text 2
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    Yes. It adheres to the WAI-ARIA design pattern.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </motion.div>
+            {/* Footer Actions */}
+            <motion.div
+              className="flex items-center justify-between pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <Button variant="ghost">Go Back</Button>
+              <Button className="bg-[#1F0954]">Save & Proceed</Button>
+            </motion.div>
           </div>
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="text-[#1f0954] font-semibold">
-                Program Information Text 1
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="text-[#1f0954] font-semibold">
-                Program Information Text 2
-              </AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          {/* Footer Actions */}
-          <div className="flex items-center justify-between pt-4">
-            <Button variant="ghost">Go Back</Button>
-            <Button className="bg-[#1F0954]">Save & Proceed</Button>
-          </div>
-        </div>
-      </Card>
-    </div>
+        </Card>
+      </motion.div>
+    </motion.div>
   );
 }
