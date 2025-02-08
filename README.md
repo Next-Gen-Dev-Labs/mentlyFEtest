@@ -7,7 +7,7 @@ A technical assessment implementation by me for the Frontend Developer position 
 - [Next.js 14](https://nextjs.org/):
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
-- [Reusables](https://reusables.vercel.app/) built by me 😎
+- [Reusables](https://reusables.vercel.app/) - [Toast](https://reusables.vercel.app/docs/components/notify) built by me 😎
 - [Framer Motion](https://www.framer.com/motion/)
 - [Vitest](https://vitest.dev/)
 
@@ -23,9 +23,9 @@ A technical assessment implementation by me for the Frontend Developer position 
 ## Project Structure
 
 ```
-├── app/                  # Next.js app directory
-├── assets/              # Static assets
-├── components/          # React components
+├── app/                # Next.js app directory
+├── assets/             # Static assets
+├── components/         # React components
 │   ├── ui/             # Reusable UI components
 │   └── editor/         # Rich text editor components
 |   └── programs/       # Program components
@@ -33,7 +33,9 @@ A technical assessment implementation by me for the Frontend Developer position 
 ├── constants/          # Configuration and constants
 ├── hooks/              # Custom React hooks
 ├── lib/                # Utility functions
-└── __tests__/         # Test files
+├── _tests_/            # Unit tests
+└── middleware/         # Middleware
+
 ```
 
 ## Setup
@@ -69,7 +71,7 @@ bun run dev
 
 Access the application at [http://localhost:3000](http://localhost:3000)
 
-Deployed on Vercel: [URL_ADDRESS-mentor-mentorship-program.vercel.app/](URL_ADDRESSs://frontend-mentor-mentorship-program.vercel.app/)
+Deployed on Netlify: [Link](https://fas-mently-fe-assessment.netlify.app/dashboard/programs)
 
 ### Testing
 
