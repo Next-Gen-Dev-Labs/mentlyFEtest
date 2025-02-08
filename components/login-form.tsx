@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ClientCookies } from "@/lib/cookies.client";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -30,8 +31,12 @@ export function LoginForm({
       duration: Infinity,
     });
 
+    const formData = new FormData(event.currentTarget);
+    const password = formData.get("password") as string;
+
     setTimeout(() => {
       setIsLoading(false);
+      ClientCookies.set("password", password);
       toast.success("Login successful!", { id: toastId });
       router.push("/");
     }, 2000);
