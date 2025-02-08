@@ -8,7 +8,7 @@ import { ArrowDown2 } from "iconsax-react";
 export default function Header() {
   return (
     <header className="bg-header flex justify-end p-3 shadow-sm">
-      <div className="flex gap-6 items-center mr-[6em]">
+      <div className="flex gap-6 items-center sm:mr-[2em]">
         <NotificationBell />
         <div className="flex gap-3 items-center justify-start max-w-56">
           <div className="w-12 h-12 bg-white relative rounded-full overflow-hidden">

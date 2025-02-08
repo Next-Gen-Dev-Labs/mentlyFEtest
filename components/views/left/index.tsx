@@ -14,8 +14,7 @@ const programList = [
 
 export default function Left() {
   return (
-    <div className='w-full max-w-[520px] bg-header'>
-      {/* top */}
+    <div className='w-full x-md:max-w-[500px] lg:max-w-[520px] bg-header mt-3 py-2 px-4'>
       <Top />
       <Middle />
       <Bottom items={programList} />

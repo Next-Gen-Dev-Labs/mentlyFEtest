@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${chivo.variable} antialiased`}
+        className={`${chivo.variable} grid lg:justify-center antialiased`}
       >
         {children}
       </body>
