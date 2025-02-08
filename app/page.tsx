@@ -11,8 +11,6 @@ export default function Home() {
   const handleSidebarChange = (open: boolean) => {
     setIsSidebarOpen(open);
   };
-  console.log(isSidebarOpen, "isSidebarOpen::::::::::::::::::::");
-
 
   return (
     <SidebarProvider
