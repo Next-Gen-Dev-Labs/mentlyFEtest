@@ -46,23 +46,61 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "./ui/textarea";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const formatButtons = [
-  { icon: TextBold, label: "Bold" },
-  { icon: TextItalic, label: "Italic" },
-  { icon: TextUnderline, label: "Underline" },
-  { icon: TextalignLeft, label: "Align left" },
-  { icon: TextalignCenter, label: "Align center" },
-  { icon: TextalignRight, label: "Align right" },
-  { icon: TextBlock, label: "Bullet list" },
-  { icon: DocumentText, label: "Numbered list" },
-  { icon: Link21, label: "Insert link" },
-  { icon: Gallery, label: "Insert image" },
+  { icon: TextBold, label: "Bold", action: "bold" },
+  { icon: TextItalic, label: "Italic", action: "italic" },
+  { icon: TextUnderline, label: "Underline", action: "underline" },
+  { icon: TextalignLeft, label: "Align left", action: "alignLeft" },
+  { icon: TextalignCenter, label: "Align center", action: "alignCenter" },
+  { icon: TextalignRight, label: "Align right", action: "alignRight" },
+  { icon: TextBlock, label: "Bullet list", action: "bulletList" },
+  { icon: DocumentText, label: "Numbered list", action: "numberedList" },
+  { icon: Link21, label: "Insert link", action: "link" },
+  { icon: Gallery, label: "Insert image", action: "image" },
+  { icon: TextBlock, label: "Small caps", action: "smallcaps" },
 ];
 
 export function ProgramEditor() {
   const [sections, setSections] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleFormatClick = (action: string) => {
+    // Handle different formatting actions
+    switch (action) {
+      case "bold":
+        document.execCommand("bold", false);
+        break;
+      case "italic":
+        document.execCommand("italic", false);
+        break;
+      case "underline":
+        document.execCommand("underline", false);
+        break;
+      case "alignLeft":
+        document.execCommand("justifyLeft", false);
+        break;
+      case "alignCenter":
+        document.execCommand("justifyCenter", false);
+        break;
+      case "alignRight":
+        document.execCommand("justifyRight", false);
+        break;
+      case "bulletList":
+        document.execCommand("insertUnorderedList", false);
+        break;
+      case "numberedList":
+        document.execCommand("insertOrderedList", false);
+        break;
+      // Add other cases as needed
+    }
+  };
 
   return (
     <main role="main" aria-label="Program Editor">
@@ -197,6 +235,8 @@ export function ProgramEditor() {
                     variant="ghost"
                     size="icon"
                     className="h-8 w-8"
+                    onClick={() => handleFormatClick(button.action)}
+                    aria-label={button.label}
                   >
                     <Icon className="h-4 w-4" />
                     <span className="sr-only">{button.label}</span>
@@ -258,38 +298,58 @@ export function ProgramEditor() {
         </div>
 
         <div className="space-y-2 mb-8 py-16">
-          {Array.from({ length: 2 }).map((_, index) => (
-            <div
-              key={index}
-              className="bg-[#F1F1F1] border-2 border-[#C2C2C2] rounded-lg p-2 flex items-center justify-between h-[48px]"
-            >
-              <span className="text-[#1F0954] text-[16px] font-medium">
-                Program Information Text {index + 1}
-              </span>
-              <div className="flex items-center gap-2">
-                <ArrowUp2
-                  color="#777795"
-                  className="font-bold"
-                  variant="Outline"
-                  size={24}
-                />
-                <DropdownMenu onOpenChange={setIsOpen}>
-                  <DropdownMenuTrigger asChild>
-                    <More
-                      color="#777795"
-                      className="rotate-90 cursor-pointer"
-                      variant="Outline"
-                      size={24}
-                    />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-[200px]">
-                    <DropdownMenuItem>Edit</DropdownMenuItem>
-                    <DropdownMenuItem>Delete</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
-            </div>
-          ))}
+          <Accordion type="single" collapsible className="space-y-2">
+            {Array.from({ length: 2 }).map((_, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-0"
+              >
+                <div className="bg-[#F1F1F1] border-2 border-[#C2C2C2] rounded-lg">
+                  <AccordionTrigger className="p-2 h-[48px] hover:no-underline [&[data-state=open]>div>div>svg.accordion-arrow]:rotate-180 [&>svg]:hidden">
+                    <div className="flex items-center justify-between w-full">
+                      <span className="text-[#1F0954] text-[16px] font-medium">
+                        Program Information Text {index + 1}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <ArrowUp2
+                          color="#777795"
+                          className="accordion-arrow transition-transform duration-200"
+                          variant="Outline"
+                          size={24}
+                        />
+                        <DropdownMenu onOpenChange={setIsOpen}>
+                          <DropdownMenuTrigger
+                            asChild
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <More
+                              color="#777795"
+                              className="rotate-90 cursor-pointer"
+                              variant="Outline"
+                              size={24}
+                            />
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent
+                            align="end"
+                            className="w-[200px]"
+                          >
+                            <DropdownMenuItem>Edit</DropdownMenuItem>
+                            <DropdownMenuItem>Delete</DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="border-t-2 border-[#C2C2C2] p-4">
+                    <div className="text-[#494A71]">
+                      Content for section {index + 1} goes here
+                    </div>
+                  </AccordionContent>
+                </div>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
 
         <div className="flex justify-between md:justify-end items-center md:gap-[80px] mt-8">
