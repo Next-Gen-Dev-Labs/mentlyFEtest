@@ -1,8 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Developer Assessment - Mently
 
-## Getting Started
+A technical assessment implementation by me for the Frontend Developer position at Mently, focusing on building a programs page dashboard using Next.js.
 
-First, run the development server:
+## Tech Stack
+
+- [Next.js 14](https://nextjs.org/):
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Reusables](https://reusables.vercel.app/) built by me 😎
+- [Framer Motion](https://www.framer.com/motion/)
+- [Vitest](https://vitest.dev/)
+
+## Features
+
+- Mock Authentication with protected routes
+- Program management dashboard
+- Rich text editor integration
+- Responsive design
+- Unit testing coverage
+- Mobile optimization
+
+## Project Structure
+
+```
+├── app/                  # Next.js app directory
+├── assets/              # Static assets
+├── components/          # React components
+│   ├── ui/             # Reusable UI components
+│   └── editor/         # Rich text editor components
+|   └── programs/       # Program components
+├── data/               # Mock data
+├── constants/          # Configuration and constants
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── __tests__/         # Test files
+```
+
+## Setup
+
+### Prerequisites
+
+- Node.js 18+
+- Package manager (npm/yarn/pnpm/bun)
+
+### Installation
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+### Development
 
 ```bash
 npm run dev
@@ -11,26 +64,25 @@ yarn dev
 # or
 pnpm dev
 # or
-bun dev
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Access the application at [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Deployed on Vercel: [URL_ADDRESS-mentor-mentorship-program.vercel.app/](URL_ADDRESSs://frontend-mentor-mentorship-program.vercel.app/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Testing
 
-## Learn More
+```bash
+npm test
+# or
+yarn test
+# or
+pnpm test
+# or
+bun test
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Note
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This is a technical assessment project for Mently. All implementation details are confidential.
