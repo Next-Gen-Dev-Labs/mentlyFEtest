@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown, ChevronUp, MoreVertical } from "lucide-react";
 
-import SectionDropdown from "./dropdown/sectiondropdown";
+import SectionDropdown from "../dropdown/sectiondropdown";
 import { InfoBox } from "./infoBox";
 import { SectionTitleInput } from "./sectionTitleInpute";
 import { TextEditor } from "./textEditor";

@@ -53,6 +53,7 @@ const ProgramInfomation = () => {
             className={`lg-block bg-gray-100 ${
               isMobileView ? (showRightSection ? "hidden" : "block") : "block"
             }`}
+
           >
             {" "}
             <Leftsection
@@ -65,6 +66,7 @@ const ProgramInfomation = () => {
             className={` ${
               isMobileView ? (!showRightSection ? "hidden" : "block") : "block"
             }`}
+
           >
             <Rightsection
               programInfo={programInfo}

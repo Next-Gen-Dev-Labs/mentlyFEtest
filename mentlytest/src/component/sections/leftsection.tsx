@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { ProgramForm } from "../program-form";
+import { ProgramForm } from "../leftsection/program-form";
 import { ChevronLeft, Settings, Share2 } from "lucide-react";
 import SettingActionButtons from "../button/settingActionButton";
 
