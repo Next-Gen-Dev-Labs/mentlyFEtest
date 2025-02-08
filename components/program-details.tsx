@@ -43,7 +43,7 @@ export function ProgramDetails() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className=" bg-white rounded-lg" role="contentinfo">
-                <p className="text-base text-gray-800">
+                <p className="text-base text-[#808080]">
                   UI/UX Design check ins with faith is a way for beginners in
                   UI/UX Design to get started about the fundamentals and how
                   they can build a Design Career, share, document their progress

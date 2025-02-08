@@ -23,13 +23,21 @@ import {
   TextalignCenter,
   TextalignRight,
   TextBlock,
-  DocumentText,
+  Document,
   Link21,
   Gallery,
   InfoCircle,
   ArrowLeft2,
   Copy,
   Share,
+  Task,
+  TextalignJustifycenter,
+  Smallcaps,
+  Text,
+  QuoteDown,
+  QuoteUp,
+  Refresh,
+  Math,
 } from "iconsax-react";
 import {
   DropdownMenu,
@@ -52,21 +60,30 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
 
 const formatButtons = [
-  { icon: TextBold, label: "Bold", action: "bold" },
-  { icon: TextItalic, label: "Italic", action: "italic" },
-  { icon: TextUnderline, label: "Underline", action: "underline" },
-  { icon: TextalignLeft, label: "Align left", action: "alignLeft" },
-  { icon: TextalignCenter, label: "Align center", action: "alignCenter" },
-  { icon: TextalignRight, label: "Align right", action: "alignRight" },
-  { icon: TextBlock, label: "Bullet list", action: "bulletList" },
-  { icon: DocumentText, label: "Numbered list", action: "numberedList" },
-  { icon: Link21, label: "Insert link", action: "link" },
-  { icon: Gallery, label: "Insert image", action: "image" },
-  { icon: TextBlock, label: "Small caps", action: "smallcaps" },
+  { name: "text", label: "Text", icon: Text },
+  { name: "bold", label: "Bold", icon: TextBold },
+  { name: "italic", label: "Italic", icon: TextItalic },
+  { name: "underline", label: "Underline", icon: TextUnderline },
+  // { name: "strikethrough", label: "Strikethrough", icon: Strikethrough },
+  { name: "smallcaps", label: "Small Caps", icon: Smallcaps },
+  { name: "task", label: "Task", icon: Task },
+  { name: "textalign-left", label: "Align Left", icon: TextalignLeft },
+  { name: "textalign-center", label: "Align Center", icon: TextalignCenter },
+  { name: "textalign-right", label: "Align Right", icon: TextalignRight },
+  {
+    name: "textalign-justifycenter",
+    label: "Justify Center",
+    icon: TextalignJustifycenter,
+  },
+  { name: "quote-up", label: "Blockquote Close", icon: QuoteUp },
+  { name: "quote-down", label: "Blockquote Open", icon: QuoteDown },
+  { name: "math", label: "Math", icon: Math },
+  { name: "gallery", label: "Insert Image", icon: Gallery },
+  { name: "link ", label: "Link", icon: Link21 },
 ];
-
 export function ProgramEditor() {
   const [sections, setSections] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
@@ -221,11 +238,13 @@ export function ProgramEditor() {
             </p>
           </div>
           <div className="border rounded-md p-2 mb-4">
-            <div className="flex items-center gap-1 border-b pb-2 mb-2">
-              <Button variant="ghost" size="icon" className="h-8 w-8">
-                <DocumentText className="h-4 w-4" />
-              </Button>
-              <ArrowDown2 variant="Bold" size={12} aria-hidden="true" />
+            <div className="flex items-center justify-between gap-1 border-b pb-2 mb-2">
+              <div className="gap-4 w-[104px] h-[32px]  border-e-2 flex items-center justify-center">
+                <Document size={24} variant="Outline" />
+                <ArrowDown2 variant="Bold" size={18} aria-hidden="true" />
+              </div>
+
+              <Separator orientation="vertical" className="text-red-800"/>
 
               {formatButtons.map((button, index) => {
                 const Icon = button.icon;
@@ -235,10 +254,9 @@ export function ProgramEditor() {
                     variant="ghost"
                     size="icon"
                     className="h-8 w-8"
-                    onClick={() => handleFormatClick(button.action)}
                     aria-label={button.label}
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-12 w-12 text-[#292D32]" />
                     <span className="sr-only">{button.label}</span>
                   </Button>
                 );
