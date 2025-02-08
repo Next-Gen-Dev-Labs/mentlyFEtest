@@ -7,6 +7,7 @@ A technical assessment implementation by me for the Frontend Developer position 
 - [Next.js 14](https://nextjs.org/):
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
+- [Tiptap] (https://tiptap.dev)
 - [Reusables](https://reusables.vercel.app/) - [Toast](https://reusables.vercel.app/docs/components/notify) built by me 😎
 - [Framer Motion](https://www.framer.com/motion/)
 - [Vitest](https://vitest.dev/)
@@ -14,7 +15,7 @@ A technical assessment implementation by me for the Frontend Developer position 
 ## Features
 
 - Mock Authentication with protected routes
-- Program management dashboard
+- Programs dashboard page
 - Rich text editor integration
 - Responsive design
 - Unit testing coverage
