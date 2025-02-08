@@ -1,6 +1,5 @@
 import React from "react";
 import "@/styles/globals.css";
-import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { Sidebar } from "@/component/sharedLayout/sidebar/sidebar";
 import { ThemeProvider } from "@/component/providers";
@@ -18,7 +17,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable}`}
       suppressHydrationWarning
     >
       <body>

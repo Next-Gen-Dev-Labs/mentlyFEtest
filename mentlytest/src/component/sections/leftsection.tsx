@@ -15,7 +15,7 @@ interface ProgramInfo {
 const Leftsection: React.FC<{ programInfo: ProgramInfo; onSave: () => void }> = ({ onSave }) => {
 
   return (
-    <div className=" space-y-6 py-4 lg:px-6 px-4 lg:pb-0 pb-10 font-[Chivo] bg-gray-100   dark:bg-background ">
+    <div className=" space-y-6 py-4 lg:px-6 px-4 lg:pb-0 pb-10 font-[Chivo] bg-gray-100 h-full   dark:bg-background ">
       <nav className="flex items-center justify-between ">
         <motion.button
           whileHover={{ scale: 1.02, x: -2 }}
@@ -23,7 +23,7 @@ const Leftsection: React.FC<{ programInfo: ProgramInfo; onSave: () => void }> = 
           className="text-[#F0C074] hover:text-orange-600 flex items-center gap-2  rounded-lg transition-colors"
         >
           <ChevronLeft className="w-4 h-4" />
-          <span className="lg:text-[14px] font-medium font-sm text-[10px]">Back to Home</span>
+          <span className="lg:text-[14px] font-medium font-sm text-[12px]">Back to Home</span>
         </motion.button>
         <SettingActionButtons />
       </nav>

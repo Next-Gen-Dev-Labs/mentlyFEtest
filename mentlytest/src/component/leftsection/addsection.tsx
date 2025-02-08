@@ -12,13 +12,13 @@ interface Props {
         whileTap={{ scale: 0.99 }}
         onClick={addSection}
         disabled={disabled}
-        className="w-full mt-4 py-4 border-2  border-black dark:border-white rounded-xl text-gray-600 dark:text-foreground  hover:bg-gray-50 hover:border-gray-400 disabled:opacity-50 transition-all"
+        className="w-full mt-4 py-4 border-2  border-black dark:border-white rounded-xl text-gray-600 dark:text-foreground   hover:bg-gray-50 hover:border-gray-400 disabled:opacity-50 transition-all"
       >
         <span className="flex items-center justify-center gap-2">
-          <span className="text-lg font-bold">+</span>
-          <span className="font-bold">Add new section</span>
+          <span className="text-lg font-bold dark:text-purple-900">+</span>
+          <span className="font-bold dark:text-purple-900">Add new section</span>
         </span>
-        <div className="text-sm text-gray-400 mt-1">
+        <div className="text-sm text-gray-400 mt-1 dark:text-purple-700">
           (maximum number of sections to add is 3)
         </div>
       </motion.button>
