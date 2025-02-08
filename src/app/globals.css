@@ -1,21 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --sidebar-background: #1f0954;
+  --grey-1: #aaaaaa;
+  --grey-2: #333333;
+  --grey-3: #4d4d4d;
+  --grey-4: #f6f6f6;
+  --grey-5: #c2c2c2;
+  --grey-6: #f1f1f1;
+  --grey-7: #fafafa;
+  --grey-8: #cee1fb;
+  --heading-color-1: #06152b;
+  --heading-color-2: #1c1d4e;
+  --text-color-1: #828282;
+  --text-color-2: #808080;
+  --text-color-3: #595564;
+  --text-color-secondary: #809fb8;
+  --primary-color-1: #1f0954;
+  --primary-color-2: #494a71;
+  --primary-color-3: #777795;
+  --primary-color-4: #a4a5b8;
+  --profile-color-1: #404040;
+  --profile-color-2: #d8d8d8;
+  --profile-color-3: #fdfdfd;
+  --profile-color-4: #ff3e3e;
+  --accent-color-1: #ffeccc;
+  --accent-color-2: #fee0b1;
+  --accent-color-3: #fffaf2;
+  --primary-pressed-ghost: #0214bd38;
+  --secondary-color-3: #f0c074;
+  --link-color: #2b85fe;
+  --card-background: linear-gradient(90deg, #0f1013 0%, #5d6379 100%);
+  --button-gradient: linear-gradient(90deg, #f04 0%, #f6a000 100%);
+  --font-family-chivo: "Chivo", serif;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-chivo);
 }
