@@ -1,9 +1,15 @@
-
+import Sidebar from "@/components/sidebar/Sidebar";
+import Header from "@/components/header/Header";
+import Index from "@/components/views/ProgramView";
 
 export default function Home() {
   return (
-    <div className="font-[family-name:var(--font-chivo)]">
-     
-    </div>
+    <main className="grid grid-cols-1 sm:grid-cols-[auto_1fr] font-[family-name:var(--font-chivo)] min-w-screen h-screen max-w-[1440px]">
+      <Sidebar />
+      <div>
+        <Header />
+        <Index />
+      </div>
+    </main>
   );
 }
