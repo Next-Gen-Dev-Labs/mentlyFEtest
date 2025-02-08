@@ -87,6 +87,7 @@ export default function ProgramPreview() {
                 alt="Speaker"
                 width={80}
                 height={80}
+                priority
                 className="rounded-xl"
               />
             </motion.div>
