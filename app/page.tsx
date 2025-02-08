@@ -1,7 +1,10 @@
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      Hello world!
+    <div className="flex justify-between px-8 py-6">
+      <div className=""></div>
+      <div className="text-[#809FB8] text-xs">
+        13th February 2024, 12:15 PM (Local time).
+      </div>
     </div>
   );
 }

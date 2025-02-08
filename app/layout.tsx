@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Chivo, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./_components/Sidebar";
+import Header from "./_components/Header";
 
 export const chivo = Chivo({ subsets: ["latin"] });
 export const inter = Inter({ subsets: ["latin"] });
@@ -22,10 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${chivo.className}  `}>
-        <div className="grid grid-cols-[120_1fr]">
-          <Sidebar />
-          {children}
+      <body className={`${chivo.className}`}>
+        <Sidebar />
+        <div className=" ml-[120px]">
+          <Header />
+          <main className=" w-full mt-[70px]  bg-red-500">{children}</main>
         </div>
       </body>
     </html>
