@@ -19,3 +19,24 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+  @apply font-chivo;
+}
+
+@layer base {
+  input {
+    @apply dark:bg-gray-800 dark:text-gray-300 bg-gray-100 text-gray-900;
+  }
+}
+
+@layer components {
+  @import "./components/index.css";
+}
+
+@layer utilities {
+  @import "./utils/index.css";
+}
+
+/* other css file */
+@import "./others/index.css";
