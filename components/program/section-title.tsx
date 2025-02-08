@@ -7,7 +7,7 @@ export function SectionTitle() {
         Program Information
       </h1>
       <p className="text-gray-600">Describe Section Title</p>
-      <TitleEditor />
+      <TitleEditor data-testid="title-editor" />
     </div>
   );
 }

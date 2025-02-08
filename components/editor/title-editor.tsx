@@ -22,7 +22,7 @@ const levels = [
   { value: "p", label: "T" },
 ];
 
-export function TitleEditor() {
+export function TitleEditor({ ...props }) {
   const editor = useEditor({
     immediatelyRender: false,
     extensions: [
@@ -43,7 +43,10 @@ export function TitleEditor() {
   const { currentLevel, updateHeadingLevel } = getHeadingLevel(editor);
 
   return (
-    <div className="flex items-start gap-3 rounded-lg border border-black p-4 focus-within:ring-1 focus-within:ring-black">
+    <div
+      {...props}
+      className="flex items-start gap-3 rounded-lg border border-black p-4 focus-within:ring-1 focus-within:ring-black"
+    >
       <Select value={currentLevel} onValueChange={updateHeadingLevel}>
         <SelectTrigger className="w-[80px] border-2 border-dashed border-black">
           <div className="flex items-center justify-center">

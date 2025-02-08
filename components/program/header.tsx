@@ -23,6 +23,7 @@ export function ProgramHeader() {
             <Button
               variant="ghost"
               size="icon"
+              data-testid="settings-button"
               className="text-gray-400 hover:text-gray-600"
             >
               <Settings className="h-5 w-5" />
@@ -38,6 +39,7 @@ export function ProgramHeader() {
         <Button
           variant="ghost"
           size="icon"
+          data-testid="copy-button"
           className="text-gray-400 hover:text-gray-600"
         >
           <Copy className="h-5 w-5" />

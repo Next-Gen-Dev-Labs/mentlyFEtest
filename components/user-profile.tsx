@@ -26,11 +26,15 @@ export const UserProfile: React.FC<UserProfileProps> = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="flex w-fit cursor-pointer items-center justify-between p-4">
+        <button
+          className="flex w-fit cursor-pointer items-center justify-between p-4"
+          role="button"
+          aria-label="User menu"
+        >
           <div className="flex items-center space-x-1 md:space-x-4">
             <Avatar className="">
               {image ? (
-                <AvatarImage src={image} alt={name} />
+                <AvatarImage src={image} data-testid="img" alt={name} />
               ) : (
                 <AvatarFallback>{name.charAt(0)}</AvatarFallback>
               )}
@@ -46,7 +50,7 @@ export const UserProfile: React.FC<UserProfileProps> = ({
             </div>
             <ChevronDown className="h-4 w-4 text-gray-500 md:ml-1" />
           </div>
-        </div>
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mr-3 w-56 md:mr-auto">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>

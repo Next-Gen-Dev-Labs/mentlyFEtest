@@ -22,12 +22,14 @@ export function Logo({
     <Link
       href={href}
       className={cn("flex w-full items-center gap-2", linkClassName)}
+      data-testid="logo-link-id"
     >
       <Image
         src={images.logo}
         alt="logo"
         width={32}
         height={32}
+        data-testid="logo-image-id"
         className={cn("object-contain", className)}
       />
       {showText && <Icons.logoText />}

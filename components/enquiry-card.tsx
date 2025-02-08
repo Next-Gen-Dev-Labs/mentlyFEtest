@@ -10,7 +10,10 @@ export const EnquiryCard = ({ isCollapsed }: IEnquiryCard) => {
   return (
     <div className="mt-5">
       <div className="flex w-full flex-col gap-4 rounded-lg bg-[#FFFFFF1F] p-3">
-        <Icons.user className={cn(isCollapsed && "mx-auto")} />
+        <Icons.user
+          data-testid="user-icon"
+          className={cn(isCollapsed && "mx-auto")}
+        />
         {!isCollapsed && (
           <p className="text-[11px] font-bold leading-[13px] text-white">
             Got some questions, enquiries or need help?
