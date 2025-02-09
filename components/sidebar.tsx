@@ -90,7 +90,10 @@ function SidebarToggle() {
       aria-label="Toggle sidebar"
     >
       {!open ? (
-        <SidebarLeft size="26" color="#AAAAAA" aria-hidden="true" />
+        <>
+         <SidebarLeft size="26" color="#AAAAAA" aria-hidden="true" className="hidden lg:block" />
+        <SidebarRight size="26" color="#AAAAAA" aria-hidden="true" className="block lg:hidden" />
+        </>
       ) : (
         <SidebarRight size="26" color="#AAAAAA" aria-hidden="true" />
       )}
@@ -98,7 +101,7 @@ function SidebarToggle() {
   );
 }
 function MobileSidebarToggle() {
-  const { toggleSidebar, open } = useSidebar();
+  const { toggleSidebar } = useSidebar();
 
   return (
     <button
@@ -106,11 +109,9 @@ function MobileSidebarToggle() {
       className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md text-white/60 hover:bg-white/10 hover:text-white transition-colors"
       aria-label="Toggle mobile sidebar"
     >
-      {!open ? (
+     
         <SidebarLeft size="26" color="#AAAAAA" aria-hidden="true" />
-      ) : (
-        <SidebarRight size="26" color="#AAAAAA" aria-hidden="true" />
-      )}
+     
     </button>
   );
 }
@@ -126,80 +127,89 @@ export function Sidebar() {
         role="navigation"
         aria-label="Main navigation"
       >
-        <SidebarHeader className="h-[60px] mb-2 flex items-center justify-center">
-          <Image src={logo} width={47} height={32} alt="logo of Mently" />
-        </SidebarHeader>
+        <div className="flex flex-col h-screen">
+          <SidebarHeader className="h-[60px] mb-2 flex items-center justify-center shrink-0">
+            <Image src={logo} width={47} height={32} alt="logo of Mently" />
+          </SidebarHeader>
 
-        <SidebarContent>
-          <div className="px-2 mb-2">
-            <SidebarToggle />
-          </div>
-          <SidebarMenu className="px-2 mb-4 flex group-data-[state=collapsed]:items-center ">
-            {sidebarItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = pathname === item.href;
-              return (
-                <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton
-                    className="group-data-[state=collapsed]:w-96 "
-                    asChild
-                    isActive={isActive}
-                    tooltip={item.label}
-                  >
-                    <Link
-                      href={item.href}
-                      className={`flex items-center mb-2  ${
-                        isActive ?? "w-[148px]"
-                      } ${isActive ?? "text-[#1F0954]"} ${
-                        isActive && "bg-[#FFFFFF]"
-                      }`}
+          <SidebarContent className="flex flex-col h-full">
+            <div className="px-2 mb-2 shrink-0">
+              <SidebarToggle />
+            </div>
+            <SidebarMenu
+              className="px-2 mb-4 flex group-data-[state=collapsed]:items-center overflow-y-auto flex-1 
+              scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20 hover:scrollbar-thumb-white/30
+              [&::-webkit-scrollbar]:w-1.5
+              [&::-webkit-scrollbar-thumb]:rounded-full
+              [&::-webkit-scrollbar-track]:bg-transparent"
+            >
+              {sidebarItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = pathname === item.href;
+                return (
+                  <SidebarMenuItem key={item.href}>
+                    <SidebarMenuButton
+                      className="group-data-[state=collapsed]:w-96 "
+                      asChild
+                      isActive={isActive}
+                      tooltip={item.label}
                     >
-                      <Icon
-                        className={`h-20 hover:text-[#1F0954] w-20 shrink-0  ${
-                          isActive ? "text-[#1F0954]" : "text-[#C2C2C2]"
+                      <Link
+                        href={item.href}
+                        className={`flex items-center mb-2  ${
+                          isActive ?? "w-[148px]"
+                        } ${isActive ?? "text-[#1F0954]"} ${
+                          isActive && "bg-[#FFFFFF]"
                         }`}
-                      />
-                      <span
-                        className={`ml-3 hover:text-[#1F0954]  ${
-                          isActive ? "text-[#1F0954]" : "text-[#C2C2C2]"
-                        } `}
                       >
-                        {item.label}
-                      </span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              );
-            })}
-          </SidebarMenu>
-          <div className="flex items-center justify-enter flex-col px-4 space-y-4 mt-6">
-            <div className="group-data-[state=collapsed]:w-[84px] text-[10px] w-full h-[126px] p-4 bg-white/5 rounded-lg mx-2 flex flex-col group-data-[state=collapsed]:items-center justify-between ">
-              <div className="flex group-data-[state=collapsed]:justify-center">
-                <TagUser color="#c2c2c2" />
-              </div>
-              <Link
-                href={"/"}
-                className="text-[10px] text-[#F0C074] underline text-cener mt-auto"
-              >
-                Visit Mently Help Desk Here
-              </Link>
-            </div>
+                        <Icon
+                          className={`h-20 hover:text-[#1F0954] w-20 shrink-0  ${
+                            isActive ? "text-[#1F0954]" : "text-[#C2C2C2]"
+                          }`}
+                        />
+                        <span
+                          className={`ml-3 hover:text-[#1F0954]  ${
+                            isActive ? "text-[#1F0954]" : "text-[#C2C2C2]"
+                          } `}
+                        >
+                          {item.label}
+                        </span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
+            </SidebarMenu>
 
-            <div className="w-full px-2 pb-4">
-              <button
-                className="w-full h-6 flex items-center justify-center"
-                onClick={() =>
-                  document.documentElement.classList.toggle("dark")
-                }
-                aria-label="Toggle dark mode"
-              >
-                <div className="w-8 h-4 bg-white/20 rounded-full relative transition-colors">
-                  <div className="absolute left-1 top-1 w-2 h-2 bg-white rounded-full transition-transform" />
+            <div className="flex items-center justify-enter flex-col px-4 space-y-4 mt-auto shrink-0">
+              <div className="group-data-[state=collapsed]:w-[84px] text-[10px] w-full h-[126px] p-4 bg-white/5 rounded-lg mx-2 flex flex-col group-data-[state=collapsed]:items-center justify-between">
+                <div className="flex group-data-[state=collapsed]:justify-center">
+                  <TagUser color="#c2c2c2" />
                 </div>
-              </button>
+                <Link
+                  href={"/"}
+                  className="text-[10px] text-[#F0C074] underline text-cener mt-auto"
+                >
+                  Visit Mently Help Desk Here
+                </Link>
+              </div>
+
+              <div className="w-full px-2 pb-4">
+                <button
+                  className="w-full h-6 flex items-center justify-center"
+                  onClick={() =>
+                    document.documentElement.classList.toggle("dark")
+                  }
+                  aria-label="Toggle dark mode"
+                >
+                  <div className="w-8 h-4 bg-white/20 rounded-full relative transition-colors">
+                    <div className="absolute left-1 top-1 w-2 h-2 bg-white rounded-full transition-transform" />
+                  </div>
+                </button>
+              </div>
             </div>
-          </div>
-        </SidebarContent>
+          </SidebarContent>
+        </div>
       </ShadcnSidebar>
     </>
   );
