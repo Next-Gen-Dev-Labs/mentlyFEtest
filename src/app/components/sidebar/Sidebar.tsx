@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { useAppContext } from "../../context/AppContext";
 import Navbar from "./Navbar";
 

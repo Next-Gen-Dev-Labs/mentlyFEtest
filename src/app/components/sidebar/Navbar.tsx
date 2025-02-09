@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import Menu from "./Menu";
 import Link from "next/link";

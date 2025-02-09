@@ -1,5 +1,4 @@
 "use client";
-import Image from 'next/image';
 import { ActivitiesIcon, AnalyticsIcon, BadgesIcon, ClipboardIcon, DashboardIcon, FinancesIcon, LoginIcon, ProgramsIcon, SettingsIcon } from '../../constant/AppImages';
 import { useAppContext } from "../../context/AppContext";
 import React, { useState } from 'react';
