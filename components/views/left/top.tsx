@@ -48,7 +48,7 @@ export default function Top() {
             className="stroke-icon-grey hover:stroke-mently-blue transition-colors duration-150 ease-in-out"
           />
         </Button>
-        <Button classname="bg-mently-blue text-white flex-center px-3 py-[2px] rounded-3xl gap-1" ariaLabel="Share">
+        <Button classname="bg-mently-blue text-white flex-center px-3 py-[2px] rounded-3xl gap-1 transition-transform hover:scale-105 ease-in-out" ariaLabel="Share">
           <Share className="stroke-white" aria-hidden={true} />
           <span>Share</span>
         </Button>

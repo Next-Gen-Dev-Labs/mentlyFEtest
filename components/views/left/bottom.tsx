@@ -54,7 +54,7 @@ export default function Bottom({ items }: { items: AccordionProps[] }) {
         <button
           type="button"
           aria-label="Save program"
-          className="appearance-none bg-mently-blue text-white flex-center p-3 rounded-md flex items-center gap-2 text-[0.9rem] leading-5 w-full max-w-52"
+          className="appearance-none bg-mently-blue text-white flex-center p-3 rounded-md flex items-center gap-2 text-[0.9rem] leading-5 w-full max-w-52 transition-opacity hover:opacity-90 duration-150 ease-in-out hover:shadow-sm"
         >
           <span className="font-medium">Save & Proceed</span>
           <ArrowDropDown className="fill-white w-3 h-3" aria-hidden />

@@ -48,7 +48,7 @@ export default function TextArea() {
         <div className="border shadow-sm border-mently-blue/40 rounded-b-sm flex items-center justify-around gap-1 px-2 w-full min-w-fit">
           {textAreaIcons.map((Icon, index) => (
             <button key={index} className="appearance-none" aria-label="Text edit tool">
-              <Icon size={12} variant="Linear" className="stroke-gray-500" />
+              <Icon size={12} variant="Linear" className="stroke-gray-500 transition-colors hover:stroke-mently-blue hover:font-medium ease-in-out" />
             </button>
           ))}
         </div>
@@ -64,7 +64,7 @@ export default function TextArea() {
 
       <button
         type="button"
-        className="text-mently-purple font-medium text-xs bg-mently-purple/10 rounded-lg w-[136px] py-2 flex items-center gap-1 h-8 p-2 absolute bottom-2 left-2"
+        className="text-mently-purple font-medium text-xs bg-mently-purple/10 rounded-lg w-[136px] py-2 flex items-center gap-1 h-8 p-2 absolute bottom-2 left-2  transition-transform hover:scale-105 ease-in-out"
         aria-label="Use AI to write description"
       >
         <Pen />
