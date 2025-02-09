@@ -1,4 +1,4 @@
-const icons = [
+export const cmsIcons = [
   {
     name: "text",
     path: "/icons/text.svg",
@@ -61,4 +61,29 @@ const icons = [
   },
 ];
 
-export default icons;
+export const programIcons = [
+  {
+    name: "program content",
+    path: "/icons/program-content.svg",
+  },
+  {
+    name: "brief case",
+    path: "/icons/briefcase.svg",
+  },
+  {
+    name: "people",
+    path: "/icons/people.svg",
+  },
+  {
+    name: "note",
+    path: "icons/note-2.svg",
+  },
+  {
+    name: "call",
+    path: "/icons/call.svg",
+  },
+  {
+    name: "chat",
+    path: "/icons/chat.svg",
+  },
+];

@@ -7,6 +7,14 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "780px",
+      lg: "1024px",
+      xxl: "1180px",
+      xl: "1280px",
+      "2xl": "1530px",
+    },
     extend: {
       colors: {
         background: "var(--background)",
@@ -16,6 +24,9 @@ export default {
         },
         secondary: {
           400: "#F0C074",
+          300: "#FEE0B1",
+          250: "#FFECCC",
+          200: "#fff9f2",
         },
       },
     },

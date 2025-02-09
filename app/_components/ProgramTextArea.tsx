@@ -1,0 +1,46 @@
+import Image from "next/image";
+import { FaCaretDown } from "react-icons/fa";
+import { cmsIcons } from "../_constants/icons";
+
+export default function ProgramTextArea() {
+  return (
+    <div className="mt-6 border-black border rounded-[4px] relative">
+      <div className="flex">
+        <div className="basis-1/10 max-w-[100px] flex py-1.5 px-2 gap-4    items-center justify-center   border-r-[1px] border-b-[1px] border-black rounded-br-[4px]">
+          <Image
+            src={"/icons/document.svg"}
+            width={24}
+            height={24}
+            alt="document icon"
+          />
+
+          <FaCaretDown className="text-black" />
+        </div>
+        <div className="flex border-black rounded-bl-[4px] border-l-[1px] border-b-[1px] flex-1 py-1.5 px-2 gap-1 justify-between items-center">
+          {cmsIcons.map((icon) => (
+            <Image
+              src={icon.path}
+              alt={icon.name}
+              width={16}
+              height={16}
+              key={icon.name}
+            />
+          ))}
+        </div>
+      </div>
+      <textarea
+        className="h-[130px] w-full p-3 placeholder:text-[#828282] placeholder:text-xs outline-none"
+        placeholder="Input text"
+      ></textarea>
+      <button className="bg-[#A100FF21] absolute bottom-[10px] left-[10px] flex  items-center justify-between px-3 py-2 gap-1 rounded-lg">
+        <Image
+          src={"/icons/may-icon.svg"}
+          width={12}
+          height={12}
+          alt="may icom"
+        />
+        <span className="text-[#8C00E3] text-xs ">Write with may</span>
+      </button>
+    </div>
+  );
+}

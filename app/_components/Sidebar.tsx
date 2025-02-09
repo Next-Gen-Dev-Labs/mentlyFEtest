@@ -5,7 +5,7 @@ import ToggleButton from "./ToggleButton";
 
 const Sidebar = function () {
   return (
-    <aside className="bg-primary-400  z-20 p-4 fixed w-[120px] h-full top-0 bottom-0 left-0">
+    <aside className="bg-primary-400  z-20 p-4 fixed w-[100px] md:w-[120px] h-full top-0 bottom-0 left-0">
       <div className="grid place-items-center gap-[20px]">
         <Image src={"/images/logo.png"} alt="mently" width={47} height={32} />
         <Image
