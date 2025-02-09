@@ -2,6 +2,8 @@
 
 A technical assessment I implemented for the Frontend Developer position at Mently, focusing on building the program's dashboard page using Next.js.
 
+> ⚠️ **Important Notice**: This assessment project for Mently must not be copied or used until my assessment has been reviewed. I will update the README once that is done.
+
 ## Tech Stack
 
 - [Next.js 14](https://nextjs.org/):
@@ -87,8 +89,3 @@ bun run test
 ### Deploymennt
 
 Deployed to Netlify: [https://fas-mently-fe-assessment.netlify.app](https://fas-mently-fe-assessment.netlify.app/dashboard/programs)
-
-
-## Note
-
-This is a technical assessment project for Mently. It must not be copied or used until my assessment has been reviewed. I will update the README once that is done.
