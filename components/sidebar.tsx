@@ -164,8 +164,8 @@ export function Sidebar() {
             })}
           </SidebarMenu>
           <div className="flex items-center justify-enter flex-col px-4 space-y-4 mt-6">
-            <div className="group-data-[state=collapsed]:w-[84px] text-[10px] w-full h-[126px] p-4 bg-white/5 rounded-lg mx-2 flex flex-col items-center justify-between ">
-              <div className="flex justify-center">
+            <div className="group-data-[state=collapsed]:w-[84px] text-[10px] w-full h-[126px] p-4 bg-white/5 rounded-lg mx-2 flex flex-col group-data-[state=collapsed]:items-center justify-between ">
+              <div className="flex group-data-[state=collapsed]:justify-center">
                 <TagUser color="#c2c2c2" />
               </div>
               <Link

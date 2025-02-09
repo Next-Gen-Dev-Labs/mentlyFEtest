@@ -8,7 +8,11 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './components/test/setup.ts',
     globals: true,
-    include: ['**/*.{test,spec}.{ts,tsx}']
+    exclude: ['**/node_modules/**', '**/.next/**', '**/dist/**'],
+    include: ['**/__tests__/**/*.{test,spec}.{ts,tsx}'],
+    deps: {
+      inline: ['vitest-canvas-mock']
+    }
   },
   resolve: {
     alias: {

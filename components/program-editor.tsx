@@ -238,13 +238,15 @@ export function ProgramEditor() {
             </p>
           </div>
           <div className="border rounded-md p-2 mb-4">
-            <div className="flex items-center justify-between gap-1 border-b pb-2 mb-2">
-              <div className="gap-4 w-[104px] h-[32px]  border-e-2 flex items-center justify-center cursor-pointer">
+            <div className="md:flex items-center justify-between gap-1 border-b pb-2 mb-2">
+              <div className="gap-4 w-[104px] h-[32px] p-2  md:border-e-2 flex items-center justify-center cursor-pointer">
                 <Document size={24} variant="Outline" />
                 <ArrowDown2 variant="Bold" size={18} aria-hidden="true" />
               </div>
 
-              <Separator orientation="vertical" className="text-red-800"/>
+              <Separator orientation="horizontal" className="block md:hidden "/>
+              <Separator orientation="vertical" className="hidden md:block"/>
+
 
               {formatButtons.map((button, index) => {
                 const Icon = button.icon;
