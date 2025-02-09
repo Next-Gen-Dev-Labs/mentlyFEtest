@@ -1,6 +1,6 @@
 # Frontend Developer Assessment - Mently
 
-A technical assessment implementation by me for the Frontend Developer position at Mently, focusing on building a programs page dashboard using Next.js.
+A technical assessment I implemented for the Frontend Developer position at Mently, focusing on building the program's dashboard page using Next.js.
 
 ## Tech Stack
 
@@ -18,8 +18,8 @@ A technical assessment implementation by me for the Frontend Developer position 
 - Programs dashboard page
 - Rich text editor integration
 - Responsive design
-- Unit testing coverage
-- Mobile optimization
+- Unit testing
+- Mobile Responsiveness
 
 ## Project Structure
 
@@ -72,8 +72,6 @@ bun run dev
 
 Access the application at [http://localhost:3000](http://localhost:3000)
 
-Deployed on Netlify: [Link](https://fas-mently-fe-assessment.netlify.app/dashboard/programs)
-
 ### Testing
 
 ```bash
@@ -83,9 +81,14 @@ yarn test
 # or
 pnpm test
 # or
-bun test
+bun run test
 ```
+
+### Deploymennt
+
+Deployed to Netlify: [https://fas-mently-fe-assessment.netlify.app](https://fas-mently-fe-assessment.netlify.app/dashboard/programs)
+
 
 ## Note
 
-This is a technical assessment project for Mently. All implementation details are confidential.
+This is a technical assessment project for Mently. It must not be copied or used until my assessment has been reviewed. I will update the README once that is done.
