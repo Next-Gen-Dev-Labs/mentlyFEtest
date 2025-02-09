@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { FaCaretDown } from "react-icons/fa";
 import { cmsIcons } from "../_constants/icons";
+import { useState } from "react";
 
 export default function ProgramTextArea() {
+  const [content, setContent] = useState<string>("");
   return (
     <div className="mt-6 border-black border rounded-[4px] relative">
       <div className="flex">
@@ -31,6 +35,8 @@ export default function ProgramTextArea() {
       <textarea
         className="h-[130px] w-full p-3 placeholder:text-[#828282] placeholder:text-xs outline-none"
         placeholder="Input text"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
       ></textarea>
       <button className="bg-[#A100FF21] absolute bottom-[10px] left-[10px] flex  items-center justify-between px-3 py-2 gap-1 rounded-lg">
         <Image

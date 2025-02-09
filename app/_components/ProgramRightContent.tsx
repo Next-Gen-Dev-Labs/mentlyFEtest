@@ -21,7 +21,7 @@ export default function ProgramRightContent() {
             Design to get started about the fundamentals and how they can build
             a Design Career, share, document their progress on a weekly basis.
           </div>
-          <div className="shadow-[0_6px_16px_0px_#0000000F] grid gap-5 bg-white flex-1 p-8">
+          <div className="shadow-[0_6px_16px_0px_#0000000F] hover:scale-110 duration-300 cursor-pointer grid gap-5 bg-white flex-1 p-8">
             <div className="grid grid-cols-2 justify-between items-center">
               <Image
                 src={"/icons/main-content.svg"}
