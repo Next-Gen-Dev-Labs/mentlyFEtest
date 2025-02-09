@@ -40,4 +40,11 @@
 
 body {
   font-family: var(--font-family-chivo);
+  width: 100vw;
+}
+
+main {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
 }
