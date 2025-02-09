@@ -46,7 +46,7 @@ describe("Sidebar Component", () => {
       </CustomProvider>
     );
 
-    expect(screen.queryByRole("complementary")).toBeNull();
+    expect(screen.queryByRole("complementary")).toHaveClass("hidden");
   });
 
   it("applies collapsed class when isCollapsed is true", () => {
