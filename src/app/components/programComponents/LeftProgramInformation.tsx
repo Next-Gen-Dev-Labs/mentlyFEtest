@@ -19,7 +19,7 @@ const LeftProgramInformation = () => {
     return (
       <>
             {/* Left Section */}
-            <div className="leftside w-full px-4 md:px-6 my-10 lg:w-[45%] lg:pl-8">
+            <div className="leftside w-full px-4 md:px-6 my-10 lg:w-[45%] lg:pl-8 shadow-[0_2px_4px_rgba(0,0,0,0.0622)]">
                 {/* Navigation and Action Icons */}
                 <div className="flex gap-2 justify-between relative">
                     {/* Back Button*/}

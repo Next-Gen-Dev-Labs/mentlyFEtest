@@ -20,7 +20,7 @@ const menu = [
 
 const Menu = () => {
     const { isCollapsed } = useAppContext();
-    const [activeTab, setActiveTab] = useState(1);
+    const [activeTab, setActiveTab] = useState(2);
     const [isHovered, setIsHovered] = useState<number | null>(null);
 
     return (
