@@ -6,7 +6,6 @@ import { useAppContext } from "../context/AppContent";
 
 const Header = () => {
     const { isSidebarOpen, setIsSidebarOpen, darktheme} = useAppContext()
-    console.log(isSidebarOpen)
     return (
         <div className={`w-full h-full flex gap-2 justify-between items-center p-4  ${darktheme ? "bg-appDeepTextBlue" : "bg-[#FDFDFD]" }`}>
             <button

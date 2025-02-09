@@ -23,23 +23,24 @@ export default function RootLayout({
     <AppProvider>
       <html lang="en">
         <body className={inter.className}>
-          <div className='min-h-screen flex overflow-hidden'>
-            {/* SIDEBAR */}
+          {/* Main wrapper */}
+          <div className="min-h-screen flex overflow-hidden">
+
+            {/* Sidebar navigation */}
             <Sidebar />
 
-            {/* MAIN CONTENT SECTION */}
-            <div className=' min-h-screen w-screen '>
+            {/* Main content area */}
+            <div className="min-h-screen w-screen">
 
-              {/* HEADER */}
-              <header className='h-[82px] w-full shadow-md relative z-10 '>
+              {/* Header section */}
+              <header className="h-[82px] w-full shadow-md relative z-10">
                 <Header />
               </header>
 
-              {/* CONTENT */}
-              <main className='min-h-screen h-sreen'>
+              {/* Main content section */}
+              <main className="min-h-screen">
                 {children}
               </main>
-
             </div>
           </div>
         </body>
