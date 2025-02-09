@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       {
         source: "/",
         destination: paths.private.programs,
-        permanent: true,
+        permanent: false,
       },
     ];
   },
