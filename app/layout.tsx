@@ -3,6 +3,7 @@ import { Chivo, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./_components/Sidebar";
 import Header from "./_components/Header";
+import { SidebarProvider } from "./_context/SidebarContext";
 
 export const chivo = Chivo({ subsets: ["latin"] });
 export const inter = Inter({ subsets: ["latin"] });
@@ -24,11 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${chivo.className}`}>
-        <Sidebar />
-        <div className=" ml-[120px]">
-          <Header />
-          <main className=" w-full mt-[70px]  ">{children}</main>
-        </div>
+        <SidebarProvider>
+          <Sidebar />
+          <div className="sm:ml-[120px]">
+            <Header />
+            <main className=" w-full mt-[70px]  ">{children}</main>
+          </div>
+        </SidebarProvider>
       </body>
     </html>
   );
