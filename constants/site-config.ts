@@ -1,7 +1,7 @@
 export const siteConfig = {
   title: "Mently",
   name: "Mently",
-  url: "https://scrollz-web.netlify.app/",
+  url: "https://fas-mently-fe-assessment.netlify.app",
   author: "ifeoluw fas",
   ogImage: "/og-image.png",
   description:
