@@ -1,6 +1,6 @@
 "use client";
 
-import { useAppContext } from "@/app/context/AppContent";
+import { useAppContext } from "../../context/AppContext";
 import Navbar from "./Navbar";
 
 /**

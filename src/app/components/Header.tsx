@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useAppContext } from "../context/AppContent";
+import { useAppContext } from "../context/AppContext";
 
 const Header = () => {
     const { isSidebarOpen, setIsSidebarOpen, darktheme} = useAppContext()

@@ -1,7 +1,7 @@
 "use client";
 import LeftProgramInformation from "../components/programComponents/LeftProgramInformation";
 import RightProgramInformation from "../components/programComponents/RightProgramInformation";
-import { useAppContext } from "../context/AppContent";
+import { useAppContext } from "../context/AppContext";
 
 const ProgramPages = () => {
     const { darktheme, setDarkTheme } = useAppContext();

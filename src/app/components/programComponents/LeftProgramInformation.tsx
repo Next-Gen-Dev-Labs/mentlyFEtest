@@ -8,7 +8,7 @@ import ProgramList from "./ProgramList";
 import ProgramInfoBox from "./ProgramInfoBox";
 import Dropdown from "../ui/DropdownMenu";
 import { RichTextEditor } from "./RichTextEditor";
-import { useAppContext } from "@/app/context/AppContent";
+import { useAppContext } from "@/app/context/AppContext";
 
 const LeftProgramInformation = () => {
     // State to manage visibility of a section

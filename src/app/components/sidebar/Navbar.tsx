@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Menu from "./Menu";
 import Link from "next/link";
-import { useAppContext } from "@/app/context/AppContent";
+import { useAppContext } from "../../context/AppContext";
 import HelpDesk from "./HelpDesk";
 import ToggleSwitch from "../ui/ToggleSwitch";
 import { Icon } from "@iconify/react";

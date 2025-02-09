@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from './components/sidebar/Navbar'
-import { AppProvider } from './context/AppContent'
+import { AppProvider } from './context/AppContext'
 import Sidebar from './components/sidebar/Sidebar'
 import Header from './components/Header'
 

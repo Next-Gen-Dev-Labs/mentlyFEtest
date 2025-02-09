@@ -1,9 +1,9 @@
-import { useAppContext } from "@/app/context/AppContent";
+import { useAppContext } from "../../context/AppContext";
 import { useState } from "react";
 
 const ToggleSwitch = () => {
     const { darktheme, setDarkTheme } = useAppContext();
-    
+
     return (
         <>
             <label className="flex items-center justify-center relative gap-x-2 mt-10 cursor-pointer">

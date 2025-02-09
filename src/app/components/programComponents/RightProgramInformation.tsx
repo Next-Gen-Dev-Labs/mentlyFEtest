@@ -8,7 +8,7 @@ import { useState } from "react";
 import ProgramList from "./ProgramList";
 import ProgramInfoBox from "./ProgramInfoBox";
 import Dropdown from "../ui/DropdownMenu";
-import { useAppContext } from "@/app/context/AppContent";
+import { useAppContext } from "@/app/context/AppContext";
 
 const RightProgramInformation = () => {
 
