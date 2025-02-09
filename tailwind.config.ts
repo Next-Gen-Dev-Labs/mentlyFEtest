@@ -34,6 +34,15 @@ export default {
   			'gradient-yellow': '#F6A000',
   			'mently-purple': '#8C00E3',
 				'mently-link-color': '#2B85FE',
+				keyframes: {
+					'fade-in': {
+						'0%': { opacity: '0' },
+						'100%': { opacity: '1' },
+					},
+				},
+				animation: {
+					'fade-in': 'fade-in 0.5s ease-in-out',
+				},
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',
   				foreground: 'hsl(var(--primary-foreground))'
