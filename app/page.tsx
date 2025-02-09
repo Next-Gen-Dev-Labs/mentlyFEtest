@@ -4,7 +4,7 @@ import Index from "@/components/views/ProgramView";
 
 export default function Home() {
   return (
-    <main className="grid grid-cols-1 sm:grid-cols-[auto_1fr] font-[family-name:var(--font-chivo)] min-w-screen h-screen max-w-[1440px]">
+    <main className="grid grid-cols-1 sm:grid-cols-[auto_1fr] font-[family-name:var(--font-chivo)] min-w-screen h-screen max-w-[1440px] animate-fade-in">
       <Sidebar />
       <div>
         <Header />

@@ -48,7 +48,8 @@ export default function Nav() {
 function NavItem({ children }: { children: ReactNode }) {
   return (
     <li className="hover:bg-white rounded-sm py-[6px]  w-[80%] max-w-[207px] grid place-content-center text-icon-grey hover:text-mently-blue transition-colors duration-150 ease-in-out cursor-pointer">
-      <Link href={"#"}>{children}</Link>
+      <Link href={"#"}>{children}</Link> 
+      {/* add link names */}
     </li>
   );
 }

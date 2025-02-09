@@ -6,10 +6,10 @@ import React from "react";
 
 export default function Middle() {
   return (
-    <section className="mt-6">
-      <h2 className="font-bold text-gray-900 text-3xl capitalize">
+    <div className="mt-6">
+      <h1 className="font-bold text-gray-900 text-3xl capitalize">
         program information
-      </h2>
+      </h1>
       <small className="text-gray-500 capitalize">describe section title</small>
 
       <form className="grid grid-cols-1 gap-2">
@@ -17,12 +17,15 @@ export default function Middle() {
           <span className="border-2 border-dashed border-mently-blue px-2">
             T
           </span>
-          <button>
-            <ArrowDropDown className="fill-gray-700 ml-2" />
+          <button aria-label="font dropdown">
+            <ArrowDropDown className="fill-gray-700 ml-2" aria-hidden />
           </button>
           <input
             className="w-full pl-4 placeholder:text-sm border-none outline-none"
             type="text"
+            id="program-title"
+            name="program-title"
+            aria-label="program-title"
             placeholder="Describe Section Title e.g What you stand to learn"
           />
         </div>
@@ -34,13 +37,18 @@ export default function Middle() {
 
         {/* submit  btn */}
         <div className="mt-2 flex flex-col gap-2">
-          <button className="flex flex-col items-center justify-center border h-[64px] border-mently-blue/50 font-medium text-mently-blue w-full rounded-sm min-w-80">
-            <span className="flex items-center gap-2">+ <span>Add new section</span></span>
+          <button className="flex flex-col items-center justify-center border h-[64px] border-mently-blue/50 font-medium text-mently-blue w-full rounded-sm min-w-80" aria-label="add new section">
+            <span className="flex items-center gap-2">
+              + <span>Add new section</span>
+            </span>
             <small>(maximum number of sections to add is 3)</small>
           </button>
           <div className="flex items-baseline gap-1">
-            <input type="checkbox" name="show_section" id="show_secton" />
-            <label htmlFor="show_section" className="text-gray-800 font-medium text-sm">
+            <input type="checkbox" name="show_section" id="show_section" />
+            <label
+              htmlFor="show_section"
+              className="text-gray-800 font-medium text-sm"
+            >
               Show this section when published
             </label>
           </div>
@@ -48,6 +56,6 @@ export default function Middle() {
 
         {/* end */}
       </form>
-    </section>
+    </div>
   );
 }

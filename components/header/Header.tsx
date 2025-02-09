@@ -27,8 +27,8 @@ export default function Header() {
                 </Link>
               </span>
             </div>
-          <button className="appearance-none">
-            <ArrowDown2 size={16} variant="Linear" className="stroke-icon-grey" />
+          <button className="appearance-none focus-visible:outline-1" aria-label="profile dropdown">
+            <ArrowDown2 size={16} variant="Linear" aria-hidden className="stroke-icon-grey" />
           </button>
         </div>
       </div>

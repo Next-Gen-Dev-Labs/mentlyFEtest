@@ -26,7 +26,7 @@ export default function Bottom({ items }: { items: AccordionProps[] }) {
             <Accordion type="single" collapsible>
               <AccordionItem value={`item-${index}`} className="border-none max-w-[325px]">
                 <AccordionTrigger className="border bg-mently-blue/5 border-mently-blue/20 rounded-md px-4 py-3 pr-10 relative h-12 hover:no-underline">
-                  <span className="font-bold text-mently-blue/80 capitalize text-sm">{heading}</span>
+                  <h2 className="font-bold text-mently-blue/80 capitalize text-sm">{heading}</h2>
 
                   <DropdownMenu>
                     <DropdownMenuTrigger>
@@ -48,15 +48,16 @@ export default function Bottom({ items }: { items: AccordionProps[] }) {
       </ul>
 
       <div className="flex flex-col items-baseline gap-2 justify-end mt-3 x-md:flex-row">
-        <button className="appearance-none bg-none text-mently-blue/40 flex-center p-3 rounded-md flex items-center gap-2 text-[0.9rem] leading-5 w-full font-bold max-w-52">
+        <button className="appearance-none bg-none text-mently-blue/40 flex-center p-3 rounded-md flex items-center gap-2 text-[0.9rem] leading-5 w-full font-bold max-w-52 focus-visible:outline-1">
           Go Back
         </button>
         <button
           type="button"
+          aria-label="Save program"
           className="appearance-none bg-mently-blue text-white flex-center p-3 rounded-md flex items-center gap-2 text-[0.9rem] leading-5 w-full max-w-52"
         >
           <span className="font-medium">Save & Proceed</span>
-          <ArrowDropDown className="fill-white w-3 h-3" />
+          <ArrowDropDown className="fill-white w-3 h-3" aria-hidden />
         </button>
       </div>
     </div>

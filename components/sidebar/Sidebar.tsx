@@ -12,8 +12,8 @@ export default function Sidebar() {
           <HambergerMenu size={24} variant="Linear" className="stroke-white" />
         </span>
         <Image src={mently} alt="mently logo" width={47} height={32} />
-        <button type="button" className="hidden sm:inline">
-          <Grid4 size={32} variant="Linear" className="stroke-icon-grey " />
+        <button type="button" className="hidden sm:inline" aria-label="change nav view">
+          <Grid4 size={32} variant="Linear" className="stroke-icon-grey " aria-hidden />
         </button>
       </div>
       <Nav />

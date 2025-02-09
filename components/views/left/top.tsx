@@ -17,8 +17,14 @@ export default function Top() {
           variant="Linear"
           size={16}
           className="stroke-mently-honey stroke-2"
+          aria-hidden={true}
         />
-        <button className="font-medium appearance-none">Back to Home</button>
+        <button
+          className="font-medium appearance-none"
+          aria-label="Go back to homepage"
+        >
+          Back to Home
+        </button>
       </span>
       <div className="flex gap-2 items-center">
         <DropdownMenu>
@@ -34,15 +40,16 @@ export default function Top() {
             <DropdownMenuItem>Edit</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <Button>
+        <Button ariaLabel="Copy">
           <Copy
+            aria-hidden={true}
             variant="Linear"
             size={22}
             className="stroke-icon-grey hover:stroke-mently-blue transition-colors duration-150 ease-in-out"
           />
         </Button>
-        <Button classname="bg-mently-blue text-white flex-center px-3 py-[2px] rounded-3xl gap-1">
-          <Share className="stroke-white" />
+        <Button classname="bg-mently-blue text-white flex-center px-3 py-[2px] rounded-3xl gap-1" ariaLabel="Share">
+          <Share className="stroke-white" aria-hidden={true} />
           <span>Share</span>
         </Button>
       </div>

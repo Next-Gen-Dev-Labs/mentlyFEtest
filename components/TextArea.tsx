@@ -47,22 +47,25 @@ export default function TextArea() {
         </div>
         <div className="border shadow-sm border-mently-blue/40 rounded-b-sm flex items-center justify-around gap-1 px-2 w-full min-w-fit">
           {textAreaIcons.map((Icon, index) => (
-            <button key={index} className="appearance-none">
+            <button key={index} className="appearance-none" aria-label="Text edit tool">
               <Icon size={12} variant="Linear" className="stroke-gray-500" />
             </button>
           ))}
         </div>
       </div>
       <textarea
-        name="description"
-        id="description"
-        className="resize-none w-full border-none outline-none p-2 text-[13.6px] h-[85px] bg-transparent"
+        name="program-description"
+        id="program-description"
+        aria-label="program-description"
+        className="focus-visible:border resize-none w-full border-none outline-none p-2 text-[13.6px] h-[85px] bg-transparent"
         placeholder="Input Text"
+        
       ></textarea>
 
       <button
         type="button"
         className="text-mently-purple font-medium text-xs bg-mently-purple/10 rounded-lg w-[136px] py-2 flex items-center gap-1 h-8 p-2 absolute bottom-2 left-2"
+        aria-label="Use AI to write description"
       >
         <Pen />
         <span>Write with May</span>
