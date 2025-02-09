@@ -9,7 +9,7 @@ export default function MentlyLogo() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className="w-10 h-10 border-2 z-30"
+      className="w-10 h-10 z-30"
     >
       <rect width="47.0261" height="32" fill="url(#pattern0_999_297)" />
       <defs>

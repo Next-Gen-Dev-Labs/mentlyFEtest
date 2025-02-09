@@ -31,7 +31,7 @@ export default function Right() {
             <Image src={lady} alt="event flier" width={74} height={116} />
             <div className="max-w-96 border-2c flex flex-col ">
               <h3 className="text-white text-lg flex flex-col">
-                <span className="capitalize font-extrabold text-xl lg:text-2xl">
+                <span className="capitalize font-extrabold text-lg  md:text-sm lg:text-2xl">
                   mastering the work life equation
                 </span>
               </h3>
