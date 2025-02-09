@@ -11,7 +11,7 @@
   scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
 
-/* Light Mode (default) */
+
 :root {
   --background: #ffffff;
   --foreground: #000000;
@@ -19,17 +19,27 @@
   --secondary: #f3f4f6; /* Gray-100 */
 }
 
-/* Dark Mode */
-.dark {
-  --background: #1a1a1a;
-  --foreground: #ffffff;
-  --primary: #6366f1; /* Indigo-400 */
-  --secondary: #2d2d2d; /* Gray-800 */
+body {
+  @apply bg-white text-black dark:bg-black dark:text-white;
 }
 
-
+/* 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+} */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeInSlide {
+  animation: fadeInSlide 0.2s ease-out forwards;
 }

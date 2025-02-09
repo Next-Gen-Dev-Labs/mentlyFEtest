@@ -8,11 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Chivo", "sans-serif"],
+      },
       colors: {
-        lightBg: "#f8f9fa",
-        darkBg: "#1e1e2e",
-        lightText: "#333",
-        darkText: "#fff",
+        primary: "#2A1B5C", 
+        secondary: "#FFFFFF", 
+        tertiary: "#F0C074", 
       },
     },
   },
