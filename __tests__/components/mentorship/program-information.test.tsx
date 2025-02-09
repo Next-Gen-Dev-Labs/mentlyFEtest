@@ -1,4 +1,4 @@
-import { ProgramInformation } from "@/components/program-information";
+import { ProgramInformation } from "@/components/mentorship/program-information";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 

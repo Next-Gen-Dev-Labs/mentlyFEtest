@@ -6,5 +6,9 @@ interface ICurrentDate {
 }
 
 export const CurrentDate = ({ date, className }: ICurrentDate) => {
-  return <p className={cn(className, "text-sm text-[#809FB8]")}>{date}</p>;
+  return (
+    <p className={cn(className, "text-sm text-[#809FB8]")}>
+      {date} <span className="sr-only"> current data</span>
+    </p>
+  );
 };

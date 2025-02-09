@@ -119,6 +119,7 @@ export function LoginForm({
           </form>
         </CardContent>
       </Card>
+      <span className="sr-only">login form</span>
     </motion.div>
   );
 }

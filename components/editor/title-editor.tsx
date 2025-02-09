@@ -67,6 +67,7 @@ export function TitleEditor({ ...props }) {
       </Select>
 
       <EditorContent className="w-[87%]" editor={editor} />
+      <span className="sr-only">title editor</span>
     </div>
   );
 }

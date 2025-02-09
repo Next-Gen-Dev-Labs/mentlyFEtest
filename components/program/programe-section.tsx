@@ -3,13 +3,14 @@
 import { ProgramFooter } from "@/components/program/footer";
 import { ProgramHeader } from "@/components/program/header";
 import { SectionList } from "@/components/program/section-list";
-import { SectionTitle } from "@/components/program/section-title";
+import { SectionTitle } from "@/components/section-title";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Callout } from "@/components/ui/callout";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Editor } from "../editor/editor";
+import { TitleEditor } from "../editor/title-editor";
 
 export default function ProgramInformation() {
   return (
@@ -39,7 +40,11 @@ export default function ProgramInformation() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <SectionTitle />
+          <SectionTitle
+            title=" Program Information"
+            subtitle="Describe Section Title"
+          />
+          <TitleEditor data-testid="title-editor" />
         </motion.div>
 
         <motion.div

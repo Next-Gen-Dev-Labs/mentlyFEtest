@@ -32,6 +32,7 @@ export function Navbar() {
           className="h-5 w-5 text-primary md:hidden"
         />
       </div>
+      <span className="sr-only">navbar</span>
     </div>
   );
 }

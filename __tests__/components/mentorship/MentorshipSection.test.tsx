@@ -1,4 +1,4 @@
-import { MentorshipSection } from "@/components/mentorship-section";
+import { MentorshipSection } from "@/components/mentorship/mentorship-section";
 import { images } from "@/constants/image";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";

@@ -33,6 +33,7 @@ export function Logo({
         className={cn("object-contain", className)}
       />
       {showText && <Icons.logoText />}
+      <span className="sr-only">logo</span>
     </Link>
   );
 }

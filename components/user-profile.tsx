@@ -40,6 +40,7 @@ export const UserProfile: React.FC<UserProfileProps> = ({
               )}
             </Avatar>
             <div className="hidden md:block">
+              <span className="sr-only">user profile dropdown</span>
               <h2 className="">{name}</h2>
               <div className="flex items-center space-x-2">
                 <p className="text-sm text-muted-foreground">{plan}</p>

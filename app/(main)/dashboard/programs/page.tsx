@@ -1,4 +1,4 @@
-import { MentorshipSection } from "@/components/mentorship-section";
+import { MentorshipSection } from "@/components/mentorship/mentorship-section";
 import ProgramInformation from "@/components/program/programe-section";
 
 export const metadata = {

@@ -15,6 +15,14 @@ describe("ProgramSection", () => {
   it("renders all required components and elements", () => {
     render(<ProgramInformation />);
 
+    // Check for SectionTitle component
+
+    expect(screen.getByText("Program Information")).toBeInTheDocument();
+    expect(screen.getByText("Describe Section Title")).toBeInTheDocument();
+
+    // Check for TitleEditor component
+    expect(screen.getByTestId("title-editor")).toBeInTheDocument();
+
     // Check for header section
     expect(screen.getByText("Back to Home")).toBeInTheDocument();
 
@@ -32,13 +40,11 @@ describe("ProgramSection", () => {
       screen.getByText("(maximum number of sections to add is 3)"),
     ).toBeInTheDocument();
 
-    // Check for checkbox and its label
     expect(screen.getByRole("checkbox")).toBeInTheDocument();
     expect(
       screen.getByText("Show this section when Published"),
     ).toBeInTheDocument();
 
-    // Check for footer buttons
     expect(screen.getByText("Go Back")).toBeInTheDocument();
     expect(screen.getByText("Save & Proceed")).toBeInTheDocument();
   });

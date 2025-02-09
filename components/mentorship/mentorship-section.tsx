@@ -5,9 +5,10 @@ import { images } from "@/constants/image";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import { CurrentDate } from "./curent-date";
+import { CurrentDate } from "../curent-date";
+import { SectionTitle } from "../section-title";
+import { Card } from "../ui/custom-card";
 import { ProgramInformation } from "./program-information";
-import { Card } from "./ui/custom-card";
 
 const mentorship_data = [
   {
@@ -52,9 +53,11 @@ export const MentorshipSection = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="text-2xl font-bold text-primary md:text-4xl"
         >
-          Mentorship Program
+          <SectionTitle
+            title="
+          Mentorship Program"
+          />
         </motion.h1>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

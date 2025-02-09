@@ -109,6 +109,7 @@ export function DashboardSidebar({
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <span className="sr-only">sidebar</span>
     </Sidebar>
   );
 }
