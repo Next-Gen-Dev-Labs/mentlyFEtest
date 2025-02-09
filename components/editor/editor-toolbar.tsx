@@ -35,7 +35,7 @@ interface EditorToolbarProps {
   editor: Editor | null;
 }
 
-const levels = [
+export const levels = [
   { value: "h1", label: "H1" },
   { value: "h2", label: "H2" },
   { value: "h3", label: "H3" },

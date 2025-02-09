@@ -1,29 +1,13 @@
 "use client";
 
-import { Icons } from "@/constants/icons";
 import { images } from "@/constants/image";
+import { mentorship_data } from "@/data";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
 import { CurrentDate } from "../curent-date";
 import { SectionTitle } from "../section-title";
 import { Card } from "../ui/custom-card";
 import { ProgramInformation } from "./program-information";
-
-const mentorship_data = [
-  {
-    title: "mentorship programs",
-    icon: Icons.brief_case,
-  },
-  {
-    title: "21/4/2024",
-    icon: Icons.brief_case,
-  },
-  {
-    title: "In Person",
-    icon: Icons.location,
-  },
-];
 
 export const MentorshipSection = () => {
   return (

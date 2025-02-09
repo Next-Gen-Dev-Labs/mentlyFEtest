@@ -2,7 +2,7 @@
 
 import { ProgramFooter } from "@/components/program/footer";
 import { ProgramHeader } from "@/components/program/header";
-import { SectionList } from "@/components/program/section-list";
+import { ProgramCreatedList } from "@/components/program/program-created-list";
 import { SectionTitle } from "@/components/section-title";
 import { motion } from "framer-motion";
 
@@ -126,7 +126,7 @@ export default function ProgramInformation() {
           viewport={{ once: true }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <SectionList />
+          <ProgramCreatedList />
         </motion.div>
 
         <motion.div

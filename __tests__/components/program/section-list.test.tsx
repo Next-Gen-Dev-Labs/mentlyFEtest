@@ -1,18 +1,18 @@
-import { SectionList } from "@/components/program/section-list";
+import { ProgramCreatedList } from "@/components/program/program-created-list";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
-describe("SectionList", () => {
+describe("ProgramCreatedList", () => {
   it("renders program information sections", () => {
-    render(<SectionList />);
+    render(<ProgramCreatedList />);
 
     expect(screen.getByText("Program Information Text 1")).toBeInTheDocument();
     expect(screen.getByText("Program Information Text 2")).toBeInTheDocument();
   });
 
   it("shows dropdown menu when clicking more options", async () => {
-    render(<SectionList />);
+    render(<ProgramCreatedList />);
     const user = userEvent.setup();
 
     const moreButtons = screen.getAllByRole("button", {
@@ -25,7 +25,7 @@ describe("SectionList", () => {
   });
 
   it("expands accordion item when clicked", async () => {
-    render(<SectionList />);
+    render(<ProgramCreatedList />);
     const user = userEvent.setup();
 
     const accordionTrigger = screen.getByText("Program Information Text 1");
@@ -37,7 +37,7 @@ describe("SectionList", () => {
   });
 
   it("collapses expanded accordion item when clicked again", async () => {
-    render(<SectionList />);
+    render(<ProgramCreatedList />);
     const user = userEvent.setup();
 
     const accordionTrigger = screen.getByText("Program Information Text 1");

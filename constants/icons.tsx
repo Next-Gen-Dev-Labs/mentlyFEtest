@@ -292,6 +292,7 @@ export const Icons = {
         strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="1.5"
       />
       <path
         d="M12.5 10H3.01666"
@@ -299,6 +300,7 @@ export const Icons = {
         strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="1.5"
       />
       <path
         d="M4.87498 7.20833L2.08331 10L4.87498 12.7917"

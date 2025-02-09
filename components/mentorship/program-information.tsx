@@ -1,14 +1,5 @@
-import { Icons } from "@/constants/icons";
+import { programInfoData } from "@/data";
 import { Card } from "../ui/custom-card";
-
-const programInfoData = [
-  { icon: Icons.pro_icon1, content: "Content" },
-  { icon: Icons.pro_icon2, content: "Content" },
-  { icon: Icons.pro_icon3, content: "Content" },
-  { icon: Icons.pro_icon4, content: "Content" },
-  { icon: Icons.pro_icon5, content: "Content" },
-  { icon: Icons.pro_icon6, content: "Content" },
-];
 
 export const ProgramInformation = () => {
   return (

@@ -10,17 +10,7 @@ import Placeholder from "@tiptap/extension-placeholder";
 import { useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { EditorContent } from "./editor-content";
-import { getHeadingLevel } from "./editor-toolbar";
-
-const levels = [
-  { value: "h1", label: "H1" },
-  { value: "h2", label: "H2" },
-  { value: "h3", label: "H3" },
-  { value: "h4", label: "H4" },
-  { value: "h5", label: "H5" },
-  { value: "h6", label: "H6" },
-  { value: "p", label: "T" },
-];
+import { getHeadingLevel, levels } from "./editor-toolbar";
 
 export function TitleEditor({ ...props }) {
   const editor = useEditor({
@@ -34,8 +24,7 @@ export function TitleEditor({ ...props }) {
     content: "<p></p>",
     editorProps: {
       attributes: {
-        class: "outline-none flex-1 text-gray-600 placeholder:text-[red]",
-        placeholder: "Describe Section Title e.g What you stand to learn",
+        class: "outline-none ",
       },
     },
   });

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { MoreVertical } from "lucide-react";
 
-export function SectionList() {
+export function ProgramCreatedList() {
   return (
     <Accordion type="single" collapsible className="space-y-3">
       {["Program Information Text 1", "Program Information Text 2"].map(

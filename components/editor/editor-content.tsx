@@ -11,7 +11,7 @@ export const EditorContent = ({ editor, className }: EditorContentProps) => {
     <TipTapEditorContent
       editor={editor}
       className={cn(
-        "prose prose-h1:my-1 prose-h2:my-1 prose-h6:my-1 prose-h4:my-1 prose-h5:my-1 prose-h3:my-1 prose-p:my-1 h-full w-full",
+        "prose h-full w-full prose-h1:my-1 prose-h2:my-1 prose-h3:my-1 prose-h4:my-1 prose-h5:my-1 prose-h6:my-1 prose-p:my-1",
         className,
       )}
     />
