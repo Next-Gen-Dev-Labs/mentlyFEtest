@@ -19,7 +19,7 @@ export function Header() {
 
   return (
     <header
-      className="flex items-center justify-end p-4 border-b gap-4"
+      className=" fixed top-0 left-0 right-0 z-20  bg-white flex items-center justify-end p-4 border-b gap-4"
       role="banner"
     >
       <Button

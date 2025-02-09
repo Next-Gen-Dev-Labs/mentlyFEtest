@@ -22,7 +22,7 @@ export default function Home() {
         <Sidebar />
         <SidebarInset>
           <Header />
-          <div className={`${isSidebarOpen == false ? " p-4 md:ps-20" : "p-4 md:px-6"}`}>
+          <div className={`${isSidebarOpen == false ? " p-4 md:ps-20" : "p-4 md:px-6"} mt-14 md:mt-20`}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
               <section
                 className="col-span-1 bg-[#FDFDFD] opacity-90 shadow-[0px_2px_4px_0px_rgba(0,0,0,0.06)] border-none h-full"

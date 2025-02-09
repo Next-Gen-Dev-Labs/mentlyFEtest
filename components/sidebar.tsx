@@ -14,6 +14,7 @@ import {
   Award,
   EmptyWallet,
   SidebarLeft,
+  SidebarRight,
   TagUser,
 } from "iconsax-react";
 import {
@@ -80,7 +81,7 @@ const sidebarItems = [
 ];
 
 function SidebarToggle() {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, open } = useSidebar();
 
   return (
     <button
@@ -88,12 +89,16 @@ function SidebarToggle() {
       className="flex h-10 w-full items-center justify-center rounded-md text-white/60 hover:bg-white/10 hover:text-white transition-colors mb-2"
       aria-label="Toggle sidebar"
     >
-      <SidebarLeft size="26" color="#AAAAAA" aria-hidden="true" />
+      {!open ? (
+        <SidebarLeft size="26" color="#AAAAAA" aria-hidden="true" />
+      ) : (
+        <SidebarRight size="26" color="#AAAAAA" aria-hidden="true" />
+      )}
     </button>
   );
 }
 function MobileSidebarToggle() {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, open } = useSidebar();
 
   return (
     <button
@@ -101,7 +106,11 @@ function MobileSidebarToggle() {
       className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md text-white/60 hover:bg-white/10 hover:text-white transition-colors"
       aria-label="Toggle mobile sidebar"
     >
-      <SidebarLeft size="26" color="#AAAAAA" aria-hidden="true" />
+      {!open ? (
+        <SidebarLeft size="26" color="#AAAAAA" aria-hidden="true" />
+      ) : (
+        <SidebarRight size="26" color="#AAAAAA" aria-hidden="true" />
+      )}
     </button>
   );
 }
@@ -112,7 +121,7 @@ export function Sidebar() {
     <>
       <MobileSidebarToggle />
       <ShadcnSidebar
-        className="w-64 transition-all duration-300 ease-in-out group-data-[state=collapsed]:w-[120px]"
+        className="w-64 z-50 transition-all duration-300 ease-in-out group-data-[state=collapsed]:w-[120px]"
         collapsible="icon"
         role="navigation"
         aria-label="Main navigation"
