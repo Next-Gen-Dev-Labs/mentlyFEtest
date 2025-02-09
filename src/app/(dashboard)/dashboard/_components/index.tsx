@@ -1,31 +1,27 @@
 "use client";
-import {
-  ArrowLeft,
-  Briefcase,
-  Calendar2,
-  Copy,
-  Location,
-  Setting2,
-} from "iconsax-react";
+import { ArrowLeft, Copy, Setting2 } from "iconsax-react";
 import React, { Fragment, useState } from "react";
 import ProgramInfo from "./program-info";
 import { DropdownMenu } from "@/components/common/dropdown";
-import Image from "next/image";
-
-// const ImageResize = dynamic(() => import('quill-image-resize-module-react'), {
-//     ssr: false
-//   })
+import { useApp } from "@/context/main";
+import ProgramDetail from "./program-detail";
 
 function DashboardPage() {
+  const { theme, mounted } = useApp();
   return (
     <Fragment>
-      <div className="flex gap-[47px]">
-        <div className="w-[532px]">
+      <div className="flex max-md:flex-col gap-[47px]">
+        <div className="w-[532px] max-md:w-full">
           <div className="flex justify-between items-center mb-8">
-            <button className="text-orange-400 flex items-center gap-2">
-              <ArrowLeft size={20} />
-              Back to Home
-            </button>
+            {mounted && (
+              <button className="text-[#F0C074] flex items-center gap-2">
+                <ArrowLeft
+                  size={20}
+                  color={theme === "light" ? "#F0C074" : "#FFD8A8"}
+                />
+                Back to Home
+              </button>
+            )}
 
             <div className="flex items-center gap-4">
               <DropdownMenu
@@ -45,6 +41,23 @@ function DashboardPage() {
               <button>
                 <Copy size={20} color="#C2C2C2" />
               </button>
+
+              <button className="flex items-center gap-2 bg-primary text-white px-2 py-1 rounded-full font-bold text-sm dark:bg-[#1E2139] dark:text-[#D9D9D9]">
+                <svg
+                  width="16"
+                  height="13"
+                  viewBox="0 0 16 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.2771 5.82528L9.91966 0.23509C9.84478 0.156863 9.74934 0.103565 9.64542 0.0819363C9.54151 0.0603078 9.43378 0.0713201 9.33586 0.113581C9.23794 0.155841 9.15423 0.227451 9.09532 0.319355C9.03641 0.411259 9.00494 0.519329 9.00489 0.629897V3.44945C7.26775 3.60458 5.34914 4.49202 3.77072 5.88887C1.87018 7.57152 0.686871 9.73981 0.438422 11.9941C0.419007 12.1693 0.453062 12.3465 0.535742 12.5004C0.618421 12.6543 0.745512 12.777 0.898928 12.8512C1.05234 12.9254 1.22427 12.9471 1.39023 12.9134C1.55619 12.8797 1.70774 12.7923 1.82331 12.6635C2.55995 11.8452 5.18105 9.25766 9.00489 9.02986V11.8103C9.00494 11.9208 9.03641 12.0289 9.09532 12.1208C9.15423 12.2127 9.23794 12.2843 9.33586 12.3266C9.43378 12.3689 9.54151 12.3799 9.64542 12.3582C9.74934 12.3366 9.84478 12.2833 9.91966 12.2051L15.2771 6.61489C15.3772 6.5101 15.4335 6.36811 15.4335 6.22009C15.4335 6.07206 15.3772 5.93008 15.2771 5.82528ZM10.0764 10.4609V8.45616C10.0764 8.3079 10.0199 8.16571 9.91945 8.06088C9.81898 7.95604 9.68271 7.89714 9.54063 7.89714C7.66018 7.89714 5.82863 8.40934 4.09685 9.42047C3.21486 9.93774 2.39308 10.5596 1.64785 11.2736C2.03626 9.60774 3.01533 8.02362 4.46383 6.74137C6.01881 5.36549 7.91667 4.54303 9.54063 4.54303C9.68271 4.54303 9.81898 4.48413 9.91945 4.3793C10.0199 4.27446 10.0764 4.13227 10.0764 3.98401V1.97993L14.1406 6.22009L10.0764 10.4609Z"
+                    fill="white"
+                  />
+                </svg>
+
+                <span>Share</span>
+              </button>
             </div>
           </div>
 
@@ -54,92 +67,7 @@ function DashboardPage() {
         </div>
 
         <div className="flex-1">
-          <p className="text-end">13th February 2024, 12:15 PM (Local time).</p>
-
-          <div className="space-y-6 border border-[#D9E1E7] p-3 rounded">
-            <h2 className="text-3xl font-bold mb-4 text-primary">
-              Mentorship Program
-            </h2>
-
-            <div className="bg-gradient-to-r from-[#0F1013] to-[#5D6379] rounded-2xl px-[40px] text-white relative overflow-hidden pt-[56px] pb-[34px]">
-              <div className="absolute top-0 left-0">
-                <svg
-                  width="505"
-                  height="206"
-                  viewBox="0 0 505 206"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M504.247 100.832C504.247 168.437 391.418 223.242 252.238 223.242C113.057 223.242 0.228516 168.437 0.228516 100.832C0.228516 33.2261 113.057 -21.5791 252.238 -21.5791C391.418 -21.5791 504.247 33.2261 504.247 100.832Z"
-                    fill="#D9D9D9"
-                    style={{ mixBlendMode: "color-burn" }}
-                  />
-                </svg>
-              </div>
-              <div className="flex justify-between items-center">
-                <div className="flex-1">
-                  <div className="flex items-center gap-6">
-                    <div className="w-[74px] h-[115px] relative">
-                      <Image
-                        src="/img/program.png"
-                        fill
-                        className=""
-                        alt="program"
-                      />
-                    </div>
-
-                    <div className="">
-                      <h3 className="text-2xl font-bold mb-1 leading-none">
-                        Mastering the
-                        <br />
-                        work life Equation
-                      </h3>
-                      <p className="text-sm opacity-80">
-                        with: Nwachukwu Peculiar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-[39px] divide-y">
-                  <h4>20TH OCT, 2024</h4>
-                  <h6>2PM</h6>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex">
-              <div className="flex-1">
-                <p className="text-gray-600">
-                  UI/UX Design check ins with faith is a way for beginners in
-                  UI/UX Design to get started about the fundamentals and how
-                  they can build a Design Career, share, document their progress
-                  on a weekly basis.
-                </p>
-              </div>
-
-              <div className="shadow-[0px_6px_16px_0px_#0000000F] bg-white rounded-lg p-4 flex-1 text-grey-text font-bold space-y-4">
-                <div className="flex justify-between">
-                  <Briefcase size={20} color="#777795" />
-                  <span className="">Mentorship Program</span>
-                </div>
-
-                <div className="flex justify-between">
-                  <Calendar2 size={20} color="#777795" />
-                  <span className="">21/4/2024-21/5/2024</span>
-                </div>
-
-                <div className="flex justify-between">
-                  <Location size={20} color="#777795" />
-                  <span className="">In Person</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="border bg-[#FFFAF2] border-[#FEE0B1] p-4 rounded-2xl"></div>
-            </div>
-          </div>
+          <ProgramDetail />
         </div>
       </div>
     </Fragment>

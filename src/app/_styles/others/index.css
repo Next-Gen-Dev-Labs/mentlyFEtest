@@ -1,1 +1,17 @@
 @import "./loader.css";
+
+.ql-editor {
+  @apply min-h-[250px] font-sans text-base text-gray-800 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 overflow-y-auto;
+}
+
+.ql-editor.ql-blank::before {
+  @apply text-gray-500 dark:text-gray-300;
+}
+
+.ql-toolbar {
+  @apply dark:bg-gray-800 dark:text-gray-300 rounded-t-lg bg-gray-100 text-gray-900;
+}
+
+.ql-toolbar button {
+  color: white !important;
+}

@@ -19,7 +19,7 @@ export function Toggle({
       <div className="relative">
         <input
           type="checkbox"
-          className="sr-only peer ring-0"
+          className="sr-only peer ring-0 outline-none"
           checked={checked}
           disabled={disabled}
           onChange={(e) => onChange(e.target.checked)}
@@ -27,14 +27,10 @@ export function Toggle({
         <div
           className={cn(
             "w-[29px] h-[15px] rounded-full peer",
-            disabled
-              ? "bg-gray-200"
-              : checked
-              ? "bg-purple-600"
-              : "bg-gray-300",
-            "peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300",
+            disabled ? "bg-gray-200" : checked ? "bg-white" : "bg-gray-300",
+            "peer-focus:outline-none",
             "after:content-[''] after:absolute after:top-[2px] after:left-[2px]",
-            "after:bg-white after:border-gray-300 after:border after:rounded-full",
+            "after:bg-primary after:border-gray-300 after:border after:rounded-full",
             "after:h-[12px] after:w-[12px] after:transition-all",
             "peer-checked:after:translate-x-full peer-checked:after:border-white",
             disabled ? "cursor-not-allowed" : "cursor-pointer"

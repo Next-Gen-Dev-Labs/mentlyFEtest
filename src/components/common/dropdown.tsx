@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/utils/classname";
 import type React from "react";
 import { useState, useRef, useEffect } from "react";
 
@@ -8,11 +9,13 @@ interface DropdownMenuProps {
     label: string;
     onClick: () => void;
   }[];
+  dropdownClassName?: string;
 }
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = ({
   trigger,
   items,
+  dropdownClassName = "",
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -48,7 +51,12 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
       </div>
 
       {isOpen && (
-        <div className="origin-top-right absolute right-0 w-[68px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-[99]">
+        <div
+          className={cn(
+            "origin-top-right absolute right-0 w-[68px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-[99]",
+            dropdownClassName
+          )}
+        >
           <div
             className="py-1"
             role="menu"

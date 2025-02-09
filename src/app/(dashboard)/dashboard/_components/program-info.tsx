@@ -44,17 +44,24 @@ function ProgramInfo() {
   };
   return (
     <Fragment>
-      <h1 className="text-2xl font-bold text-gray-900">Program Information</h1>
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+        Program Information
+      </h1>
 
       <div className="space-y-4">
         <div className="space-y-3">
-          <input
-            type="text"
-            className="w-full p-3 border rounded-lg"
-            placeholder="Describe Section Title e.g What you stand to learn"
-            value={sectionTitle}
-            onChange={(e) => setSectionTitle(e.target.value)}
-          />
+          <div className="space-y-2">
+            <label className="text-gray-600 text-sm">
+              Describe Section Title
+            </label>
+            <input
+              type="text"
+              className="w-full p-3 border rounded-lg"
+              placeholder="Describe Section Title e.g What you stand to learn"
+              value={sectionTitle}
+              onChange={(e) => setSectionTitle(e.target.value)}
+            />
+          </div>
 
           <Info text="Provide your prefered title for this section i.e What’s in this Program for you?" />
         </div>
