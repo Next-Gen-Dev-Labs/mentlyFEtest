@@ -7,7 +7,7 @@ const ProgramPages = () => {
     const { darktheme, setDarkTheme } = useAppContext();
 
     return (
-        <div className={`flex flex-col ${darktheme ? "bg-appDeepTextBlue" : "bg-[#FDFDFD]" } gap-8 lg:flex-row`}>
+        <div className={`flex flex-col min-h-screen ${darktheme ? "bg-appDeepTextBlue" : "bg-[#FDFDFD]" } gap-8 lg:flex-row`}>
             {/* Left Section */}
             <LeftProgramInformation />
 

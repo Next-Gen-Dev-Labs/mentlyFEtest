@@ -19,7 +19,7 @@ const LeftProgramInformation = () => {
     return (
       <>
             {/* Left Section */}
-            <div className="leftside w-full px-4 md:px-6 my-10 lg:w-[45%] lg:pl-8 shadow-[0_2px_4px_rgba(0,0,0,0.0622)]">
+            <div id="left-side" className="w-full min-h-screen px-4 md:px-6 mt-10 lg:w-[45%] lg:pl-8 shadow-[0_2px_4px_rgba(0,0,0,0.0622)]">
                 {/* Navigation and Action Icons */}
                 <div className="flex gap-2 justify-between relative">
                     {/* Back Button*/}
@@ -57,7 +57,7 @@ const LeftProgramInformation = () => {
                     <p className="text-text text-sm">Describe Section Title</p>
                 </div>
 
-                {/* Input Field*/}
+                {/* Input Fields*/}
                 <div>
                     <div className="border border-mentlyBlue rounded-lg overflow-hidden mb-4">
                         <div className="p-4 flex items-center gap-3">
@@ -66,7 +66,7 @@ const LeftProgramInformation = () => {
                             <input
                                 type="text"
                                 placeholder="Describe Section Title e.g What you stand to learn"
-                                className="flex-1 outline-none text-text placeholder-text"
+                                className="flex-1 outline-none text-text placeholder-text bg-transparent"
                                 aria-label="Describe Section Title Input"
                             />
                         </div>
@@ -111,6 +111,19 @@ const LeftProgramInformation = () => {
                     </div>
 
                     <ProgramList />
+                </div>
+
+                {/* Bottom Actions */}
+                <div className="flex items-center justify-between pt-4">
+                    <button className="text-[#A4A5B8] text-center hover:text-gray-900 w-[60%] font-bold">
+                        Go Back
+                    </button>
+                    <button className="flex bg-[#1F1147] text-white hover:bg-[#2a1861] px-6 rounded-lg py-4 gap-2">
+                        Save & Proceed
+                        <span className="flex items-center">
+                            <Icon icon="icon-park-solid:down-one" className="text-white" width="20" height="20" />
+                        </span>
+                    </button>
                 </div>
             </div>
       </>

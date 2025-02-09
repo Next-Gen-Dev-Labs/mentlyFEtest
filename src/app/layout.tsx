@@ -1,11 +1,15 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Chivo } from 'next/font/google'
 import { AppProvider } from './context/AppContext'
 import Sidebar from './components/sidebar/Sidebar'
 import Header from './components/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+const chivo = Chivo({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Mently Frontend Task',
@@ -21,7 +25,7 @@ export default function RootLayout({
   return (
     <AppProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={chivo.className}>
           {/* Main wrapper */}
           <div className="min-h-screen flex overflow-hidden">
 

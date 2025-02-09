@@ -11,10 +11,11 @@ import TextAlign from "@tiptap/extension-text-align"
 import Link from "@tiptap/extension-link"
 import { useState } from "react"
 import { Icon } from "@iconify/react";
+import { useAppContext } from "../../context/AppContext";
 
 const MenuBar = ({ editor }: { editor: any }) => {
     const [documentType, setDocumentType] = useState("doc")
-
+    const { darktheme } = useAppContext()
     if (!editor) {
         return null
     }
@@ -24,12 +25,12 @@ const MenuBar = ({ editor }: { editor: any }) => {
             {/* Document Type Selector */}
             <div className="border border-mentlyBlue rounded-r-md pr-2 relative">
                 <div>
-                    <Image src={documentType == "doc" ? "/document.png" : "/text.svg"} alt="document-icon" className='absolute z-10 top-[25%] bg-transparent left-[25%]' width={20} height={20} />
-                    <Icon icon="icon-park-solid:down-one" width="15" height="15" className='text-mentlyBlue absolute top-[30%] left-[65%]' />
+                    <Image src={documentType == "doc" ? "/document.png" : "/text.svg"} alt="document-icon" className='absolute z-10 top-[25%] left-[25%]' width={20} height={20} />
+                    <Icon icon="icon-park-solid:down-one" width="15" height="15" className={`${darktheme ? "text-white" : "text-mentlyBlue"} absolute top-[30%] left-[65%]`} />
                 </div>
                 <select
                     onChange={(e) => setDocumentType(e.target.value)}
-                    className="h-8 w-12 text-transparent text-sm border-none focus:outline-none bg-white"
+                    className={`h-8 w-12 text-transparent text-sm border-none focus:outline-none ${darktheme ? "bg-appDeepTextBlue" : "bg-[#FDFDFD]"}`}
                 >
                     <option value="doc" className="pl-8  text-mentlyBlue bg-no-repeat hover:bg-appLightBlue bg-left">
                         Document
@@ -63,7 +64,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
                     <button
                         onClick={() => editor.chain().focus().toggleUnderline().run()}
                         className="h-8 w-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded underline">
-                        U
+                        <Image src="/underline.png" alt="underline-sign" width={15} height={15} />
                     </button>
                 </div>
 
@@ -95,9 +96,9 @@ const MenuBar = ({ editor }: { editor: any }) => {
                 {/* Task and quotes Options */}
                 <div className="flex items-center">
                     <button
-                       onClick={() => editor.chain().focus().toggleList("taskList", "taskItem").run()}
-                    //    disabled={!editor}
-                       className={`${editor.isActive('taskList') ? 'is-active' : ''} h-8 w-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded`}>
+                        onClick={() => editor.chain().focus().toggleList("taskList", "taskItem").run()}
+                        //    disabled={!editor}
+                        className={`${editor.isActive('taskList') ? 'is-active' : ''} h-8 w-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded`}>
                         <Image src="/task.png" alt="task-list-sign" width={20} height={20} />
                     </button>
                     <button
@@ -164,9 +165,9 @@ export function RichTextEditor() {
             TiptapImage,
             TaskList.configure({
                 itemTypeName: 'taskItem',
-              }),
+            }),
             TaskItem.configure({
-              nested: true,
+                nested: true,
             }),
             TextAlign.configure({
                 types: ["heading", "paragraph"],
@@ -175,7 +176,7 @@ export function RichTextEditor() {
                 openOnClick: false,
             }),
         ],
-        content:``,
+        content: ``,
         editorProps: {
             attributes: {
                 class: "prose prose-sm max-w-none focus:outline-none min-h-[200px] px-4 py-2",
