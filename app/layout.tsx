@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Chivo } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import NextTopLoader from "nextjs-toploader";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -28,11 +29,11 @@ export default function RootLayout({
       <body
         className={`${chivoSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NextTopLoader color="hsl(258, 81%, 18%)" />
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          forcedTheme="light"
-          disableTransitionOnChange
+          defaultTheme="light"
+          disableTransitionOnChange={false}
         >
           {children}
         </ThemeProvider>
