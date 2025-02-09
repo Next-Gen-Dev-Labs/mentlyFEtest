@@ -2,9 +2,10 @@
 import { ArrowLeft, Copy, Setting2 } from "iconsax-react";
 import React, { Fragment, useState } from "react";
 import ProgramInfo from "./program-info";
-import { DropdownMenu } from "@/components/common/dropdown";
+import { DropdownMenu } from "@/components/ui/dropdown";
 import { useApp } from "@/context/main";
 import ProgramDetail from "./program-detail";
+import Animate from "@/components/common/animate";
 
 function DashboardPage() {
   const { theme, mounted } = useApp();
@@ -12,7 +13,7 @@ function DashboardPage() {
     <Fragment>
       <div className="flex max-md:flex-col gap-[47px]">
         <div className="w-[532px] max-md:w-full">
-          <div className="flex justify-between items-center mb-8">
+          <Animate className="flex justify-between items-center mb-8">
             {mounted && (
               <button className="text-[#F0C074] flex items-center gap-2">
                 <ArrowLeft
@@ -59,7 +60,7 @@ function DashboardPage() {
                 <span>Share</span>
               </button>
             </div>
-          </div>
+          </Animate>
 
           <div className="space-y-6">
             <ProgramInfo />

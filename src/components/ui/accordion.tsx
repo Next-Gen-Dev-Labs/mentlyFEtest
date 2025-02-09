@@ -26,14 +26,6 @@ function Accordion({ items }: AccordionProps) {
             className="w-full px-6 py-4 text-left focus:outline-none"
             onClick={() => toggleItem(item.id)}
           >
-            {/* <div className="flex items-center justify-between">
-              <span className="text-indigo-900 font-medium text-base">
-                {item.title}
-              </span>
-              <span className="transform transition-transform duration-200 ease-in-out">
-                {openItems.includes(item.id) ? "▲" : "▼"}
-              </span>
-            </div> */}
             {item.header}
           </button>
           {openItems.includes(item.id) && (

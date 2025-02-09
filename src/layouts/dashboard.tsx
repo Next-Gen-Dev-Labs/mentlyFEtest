@@ -24,7 +24,7 @@ import { cn } from "@/utils/classname";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Toggle } from "@/components/ui/toggle";
-import { DropdownMenu } from "@/components/common/dropdown";
+import { DropdownMenu } from "@/components/ui/dropdown";
 
 interface menuItem {
   icon: Icon;
@@ -274,8 +274,10 @@ function LayoutDashboard({
                       </div>
 
                       <div className="flex flex-col items-start">
-                        <h4 className="text-[#404040] text-sm">Godwin Jimmy</h4>
-                        <p className="text-sm text-[#777795]">
+                        <h4 className="text-[#404040] text-sm dark:text-white">
+                          Godwin Jimmy
+                        </h4>
+                        <p className="text-sm text-[#777795] dark:text-white">
                           Free plan{" "}
                           <span className="font-bold text-[#2B85FE]">
                             Upgrade

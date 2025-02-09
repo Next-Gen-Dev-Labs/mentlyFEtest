@@ -2,9 +2,10 @@ import React, { Fragment, useState } from "react";
 import dynamic from "next/dynamic";
 import Info from "./info";
 import "react-quill-new/dist/quill.snow.css";
-import Accordion from "@/components/common/accordion";
+import Accordion from "@/components/ui/accordion";
 import { ArrowDown, More } from "iconsax-react";
-import { DropdownMenu } from "@/components/common/dropdown";
+import { DropdownMenu } from "@/components/ui/dropdown";
+import Animate from "@/components/common/animate";
 
 const ReactQuill = dynamic(() => import("react-quill-new"), {
   ssr: false,
@@ -44,12 +45,15 @@ function ProgramInfo() {
   };
   return (
     <Fragment>
-      <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+      <Animate
+        as={"h1"}
+        className="text-2xl font-bold text-gray-900 dark:text-gray-100"
+      >
         Program Information
-      </h1>
+      </Animate>
 
       <div className="space-y-4">
-        <div className="space-y-3">
+        <Animate className="space-y-3">
           <div className="space-y-2">
             <label className="text-gray-600 text-sm">
               Describe Section Title
@@ -64,9 +68,9 @@ function ProgramInfo() {
           </div>
 
           <Info text="Provide your prefered title for this section i.e What’s in this Program for you?" />
-        </div>
+        </Animate>
 
-        <div className="space-y-3">
+        <Animate className="space-y-3">
           <div className="">
             <ReactQuill
               theme="snow"
@@ -86,9 +90,9 @@ function ProgramInfo() {
           </div>
 
           <Info text="Provide a clear and concise description/information of your program. This can include objectives, goals, necessary resources, or any specific instructions.." />
-        </div>
+        </Animate>
 
-        <div className="space-y-4">
+        <Animate className="space-y-4">
           {sections.length < 3 && (
             <button
               onClick={handleAddSection}
@@ -100,9 +104,9 @@ function ProgramInfo() {
               </span>
             </button>
           )}
-        </div>
+        </Animate>
 
-        <div className="flex items-center gap-2">
+        <Animate className="flex items-center gap-2">
           <input
             type="checkbox"
             checked={showPublished}
@@ -112,18 +116,18 @@ function ProgramInfo() {
           <label className="text-sm text-gray-600">
             Show this section when Published
           </label>
-        </div>
+        </Animate>
 
-        <div className="flex justify-between mt-8">
+        <Animate className="flex justify-between mt-8">
           <button className="text-gray-600">Go Back</button>
           <button className="bg-indigo-900 text-white px-6 py-2 rounded-md">
             Save & Proceed
           </button>
-        </div>
+        </Animate>
       </div>
 
       {/* sections */}
-      <div className="">
+      <Animate className="">
         <Accordion
           items={sections.map((section, index) => ({
             id: section.title + index,
@@ -163,7 +167,7 @@ function ProgramInfo() {
             ),
           }))}
         />
-      </div>
+      </Animate>
     </Fragment>
   );
 }

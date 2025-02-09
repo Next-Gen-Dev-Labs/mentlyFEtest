@@ -10,20 +10,27 @@ import {
 import React, { Fragment } from "react";
 import Image from "next/image";
 import ProgramCard, { ProgramIconWithText } from "./program-card";
+import Animate from "@/components/common/animate";
 
 function ProgramDetail() {
   return (
     <Fragment>
-      <p className="text-end text-xs text-[#809FB8] dark:text-[#8B8B8B]">
+      <Animate
+        as={"p"}
+        className="text-end text-xs text-[#809FB8] dark:text-[#8B8B8B]"
+      >
         13th February 2024, 12:15 PM (Local time).
-      </p>
+      </Animate>
 
-      <div className="space-y-6 border border-[#D9E1E7] p-3 rounded mt-[50px] dark:border-[#3A3D4A]">
-        <h2 className="text-3xl font-bold mb-4 text-primary dark:text-[#D9D9D9]">
+      <Animate className="space-y-6 border border-[#D9E1E7] p-3 rounded mt-[50px] dark:border-[#3A3D4A]">
+        <Animate
+          as={"h2"}
+          className="text-3xl font-bold mb-4 text-primary dark:text-[#D9D9D9]"
+        >
           Mentorship Program
-        </h2>
+        </Animate>
 
-        <div className="bg-gradient-to-r from-[#0F1013] to-[#5D6379] rounded-2xl px-[40px] text-white relative overflow-hidden pt-[56px] pb-[34px]">
+        <Animate className="bg-gradient-to-r from-[#0F1013] to-[#5D6379] rounded-2xl px-[40px] text-white relative overflow-hidden pt-[56px] pb-[34px]">
           <div className="absolute top-0 left-0">
             <svg
               width="505"
@@ -66,19 +73,19 @@ function ProgramDetail() {
               <h6>2PM</h6>
             </div>
           </div>
-        </div>
+        </Animate>
 
         <div className="flex gap-2">
           <div className="flex-1">
-            <p className="text-gray-600 dark:text-[#8B8B8B]">
+            <Animate as={"p"} className="text-gray-600 dark:text-[#8B8B8B]">
               UI/UX Design check ins with faith is a way for beginners in UI/UX
               Design to get started about the fundamentals and how they can
               build a Design Career, share, document their progress on a weekly
               basis.
-            </p>
+            </Animate>
           </div>
 
-          <div className="shadow-[0px_6px_16px_0px_#0000000F] bg-white rounded-lg p-4 flex-1 text-grey-text font-bold space-y-4">
+          <Animate className="shadow-[0px_6px_16px_0px_#0000000F] bg-white rounded-lg p-4 flex-1 text-grey-text font-bold space-y-4">
             <div className="flex justify-between">
               <Briefcase size={20} color="#777795" />
               <span className="">Mentorship Program</span>
@@ -93,7 +100,7 @@ function ProgramDetail() {
               <Location size={20} color="#777795" />
               <span className="">In Person</span>
             </div>
-          </div>
+          </Animate>
         </div>
 
         <div className="space-y-4">
@@ -159,16 +166,19 @@ function ProgramDetail() {
           </ProgramCard>
 
           <ProgramCard title="Program Information Text 2">
-            <ul className="list-disc list-inside text-base font-semibold text-[#595564] dark:text-[#8B8B8B]">
+            <Animate
+              as={"ul"}
+              className="list-disc list-inside text-base font-semibold text-[#595564] dark:text-[#8B8B8B]"
+            >
               <li>Content</li>
               <li>Content</li>
               <li>Content</li>
               <li>Content</li>
               <li>Content</li>
-            </ul>
+            </Animate>
           </ProgramCard>
         </div>
-      </div>
+      </Animate>
     </Fragment>
   );
 }
