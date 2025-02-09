@@ -58,13 +58,13 @@ This project is my submission for the MentlyFEtest Frontend Coding Challenge. It
 
 ```javascript
 /MentlyFEtest
-│── public/           # Static assets (images, fonts, etc.)
+│── public/                 # Static assets (images, fonts, etc.)
 │── src/
-│   ├── components/   # Reusable UI components
-│   ├── pages/        # Next.js pages (routes)
-│   ├── styles/       # Custom global styles
-│   ├── hooks/        # Custom React hooks (if any)
-│   ├── utils/        # Utility functions
+│   ├── __tests__/          # test files are here
+│   ├── app/                # Next.js App router 
+│       ├── components/     # Reusable UI components
+│       ├── constant/       # Constant imports used throught the app
+│       ├── context/        # useContext folder
 │── .gitignore        # Git ignore file
 │── package.json      # Project dependencies
 │── tailwind.config.js # Tailwind CSS configuration
