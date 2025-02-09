@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import IconWrapper from "./ui/ProgramIcons";
+import IconWrapper from "../ui/ProgramIcons";
 
 const ProgramInfoBoxContent = [
     {

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Icon } from "@iconify/react"
-import Dropdown from "./ui/DropdownMenu"
+import Dropdown from "../ui/DropdownMenu"
 
 interface Section {
     id: number

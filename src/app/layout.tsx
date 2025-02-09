@@ -31,7 +31,7 @@ export default function RootLayout({
             <div className=' min-h-screen w-screen '>
 
               {/* HEADER */}
-              <header className='h-[82px] w-full flex gap-2 justify-between items-center p-4 shadow-md relative z-10 bg-[#FDFDFD]'>
+              <header className='h-[82px] w-full shadow-md relative z-10 '>
                 <Header />
               </header>
 

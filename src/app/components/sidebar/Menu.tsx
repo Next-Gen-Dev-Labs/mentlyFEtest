@@ -55,27 +55,28 @@ const menu = [
 ]
 
 const Menu = () => {
-    const {isCollapsed, setIsCollapsed } = useAppContext();
+    const { isCollapsed, setIsCollapsed } = useAppContext();
     const [activeTab, setActiveTab] = useState(1);
     const [isHovered, setIsHovered] = useState<number | null>(null);
 
     console.log(isHovered)
     return (
-        <div className='menu'>
+        <div className='menu flex flex-col items-center'>
             {menu.map((item) => (
-                <div 
-                key={item.id} 
-                onClick={() => setActiveTab(item.id)}
-                onMouseEnter={() => setIsHovered(item.id)}
-                onMouseLeave={() => setIsHovered(null)}
-                className={`flex justify-center gap-2 mb-4 py-[16px] ${activeTab === item.id ? "bg-white text-mentlyBlue" : "hover:bg-[#E5DAFD] hover:text-mentlyBlue"}  rounded-[8px]`}>
-                      <span>
-                            {React.cloneElement(item.icon, {
-                                color: (isHovered === item.id || activeTab === item.id) ? "#1F0954" : "#C2C2C2"
-                            })}
-                        </span>
-                        {!isCollapsed && <span className='text-sm'>{item.name}</span>}
-                </div>
+                <button
+                    key={item.id}
+                    aria-label={item.name}
+                    onClick={() => setActiveTab(item.id)}
+                    onMouseEnter={() => setIsHovered(item.id)}
+                    onMouseLeave={() => setIsHovered(null)}
+                    className={`flex justify-center gap-2 mb-4 px-3 py-[16px] ${activeTab === item.id ? "bg-white text-mentlyBlue" : "hover:bg-[#E5DAFD] hover:text-mentlyBlue"}  rounded-[8px]`}>
+                    <span>
+                        {React.cloneElement(item.icon, {
+                            color: (isHovered === item.id || activeTab === item.id) ? "#1F0954" : "#C2C2C2"
+                        })}
+                    </span>
+                    {!isCollapsed && <span className='text-sm'>{item.name}</span>}
+                </button>
             ))}
         </div>
     );

@@ -1,11 +1,13 @@
+import { useAppContext } from "@/app/context/AppContent";
 import { useState } from "react";
 
 const ToggleSwitch = () => {
-    const [darktheme, setDarkTheme] = useState(false)
+    const { darktheme, setDarkTheme } = useAppContext();
+    
     return (
         <>
             <label className="flex items-center justify-center relative gap-x-2 mt-10 cursor-pointer">
-                   {/* Hidden Checkbox Input */}
+                {/* Hidden Checkbox Input */}
                 <input
                     value={"on"}
                     type="checkbox"
