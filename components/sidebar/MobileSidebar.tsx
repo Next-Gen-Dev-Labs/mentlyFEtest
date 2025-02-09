@@ -38,7 +38,7 @@ export default function MobileSidebar() {
   return (
     <>
       <button
-        className="sm:hidden fixed top-5 left-12 "
+        className="sm:hidden fixed top-5 left-6"
         name="navigation"
         onClick={() => setNavMenu((prev) => !prev)}
       >
