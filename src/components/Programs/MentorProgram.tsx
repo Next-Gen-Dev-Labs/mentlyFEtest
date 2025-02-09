@@ -1,6 +1,6 @@
 import { Woman_Avatar } from "@/assets";
 import { programData, programInfoData } from "@/shared/data";
-import { HeaderText } from "@/shared/ReusedComponents";
+import { HeaderText } from "@/shared/UIs/ReusedComponents";
 import Image from "next/image";
 import React, { JSX } from "react";
 

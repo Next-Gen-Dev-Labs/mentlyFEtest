@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const usePrograms = () => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // When an item is clicked, update the state.
   const handleItemClick = (id: number) => {
@@ -14,6 +15,8 @@ const usePrograms = () => {
   return {
     expandedId,
     handleItemClick,
+    isModalOpen,
+    setIsModalOpen,
   };
 };
 

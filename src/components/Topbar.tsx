@@ -1,11 +1,29 @@
-import { Man_Avatar } from "@/assets";
+import { Logo, Man_Avatar } from "@/assets";
 import IconNofication from "@/assets/IconComponents/IconNofication";
+import IconSidebar from "@/assets/IconComponents/IconSidebar";
 import Image from "next/image";
 import React from "react";
 
-const Topbar = () => {
+const Topbar = ({
+  showSidebar,
+  setShowSidebar,
+}: {
+  showSidebar: boolean;
+  setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   return (
-    <div className="w-full h-16 py-4 bg-[#FDFDFD] drop-shadow-sm border-b border-gray-200  flex items-center px-[5rem] ">
+    <div className="w-full h-16 py-4 bg-[#FDFDFD] drop-shadow-sm border-b border-gray-200  flex items-center lg:px-[5rem] px-[2rem]">
+      <div className="flex items-center gap-6">
+        <div
+          title="Toggle Sidebar"
+          className="cursor-pointer lg:hidden"
+          onClick={() => {
+            setShowSidebar(!showSidebar);
+          }}
+        >
+          <IconSidebar />
+        </div>
+      </div>
       <div className="flex justify-end w-full items-center gap-10">
         <IconNofication />
         <div className="flex items-center gap-4">
@@ -27,4 +45,4 @@ const Topbar = () => {
   );
 };
 
-export default Topbar;
+export default React.memo(Topbar);

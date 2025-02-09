@@ -1,11 +1,15 @@
 "use client";
 import { Logo } from "@/assets";
+import IconHelpDesk from "@/assets/IconComponents/IconHelpDesk";
+import IconLogOut from "@/assets/IconComponents/IconLogOut";
 import IconSidebar from "@/assets/IconComponents/IconSidebar";
+import IconToggle from "@/assets/IconComponents/IconToggle";
 import { sidebarItems } from "@/shared/data";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
+import { useMediaQuery } from "usehooks-ts";
 
 const SidebarItem = ({
   item,
@@ -31,15 +35,33 @@ const SidebarItem = ({
   );
 };
 
-const Sidebar = () => {
+const Sidebar = ({
+  showSidebar,
+  setShowSidebar,
+}: {
+  showSidebar: boolean;
+  setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const router = usePathname();
-
+  const isSmallScreen = useMediaQuery("(min-width: 1024px)");
   return (
-    <div className="w-[7.5rem] bg-mentlyBlue flex flex-col items-center h-screen p-4">
+    <div
+      className={`w-[7.5rem] ${
+        isSmallScreen ? "sticky" : "fixed"
+      } top-0 left-0 bg-mentlyBlue overflow-y-auto z-20 flex flex-col items-center min-h-screen p-4`}
+    >
       {/* Logo Section */}
       <div className="flex flex-col items-center my-10 gap-7">
         <Image src={Logo} alt="logo" />
-        <IconSidebar className="mr-1" />
+        <div
+          className="cursor-pointer"
+          onClick={() => {
+            setShowSidebar(!showSidebar);
+          }}
+          title="Toggle Sidebar"
+        >
+          <IconSidebar className="mr-1 mt-4" />
+        </div>
       </div>
 
       {/* Navigation Items */}
@@ -47,6 +69,18 @@ const Sidebar = () => {
         {sidebarItems.map((item) => (
           <SidebarItem key={item.id} item={item} router={router} />
         ))}
+      </div>
+
+      <div className="bg-[#ffffff29] w-full mt-[2rem] flex flex-col items-center justify-between gap-2 rounded-[0.5rem] px-3 py-4">
+        <div className="mt-3 cursor-pointer">
+          <IconHelpDesk />
+        </div>
+        <span className="text-[0.6rem] mt-3 text-[#F0C074] font-[300] leading-[0.75rem] underline ">
+          Visit Mently Help Desk Here
+        </span>
+      </div>
+      <div className="mt-8 cursor-pointer">
+        <IconToggle />
       </div>
     </div>
   );

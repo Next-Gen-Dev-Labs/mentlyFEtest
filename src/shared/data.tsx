@@ -21,6 +21,14 @@ import IconCommunity from "@/assets/IconComponents/IconCommunity";
 import IconConversation from "@/assets/IconComponents/IconConversation";
 import IconCall from "@/assets/IconComponents/IconCall";
 import IconChat from "@/assets/IconComponents/IconChat";
+import IconProgram from "@/assets/IconComponents/IconProgram";
+import IconSetting from "@/assets/IconComponents/IconSetting";
+import IconActivities from "@/assets/IconComponents/IconActivities";
+import IconForm from "@/assets/IconComponents/IconForm";
+import IconFinance from "@/assets/IconComponents/IconFinance";
+import IconAnalytics from "@/assets/IconComponents/IconAnalytics";
+import IconBadges from "@/assets/IconComponents/IconBadges";
+import IconLogOut from "@/assets/IconComponents/IconLogOut";
 
 export const sidebarItems: SidebarItem[] = [
   {
@@ -30,12 +38,54 @@ export const sidebarItems: SidebarItem[] = [
     icon: <IconDashboard />,
     isDisabled: true,
   },
-  { id: 2, label: "Programs", path: "/programs", icon: <IconDashboard /> },
+  { id: 2, label: "Programs", path: "/programs", icon: <IconProgram /> },
   {
     id: 3,
+    label: "Activities",
+    path: "/activities",
+    icon: <IconActivities />,
+    isDisabled: true,
+  },
+  {
+    id: 4,
+    label: "Forms",
+    path: "/forms",
+    icon: <IconForm />,
+    isDisabled: true,
+  },
+  {
+    id: 5,
+    label: "Finance",
+    path: "/finance",
+    icon: <IconFinance />,
+    isDisabled: true,
+  },
+  {
+    id: 6,
+    label: "Badges",
+    path: "/badges",
+    icon: <IconBadges />,
+    isDisabled: true,
+  },
+  {
+    id: 7,
+    label: "Analytics",
+    path: "/analytics",
+    icon: <IconAnalytics />,
+    isDisabled: true,
+  },
+  {
+    id: 8,
     label: "Settings",
     path: "/settings",
-    icon: <IconDashboard />,
+    icon: <IconSetting />,
+    isDisabled: true,
+  },
+  {
+    id: 9,
+    label: "Log Out",
+    path: "/logout",
+    icon: <IconLogOut />,
     isDisabled: true,
   },
 ];

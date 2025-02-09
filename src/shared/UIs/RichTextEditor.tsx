@@ -1,13 +1,11 @@
 import React, { useRef, useEffect, useCallback } from "react";
-import { IconWithDropdown } from "../ReusedComponents";
-import { fontSizes, toolbarButtons } from "../data";
-import { TfiText } from "react-icons/tfi";
+import { IconWithDropdown } from "./ReusedComponents";
+import { toolbarButtons } from "../data";
 import IconTextLink from "@/assets/IconComponents/IconTextLink";
 import IconTextQuoteDown from "@/assets/IconComponents/IconTextQuoteDown";
 import IconTextMath from "@/assets/IconComponents/IconTextMath";
 import IconTextQuoteUp from "@/assets/IconComponents/IconTextQuoteUp";
 import IconDocument from "@/assets/IconComponents/IconDocument";
-import IconTextEdit from "@/assets/IconComponents/IconTextEdit";
 import { IoMdArrowDropdown } from "react-icons/io";
 import IconTextImage from "@/assets/IconComponents/IconTextImage";
 
@@ -60,7 +58,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ value, onChange }) => {
             items={[]}
           />
         </div>
-        <div className="flex gap-[0.9rem] items-center pl-3  border-b-mentlyBlue border-r-mentlyBlue border-mentlyBlue border-b rounded-b-sm w-full">
+        <div className="flex gap-[0.9rem] items-center pl-3  border-b-mentlyBlue border-r-mentlyBlue border-mentlyBlue border-b rounded-b-sm w-full overflow-x-auto">
           {toolbarButtons.map((button, index) => (
             <button
               type="button"
