@@ -58,7 +58,7 @@ const Sidebar = () => {
          animate={{ x: 0 }}
          exit={{ x: -120 }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
-        className={`fixed z-40 top-0 left-0 w-[110px] h-screen bg-primary dark:bg-gray-900 flex flex-col py-[36px] gap-[80px] transition-all duration-500
+        className={`fixed z-40 top-0 left-0 w-[120px] h-screen bg-primary dark:bg-gray-900 flex flex-col py-[36px] gap-[80px] transition-all duration-500
           overflow-y-auto no-scrollbar ${isSidebarOpen ? "block" : "hidden"} md:flex`}
       >
         {/* Logo & Grid Icon */}

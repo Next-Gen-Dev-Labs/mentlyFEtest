@@ -11,19 +11,36 @@ import { GoPlus } from "react-icons/go";
 import { programInfo } from "./programs";
 import { useState, useRef } from "react";
 import { CgMoreVertical } from "react-icons/cg";
+import TextEditor from "@/components/TextEditor";
 
 
 
 export default function ProgramPage() {
- 
+  const [checked, setChecked] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState('bold');
   const dropdownRef = useRef(null);
+  
 
-  const handleStyleChange = (style) => {
-    setSelectedStyle(style);
-    setDropdownOpen(false); // Close dropdown after selection
+ 
+  const [programInfoSections, setProgramInfoSections] = useState([
+    { sectionTitle: "", description: "" }
+  ]);
+
+  const handleAddSection = () => {
+    if (programInfoSections.length >= 3) {
+      alert("Maximum of 3 sections allowed.");
+      return;
+    }
+
+    setProgramInfoSections([...programInfoSections, { sectionTitle: "", description: "" }]);
+  };
+
+  const handleRemoveSection = (indexToRemove) => {
+    if (programInfoSections.length === 1) return;
+
+    setProgramInfoSections(programInfoSections.filter((_, index) => index !== indexToRemove));
   };
 
 
@@ -44,7 +61,7 @@ export default function ProgramPage() {
         <div className="flex justify-end md:hidden ">
     <p className="text-[#809FB8] text-md">13th February 2024, 12:15 PM <span className="text-sm">(Local time).</span></p>
 </div>
-     <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] ">
+     <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_2fr] ">
             <div className="col bg-[#FDFDFD] dark:bg-black p-3 md:p-6 ">
             <div className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 cursor-pointer">
@@ -59,93 +76,159 @@ export default function ProgramPage() {
 </div>
 </div>
 <div className="mt-4 md:mt-8">
-  <h1 className="text-[#06152B] dark:text-white text-[24px] md:text-[32px] font-bold">Program Information</h1>
-  <p className="text-[#828282] dark:text-white">Describe Section Title</p>
-  <div className="mt-3">
-  <div className="flex items-center border-2 border-[#1F0954] dark:border-[#ffffff] rounded-lg p-3 w-full max-w-md gap-4">
-  <div className="relative flex">
-      {/* Icon */}
-      <div
-        className={`flex items-center justify-center w-14 text-[28px] h-10 border-2 border-dashed border-[#2E1D5F] text-[#2E1D5F] rounded-md ${getTextStyleClass()}`}
-      >
-        T
-      </div>
-   
-      <div
-        onClick={() => setDropdownOpen(!dropdownOpen)}
-        className="flex items-center  cursor-pointer rel"
-      >
-        
-        <TiArrowSortedDown
-          size={24}
-          color="
-#555555"
-          className={`transition-transform ${dropdownOpen ? "rotate-180" : "rotate-0"} cursor-pointer`}
-          ref={dropdownRef}
-        />
-      </div>
-   {dropdownOpen && (
-        <div className="absolute -right-20 top-10 w-30 bg-white shadow-lg rounded-lg py-2 transform transition-all duration-200 ease-out scale-95 opacity-100 animate-fadeInSlide">
-          <button
-            onClick={() => handleStyleChange('normal')}
-            className="block w-full px-4 py-2 text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
-          >
-            Normal
-          </button>
-          <button
-            onClick={() => handleStyleChange('bold')}
-            className="block w-full px-4 py-2 text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
-          >
-            Bold
-          </button>
-          <button
-            onClick={() => handleStyleChange('italic')}
-            className="block w-full px-4 py-2 text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
-          >
-            Italic
-          </button>
-          <button
-            onClick={() => handleStyleChange('underline')}
-            className="block w-full px-4 py-2 text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
-          >
-            Underline
-          </button>
+  {programInfoSections.map((section,index) => (
+     <section key={index} className={programInfoSections.length > 1 && 'mb-12'}>
+      <div className="flex justify-between">  <h1 className="text-[#06152B] dark:text-white text-[24px] md:text-[32px] font-bold">Program Information</h1>
+      <div>
+      {programInfoSections.length > 1 && (
+            <button
+              onClick={() => handleRemoveSection(programInfoSections?.index)}
+              className="mt-2 bg-red-500 text-white px-4 py-2 rounded"
+            >
+              Cancel
+            </button>
+          )}
+          </div>
         </div>
-      )}
-      </div>
-
-     
-      <input
-        type="text"
-        placeholder="Describe Section Title e.g What you stand to learn"
-        className="flex-1 border-none outline-none text-gray-500 bg-transparent px-2"
-      />
-    </div>
-    <div className="mt-2 flex items-center gap-2 bg-[#CEE1FB] p-3">
-    <div>
-      <PiWarningCircle color="#086BED" size={26}/>
-      </div>
-      <p className="text-[12px] text-[#777795]">Provide your prefered title for this section i.e What’s in this Program for you?</p>
-    </div>
     
-  </div>
-  <div>
-  <div className="mt-2 flex items-center gap-2 bg-[#CEE1FB] p-3">
-    <div>
-      <PiWarningCircle color="#086BED" size={26}/>
-      </div>
-      <p className="text-[12px] text-[#777795]">Provide a clear and concise description/information of your program. This can include objectives, goals, necessary resources, or any specific instructions..</p>
-    </div>
-  </div>
-  <div className="flex flex-col mt-3 items-center border border-[#000000] dark:border-[#ffffff] rounded-lg p-2 w-full max-w-md gap-2">
+    
+     <p className="text-[#828282] dark:text-white">Describe Section Title</p>
+     <div className="mt-4">
+     <div className="flex items-center border-2 border-[#1F0954] dark:border-[#ffffff] rounded-lg p-3 w-full max-w-md gap-4">
+     <div className="relative flex">
+         {/* Icon */}
+         <div
+           className={`flex items-center justify-center w-14 text-[28px] h-10 border-2 border-dashed border-[#2E1D5F] text-[#2E1D5F] rounded-md ${getTextStyleClass()}`}
+         >
+           T
+         </div>
+      
+         <div
+           onClick={() => setDropdownOpen(!dropdownOpen)}
+           className="flex items-center  cursor-pointer rel"
+         >
+           
+           <TiArrowSortedDown
+             size={24}
+             color="
+   #555555"
+             className={`transition-transform ${dropdownOpen ? "rotate-180" : "rotate-0"} cursor-pointer`}
+             ref={dropdownRef}
+           />
+         </div>
+      {dropdownOpen && (
+           <div className="absolute -right-20 top-10 w-30 bg-white shadow-lg rounded-lg py-2 transform transition-all duration-200 ease-out scale-95 opacity-100 animate-fadeInSlide">
+             <button
+               onClick={() => handleStyleChange('normal')}
+               className="block w-full px-4 py-2 text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
+             >
+               Normal
+             </button>
+             <button
+               onClick={() => handleStyleChange('bold')}
+               className="block w-full px-4 py-2 text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
+             >
+               Bold
+             </button>
+             <button
+               onClick={() => handleStyleChange('italic')}
+               className="block w-full px-4 py-2 text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
+             >
+               Italic
+             </button>
+             <button
+               onClick={() => handleStyleChange('underline')}
+               className="block w-full px-4 py-2 text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
+             >
+               Underline
+             </button>
+           </div>
+         )}
+         </div>
+   
+        
+         <input
+           type="text"
+           placeholder="Describe Section Title e.g What you stand to learn"
+           className="flex-1 border-none outline-none text-gray-500 bg-transparent px-2"   value={programInfoSections.sectionTitle}
+           onChange={(e) => {
+            const updatedSections = [...programInfoSections];
+            updatedSections[index].sectionTitle = e.target.value;
+            setProgramInfoSections(updatedSections);
+          }}
+         
+         />
+       </div>
+       <div className="mt-2 flex items-center gap-2 bg-[#CEE1FB] p-3">
+       <div>
+         <PiWarningCircle color="#086BED" size={26}/>
+         </div>
+         <p className="text-[12px] text-[#777795]">Provide your prefered title for this section i.e What’s in this Program for you?</p>
+       </div>
+       
+     </div>
+     <div className="mt-5">
+       <TextEditor   value={section.description}
+              onChange={(content) => {
+                const updatedSections = [...programInfoSections];
+                updatedSections[index].description = content;
+                setProgramInfoSections(updatedSections);
+              }}/>
+     <div className="mt-3 flex items-center gap-2 bg-[#CEE1FB] p-3">
+       <div>
+         <PiWarningCircle color="#086BED" size={26}/>
+         </div>
+         <p className="text-[12px] text-[#777795]">Provide a clear and concise description/information of your program. This can include objectives, goals, necessary resources, or any specific instructions..</p>
+       </div>
+     </div>
+     </section>
+  ))}
+  {programInfoSections.length < 3 && (
+       
+  <div className="flex flex-col mt-8 items-center border border-[#000000] dark:border-[#ffffff] rounded-lg p-2 w-full max-w-md gap-2 cursor-pointer"    onClick={handleAddSection}
+  >
     <div className="flex gap-3 items-center">
       <GoPlus size={16} color='#494A71'/>
       <h6 className="text-[#494A71] font-semibold">Add new section</h6>
     </div>
     <p className="text-[10px] md:text-[12px] italic text-[#777795]">(maximum number of sections to add is 3)</p>
-  </div>
+  </div>)}
+  <label className="flex items-center gap-2 cursor-pointer relative mt-3">
+      
+
+      
+      <input
+        type="checkbox"
+        className="hidden"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      />
+
+    
+      <div
+        className={`w-4 h-4 border-2 border-gray-400 rounded-sm flex items-center justify-center transition-all duration-300 ${
+          checked ? "bg-[#1F0954] border-[#1F0954]" : "bg-white"
+        }`}
+      >
+        {checked && (
+          <svg
+            className="w-3 h-3 text-white transition-all duration-300"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        )}
+      </div>
+
+      {/* Label */}
+      <span className="text-[#333333] text-sm">Show this section when Published</span>
+    </label>
 </div>
-<div className="mt-5 flex flex-col gap-4">
+<div className="mt-8 md:mt-16 flex flex-col gap-4">
 {programInfo.map((program) => (
         <div key={program.id}  className={`border ${selectedProgram?.id === program.id ? "border-[#FEE0B1] bg-[#FFFAF2]" : "border-[#C2C2C2] bg-[#F1F1F1]"} rounded-lg p-4 shadow-md cursor-pointer`}
              >
@@ -171,15 +254,22 @@ export default function ProgramPage() {
         </div>
       ))}
       </div>
+      <div className="flex justify-end items-center gap-2 mt-[30px] md:mt-[100px]">
+      <button   className="flex items-center py-2 px-3 md:px-10 font-bold text-md gap-2 text-[#A4A5B8] border-0">  Go Back</button>
+      <button   className="flex items-center bg-primary py-2 px-3 md:px-8 font-bold text-md gap-2 text-white rounded-md">  Save & Proceed <TiArrowSortedDown
+          size={24}
+          color="
+#ffffff"/></button>
+      </div>
 </div>
-<div className="p-3 md:p-6">
+<div className="p-3 md:p-6 mt-4 md:mt-0">
 <div className="md:flex justify-end mb-[20px] md:mb-[70px] hidden ">
     <p className="text-[#809FB8] text-md">13th February 2024, 12:15 PM <span className="text-sm">(Local time).</span></p>
 </div>
 <div className=" px-3 py-2" style={{border: '1px solid #D9E1E780'}}>
 <h1 className="text-[#1C1D4E] dark:text-white font-black text-[20px] md:text-[32px] mb-2">Mentorship Program</h1>
 <ProgramBanner/>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 mt-4 md:mt-8 pt-0 md:pt-4">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-10 mt-4 md:mt-8 pt-0 md:pt-4">
   <div>
     <p className="text-[#808080] text-md">UI/UX Design check ins with faith is a way for beginners in UI/UX Design to get started about the fundamentals and how they can build a Design Career, share, document their progress on a weekly basis.
 
@@ -187,15 +277,15 @@ export default function ProgramPage() {
   </div>
   <div className="shadow-[0px_6px_16px_0px_#0000000F] px-3 py-3 md:px-6 md:py-8 flex flex-col gap-4 md:gap-6
 ">
-  <div className="flex items-center gap-10">
+  <div className="flex items-center gap-8">
     <Briefcase size={24} color="#777795" />
     <h6 className="text-[#777795] font-bold">Mentorship Program</h6>
   </div>
-  <div className="flex items-center gap-10">
+  <div className="flex items-center gap-8">
     <Calendar2 size={24} color="#777795" />
     <h6 className="text-[#777795] font-bold">21/4/2024-21/5/2024</h6>
   </div>
-  <div className="flex items-center gap-10">
+  <div className="flex items-center gap-8">
     <Location size={24} color="#777795" />
     <h6 className="text-[#777795] font-bold">In Person</h6>
   </div>
