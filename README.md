@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MentlyFEtest Frontend Coding Challenge
 
 ## Welcome
@@ -37,3 +38,4 @@ Your submission will be evaluated on the following criteria:
 * **Accessibility:**  Adherence to accessibility guidelines.
 
 We appreciate your time and effort in completing this challenge. Good luck!
+=======
