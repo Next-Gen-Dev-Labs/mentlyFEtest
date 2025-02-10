@@ -1,0 +1,20 @@
+"use client";
+import LeftProgramInformation from "../components/programComponents/LeftProgramInformation";
+import RightProgramInformation from "../components/programComponents/RightProgramInformation";
+import { useAppContext } from "../context/AppContext";
+
+const ProgramPages = () => {
+    const { darktheme, setDarkTheme } = useAppContext();
+
+    return (
+        <div className={`flex flex-col min-h-screen ${darktheme ? "bg-appDeepTextBlue" : "bg-[#FDFDFD]" } gap-8 lg:flex-row`}>
+            {/* Left Section */}
+            <LeftProgramInformation />
+
+            {/* Right Section */}
+            <RightProgramInformation />
+        </div>
+    );
+}
+
+export default ProgramPages;
