@@ -82,7 +82,7 @@ export default function ProgramPage() {
       <div>
       {programInfoSections.length > 1 && (
             <button
-              onClick={() => handleRemoveSection(programInfoSections?.index)}
+              onClick={() => handleRemoveSection(index)}
               className="mt-2 bg-red-500 text-white px-4 py-2 rounded"
             >
               Cancel
