@@ -4,6 +4,8 @@
 
 This is a Next.js application built with React 19, TypeScript, and Tailwind CSS. The project is designed to demonstrate modern web development practices and provides a robust frontend solution.
 
+## Live Demo - [https://mently-f-etest-bice.vercel.app/programs](https://mently-f-etest-bice.vercel.app/programs)
+
 ## 🚀 Features
 
 - Next.js 15 framework
@@ -66,7 +68,7 @@ Start the production server:
 npm start
 ```
 
-## 📁 Project Structure
+## 📁 Project Structures
 
 ```
 mentlyfetest/
