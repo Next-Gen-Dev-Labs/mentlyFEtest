@@ -23,7 +23,7 @@ const Sidebar = function () {
           showSidebar ? "translate-x-0" : "-translate-x-[100%]"
         } fixed w-[70%] xs:w-[50%]  sm:w-[120px] h-full top-0 bottom-0 left-0`}
       >
-        <div className="grid place-items-center  gap-[20px]">
+        <div className=" flex justify-evenly sm:grid place-items-center  gap-[20px]">
           <Image
             src={"/images/logo.png"}
             alt="mently"
