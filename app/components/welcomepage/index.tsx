@@ -3,6 +3,7 @@ import hooks from "@/app/utils/hooks";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Confetti from "react-confetti";
+import Button from "../Button";
 
 const HomeScreen: React.FC = () => {
   const { push } = useRouter();
@@ -20,12 +21,13 @@ const HomeScreen: React.FC = () => {
     <div className="flex flex-col gap-4 justify-center items-center h-screen bg-midnightPurple text-white">
       {isConfettiActive && <Confetti width={width} height={height} />}
       <h1 className="text-5xl font-bold">WELC😊ME</h1>
-      <button
-        className="border border-softGray rounded-lg py-2 px-3"
+      <Button
+        whiteBorder
+        borderRadius="rounded-lg"
         onClick={() => push("/create-program")}
       >
         Click to view task implementation
-      </button>
+      </Button>
     </div>
   );
 };

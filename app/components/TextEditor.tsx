@@ -3,6 +3,7 @@ import DocIcon from "../assets/icons/DocIcon";
 import InputDropdownIcon from "../assets/icons/InputDropdownIcon";
 import { returnTextEditorIcons } from "../utils/helpers";
 import WriteWithMayIcon from "../assets/icons/WriteWithMayIcon";
+import Button from "./Button";
 
 const TextEditor = () => {
   return (
@@ -24,12 +25,13 @@ const TextEditor = () => {
         cols={2}
         className="focus:outline-none focus:border-transparent pl-3 resize-none h-4/5 mx-2 text-midnightPurple"
       />
-      <button className="flex items-center bg-lavendarMist w-fit rounded-lg p-2 gap-1 mt-auto ml-3 mb-3">
-        <WriteWithMayIcon />
-        <span className="text-royalPurple text-[10px] font-medium">
-          Write with May
-        </span>
-      </button>
+      <Button
+        purpleBg
+        purpleText
+        extraClasses="gap-1 mt-auto ml-3 mb-3 text-[10px] font-medium"
+      >
+        <WriteWithMayIcon /> Write with May
+      </Button>
     </label>
   );
 };

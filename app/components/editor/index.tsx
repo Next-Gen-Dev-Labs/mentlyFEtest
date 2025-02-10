@@ -10,6 +10,7 @@ import TextEditor from "../TextEditor";
 import ProgramInfoTextDisplay from "../ProgramInfoTextDisplay";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Button from "../Button";
 
 const ProgramInfoEditor = () => {
   const { push } = useRouter();
@@ -25,9 +26,14 @@ const ProgramInfoEditor = () => {
         <div className="flex items-center gap-6">
           <HoverDropdown icon={<SettingsIcon />} list={["Delete", "Clear"]} />
           <CopyIcon />
-          <button className="bg-midnightPurple flex items-center py-2 px-3 rounded-2xl gap-2 text-sm font-bold text-white">
+          <Button
+            whiteText
+            darkBlueBg
+            borderRadius="rounded-2xl"
+            extraClasses="gap-2 text-sm font-bold"
+          >
             <ShareIcon /> Share
-          </button>
+          </Button>
         </div>
       </div>
       <div className="flex flex-col gap-6">
@@ -56,14 +62,12 @@ const ProgramInfoEditor = () => {
           <InputHint message="Provide a clear and concise description/information of your program. This can include objectives, goals, necessary resources, or any specific instructions.." />
         </div>
         <div className="flex flex-col gap-3">
-          <button className="flex flex-col items-center justify-center border border-black rounded-lg w-full py-3 px-6">
-            <span className="font-medium text-indigo-800">
-              + Add new section
-            </span>
+          <Button darkBorder verticalAlign fullWidth extraClasses="font-medium">
+            <span>+ Add new section</span>
             <span className="font-medium text-xs text-slateLavendar">
               (maximum number of sections to add is 3)
             </span>
-          </button>
+          </Button>
           <div className="flex items-center gap-2">
             <input type="checkbox" name="" id="" />
             <label className="text-gray-800">
@@ -77,15 +81,25 @@ const ProgramInfoEditor = () => {
         <ProgramInfoTextDisplay text="Program Information Text 2" />
       </div>
       <div className="flex items-center w-full justify-between">
-        <button
-          className="w-1/2 py-4 text-gray-400 font-bold"
+        <Button
+          greyText
+          width="w-1/2"
+          padding="py-4"
+          extraClasses="font-bold"
           onClick={() => push("/")}
         >
           Go Back
-        </button>
-        <button className="w-1/2 py-4 bg-midnightPurple rounded-lg text-white flex items-center gap-3 justify-center border-none">
+        </Button>
+
+        <Button
+          darkBlueBg
+          whiteText
+          width="w-1/2"
+          extraClasses="gap-3"
+          padding="py-4"
+        >
           Save & Proceed <InputDropdownIcon fill="#fff" />
-        </button>
+        </Button>
       </div>
     </div>
   );

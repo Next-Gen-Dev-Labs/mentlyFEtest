@@ -53,3 +53,20 @@ export interface ProgramInfoTextCardProps {
   title: string;
   content: React.ReactNode;
 }
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  purpleBg: boolean;
+  purpleText: boolean;
+  darkBorder: boolean;
+  darkBlueBg: boolean;
+  greyText: boolean;
+  whiteText: boolean;
+  whiteBorder: boolean;
+  verticalAlign: boolean;
+  fullWidth: boolean;
+  borderRadius: string;
+  width: string;
+  padding: string;
+  extraClasses: string;
+}

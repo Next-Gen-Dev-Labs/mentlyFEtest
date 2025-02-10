@@ -6,6 +6,7 @@ import Navbar from "./components/navbar";
 import GlobalProvider from "./context/Provider";
 import PreventScroll from "./components/PreventScroll";
 import PageWrapper from "./components/PageWrapper";
+import favicon from "@/app/favicon.png";
 
 const chivoFont = Chivo({
   variable: "--font-chivo",
@@ -23,6 +24,11 @@ export const metadata: Metadata = {
   title: "MentlyFEtest Frontend Coding Challenge",
   description:
     "This challenge is designed to assess your Frontend development skills",
+  icons: {
+    icon: favicon.src,
+    shortcut: favicon.src,
+    apple: favicon.src,
+  },
 };
 
 export default function RootLayout({
