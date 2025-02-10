@@ -7,9 +7,9 @@ import Button from "./Button";
 
 const TextEditor = () => {
   return (
-    <label className="flex flex-col gap-4 border border-midnightPurple rounded-md overflow-hidden w-full aspect-[67/24]">
+    <label className="flex flex-col lg:gap-4 gap-1 border border-midnightPurple rounded-md overflow-hidden w-full max-h-[168px]">
       <div className="flex items-center">
-        <div className="flex items-center gap-6 lg:px-8 px-4 h-[34px] border-r border-b border-midnightPurple rounded-[4px]">
+        <div className="flex items-center gap-6 w-[22%] px-2 h-[34px] border-r border-b border-midnightPurple rounded-[4px]">
           <DocIcon /> <InputDropdownIcon />
         </div>
         <div className="flex items-center w-full justify-between py-1.5 px-2 border-b rounded-[4px] border-black h-[34px]">
@@ -23,7 +23,8 @@ const TextEditor = () => {
         name=""
         id=""
         cols={2}
-        className="focus:outline-none focus:border-transparent pl-3 resize-none h-4/5 mx-2 text-midnightPurple"
+        rows={5}
+        className="focus:outline-none focus:border-transparent pl-3 resize-none mx-2 text-midnightPurple"
       />
       <Button
         purpleBg

@@ -13,7 +13,7 @@ const SidebarItem: React.FC<Partial<SidebarItemProps>> = ({ icon, route }) => {
   return (
     <Link
       href={route as Url}
-      className={`rounded-lg py-4 px-8 flex items-center justify-center hover:bg-greyBg hover:active-icon ${
+      className={`rounded-lg w-full py-4 flex items-center justify-center hover:bg-greyBg hover:active-icon ${
         isActive ? "bg-white active-icon" : ""
       } hover-icon`}
     >

@@ -15,7 +15,7 @@ import Button from "../Button";
 const ProgramInfoEditor = () => {
   const { push } = useRouter();
   return (
-    <div className="bg-pureSnow flex flex-col gap-6 lg:w-[43.4%] w-full lg:px-7 px-3.5 py-6">
+    <div className="bg-pureSnow flex flex-col gap-6 xl:px-7 lg:w-[43.4%] w-full px-3.5 py-6">
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center gap-6 font-semibold text-honeyGold">
           <span>{"<"}</span>
