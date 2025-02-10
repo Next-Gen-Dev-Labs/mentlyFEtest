@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="grid min-h-screen p-8 place-content-center place-items-start"
+  >
+    <div
+      class="flex flex-col items-center justify-center gap-4 "
+    >
+      <h1>
+        Menlty Site
+      </h1>
+      <a
+        class="bg-sidebar text-white p-3 rounded-md px-6 font-semibold"
+        href="/dashboard"
+      >
+        Dashboard
+      </a>
+    </div>
+  </div>
+</div>
+`;
