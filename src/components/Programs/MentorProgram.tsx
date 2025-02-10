@@ -56,7 +56,7 @@ const MentorProgram = () => {
       </span>
 
       <div className="flex flex-col gap-2">
-        <HeaderText text="Mentorship Program" />
+        <HeaderText text="Mentorship Program." />
         <div className="relative flex items-center justify-between w-full max-w-3xl px-[2rem] py-[3rem] bg-gradient-to-r from-black to-gray-700 rounded-xl text-white shadow-lg">
           {/* Background Overlay */}
           <div className="absolute inset-0 overflow-hidden">
@@ -126,35 +126,29 @@ const MentorProgram = () => {
           </div>
         </div>
         <div className="flex flex-col gap-6 mt-[1.3rem]">
-          <ProgramInnfoContainer
-            title="Program Information Text"
-            children={
-              <div className="grid lg:grid-cols-2 grid-cols-1 gap-2">
-                {programInfoData.map((item, index) => (
-                  <IconWithText
-                    isProgramInfo
-                    key={index}
-                    icon={item.icon}
-                    text={item.text}
-                  />
+          <ProgramInnfoContainer title="Program Information Text">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-2">
+              {programInfoData.map((item, index) => (
+                <IconWithText
+                  isProgramInfo
+                  key={index}
+                  icon={item.icon}
+                  text={item.text}
+                />
+              ))}
+            </div>
+          </ProgramInnfoContainer>
+          <ProgramInnfoContainer title="Program Information Text 2">
+            <ul className="list-disc pl-4 flex flex-col gap-2 mt-5-">
+              {Array(6)
+                .fill(0)
+                .map((_, index) => (
+                  <li key={index} className="text-[#595564]">
+                    Content
+                  </li>
                 ))}
-              </div>
-            }
-          />
-          <ProgramInnfoContainer
-            title="Program Information Text 2"
-            children={
-              <ul className="list-disc pl-4 flex flex-col gap-2 mt-5-">
-                {Array(6)
-                  .fill(0)
-                  .map((_, index) => (
-                    <li key={index} className="text-[#595564]">
-                      Content
-                    </li>
-                  ))}
-              </ul>
-            }
-          />
+            </ul>
+          </ProgramInnfoContainer>
         </div>
       </div>
     </div>

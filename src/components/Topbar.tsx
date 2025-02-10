@@ -1,4 +1,4 @@
-import { Logo, Man_Avatar } from "@/assets";
+import { Man_Avatar } from "@/assets";
 import IconNofication from "@/assets/IconComponents/IconNofication";
 import IconSidebar from "@/assets/IconComponents/IconSidebar";
 import Image from "next/image";

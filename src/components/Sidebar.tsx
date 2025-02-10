@@ -1,14 +1,14 @@
 "use client";
 import { Logo } from "@/assets";
 import IconHelpDesk from "@/assets/IconComponents/IconHelpDesk";
-import IconLogOut from "@/assets/IconComponents/IconLogOut";
+
 import IconSidebar from "@/assets/IconComponents/IconSidebar";
 import IconToggle from "@/assets/IconComponents/IconToggle";
 import { sidebarItems } from "@/shared/data";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 const SidebarItem = ({

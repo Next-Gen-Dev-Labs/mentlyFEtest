@@ -64,7 +64,7 @@ export const IconWithDropdown: React.FC<IconWithDropdownProps> = ({
                   key={index}
                   onClick={() => {
                     setIsOpen(false);
-                    item.onClick && item.onClick();
+                    item.onClick?.();
                   }}
                   className="block w-full text-left px-4 py-2 text-sm text-[#777795] hover:bg-gray-100"
                   role="menuitem"
