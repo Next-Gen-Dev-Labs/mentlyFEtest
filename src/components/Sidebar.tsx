@@ -60,7 +60,7 @@ const Sidebar = ({
         flex-col 
         items-center 
         px-3 py-6
-        ${!isLargeScreen ? "w-[7rem] shadow-lg" : ""}
+        ${!isLargeScreen ? "w-[6.4rem] shadow-lg" : ""}
       `}
     >
       {/* Logo Section */}
