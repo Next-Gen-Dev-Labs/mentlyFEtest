@@ -22,7 +22,7 @@ export default function DashboardLayout({
 
       <div
         className={`flex flex-col flex-1 transition-all duration-300 ${
-          isSidebarOpen ? "ml-[120px]" : "lg:ml-[120px]"
+          isSidebarOpen ? "ml-0" : "ml-0"
         }`}
       >
         <Header toggleSidebar={() => setSidebarOpen(!isSidebarOpen)} />
