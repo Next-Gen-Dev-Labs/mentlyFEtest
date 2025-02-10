@@ -6,7 +6,7 @@ This project is my submission for the MentlyFEtest Frontend Coding Challenge. It
 
 ## 📌 Live Demo
 
-🔗 [View Deployment] ()
+🔗 [View Deployment] (https://mently-frontendtask-cneztjia4-ebun22s-projects.vercel.app/)
 
 **🛠 Tech Stack:**
 * **Framework:** Next.js
@@ -19,11 +19,11 @@ This project is my submission for the MentlyFEtest Frontend Coding Challenge. It
 /MentlyFEtest
 │── public/                 # Static assets (images, fonts, etc.)
 │── src/
-│   ├── __tests__/          # test files are here
+│   ├── __tests__/          #Ttst files are here
 │   ├── app/                # Next.js App router 
 │       ├── components/     # Reusable UI components
 │       ├── constant/       # Constant imports used throught the app
-│       ├── context/        # useContext folder
+│       ├── context/        # State management with Usecontext
 │── .gitignore        # Git ignore file
 │── package.json      # Project dependencies
 │── tailwind.config.js # Tailwind CSS configuration
@@ -63,6 +63,7 @@ yarn dev
 
 * **Subtle hover and click effects for better user experience.**
 
+
 ## ✅ Testing (if applicable)
 
 Run tests with:
@@ -71,6 +72,12 @@ npm run test
 # or
 yarn test
 ```
+
+## 🚀 Deployment
+
+This project is deployed on Vercel. You can view the live version here:
+🔗 Live Demo (Replace with actual deployment link)
+
 
 ## 👨‍💻 Author
 
