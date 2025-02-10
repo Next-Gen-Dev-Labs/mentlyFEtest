@@ -1,39 +1,66 @@
-# MentlyFEtest Frontend Coding Challenge
+# 🌟 MentlyFEtest Frontend Coding Challenge
 
-## Welcome
+## 🚀 Introduction
+This is a **Next.js application** built with **TypeScript** and **Tailwind CSS**, developed as part of the Mently Frontend Coding Challenge. The project focuses on **building a responsive and accessible frontend page** based on the provided designs.
 
-This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+🔗 **Live Demo:** [View Here](https://mently-fe-test-iota.vercel.app)
 
-## The Challenge
+## 🎯 Challenge Requirements
+- ✅ **Use Next.js** for building the frontend.
+- ✅ **Implement Tailwind CSS** for styling.
+- ✅ **Ensure responsiveness** across various screen sizes.
+- ✅ **Follow accessibility best practices** for improved UX.
+- ✅ **Write clean, maintainable, and well-documented code**.
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=0-1&node-type=canvas&t=B30FPyMAYW7jtBcX-0).
+### 🎖 Bonus Points
+- 🎬 **Add animations or interactions** to enhance user experience.
+- 🧪 **Include unit tests** for components.
+- 🚀 **Deploy the solution** via a **Pull Request** to this repository.
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
+---
 
-**Bonus Points:**
+## 🛠️ Features
+- ⚡ Built with **Next.js 14**
+- 🎨 Styled using **Tailwind CSS**
+- 🎭 **Dynamic Routing** & Server-Side Rendering (SSR)
+- 🎯 Fully **Responsive** & Mobile-Friendly
+- 🌍 **SEO-Optimized** with metadata integration
+- ✨ **Smooth Page Transitions** using Framer Motion
+- ♿ **Accessibility Best Practices** Implemented
 
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
+## 📦 Tech Stack
+- **Next.js** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** (for animations)
+- **React Hooks & Context API**
 
-## Submission
+---
 
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+## 📜 Installation & Setup
+To set up this project locally, follow these steps:
 
-## Evaluation Criteria
+```sh
+# Clone the repository
+git clone https://github.com/Chukwuebukaj/mentlyFEtest.git
 
-Your submission will be evaluated on the following criteria:
+# Navigate into the project directory
+cd mentlyfetest
 
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
+# Install dependencies
+npm install  
 
-We appreciate your time and effort in completing this challenge. Good luck!
+# Start the development server
+npm run dev  
+
+# View app on your browser
+Open http://localhost:3000/ in your browser.
+
+```
+
+## 🌟 Acknowledgments
+Special thanks to:
+
+- **Mently** for organizing this challenge.
+- **Next.js & Tailwind CSS** for making frontend development efficient.
+- **Framer Motion** for smooth animations.
