@@ -37,6 +37,8 @@ This repository contains a single-page application that follows the provided Fig
    ```bash
    git clone https://github.com/Arinze999/mentlyFEtest.git
 
+## **hosted live here:**  https://mently-f-etest-opal.vercel.app/
+
 cd mentlyFEtest
 npm install
 
