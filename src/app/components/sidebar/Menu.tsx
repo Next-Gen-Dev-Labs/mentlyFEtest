@@ -60,7 +60,7 @@ const Menu = () => {
                             <span className="text-sm ">{item.name}</span>
                             {item.badge && (
                                 <span
-                                    className="absolute top-[-12px] right-[-58px] px-2 py-0.5 text-[10px] font-medium bg-blue-500 text-white rounded-full"
+                                    className="absolute top-[-12px] right-[-58px] px-2 py-0.5 text-[10px] font-medium bg-[#0214BD] text-white rounded-full"
                                     aria-label="coming soon"
                                 >
                                     {item.badge}

@@ -7,6 +7,7 @@ import { useAppContext } from "../../context/AppContext";
 import HelpDesk from "./HelpDesk";
 import ToggleSwitch from "../ui/ToggleSwitch";
 import { Icon } from "@iconify/react";
+import { Logo } from "../../../../public";
 
 /**
  * Navbar component that handles navigation, branding, and sidebar toggling.
@@ -30,7 +31,7 @@ const Navbar = () => {
             {/* Logo and Sidebar Toggle */}
             <div className="flex flex-col gap-8 pt-5 items-center">
                 <Link href="/" className="flex gap-2" aria-label="Home">
-                    <Image src="logo.svg" alt="Mently logo" width={47} height={32} />
+                    <Image src={Logo} alt="Mently logo" width={47} height={32} />
                     {!isCollapsed && <p className="font-bold flex items-center text-2xl">Mently</p>}
                 </Link>
 
