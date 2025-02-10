@@ -1,39 +1,59 @@
-# MentlyFEtest Frontend Coding Challenge
+# Mently Frontend Job Test
 
-## Welcome
+## 📌 Project Overview
 
-This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+This is the frontend implementation of the Mently frontend test, where I was tasked with developing a design from figma using **Next.js** and **Tailwind CSS**. The goal is to create a pixel-perfect, responsive, accesible and engaging web application that matches the provided design.
 
-## The Challenge
+## 🚀 Technologies Used
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=0-1&node-type=canvas&t=B30FPyMAYW7jtBcX-0).
+- **Next.js**.
+- **Tailwind CSS**.
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
+## 💻 Installation & Setup
 
-**Bonus Points:**
+To run the project locally, follow these steps:
 
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
+### Prerequisites
 
-## Submission
+- Nodejs
+- IDE eg. vs code
 
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+### Clone the Repository
 
-## Evaluation Criteria
+```sh
+git clone https://github.com/ikennarichard/mentlyFEtest.git
+cd mentlyFEtest
+```
 
-Your submission will be evaluated on the following criteria:
+### Install Dependencies
 
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
+```sh
+pnpm add 
+```
 
-We appreciate your time and effort in completing this challenge. Good luck!
+### Run the Development Server
+
+```sh
+pnpm dev
+```
+
+### Run test
+
+```sh
+pnpm test
+```
+
+Open `localhost:3000` in your browser to see the app.
+
+## ✅ Features Implemented
+
+- Pixel-perfect UI matching the Figma design.
+- Fully responsive layout.
+- Optimized accessibility.
+- Responsive design.
+
+## 📞 Contact
+
+If you have any questions, feel free to reach out!
+
+📧 Email: [Ikenna Richard](mailto:oguejioforichard@gmail.com)
