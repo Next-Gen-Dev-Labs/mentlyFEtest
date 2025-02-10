@@ -36,7 +36,7 @@ export default function RootDashboardLayout({ children }: RootLayoutType) {
     <SidebarProvider suppressHydrationWarning>
       <AppSidebar />
       <SidebarInset>
-        <header className="bg-secondary flex sm:h-20 h-[7rem] shrink-0 items-center gap-2 w-full transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 text-foreground sticky top-0 z-50 border-b">
+        <header className="bg-secondary flex h-20 shrink-0 items-center gap-2 w-full transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 text-foreground sticky top-0 z-50 border-b">
           <div className="flex items-center gap-2 px-4 justify-between w-full">
             <div>
               <SidebarTrigger className="pl-4 sm:p-0" />
