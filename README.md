@@ -21,8 +21,8 @@ To run the project locally, follow these steps:
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/ikennarichard/FeMently.git
-cd FeMently
+git clone https://github.com/ikennarichard/mentlyFEtest.git
+cd mentlyFEtest
 ```
 
 ### Install Dependencies
