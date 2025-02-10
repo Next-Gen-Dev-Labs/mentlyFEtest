@@ -5,11 +5,11 @@ import IconHelpDesk from "@/assets/IconComponents/IconHelpDesk";
 import IconSidebar from "@/assets/IconComponents/IconSidebar";
 import IconToggle from "@/assets/IconComponents/IconToggle";
 import { sidebarItems } from "@/shared/data";
+import { useScreenSize } from "@/shared/hooks/useSceenSize";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { useMediaQuery } from "usehooks-ts";
 
 const SidebarItem = ({
   item,
@@ -43,11 +43,11 @@ const Sidebar = ({
   setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const router = usePathname();
-  const isSmallScreen = useMediaQuery("(min-width: 1024px)");
+  const isLargeScreen = useScreenSize();
   return (
     <div
       className={`w-[7.5rem] ${
-        isSmallScreen ? "sticky" : "fixed"
+        isLargeScreen ? "sticky" : "fixed"
       } top-0 left-0 bg-mentlyBlue overflow-y-auto z-20 flex flex-col items-center min-h-screen p-4`}
     >
       {/* Logo Section */}

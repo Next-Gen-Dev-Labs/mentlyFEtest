@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Chivo, Meow_Script } from "next/font/google";
 import "./globals.css";
-import PrelineScript from "@/components/PrelineScript";
 
 const chivo = Chivo({
   subsets: ["latin"],
@@ -31,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={chivo.variable + " " + meowScript.variable}>
-        {children} <PrelineScript />
+        {children}
       </body>
     </html>
   );

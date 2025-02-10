@@ -18,12 +18,12 @@ import { IoCopyOutline, IoSettingsOutline } from "react-icons/io5";
 import usePrograms from "./usePrograms";
 import TextEditor from "./TextEditor";
 import MentorProgram from "./MentorProgram";
-import { useMediaQuery } from "usehooks-ts";
+import { useScreenSize } from "@/shared/hooks/useSceenSize";
 
 const ProgramInformation = () => {
   const { expandedId, handleItemClick, isModalOpen, setIsModalOpen } =
     usePrograms();
-  const isMobile = useMediaQuery("(min-width: 1024px)");
+  const isMobile = useScreenSize();
 
   return (
     <>

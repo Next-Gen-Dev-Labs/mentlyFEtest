@@ -2,16 +2,28 @@
 import Sidebar from "@/components/Sidebar";
 import React, { useState } from "react";
 import Topbar from "@/components/Topbar";
-import { useMediaQuery } from "usehooks-ts";
+import { useScreenSize } from "@/shared/hooks/useSceenSize";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
+  const isLargeScreen = useScreenSize();
 
-  const isSmallScreen = useMediaQuery("(min-width: 1024px)");
   return (
     <div className="flex h-screen">
-      {isSmallScreen && (
+      {isLargeScreen && (
         <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      )}
+
+      {/* Mobile Sidebar */}
+
+      {!isLargeScreen && showSidebar && (
+        <div
+          className={`lg:hidden transition-all z-10 duration-300 ease-in-out ${
+            showSidebar ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+        </div>
       )}
       <div
         className={`lg:hidden transition-all z-10 duration-300 ease-in-out ${

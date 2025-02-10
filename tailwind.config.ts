@@ -16,5 +16,4 @@ export default {
       },
     },
   },
-  plugins: [require("preline/plugin")],
 } satisfies Config;

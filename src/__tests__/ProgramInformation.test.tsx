@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import { useMediaQuery } from "usehooks-ts";
+import { useScreenSize } from "@/shared/hooks/useSceenSize";
 import usePrograms from "../components/Programs/usePrograms";
 import ProgramInformation from "@/components/Programs/ProgramInformation";
 
@@ -11,8 +11,8 @@ jest.mock("../components/Programs/usePrograms", () => ({
   default: jest.fn(),
 }));
 
-jest.mock("usehooks-ts", () => ({
-  useMediaQuery: jest.fn(),
+jest.mock("@/shared/hooks/useSceenSize", () => ({
+  useScreenSize: jest.fn(),
 }));
 
 describe("ProgramInformation Component", () => {
@@ -23,7 +23,7 @@ describe("ProgramInformation Component", () => {
       isModalOpen: false,
       setIsModalOpen: jest.fn(),
     });
-    (useMediaQuery as jest.Mock).mockReturnValue(true);
+    (useScreenSize as jest.Mock).mockReturnValue(true);
   });
 
   it("renders ProgramInformation component", () => {
@@ -60,7 +60,7 @@ describe("ProgramInformation Component", () => {
       setIsModalOpen: mockSetIsModalOpen,
     });
 
-    (useMediaQuery as jest.Mock).mockReturnValue(false); // Simulating mobile screen
+    (useScreenSize as jest.Mock).mockReturnValue(false); // Simulating mobile screen
 
     render(<ProgramInformation />);
 
@@ -79,7 +79,7 @@ describe("ProgramInformation Component", () => {
       setIsModalOpen: mockSetIsModalOpen,
     });
 
-    (useMediaQuery as jest.Mock).mockReturnValue(true); // Simulating desktop screen
+    (useScreenSize as jest.Mock).mockReturnValue(true); // Simulating desktop screen
 
     render(<ProgramInformation />);
 
