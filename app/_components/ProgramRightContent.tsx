@@ -9,11 +9,13 @@ export default function ProgramRightContent() {
       </div>
 
       <div className="border border-[#D9E1E780] p-4 mt-8">
-        <h1 className="font-extrabold text-[32px]">Mentorship Program</h1>
+        <h1 className="font-extrabold text-[20px] vsms:text-[26px] xs:text-[32px]">
+          Mentorship Program
+        </h1>
         <img
           src={"/images/banner.png"}
           alt="banner"
-          className="w-full rounded-lg"
+          className="w-full rounded-lg object-cover"
         />
         <div className="flex justify-between xxl:flex-row flex-col gap-8  mt-8">
           <div className="text-[#808080]  basis-1/3  2xl:basis-1/2">
@@ -22,7 +24,7 @@ export default function ProgramRightContent() {
             a Design Career, share, document their progress on a weekly basis.
           </div>
           <div className="shadow-[0_6px_16px_0px_#0000000F] hover:scale-110 duration-300 cursor-pointer grid gap-5 bg-white flex-1 p-8">
-            <div className="grid grid-cols-2 justify-between items-center">
+            <div className="grid  grid-cols-[100px_1fr] xs:grid-cols-2 justify-between items-center">
               <Image
                 src={"/icons/main-content.svg"}
                 width={24}
@@ -33,7 +35,7 @@ export default function ProgramRightContent() {
                 Mentorship Program
               </span>
             </div>
-            <div className="grid grid-cols-2 justify-between items-center">
+            <div className="grid  grid-cols-[100px_1fr] xs:grid-cols-2 justify-between items-center">
               <Image
                 src={"/icons/calendar-2.svg"}
                 width={24}
@@ -44,7 +46,7 @@ export default function ProgramRightContent() {
                 21/4/2024-21/5/2024
               </span>
             </div>
-            <div className="grid grid-cols-2 justify-between items-center">
+            <div className="grid  grid-cols-[100px_1fr] xs:grid-cols-2 justify-between items-center">
               <Image
                 src={"/icons/location.svg"}
                 width={24}

@@ -36,7 +36,9 @@ export default function ProgramButtons() {
 
   const ProgramButton = ({ index, text }: { index: number; text: string }) => (
     <button className="border-[#C2C2C2] border w-full bg-[#f1f1f1] px-4 py-3 flex justify-between items-center rounded-lg">
-      <span className="font-medium">{text}</span>
+      <span className="font-medium basis-[75%]  text-sm vsms:text-[16px] vsms:basis-auto">
+        {text}
+      </span>
       <span className="flex relative items-center gap-3">
         <FaChevronUp className="text-[#777795]" />
         <div

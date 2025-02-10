@@ -29,7 +29,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed w-full top-0 flex justify-between md:justify-end px-12 items-center z-10 right-0 shadow-sm h-[70px] bg-white">
+    <header className="fixed w-full top-0 flex justify-between md:justify-end px-8 xs:px-12 items-center z-10 right-0 shadow-sm h-[70px] bg-white">
       <div className="block md:hidden">
         <Image
           src={"/images/logo.png"}
@@ -38,6 +38,7 @@ export default function Header() {
           height={32}
           quality={100}
           onClick={() => setShowSidebar(true)}
+          className="vsms:max-w-[47px]  max-w-[40px]"
         />
       </div>
       <div className="flex md:justify-end items-center gap-6 sm:gap-9 h-full">

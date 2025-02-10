@@ -5,7 +5,7 @@ import ProgramRightContent from "./_components/ProgramRightContent";
 
 export default function Page() {
   return (
-    <div className="flex justify-between lg:flex-row flex-col gap-6 xl:gap-12 px-8 py-6">
+    <div className="flex justify-between lg:flex-row flex-col gap-6 xl:gap-12 px-4 xs:px-8 py-6">
       <ProgramLeftContent />
       <ProgramRightContent />
     </div>

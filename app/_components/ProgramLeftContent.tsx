@@ -12,7 +12,9 @@ export default function ProgramLeftContent() {
   return (
     <div className="basis-[40%]">
       <ProgramHead />
-      <h2 className="text-[32px] mt-5 font-bold">Program Information</h2>
+      <h2 className="xs:text-[32px] text-[26px] mt-5 font-bold">
+        Program Information
+      </h2>
       <div className="text-sm text-[#828282] mt-6 font-normal">
         Describe Section Title
       </div>
@@ -29,7 +31,7 @@ export default function ProgramLeftContent() {
         This can include objectives, goals, necessary resources, or any specific
         instructions..
       </InfoBox>
-      <button className="w-full mt-6 py-3 px-6 flex flex-col justify-center  items-center border border-black gap-2 rounded-lg">
+      <button className="w-full mt-6 py-3 px-3 vsms:px-6 flex flex-col justify-center  items-center border border-black gap-2 rounded-lg">
         <div className="flex items-center font-medium">
           <GoPlus />
           <span>Add a new section</span>

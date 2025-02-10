@@ -29,7 +29,7 @@ export default function ProgramHead() {
   }, []);
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex xs:flex-row flex-col items-start xs:items-center justify-between">
       <button className="flex items-center gap-2 hover:gap-2.5 duration-100">
         <span>
           <IoIosArrowBack className="text-secondary-400" />
@@ -37,7 +37,7 @@ export default function ProgramHead() {
         <span className="text-secondary-400">Back to Home</span>
       </button>
 
-      <div className="flex gap-6 items-center">
+      <div className="flex gap-6 items-center mt-6 xs:mt-0">
         <div className="relative w-6 h-6" ref={settingRef}>
           <button className="cursor-pointer" onClick={toggleShowSettings}>
             <Image
