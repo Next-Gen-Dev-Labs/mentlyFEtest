@@ -51,7 +51,7 @@ export const IconWithDropdown: React.FC<IconWithDropdownProps> = ({
       </div>
 
       {isOpen && (
-        <div className="origin-top-right z-20 absolute right-0 mt-2 min-w-32 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+        <div className="origin-top-right z-20 absolute -right-12 mt-2 min-w-32 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div
             className="py-1"
             role="menu"

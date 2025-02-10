@@ -55,7 +55,14 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ value, onChange }) => {
                 <IoMdArrowDropdown size={20} />
               </div>
             }
-            items={[]}
+            items={[
+              {
+                label: "New File",
+              },
+              {
+                label: "Open File",
+              },
+            ]}
           />
         </div>
         <div className="flex gap-[0.9rem] items-center pl-3  border-b-mentlyBlue border-r-mentlyBlue border-mentlyBlue border-b rounded-b-sm w-full overflow-x-auto">

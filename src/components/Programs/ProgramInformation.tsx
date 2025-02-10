@@ -22,8 +22,14 @@ import MentorProgram from "./MentorProgram";
 import { useScreenSize } from "@/shared/hooks/useSceenSize";
 
 const ProgramInformation = () => {
-  const { expandedId, handleItemClick, isModalOpen, setIsModalOpen } =
-    usePrograms();
+  const {
+    expandedId,
+    handleItemClick,
+    isModalOpen,
+    setIsModalOpen,
+    headerSize,
+    setHeaderSize,
+  } = usePrograms();
   const isMobile = useScreenSize();
 
   return (
@@ -75,12 +81,44 @@ const ProgramInformation = () => {
         </div>
         <div className="flex gap-3 items-center p-3 border border-mentlyBlue rounded-[0.4rem] justify-center">
           <div className="flex items-center gap-1">
-            <IconText />
-            <IoMdArrowDropdown size={30} />
+            <IconWithDropdown
+              icon={
+                <div className="flex gap-2 items-center">
+                  <IconText />
+                  <IoMdArrowDropdown size={30} />
+                </div>
+              }
+              items={[
+                {
+                  label: "Extra Small",
+                  onClick: () => setHeaderSize("text-xs"),
+                },
+                { label: "Small", onClick: () => setHeaderSize("text-sm") },
+                { label: "Base", onClick: () => setHeaderSize("text-base") },
+                { label: "Large", onClick: () => setHeaderSize("text-lg") },
+                {
+                  label: "Extra Large",
+                  onClick: () => setHeaderSize("text-xl"),
+                },
+                { label: "2XL", onClick: () => setHeaderSize("text-2xl") },
+                { label: "3XL", onClick: () => setHeaderSize("text-3xl") },
+                { label: "4XL", onClick: () => setHeaderSize("text-4xl") },
+              ]}
+            />
           </div>
-          <span className="text-sm font-[300] text-[#828282]">
-            Describe Section Title e.g What you stand to learn
-          </span>
+          <input
+            type="text"
+            placeholder="Describe Section Title e.g What you stand to learn"
+            className={`
+    w-full 
+    ${headerSize}
+    font-[300] 
+    text-[#828282] 
+    border-none 
+    focus:outline-none 
+    bg-transparent
+  `}
+          />
         </div>
         <InfoBox message="Provide your preferred title for this section i.e What's in this Program for you?" />
         <TextEditor />
