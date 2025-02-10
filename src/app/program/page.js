@@ -60,6 +60,11 @@ export default function ProgramPage() {
   };
   
 
+  const handleStyleChange = (style) => {
+    setSelectedStyle(style);
+  };
+
+  // Get text style class based on selectedStyle
   const getTextStyleClass = () => {
     switch (selectedStyle) {
       case 'bold':
@@ -144,7 +149,7 @@ export default function ProgramPage() {
            />
          </div>
       {dropdownOpen && (
-           <div className="absolute -right-20 top-10 w-30 bg-white shadow-lg rounded-lg py-2 transform transition-all duration-200 ease-out scale-95 opacity-100 animate-fadeInSlide">
+           <div className="absolute -right-20 top-10 w-30 bg-white shadow-lg rounded-lg py-2 transform transition-all duration-200 ease-out scale-95 opacity-100 animate-fadeInSlide z-20">
              <button
                onClick={() => handleStyleChange('normal')}
                className="block w-full px-4 py-2 text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
@@ -175,15 +180,16 @@ export default function ProgramPage() {
    
         
          <input
-           type="text"
-           placeholder="Describe Section Title e.g What you stand to learn"
-           className="flex-1 border-none outline-none text-gray-500 bg-transparent px-2"   value={programInfoSections[index]?.sectionTitle || ""}
-           onChange={(e) => {
-             const updatedSections = [...programInfoSections];
-             updatedSections[index].sectionTitle = e.target.value;
-             setProgramInfoSections(updatedSections);
-           }}
-         />
+        type="text"
+        placeholder="Describe Section Title e.g What you stand to learn"
+        className={`flex-1 border-none outline-none text-gray-500 bg-transparent px-2 ${getTextStyleClass()}`} // Dynamically applying text styles
+        value={programInfoSections[index]?.sectionTitle || ""}
+        onChange={(e) => {
+          const updatedSections = [...programInfoSections];
+          updatedSections[index].sectionTitle = e.target.value;
+          setProgramInfoSections(updatedSections);
+        }}
+      />
        </div>
        <div className="mt-2 flex items-center gap-2 bg-[#CEE1FB] p-3">
        <div>
@@ -283,7 +289,13 @@ export default function ProgramPage() {
       ))}
       </div>
       <div className="flex justify-end items-center gap-2 mt-[30px] md:mt-[100px]">
-      <button   className="flex items-center py-2 px-3 md:px-10 font-bold text-md gap-2 text-[#A4A5B8] border-0">  Go Back</button>
+      <Link href="/" passHref>
+      <button
+        className="flex items-center py-2 px-3 md:px-10 font-bold text-md gap-2 text-[#A4A5B8] border-0"
+      >
+        Go Back
+      </button>
+    </Link>
       <button onClick={handleSaveAndProceed}   className="flex items-center bg-primary py-2 px-3 md:px-8 font-bold text-md gap-2 text-white rounded-md">  Save & Proceed <TiArrowSortedDown
           size={24}
           color="
