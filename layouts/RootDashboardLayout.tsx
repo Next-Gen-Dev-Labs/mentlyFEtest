@@ -36,7 +36,7 @@ export default function RootDashboardLayout({ children }: RootLayoutType) {
     <SidebarProvider suppressHydrationWarning>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 w-full transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 text-foreground">
+        <header className="bg-secondary flex sm:h-20 h-[7rem] shrink-0 items-center gap-2 w-full transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 text-foreground sticky top-0 z-50 border-b">
           <div className="flex items-center gap-2 px-4 justify-between w-full">
             <div>
               <SidebarTrigger className="pl-4 sm:p-0" />
@@ -60,7 +60,7 @@ export default function RootDashboardLayout({ children }: RootLayoutType) {
                 <BellIcon size={22} />
               </button>
 
-              <Menubar className="border-none shadow-none h-full">
+              <Menubar className="border-none shadow-none h-full focus:bg-transparent bg-transparent">
                 <MenubarMenu>
                   <MenubarTrigger className="h-fit data-[state=open]:bg-transparent data-[state=open]:shadow-none cursor-pointer sm:pr-3 pr-0">
                     <div className="flex items-center gap-4">
@@ -84,7 +84,7 @@ export default function RootDashboardLayout({ children }: RootLayoutType) {
                     </div>
                   </MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem className="focus:bg-transparent">
+                    <MenubarItem className="focus:bg-transparent bg-transparent">
                       <div className="lex flex-col gap-0 text-start justify-start">
                         <p>Godwin Jimmy</p>
                         <span>
@@ -107,7 +107,7 @@ export default function RootDashboardLayout({ children }: RootLayoutType) {
             </div>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
+        <div className="flex flex-1 flex-col gap-4 mt-1">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );

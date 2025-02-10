@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Chivo } from "next/font/google";
+import { Chivo } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import NextTopLoader from "nextjs-toploader";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const chivoSans = Chivo({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -26,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${chivoSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${chivoSans.variable} antialiased`}>
         <NextTopLoader color="hsl(258, 81%, 18%)" />
         <ThemeProvider
           attribute="class"
