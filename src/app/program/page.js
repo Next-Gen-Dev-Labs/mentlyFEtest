@@ -9,18 +9,25 @@ import { PiWarningCircle } from "react-icons/pi";
 import { RiShareForwardLine } from "react-icons/ri";
 import { GoPlus } from "react-icons/go";
 import { programInformation } from "./programs";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { CgMoreVertical } from "react-icons/cg";
 import TextEditor from "@/components/TextEditor";
 
+const LOCAL_STORAGE_KEY = "programInfo";
 
+// Load saved data from local storage or use default
+const getStoredProgramInfo = () => {
+  const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+  return savedData ? JSON.parse(savedData) : programInformation;
+};
 
 export default function ProgramPage() {
-  const [programInfo, setProgramInfo] = useState(programInformation);
+  const [programInfo, setProgramInfo] = useState(getStoredProgramInfo);
   const [checked, setChecked] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(null);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [styleDropdownOpen, setstyleDropdownOpen] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState('bold');
+  const [menuOpen, setMenuOpen] = useState(null);
   const dropdownRef = useRef(null);
   
 
@@ -28,6 +35,22 @@ export default function ProgramPage() {
   const [programInfoSections, setProgramInfoSections] = useState([
     { sectionTitle: "", description: "" }
   ]);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(programInfo));
+  }, [programInfo]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setStyleDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleAddSection = () => {
     if (programInfoSections.length >= 3) {
@@ -45,19 +68,25 @@ export default function ProgramPage() {
   };
 
   const handleSaveAndProceed = () => {
-    // Append the current programInfoSections to programInfo
-    setProgramInfo((prev) => [
-      ...prev,
-      ...programInfoSections.map((section, index) => ({
-        id: prev.length + index + 1, // Generate a unique ID
-        sectionTitle: section.sectionTitle || `Program Information Text ${prev.length + index + 1}`,
-        description: section.description || "",
-      })),
-    ]);
-  
-    // Reset programInfoSections to one empty section
-    setProgramInfoSections([{ sectionTitle: "", description: "" }]);
-  };
+  const newPrograms = programInfoSections.map((section, index) => ({
+    id: programInfo.length + index + 1, // Unique ID
+    sectionTitle: section.sectionTitle || `Program Information Text ${programInfo.length + index + 1}`,
+    description: section.description || "",
+  }));
+
+  setProgramInfo((prev) => [...prev, ...newPrograms]);
+  setProgramInfoSections([{ sectionTitle: "", description: "" }]);
+};
+
+const handleEdit = (program) => {
+  setSelectedProgram(program); // Populate the editing section
+  setMenuOpen(null); // Close menu after clicking edit
+};
+
+const handleDelete = (id) => {
+  setProgramInfo((prev) => prev.filter((program) => program.id !== id));
+  setMenuOpen(null)
+};
   
 
   const handleStyleChange = (style) => {
@@ -136,7 +165,7 @@ export default function ProgramPage() {
          </div>
       
          <div
-           onClick={() => setDropdownOpen(!dropdownOpen)}
+           onClick={() => setstyleDropdownOpen(!styleDropdownOpen)}
            className="flex items-center  cursor-pointer rel"
          >
            
@@ -144,11 +173,11 @@ export default function ProgramPage() {
              size={24}
              color="
    #555555"
-             className={`transition-transform ${dropdownOpen ? "rotate-180" : "rotate-0"} cursor-pointer`}
+             className={`transition-transform ${styleDropdownOpen ? "rotate-180" : "rotate-0"} cursor-pointer`}
              ref={dropdownRef}
            />
          </div>
-      {dropdownOpen && (
+      {styleDropdownOpen && (
            <div className="absolute -right-20 top-10 w-30 bg-white shadow-lg rounded-lg py-2 transform transition-all duration-200 ease-out scale-95 opacity-100 animate-fadeInSlide z-20">
              <button
                onClick={() => handleStyleChange('normal')}
@@ -281,7 +310,34 @@ export default function ProgramPage() {
   }}
 />
 
-                         <CgMoreVertical style={{color:'#777795'}} />
+<div className="relative">
+              <CgMoreVertical
+                style={{ color: "#777795" }}
+                className="cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setMenuOpen(menuOpen === program.id ? null : program.id);
+                }}
+              />
+              
+              {/* Options Menu */}
+              {menuOpen === program.id && (
+                <div className="absolute right-0 mt-2 w-32 bg-white shadow-lg rounded-lg py-2 z-50 border border-gray-200">
+                  <button
+                    className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
+                    onClick={() => handleEdit(program)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="block w-full px-4 py-2 text-left text-red-600 hover:bg-red-100"
+                    onClick={() => handleDelete(program.id)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              )}
+            </div>
                          </div>
           </div>
         
