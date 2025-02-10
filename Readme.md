@@ -3,37 +3,16 @@
 ## Welcome
 
 This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+This is my submission on the Frontend Developer Assessment. You can find the live link [here](https://mently-f-etest-mu.vercel.app/)
 
-## The Challenge
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=0-1&node-type=canvas&t=B30FPyMAYW7jtBcX-0).
+**What I Used and Did**
+* **Use Next.js:**  The application was built using the Next.js framework.
+* **Use Tailwind CSS:** And styled strictly with tailwindcss 
+* **Responsiveness:** The application was responsive on all screen sizes
+* **Accessibility:**  Best practices was followed when writing the code
+* **Code Quality:**  The code was well documented and made use of the DRY Principle in software development.
+* **Animations/Interactions:** Subtle interactions was added to enhance the user experience.
+* **Testing:** Unit test was done using the React testing library and Jest for each components in the code
+* **Mobile Responsive:** The sidebar and content work really fine in a mobile screen.
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
-
-**Bonus Points:**
-
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
-
-## Submission
-
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
-
-## Evaluation Criteria
-
-Your submission will be evaluated on the following criteria:
-
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
-
-We appreciate your time and effort in completing this challenge. Good luck!
