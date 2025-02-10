@@ -37,7 +37,13 @@ const TextEditor = ({ value, onChange }) => {
         onChange(quillInstance.current.root.innerHTML);
       });
     }
-  }, []); // Empty dependency array ensures this runs only once
+
+    // This effect runs every time the value prop changes
+    if (quillInstance.current) {
+      quillInstance.current.root.innerHTML = value || "";
+    }
+
+  }, [value]); // Add `value` to the dependency array to re-initialize content when value changes
 
   return (
     <div style={{ position: "relative" }}>

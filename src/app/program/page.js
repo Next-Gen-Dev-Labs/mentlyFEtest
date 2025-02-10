@@ -25,11 +25,12 @@ export default function ProgramPage() {
   const [programInfo, setProgramInfo] = useState(getStoredProgramInfo);
   const [checked, setChecked] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(null);
-  const [styleDropdownOpen, setstyleDropdownOpen] = useState(false);
+  const [styleDropdownOpen, setStyleDropdownOpen] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState('bold');
   const [menuOpen, setMenuOpen] = useState(null);
+  const [settingsMenuOpen, setSettingsMenuOpen] = useState(null);
   const dropdownRef = useRef(null);
-  
 
  
   const [programInfoSections, setProgramInfoSections] = useState([
@@ -45,6 +46,7 @@ export default function ProgramPage() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setStyleDropdownOpen(false);
       }
+      
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -68,32 +70,79 @@ export default function ProgramPage() {
   };
 
   const handleSaveAndProceed = () => {
-  const newPrograms = programInfoSections.map((section, index) => ({
-    id: programInfo.length + index + 1, // Unique ID
-    sectionTitle: section.sectionTitle || `Program Information Text ${programInfo.length + index + 1}`,
-    description: section.description || "",
-  }));
+    if (isEditing) {
+      setProgramInfo((prev) =>
+        prev.map((item) =>
+          item.id === selectedProgram?.id
+            ? {
+                ...item,
+                sectionTitle: programInfoSections[0]?.sectionTitle || item.sectionTitle,
+                description: programInfoSections[0]?.description || item.description,
+              }
+            : item
+        )
+      );
+    } else {
+      const newPrograms = programInfoSections.map((section, index) => ({
+        id: programInfo.length + index + 1,
+        sectionTitle: section.sectionTitle || `Program Information Text ${programInfo.length + index + 1}`,
+        description: section.description || "",
+      }));
+      setProgramInfo((prev) => [...prev, ...newPrograms]);
+    }
 
-  setProgramInfo((prev) => [...prev, ...newPrograms]);
-  setProgramInfoSections([{ sectionTitle: "", description: "" }]);
+    
+    setSelectedProgram(null);
+    setProgramInfoSections([]);
+    setTimeout(() => {
+      setProgramInfoSections([{ sectionTitle: "", description: "" }]); 
+    }, 0);
+    setIsEditing(false);
 };
 
 const handleEdit = (program) => {
-  setSelectedProgram(program); // Populate the editing section
-  setMenuOpen(null); // Close menu after clicking edit
+  setSelectedProgram(program); 
+  setIsEditing(true); 
+  setMenuOpen(null);
+
+ 
+  setProgramInfoSections((prevSections) => {
+   
+    if (prevSections.length === 0) {
+      return [{ sectionTitle: program.sectionTitle, description: program.description }];
+    }
+   
+    return prevSections.map((section, index) =>
+      index === 0
+        ? { ...section, sectionTitle: program.sectionTitle, description: program.description }
+        : section
+    );
+  });
+
+ 
 };
+
 
 const handleDelete = (id) => {
   setProgramInfo((prev) => prev.filter((program) => program.id !== id));
   setMenuOpen(null)
 };
   
-
+const handleClear = () => {
+  setIsEditing(false);
+  setSelectedProgram(null);
+  setProgramInfoSections([{ sectionTitle: "", description: "" }]);
+};
+const handleCancelEdit = () => {
+  setIsEditing(false);
+  setSelectedProgram(null);
+  setProgramInfoSections([{ sectionTitle: "", description: "" }]);
+};
   const handleStyleChange = (style) => {
     setSelectedStyle(style);
   };
 
-  // Get text style class based on selectedStyle
+  
   const getTextStyleClass = () => {
     switch (selectedStyle) {
       case 'bold':
@@ -114,7 +163,7 @@ const handleDelete = (id) => {
         return temporalDivElement.textContent || temporalDivElement.innerText || "";
     } catch (error) {
         console.error('Error stripping HTML:', error);
-        return "";  // Return empty string on error
+        return "";  
     }
 };
     return (
@@ -130,7 +179,31 @@ const handleDelete = (id) => {
   <h4 className="text-tertiary font-semibold text-[14px] md:text-[16px]">Back to Home</h4>
 </Link>
 <div className="flex items-center gap-6">
-    <Setting2 size={24} color="#C2C2C2" />
+    
+    <div className="relative">
+    <Setting2 size={24} color="#C2C2C2" 
+                className="cursor-pointer"
+                onClick={() => setSettingsMenuOpen(!settingsMenuOpen)}
+              />
+              
+              {/* Options Menu */}
+              {settingsMenuOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-white shadow-lg rounded-lg py-2 z-50 border border-gray-200">
+                  <button
+                    className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-[#2E1D5F] hover:text-white"
+                   
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="block w-full px-4 py-2 text-left text-red-600 hover:bg-red-100"
+                    onClick={handleClear}
+                  >
+                   Clear
+                  </button>
+                </div>
+              )}
+            </div>
     <IoCopyOutline style={{color:"#C2C2C2", fontSize:'1.5rem'}} />
   
     <button   className="flex items-center bg-primary py-1 px-2 gap-2 text-white rounded-full">  <RiShareForwardLine style={{color:"#ffffff", fontSize:'1rem'}}/>Share</button>
@@ -165,7 +238,7 @@ const handleDelete = (id) => {
          </div>
       
          <div
-           onClick={() => setstyleDropdownOpen(!styleDropdownOpen)}
+           onClick={() => setStyleDropd(!styleDropdownOpen)}
            className="flex items-center  cursor-pointer rel"
          >
            
@@ -209,16 +282,19 @@ const handleDelete = (id) => {
    
         
          <input
-        type="text"
-        placeholder="Describe Section Title e.g What you stand to learn"
-        className={`flex-1 border-none outline-none text-gray-500 bg-transparent px-2 ${getTextStyleClass()}`} // Dynamically applying text styles
-        value={programInfoSections[index]?.sectionTitle || ""}
-        onChange={(e) => {
-          const updatedSections = [...programInfoSections];
-          updatedSections[index].sectionTitle = e.target.value;
-          setProgramInfoSections(updatedSections);
-        }}
-      />
+  type="text"
+  placeholder="Describe Section Title e.g What you stand to learn"
+  className={`flex-1 border-none outline-none text-gray-500 bg-transparent px-2 ${getTextStyleClass()}`} 
+  value={programInfoSections[0]?.sectionTitle || ''}  
+  onChange={(e) => {
+    setProgramInfoSections((prevSections) =>
+      prevSections.map((section, i) =>
+        i === 0 ? { ...section, sectionTitle: e.target.value } : section
+      )
+    );
+  }}
+/>
+
        </div>
        <div className="mt-2 flex items-center gap-2 bg-[#CEE1FB] p-3">
        <div>
@@ -230,11 +306,13 @@ const handleDelete = (id) => {
      </div>
      <div className="mt-5">
      <TextEditor 
-  value={programInfoSections[index]?.description || ""}
+  value={programInfoSections[0]?.description || ""}  
   onChange={(content) => {
-    const updatedSections = [...programInfoSections];
-    updatedSections[index].description = content;
-    setProgramInfoSections(updatedSections);
+    setProgramInfoSections((prevSections) => {
+      const updatedSections = [...prevSections];
+      updatedSections[0].description = content;
+      return updatedSections;
+    });
   }}
 />
      <div className="mt-3 flex items-center gap-2 bg-[#CEE1FB] p-3">
@@ -246,7 +324,7 @@ const handleDelete = (id) => {
      </div>
      </section>
   ))}
-  {programInfoSections.length < 3 && (
+  {!isEditing && programInfoSections.length < 3 && (
        
   <div className="flex flex-col mt-8 items-center border border-[#000000] dark:border-[#ffffff] rounded-lg p-2 w-full max-w-md gap-2 cursor-pointer"    onClick={handleAddSection}
   >
@@ -305,12 +383,12 @@ const handleDelete = (id) => {
     selectedProgram?.id === program.id ? "rotate-180" : "rotate-0"
   } cursor-pointer`}
   onClick={(e) => {
-    e.stopPropagation(); // Prevents triggering the parent div's onClick
+    e.stopPropagation(); 
     setSelectedProgram(selectedProgram?.id === program.id ? null : program);
   }}
 />
 
-<div className="relative">
+<div className="relative" >
               <CgMoreVertical
                 style={{ color: "#777795" }}
                 className="cursor-pointer"
@@ -345,13 +423,19 @@ const handleDelete = (id) => {
       ))}
       </div>
       <div className="flex justify-end items-center gap-2 mt-[30px] md:mt-[100px]">
+        {!isEditing && 
       <Link href="/" passHref>
       <button
         className="flex items-center py-2 px-3 md:px-10 font-bold text-md gap-2 text-[#A4A5B8] border-0"
       >
         Go Back
       </button>
-    </Link>
+    </Link>}
+    {isEditing && (
+  <button onClick={handleCancelEdit} className="bg-red-600 py-2 px-3 md:px-8 font-bold text-md gap-2 text-white rounded-md">
+    Cancel Edit
+  </button>
+)}
       <button onClick={handleSaveAndProceed}   className="flex items-center bg-primary py-2 px-3 md:px-8 font-bold text-md gap-2 text-white rounded-md">  Save & Proceed <TiArrowSortedDown
           size={24}
           color="
@@ -388,7 +472,7 @@ const handleDelete = (id) => {
 </div>
 </div>
 <div className="mt-5 flex flex-col gap-4">
-{selectedProgram &&
+{!isEditing && selectedProgram &&
         <div className="border border-[#FEE0B1]  bg-[#FFFAF2] rounded-lg p-5 shadow-md">
          <h3 className="text-[#1F0954] font-semibold text-[20px]">{selectedProgram.sectionTitle}</h3>
          <h4 className="text-[#595564] mt-3 md:mt-8">{stripHtml(selectedProgram.description)}</h4>
