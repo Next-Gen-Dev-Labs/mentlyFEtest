@@ -1,39 +1,92 @@
-# MentlyFEtest Frontend Coding Challenge
+# Mently FE Test Project
 
-## Welcome
+## 📋 Project Overview
 
-This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+This is a Next.js application built with React 19, TypeScript, and Tailwind CSS. The project is designed to demonstrate modern web development practices and provides a robust frontend solution.
 
-## The Challenge
+## Live Demo - [https://mently-f-etest-bice.vercel.app/programs](https://mently-f-etest-bice.vercel.app/programs)
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=0-1&node-type=canvas&t=B30FPyMAYW7jtBcX-0).
+## 🚀 Features
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
+- Next.js 15 framework
+- React 19 with TypeScript
+- Tailwind CSS for styling
+- Jest for unit testing
+- Responsive and modern UI design
+- Reusable UI components
 
-**Bonus Points:**
+## 📦 Installation
 
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
+1. Clone the repository:
 
-## Submission
+```bash
+git clone project_url
+cd mentlyfetest
+```
 
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+2. Install dependencies:
 
-## Evaluation Criteria
+```bash
+npm install
+```
 
-Your submission will be evaluated on the following criteria:
+## 🖥 Development
 
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
+Run the development server:
 
-We appreciate your time and effort in completing this challenge. Good luck!
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
+
+## 🧪 Testing
+
+Run tests:
+
+```bash
+npm test
+```
+
+Watch mode for tests:
+
+```bash
+npm run test:watch
+```
+
+## 🏗 Build
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Start the production server:
+
+```bash
+npm start
+```
+
+## 📁 Project Structures
+
+```
+mentlyfetest/
+├── src/
+│   ├── app/               # Next.js app router
+│   ├── components/        # React components
+│   ├── shared/            # Shared utilities and UI components
+│   └── __tests__/         # Test files
+├── public/                # Static assets
+├── jest.config.ts         # Jest configuration
+└── tsconfig.json          # TypeScript configuration
+```
+
+## 🔧 Technologies
+
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Testing**: Jest, React Testing Library
+- **State Management**: React Hooks
+- **Icons**: React Icons
