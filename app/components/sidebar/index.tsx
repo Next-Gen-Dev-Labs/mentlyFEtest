@@ -3,7 +3,6 @@ import { sidebarItems } from "@/app/utils/constants";
 import SidebarItem from "./SidebarItem";
 import Teddy from "@/app/assets/icons/Teddy";
 import GridIcon from "@/app/assets/icons/GridIcon";
-import LogoutIcon from "@/app/assets/icons/LogoutIcon";
 import UserTagIcon from "@/app/assets/icons/UserTagIcon";
 import Link from "next/link";
 import ToggleSwitch from "../ToggleSwitch";
