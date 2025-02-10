@@ -1,39 +1,88 @@
-# MentlyFEtest Frontend Coding Challenge
+# Mently FE Test
 
-## Welcome
+A Next.js + Tailwind CSS project built to demonstrate frontend skills in a single-page design challenge provided by Mently.  
+<br/>
 
-This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+## **Table of Contents**
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Setup & Installation](#setup--installation)
+- [Project Structure](#project-structure)
+- [Scripts & Usage](#scripts--usage)
+- [Testing](#testing)
+- [Author](#author)
+- [License](#license)
 
-## The Challenge
+<br/>
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=0-1&node-type=canvas&t=B30FPyMAYW7jtBcX-0).
+## **Overview**
+This repository contains a single-page application that follows the provided Figma designs for both **desktop** and **mobile**. The challenge was to:
+- Implement the page using **Next.js** & **Tailwind CSS**.
+- Ensure **responsiveness** and **accessibility**.
+- Write **clean, maintainable code**.
+- (Optional) Include animations, interactions, and unit tests.
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
+<br/>
 
-**Bonus Points:**
+## **Tech Stack**
+- **Next.js** 13+ (App Router)
+- **TypeScript** for static typing
+- **Tailwind CSS** for styling
+- **React Testing Library** + **Jest** for testing
 
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
+<br/>
 
-## Submission
+## **Setup & Installation**
+1. **Clone** this repository:
+   ```bash
+   git clone https://github.com/Arinze999/mentlyFEtest.git
 
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+cd mentlyFEtest
+npm install
 
-## Evaluation Criteria
+npm run dev
 
-Your submission will be evaluated on the following criteria:
+<br/>
 
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
+## **project folder structure**
 
-We appreciate your time and effort in completing this challenge. Good luck!
+mentlyFEtest/
+├─ .next/                      # Auto-generated Next.js build output
+├─ node_modules/               # Dependencies
+├─ public/                     # Static assets (images, icons, etc.)
+├─ src/
+│  └─ app/
+│     ├─ components/           # Reusable Components
+│     │  ├─ ProgramInformation/...
+│     │  ├─ ProgramDisplay/...
+│     │  ├─ ...
+│     ├─ globals.css           # Global styles (Tailwind base imports)
+│     ├─ layout.tsx            # Root Layout in Next.js 13+ App Router
+│     ├─ page.tsx              # Home page
+│     └─ utils.ts              # Utility functions
+├─ .gitignore
+├─ eslint.config.js
+├─ jest.config.js
+├─ jest.setup.ts
+├─ next.config.js
+├─ package.json
+├─ postcss.config.js
+├─ tailwind.config.js
+├─ tsconfig.json
+└─ README.md                   # This readme file
+
+npm run dev
+
+npm run build
+
+npm run start
+
+npm run lint
+
+<br/>
+
+## **testing**
+
+npm test
+
+npm test -- --coverage
