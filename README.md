@@ -6,7 +6,7 @@ This project is my submission for the MentlyFEtest Frontend Coding Challenge. It
 
 ## 📌 Live Demo
 
-🔗 [View Deployment] (https://mently-frontendtask-cneztjia4-ebun22s-projects.vercel.app/)
+🔗 [View Deployment] (https://mently-frontendtask-f2u53sds6-ebun22s-projects.vercel.app/)
 
 **🛠 Tech Stack:**
 * **Framework:** Next.js
@@ -76,7 +76,7 @@ yarn test
 ## 🚀 Deployment
 
 This project is deployed on Vercel. You can view the live version here:
-🔗 Live Demo (Replace with actual deployment link)
+🔗 [Live Demo] (https://mently-frontendtask-f2u53sds6-ebun22s-projects.vercel.app/)
 
 
 ## 👨‍💻 Author
