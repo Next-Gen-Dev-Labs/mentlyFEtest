@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #4f46e5; /* Indigo-600 */
+  --secondary: #f3f4f6; /* Gray-100 */
+}
+
+body {
+  @apply bg-white text-black dark:bg-black dark:text-white;
+}
+
+/* 
+body {
+  color: var(--foreground);
+  background: var(--background);
+
+} */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeInSlide {
+  animation: fadeInSlide 0.2s ease-out forwards;
+}
+
+/* Editor Container */
+.ql-container {
+  border-bottom: 2px solid #1F0954 !important;
+  border-left: 2px solid #1F0954 !important;
+  border-right: 2px solid #1F0954 !important;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding: 8px;
+height: 160px !important;
+}
+
+/* Toolbar */
+.ql-toolbar {
+  background: #f9f4ff;   border-top: 2px solid #1F0954 !important;
+  border-left: 2px solid #1F0954 !important;
+  border-right: 2px solid #1F0954 !important;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 8px;
+
+  align-items: center;
+  gap: 8px;
+}
+
+/* Toolbar buttons */
+.ql-toolbar button {
+  color: #5d3a9b; /* Purple icons */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Toolbar button hover effect */
+.ql-toolbar button:hover {
+  background: #e8d7ff;
+}
+
+/* File Upload Icon (Custom styling) */
+.ql-toolbar .ql-formats:first-child {
+  background: #7d4bc0;
+  padding: 8px;
+  border-radius: 8px 0 0 8px;
+}
+
+/* Custom AI Button */
+.custom-ai-button {
+  background: #f5e1ff;
+  color: #7d4bc0;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 14px;
+}
+
+.custom-ai-button:hover {
+  background: #e5c9ff;
+}
