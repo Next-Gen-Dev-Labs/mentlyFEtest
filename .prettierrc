@@ -1,0 +1,11 @@
+{
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindAttributes": [
+    "titleClassName",
+    "descriptionClassName",
+    "buttonClasssName",
+    "containerClassName",
+    "wrapperClassname"
+  ],
+  "tailwindFunctions": ["clsx", "cva", "cn"]
+}

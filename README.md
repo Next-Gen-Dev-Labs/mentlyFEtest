@@ -1,39 +1,91 @@
-# MentlyFEtest Frontend Coding Challenge
+# Frontend Developer Assessment - Mently
 
-## Welcome
+A technical assessment I implemented for the Frontend Developer position at Mently, focusing on building the program's dashboard page using Next.js.
 
-This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+> ⚠️ **Important Notice**: This assessment project for Mently must not be copied or used until my assessment has been reviewed. I will update the README once that is done.
 
-## The Challenge
+## Tech Stack
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=0-1&node-type=canvas&t=B30FPyMAYW7jtBcX-0).
+- [Next.js 14](https://nextjs.org/):
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Tiptap](https://tiptap.dev)
+- [Reusables](https://reusables.vercel.app/) - [Toast](https://reusables.vercel.app/docs/components/notify) built by me 😎
+- [Framer Motion](https://www.framer.com/motion/)
+- [Vitest](https://vitest.dev/)
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
+## Features
 
-**Bonus Points:**
+- Mock Authentication with protected routes
+- Programs dashboard page
+- Rich text editor integration
+- Responsive design
+- Unit testing
+- Mobile Responsiveness
 
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
+## Project Structure
 
-## Submission
+```
+├── app/                # Next.js app directory
+├── assets/             # Static assets
+├── components/         # React components
+│   ├── ui/             # Reusable UI components
+│   └── editor/         # Rich text editor components
+|   └── programs/       # Program components
+├── data/               # Mock data
+├── constants/          # Configuration and constants
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── _tests_/            # Unit tests
+└── middleware/         # Middleware
 
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+```
 
-## Evaluation Criteria
+## Setup
 
-Your submission will be evaluated on the following criteria:
+### Prerequisites
 
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
+- Node.js 18+
+- Package manager (npm/yarn/pnpm/bun)
 
-We appreciate your time and effort in completing this challenge. Good luck!
+### Installation
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+### Development
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun run dev
+```
+
+Access the application at [http://localhost:3000](http://localhost:3000)
+
+### Testing
+
+```bash
+npm test
+# or
+yarn test
+# or
+pnpm test
+# or
+bun run test
+```
+
+### Deploymennt
+
+Deployed to Netlify: [https://fas-mently-fe-assessment.netlify.app](https://fas-mently-fe-assessment.netlify.app/dashboard/programs)
