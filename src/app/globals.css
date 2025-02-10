@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,11 +36,12 @@
   --link-color: #2b85fe;
   --card-background: linear-gradient(90deg, #0f1013 0%, #5d6379 100%);
   --button-gradient: linear-gradient(90deg, #f04 0%, #f6a000 100%);
-  --font-family-chivo: "Chivo", serif;
+  --font-chivo: "Chivo", serif;
+  --font-inter: "Inter", serif;
 }
 
 body {
-  font-family: var(--font-family-chivo);
+  font-family: var(--font-chivo);
   width: 100vw;
 }
 

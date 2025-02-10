@@ -42,6 +42,9 @@ export default {
         "card-background": "var(--card-background)",
         "button-gradient": "var(--button-gradient)",
       },
+      fontFamily: {
+        inter: "var(--font-inter)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
