@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const usePrograms = () => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(true);
   const [headerSize, setHeaderSize] = useState<
     | "text-xs"
     | "text-sm"
@@ -23,6 +23,14 @@ const usePrograms = () => {
     console.log("Collapse item clicked:", id);
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return {
     expandedId,
     handleItemClick,
@@ -30,6 +38,8 @@ const usePrograms = () => {
     setIsModalOpen,
     headerSize,
     setHeaderSize,
+    isLoading,
+    setIsLoading,
   };
 };
 
