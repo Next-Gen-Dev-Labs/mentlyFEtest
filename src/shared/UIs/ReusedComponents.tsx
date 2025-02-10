@@ -85,7 +85,11 @@ export const IconWithDropdown: React.FC<IconWithDropdownProps> = ({
 };
 
 export const HeaderText = ({ text }: { text: string }) => {
-  return <h3 className="text-mentlyBlue text-[2rem] font-[700]">{text}</h3>;
+  return (
+    <h3 className="text-mentlyBlue lg:text-[2rem] text-[1.5rem] font-[700]">
+      {text}
+    </h3>
+  );
 };
 
 export const InfoBox: React.FC<InfoBoxProps> = ({
@@ -186,29 +190,57 @@ export const CollapseItem: React.FC<CollapseItemProps> = ({
   );
 };
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
+export const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  title,
+  children,
+}) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50 p-4">
       {/* Modal Content */}
-      <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md transform transition-all">
+      <div
+        className="
+        bg-white 
+        rounded-lg 
+        shadow-lg 
+        px-2 py-4 
+        w-full 
+        max-w-md 
+        mx-auto 
+        transform 
+        transition-all 
+        relative 
+        overflow-hidden
+      "
+      >
         {/* Modal Header */}
-        <div className="flex justify-between items-center border-b pb-2">
-          {title && <h2 className="text-lg font-semibold">{title}</h2>}
+        <div className="flex justify-between items-center border-b pb-4 mb-4">
+          {title && (
+            <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
+          )}
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700"
+            className="
+              text-gray-500 
+              hover:text-gray-700 
+              absolute 
+              top-4 
+              right-4 
+              text-2xl 
+              font-light 
+              focus:outline-none
+            "
           >
             ✖
           </button>
         </div>
 
         {/* Modal Body */}
-        <div className="mt-4">{children}</div>
+        <div className="max-h-[70vh] overflow-y-auto">{children}</div>
       </div>
     </div>
   );
 };
-
-export default Modal;

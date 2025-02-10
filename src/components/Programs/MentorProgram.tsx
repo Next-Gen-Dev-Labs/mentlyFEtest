@@ -57,7 +57,7 @@ const MentorProgram = () => {
 
       <div className="flex flex-col gap-2">
         <HeaderText text="Mentorship Program." />
-        <div className="relative flex items-center justify-between w-full max-w-3xl px-[2rem] py-[3rem] bg-gradient-to-r from-black to-gray-700 rounded-xl text-white shadow-lg">
+        <div className="relative flex items-center justify-between w-full max-w-3xl lg:px-[2rem] px-[1.3rem] lg:py-[3rem] py-[1.5rem] bg-gradient-to-r from-black to-gray-700 rounded-xl text-white shadow-lg gap-1">
           {/* Background Overlay */}
           <div className="absolute inset-0 overflow-hidden">
             <div
@@ -82,10 +82,10 @@ const MentorProgram = () => {
 
           {/* Event Details */}
           <div className="relative z-10 flex flex-col flex-1 ml-4">
-            <h2 className="w-52 leading-7 text-[1.45rem] font-bold">
+            <h2 className="lg:w-52 w-36 lg:leading-7 leading-5 lg:text-[1.45rem] text-[1rem] font-bold">
               Mastering the work life Equation
             </h2>
-            <div className="flex items-center gap-2 mt-1">
+            <div className="flex items-center gap-2 lg:mt-1">
               <p className="text-[0.95rem] mt-1 text-gray-300 font-meow-script">
                 with
               </p>

@@ -2,12 +2,13 @@
 import IconShare from "@/assets/IconComponents/IconShare";
 import IconText from "@/assets/IconComponents/IconText";
 import { collapseData } from "@/shared/data";
-import Modal, {
+import {
   CheckBox,
   CollapseItem,
   HeaderText,
   IconWithDropdown,
   InfoBox,
+  Modal,
 } from "@/shared/UIs/ReusedComponents";
 import Link from "next/link";
 import React from "react";

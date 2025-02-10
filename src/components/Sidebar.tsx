@@ -46,9 +46,22 @@ const Sidebar = ({
   const isLargeScreen = useScreenSize();
   return (
     <div
-      className={`w-[7.5rem] ${
-        isLargeScreen ? "sticky" : "fixed"
-      } top-0 left-0 bg-mentlyBlue overflow-y-auto z-20 flex flex-col items-center min-h-screen p-4`}
+      className={`
+        w-[7rem] 
+        ${
+          isLargeScreen
+            ? "sticky min-h-screen"
+            : "fixed inset-y-0 left-0 h-full max-h-screen"
+        }
+        bg-mentlyBlue 
+        overflow-y-auto 
+        z-20 
+        flex 
+        flex-col 
+        items-center 
+        px-3 py-6
+        ${!isLargeScreen ? "w-[7rem] shadow-lg" : ""}
+      `}
     >
       {/* Logo Section */}
       <div className="flex flex-col items-center my-10 gap-7">
@@ -65,7 +78,7 @@ const Sidebar = ({
       </div>
 
       {/* Navigation Items */}
-      <div className="flex flex-col gap-4 w-full ">
+      <div className="flex flex-col gap-4 w-full mr-1 ">
         {sidebarItems.map((item) => (
           <SidebarItem key={item.id} item={item} router={router} />
         ))}
