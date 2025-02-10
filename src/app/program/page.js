@@ -8,7 +8,7 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { PiWarningCircle } from "react-icons/pi";
 import { RiShareForwardLine } from "react-icons/ri";
 import { GoPlus } from "react-icons/go";
-import { programInfo } from "./programs";
+import { programInformation } from "./programs";
 import { useState, useRef } from "react";
 import { CgMoreVertical } from "react-icons/cg";
 import TextEditor from "@/components/TextEditor";
@@ -16,6 +16,7 @@ import TextEditor from "@/components/TextEditor";
 
 
 export default function ProgramPage() {
+  const [programInfo, setProgramInfo] = useState(programInformation);
   const [checked, setChecked] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -43,6 +44,21 @@ export default function ProgramPage() {
     setProgramInfoSections(programInfoSections.filter((_, index) => index !== indexToRemove));
   };
 
+  const handleSaveAndProceed = () => {
+    // Append the current programInfoSections to programInfo
+    setProgramInfo((prev) => [
+      ...prev,
+      ...programInfoSections.map((section, index) => ({
+        id: prev.length + index + 1, // Generate a unique ID
+        sectionTitle: section.sectionTitle || `Program Information Text ${prev.length + index + 1}`,
+        description: section.description || "",
+      })),
+    ]);
+  
+    // Reset programInfoSections to one empty section
+    setProgramInfoSections([{ sectionTitle: "", description: "" }]);
+  };
+  
 
   const getTextStyleClass = () => {
     switch (selectedStyle) {
@@ -56,6 +72,17 @@ export default function ProgramPage() {
         return 'font-normal';
     }
   };
+
+  const stripHtml = (html) => {
+    try {
+        const temporalDivElement = document.createElement("div");
+        temporalDivElement.innerHTML = html;
+        return temporalDivElement.textContent || temporalDivElement.innerText || "";
+    } catch (error) {
+        console.error('Error stripping HTML:', error);
+        return "";  // Return empty string on error
+    }
+};
     return (
       <div className="mt-2">
         <div className="flex justify-end md:hidden ">
@@ -150,13 +177,12 @@ export default function ProgramPage() {
          <input
            type="text"
            placeholder="Describe Section Title e.g What you stand to learn"
-           className="flex-1 border-none outline-none text-gray-500 bg-transparent px-2"   value={programInfoSections.sectionTitle}
+           className="flex-1 border-none outline-none text-gray-500 bg-transparent px-2"   value={programInfoSections[index]?.sectionTitle || ""}
            onChange={(e) => {
-            const updatedSections = [...programInfoSections];
-            updatedSections[index].sectionTitle = e.target.value;
-            setProgramInfoSections(updatedSections);
-          }}
-         
+             const updatedSections = [...programInfoSections];
+             updatedSections[index].sectionTitle = e.target.value;
+             setProgramInfoSections(updatedSections);
+           }}
          />
        </div>
        <div className="mt-2 flex items-center gap-2 bg-[#CEE1FB] p-3">
@@ -168,12 +194,14 @@ export default function ProgramPage() {
        
      </div>
      <div className="mt-5">
-       <TextEditor   value={section.description}
-              onChange={(content) => {
-                const updatedSections = [...programInfoSections];
-                updatedSections[index].description = content;
-                setProgramInfoSections(updatedSections);
-              }}/>
+     <TextEditor 
+  value={programInfoSections[index]?.description || ""}
+  onChange={(content) => {
+    const updatedSections = [...programInfoSections];
+    updatedSections[index].description = content;
+    setProgramInfoSections(updatedSections);
+  }}
+/>
      <div className="mt-3 flex items-center gap-2 bg-[#CEE1FB] p-3">
        <div>
          <PiWarningCircle color="#086BED" size={26}/>
@@ -256,7 +284,7 @@ export default function ProgramPage() {
       </div>
       <div className="flex justify-end items-center gap-2 mt-[30px] md:mt-[100px]">
       <button   className="flex items-center py-2 px-3 md:px-10 font-bold text-md gap-2 text-[#A4A5B8] border-0">  Go Back</button>
-      <button   className="flex items-center bg-primary py-2 px-3 md:px-8 font-bold text-md gap-2 text-white rounded-md">  Save & Proceed <TiArrowSortedDown
+      <button onClick={handleSaveAndProceed}   className="flex items-center bg-primary py-2 px-3 md:px-8 font-bold text-md gap-2 text-white rounded-md">  Save & Proceed <TiArrowSortedDown
           size={24}
           color="
 #ffffff"/></button>
@@ -295,7 +323,7 @@ export default function ProgramPage() {
 {selectedProgram &&
         <div className="border border-[#FEE0B1]  bg-[#FFFAF2] rounded-lg p-5 shadow-md">
          <h3 className="text-[#1F0954] font-semibold text-[20px]">{selectedProgram.sectionTitle}</h3>
-         <h4 className="text-[#595564] mt-3 md:mt-8">{selectedProgram?.description}</h4>
+         <h4 className="text-[#595564] mt-3 md:mt-8">{stripHtml(selectedProgram.description)}</h4>
         </div>
       }
       </div>
