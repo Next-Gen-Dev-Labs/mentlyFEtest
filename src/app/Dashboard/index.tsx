@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MainNav, Sidebar } from "@/components";
+import { MainNav, SecondaryNav, Sidebar } from "@/components";
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -14,7 +14,7 @@ export default function Dashboard() {
 
       <div className="flex-1">
         <MainNav onMenuClick={toggleSidebar} />
-
+        <SecondaryNav />
         <div className="flex flex-col md:flex-row gap-6 p-4 md:p-6">
           {/* Left Column */}
           <div className="flex-1 space-y-6">
