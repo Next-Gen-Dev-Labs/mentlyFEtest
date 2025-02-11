@@ -11,7 +11,7 @@ const AddSection = () => {
             Add new section
           </p>
         </div>
-        <span className="font-chivo font-medium italic text-xs text-center">
+        <span className="font-chivo font-medium italic text-muted text-xs text-center">
           (maximum number of sections to add is 3)
         </span>
       </div>

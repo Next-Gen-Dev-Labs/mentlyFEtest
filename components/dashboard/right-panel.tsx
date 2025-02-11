@@ -3,7 +3,9 @@ import Image from "next/image";
 
 const RightPanel = ({ className }: { className?: string }) => {
   return (
-    <div className={`w-full flex flex-col gap-y-8 bg-background ${className}`}>
+    <div
+      className={`w-full flex flex-col gap-y-8 bg-background dark:bg-foreground ${className}`}
+    >
       <p className="text-accent font-chivo font-normal text-sm lg:text-base self-end">
         {formatDate(new Date())}{" "}
         <span className="text-[10px] lg:text-xs">(Local time).</span>
@@ -20,12 +22,12 @@ const RightPanel = ({ className }: { className?: string }) => {
           className="w-full"
         />
         <div className="w-full flex flex-col lg:flex-row justify-between gap-4 lg:gap-8 py-4 lg:py-12">
-          <p className="text-text flex-1 font-chivo font-normal text-sm lg:text-base text-justify">
+          <p className="text-text dark:text-background flex-1 font-chivo font-normal text-sm lg:text-base text-justify">
             UI/UX Design check ins with faith is a way for beginners in UI/UX
             Design to get started about the fundamentals and how they can build
             a Design Career, share, document their progress on a weekly basis.
           </p>
-          <div className="w-full bg-background flex-1 shadow-md p-4 flex flex-col gap-5">
+          <div className="w-full bg-background dark:bg-foreground flex-1 shadow-md p-4 flex flex-col gap-5">
             {items.map((item, index) => (
               <div key={index} className="flex items-center gap-5">
                 <Image
@@ -34,7 +36,7 @@ const RightPanel = ({ className }: { className?: string }) => {
                   width={24}
                   height={24}
                 />
-                <span className="text-sm font-bold text-muted">
+                <span className="text-sm font-bold text-muted dark:text-background">
                   {item.text}
                 </span>
               </div>

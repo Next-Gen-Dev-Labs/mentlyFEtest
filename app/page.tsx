@@ -77,10 +77,10 @@ const Page = () => {
       )}
 
       <div
-        className="w-full lg:w-[calc(100%-120px)] lg:ml-[120px] grid grid-cols-1 md:grid-cols-2 gap-8 py-6"
+        className="w-full dark:bg-foreground lg:w-[calc(100%-120px)] lg:ml-[120px] grid grid-cols-1 md:grid-cols-2 gap-8 py-6"
         ref={container}
       >
-        <div className="w-full flex flex-col gap-y-20 lg:px-6 bg-background shadow-box-shadow">
+        <div className="w-full flex flex-col gap-y-20 lg:px-6 bg-background dark:bg-foreground shadow-box-shadow">
           <Navigation className="hero__glow" />
           <ProgramInfo className="hero__heading" />
           <TextEditorSection className="hero__body" />

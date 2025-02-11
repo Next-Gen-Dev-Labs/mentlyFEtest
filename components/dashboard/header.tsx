@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
   return (
-    <header className="flex w-full lg:w-[calc(100%-120px)] lg:ml-[120px] h-[82px] items-center justify-between px-6 lg:px-16 py-[12px] bg-background shadow-md">
+    <header className="flex w-full lg:w-[calc(100%-120px)] lg:ml-[120px] h-[82px] items-center justify-between px-6 lg:px-16 py-[12px] bg-background dark:bg-foreground shadow-md">
       <div>
         <button
           onClick={toggleSidebar}
