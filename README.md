@@ -2,8 +2,6 @@
 
 A technical assessment I implemented for the Frontend Developer position at Mently, focusing on building the program's dashboard page using Next.js.
 
-> ⚠️ **Important Notice**: This assessment project for Mently must not be copied or used until my assessment has been reviewed. I will update the README once that is done.
-
 ## Tech Stack
 
 - [Next.js 14](https://nextjs.org/):
