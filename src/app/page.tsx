@@ -1,19 +1,23 @@
+'use client';
+
 import Image from "next/image";
 import Topbar from "@/components/Topbar";
 import Sidebar from "@/components/Sidebar";
 
+import { useCollapse } from '@/contexts/collapse'
+
 export default function Home() {
+  const { isCollapsed } = useCollapse()
+
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
       <Sidebar />
 
-      {/* Main Content */}
-      <main className="ml-60 flex-1 overflow-auto">
-        {/* Topbar */}
+      <main className={`
+        flex-1 overflow-auto transition-all duration-300 ease-in-out
+        ${isCollapsed ? 'ml-20' : 'ml-60'}
+      `}>
         <Topbar />
-
-        {/* Header */}
         <section className="p-6 mb-6">
           <section className="flex justify-between items-center">
             <div>
