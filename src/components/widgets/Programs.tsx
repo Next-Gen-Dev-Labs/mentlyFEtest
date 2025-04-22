@@ -3,8 +3,8 @@ import Card from '../ui/Card'
 
 const Programs = () => {
   return (
-    <Card className="h-[400px]">
-      <h1>Programs</h1>
+    <Card className="h-full">
+      <h1 className="text-xl font-semibold mb-4">Programs</h1>
     </Card>
   )
 }

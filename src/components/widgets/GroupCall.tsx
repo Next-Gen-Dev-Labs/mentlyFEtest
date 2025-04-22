@@ -3,8 +3,8 @@ import Card from '../ui/Card'
 
 const GroupCall = () => {
   return (
-    <Card className="h-[200px]">
-      <h1>Group Call</h1>
+    <Card className="h-full">
+      <h1 className="text-xl font-semibold mb-4">Group Calls</h1>
     </Card>
   )
 }
