@@ -1,4 +1,33 @@
+// import {
+//   Home,
+//   BookOpen,
+//   CalendarClock,
+//   Users,
+//   MessageSquare,
+//   Wallet,
+//   Gift,
+//   BarChart3,
+//   Settings,
+//   LogOut,
+// } from "lucide-react";
 
+// export const menuItems = [
+//   { name: "Dashboard", icon: Home, path: "/" },
+//   { name: "Programs", icon: BookOpen, path: "/programs" },
+//   { name: "Activities", icon: CalendarClock, path: "/activities" },
+//   { name: "Users", icon: Users, path: "/users" },
+//   { name: "Forums", icon: MessageSquare, path: "/forums" },
+//   { name: "Finances", icon: Wallet, path: "/finances" },
+//   { name: "Rewards", icon: Gift, path: "/rewards" },
+//   {
+//     name: "Analytics",
+//     icon: BarChart3,
+//     path: "/analytics",
+//     comingSoon: true,
+//   },
+//   { name: "Settings", icon: Settings, path: "/settings" },
+//   { name: "Log Out", icon: LogOut, path: "/logout" },
+// ];
 
 export const programs = [
     {

@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import Sidebar from '@/components/layout/Sidebar'
 import Header from '@/components/layout/Header'
 
+// Load font outside component
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {

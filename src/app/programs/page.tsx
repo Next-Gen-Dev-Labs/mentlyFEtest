@@ -1,11 +1,11 @@
-"use client"
+export const metadata = {
+  title: 'Programs | Dashboard',
+}
 
-const page = () => {
+export default function Programs() {
   return (
-    <div>
-      <h1>Programs</h1>
+    <div className="container mx-auto px-6 py-8">
+      <h1 className="text-3xl font-semibold text-gray-800">Programs</h1>
     </div>
   )
 }
-
-export default page
