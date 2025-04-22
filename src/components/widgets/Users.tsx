@@ -1,10 +1,11 @@
 import React from 'react'
+import Card from '../ui/Card'
 
 const Users = () => {
   return (
-    <div>
-      
-    </div>
+    <Card>
+      <h1>Users</h1>
+    </Card>
   )
 }
 

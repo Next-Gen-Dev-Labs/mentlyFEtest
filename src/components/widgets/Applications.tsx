@@ -1,12 +1,12 @@
 import React from 'react'
 import Card from '../ui/Card'
 
-const Programs = () => {
+const Applications = () => {
   return (
     <Card>
-      <h1>Programs</h1>
+      <h1>Applications</h1>
     </Card>
   )
 }
 
-export default Programs;
+export default Applications
