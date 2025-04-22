@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { LayoutGrid, GridIcon } from 'lucide-react';
+import ToggleWidgetManger from './ToggleWidgetManger';
 
 interface WidgetManagementProps {
   title?: string;
@@ -25,7 +26,7 @@ export default function WidgetManagement({
         </div>
         
         {/* Manage Widgets Text */}
-        <span className="text-sm font-medium text-indigo-900">{title}</span>
+        <ToggleWidgetManger />
       </div>
     </div>
   );

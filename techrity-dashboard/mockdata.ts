@@ -1,3 +1,4 @@
+import { Applicant } from "./types/applicants";
 import { GroupCall } from "./types/groupcall";
 import { Program } from "./types/program";
 
@@ -89,3 +90,38 @@ export const defaultCalls: GroupCall[] = [
       thumbnail: "/call3.jpg"
     }
   ];
+
+export const defaultMentorApplications: Applicant[] = [
+  {
+    id: "m1",
+    name: "Maxwell Smith",
+    email: "maxwellsmith@gmail.com",
+    role: "Product Designer",
+    experience: "4years Experience",
+    location: "Lagos, Nigeria",
+    timezone: "GMT +1"
+  }
+];
+
+export const defaultStudentApplications: Applicant[] = [
+  {
+    id: "s1",
+    name: "Adeati Samuel",
+    email: "maxwellsmith@gmail.com"
+  },
+  {
+    id: "s2",
+    name: "Maxwell Smith",
+    email: "maxwellsmith@gmail.com"
+  },
+  {
+    id: "s3",
+    name: "Adeati Samuel",
+    email: "maxwellsmith@gmail.com"
+  },
+  {
+    id: "s4",
+    name: "Maxwell Smith",
+    email: "maxwellsmith@gmail.com"
+  }
+];
