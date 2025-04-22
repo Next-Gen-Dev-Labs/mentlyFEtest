@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Sidebar from "./components/layout/Sidebar";
 import Header from "./components/layout/Header";
 import WelcomeBanner from "./components/dashboard/WelcomeBanner";
 import ProgramsList from "./components/dashboard/ProgramsList";
@@ -11,6 +10,7 @@ import MentorsList from "./components/dashboard/MentorsList";
 import UserStats from "./components/dashboard/UserStats";
 import RecentActivities from "./components/dashboard/RecentActivities";
 import Applications from "./components/dashboard/Applications";
+import ActivityFeed from "./components/dashboard/ActivityFeed";
 import ManageWidgetsModal from "./components/modals/ManageWidgetsModal";
 
 export default function Dashboard() {
@@ -26,86 +26,113 @@ export default function Dashboard() {
     programAnalysis: false,
   });
 
+  const [columns, setColumns] = useState(2);
+
+  // Handle responsive layout
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setColumns(1);
+      } else if (window.innerWidth < 1280) {
+        setColumns(1);
+      } else {
+        setColumns(2);
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Clean up
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="flex h-screen bg-gray-50">
-      <Sidebar />
+    <div className="flex-1 flex flex-col h-screen bg-gray-50">
+      <Header onManageWidgets={() => setIsWidgetModalOpen(true)} />
 
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header onManageWidgets={() => setIsWidgetModalOpen(true)} />
+      <main className="flex-1 overflow-y-auto p-4 md:p-6">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <WelcomeBanner name="Blessing" />
+        </motion.div>
 
-        <main className="flex-1 overflow-y-auto p-4">
+        <div
+          className={`grid grid-cols-1 ${
+            columns > 1 ? "lg:grid-cols-2" : ""
+          } gap-6 mt-6`}
+        >
+          {activeWidgets.programs && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1 }}
+              className="col-span-1"
+            >
+              <ProgramsList />
+            </motion.div>
+          )}
+
+          {activeWidgets.groupCalls && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="col-span-1"
+            >
+              <GroupCalls />
+            </motion.div>
+          )}
+
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className={`${columns > 1 ? "" : "lg:col-span-2"}`}
           >
-            <WelcomeBanner name="Blessing" />
+            <UserStats />
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-            {activeWidgets.programs && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.1 }}
-              >
-                <ProgramsList />
-              </motion.div>
-            )}
+          {activeWidgets.mentors && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="col-span-1"
+            >
+              <MentorsList />
+            </motion.div>
+          )}
 
-            {activeWidgets.groupCalls && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <GroupCalls />
-              </motion.div>
-            )}
+          {activeWidgets.applications && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="col-span-1"
+            >
+              <Applications />
+            </motion.div>
+          )}
 
-            {activeWidgets.applications && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                <Applications />
-              </motion.div>
-            )}
-
-            {activeWidgets.mentors && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                <MentorsList />
-              </motion.div>
-            )}
-
-            {activeWidgets.recentActivities && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-              >
-                <RecentActivities />
-              </motion.div>
-            )}
-          </div>
-
-          {activeWidgets.programAnalysis && (
+          {activeWidgets.recentActivities && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="mt-6"
+              className="col-span-1"
             >
-              <UserStats />
+              <ActivityFeed />
             </motion.div>
           )}
-        </main>
-      </div>
+        </div>
+      </main>
 
       <ManageWidgetsModal
         isOpen={isWidgetModalOpen}

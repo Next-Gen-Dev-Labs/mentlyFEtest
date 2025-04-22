@@ -2,8 +2,8 @@
 
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { XIcon } from "@heroicons/react/outline";
 import { motion } from "framer-motion";
+import { HiXMark } from "react-icons/hi2";
 
 interface WidgetState {
   programs: boolean;
@@ -85,7 +85,7 @@ export default function ManageWidgetsModal({
                     className="text-gray-400 hover:text-gray-500"
                     onClick={closeModal}
                   >
-                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                    <HiXMark className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
 

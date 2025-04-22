@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { BsChevronRight } from "react-icons/bs";
 
 export default function GroupCalls() {
   const [activeTab, setActiveTab] = useState("all");
@@ -107,7 +108,7 @@ export default function GroupCalls() {
                   aria-label="Join call now"
                 >
                   Join Now
-                  <ChevronRightIcon className="h-4 w-4 ml-1" />
+                  <BsChevronRight className="h-4 w-4 ml-1" />
                 </motion.button>
               </div>
             </div>

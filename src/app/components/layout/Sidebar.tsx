@@ -3,29 +3,44 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  HomeIcon,
-  UserGroupIcon,
-  BookOpenIcon,
-  UserIcon,
-  CurrencyDollarIcon,
-  ChatAlt2Icon,
-  ChartBarIcon,
-  CogIcon,
-  LogoutIcon,
-  QuestionMarkCircleIcon,
-} from "@heroicons/react/outline";
+// import { RiHome5Line } from "react-icons/ri";
+// import { CiMemoPad, CiUser } from "react-icons/ci";
+// import { PiWalletLight } from "react-icons/pi";
+// import {
+//   HomeIcon,
+//   UserGroupIcon,
+//   BookOpenIcon,
+//   UserIcon,
+//   CurrencyDollarIcon,
+//   ChatAlt2Icon,
+//   ChartBarIcon,
+//   CogIcon,
+//   LogoutIcon,
+//   QuestionMarkCircleIcon,
+// } from "@heroicons/react/outline";
+
+import Dashboard from "../../../../public/images/assets/dashboardIcon.svg";
+import Programs from "../../../../public/images/assets/programsIcon.svg";
+import Bubbles from "../../../../public/images/assets/bubbleIcon.svg";
+import User from "../../../../public/images/assets/userIcon.svg";
+import Forum from "../../../../public/images/assets/forumIcon.svg";
+import EmptyWallet from "../../../../public/images/assets/emptyWalletIcon.svg";
+import Award from "../../../../public/images/assets/awardIcon.svg";
+import Analytics from "../../../../public/images/assets/analyticsIcon.svg";
+import Settings from "../../../../public/images/assets/settingIcon.svg";
+import LogoutIcon from "../../../../public/images/assets/logoutIcon.svg";
+import Image from "next/image";
 
 const menuItems = [
-  { name: "Dashboard", icon: HomeIcon, href: "/" },
-  { name: "Programs", icon: BookOpenIcon, href: "/programs" },
-  { name: "Activities", icon: ChartBarIcon, href: "/activities" },
-  { name: "Users", icon: UserIcon, href: "/users" },
-  { name: "Forums", icon: ChatAlt2Icon, href: "/forums" },
-  { name: "Finances", icon: CurrencyDollarIcon, href: "/finances" },
-  { name: "Rewards", icon: CurrencyDollarIcon, href: "/rewards" },
-  { name: "Analytics", icon: ChartBarIcon, href: "/analytics" },
-  { name: "Settings", icon: CogIcon, href: "/settings" },
+  { name: "Dashboard", icon: Dashboard, href: "/" },
+  { name: "Programs", icon: Programs, href: "/programs" },
+  { name: "Activities", icon: Bubbles, href: "/activities" },
+  { name: "Users", icon: User, href: "/users" },
+  { name: "Forums", icon: Forum, href: "/forums" },
+  { name: "Finances", icon: EmptyWallet, href: "/finances" },
+  { name: "Rewards", icon: Award, href: "/rewards" },
+  { name: "Analytics", icon: Analytics, href: "/analytics" },
+  { name: "Settings", icon: Settings, href: "/settings" },
 ];
 
 export default function Sidebar() {
@@ -56,7 +71,12 @@ export default function Sidebar() {
                 `}
                 onClick={() => setActiveItem(item.name)}
               >
-                <item.icon className="h-5 w-5 mr-3" />
+                <Image
+                  src={item.icon}
+                  alt={item.name}
+                  className="h-5 w-5 mr-3"
+                />
+                {/* <item.icon className="h-5 w-5 mr-3" /> */}
                 {item.name}
               </Link>
             </li>
@@ -69,7 +89,7 @@ export default function Sidebar() {
           href="/logout"
           className="flex items-center px-4 py-3 text-sm hover:bg-purple-800"
         >
-          <LogoutIcon className="h-5 w-5 mr-3" />
+          <Image src={LogoutIcon} alt="Log Out" className="h-5 w-5 mr-3" />
           Log Out
         </Link>
 
