@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+	--color-background: #f4f5fa;
+	--color-foreground: #171717;
+	--font-chivo: "Chivo", sans-serif;
+}
+
+@layer base {
+	* {
+		@apply scroll-smooth;
+		scrollbar-width: thin;
+		interpolate-size: allow-keywords;
+	}
+
+	:root {
+		@apply bg-background text-foreground h-full;
+		body {
+			@apply font-chivo flex h-full *:h-full *:overflow-auto;
+			button:not([aria-disabled="true"]):not(:disabled),
+			label:has(input:not([aria-disabled="true"]):not(:disabled)),
+			[role="button"]:not([aria-disabled="true"]):not(:disabled) {
+				@apply cursor-pointer;
+			}
+		}
+	}
+}
