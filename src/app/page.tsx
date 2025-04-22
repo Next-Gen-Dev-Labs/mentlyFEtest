@@ -7,11 +7,11 @@ import Sidebar from "@/components/Sidebar";
 import { useCollapse } from '@/contexts/collapse'
 
 export default function Home() {
-  const { isCollapsed } = useCollapse()
+  const { isCollapsed, toggleCollapse } = useCollapse();
 
   return (
     <div className="flex h-screen bg-gray-100">
-      <Sidebar />
+      <Sidebar isCollapsed={isCollapsed} toggleCollapse={toggleCollapse} />
 
       <main className={`
         flex-1 overflow-auto transition-all duration-300 ease-in-out

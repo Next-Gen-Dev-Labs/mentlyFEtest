@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { BiUserPin } from "react-icons/bi";
 import { LuBookText } from "react-icons/lu";
-import { useCollapse } from "@/contexts/collapse";
 import { FiGift, FiSettings } from "react-icons/fi";
 import { RiHome5Line, RiLineChartLine } from "react-icons/ri";
 import { IoPersonOutline, IoWalletOutline } from "react-icons/io5";
@@ -22,18 +21,23 @@ const menuItems = [
     { icon: <TbLogout2 />, label: "Logout" },
 ];
 
-export default function Sidebar() {
-    const { isCollapsed, toggleCollapse } = useCollapse()
-
+export default function Sidebar({
+    isCollapsed,
+    toggleCollapse
+}: {
+    isCollapsed: boolean;
+    toggleCollapse: () => void;
+}) {
     return (
-        <aside className={`bg-[#340260] py-6 fixed h-dvh overflow-y-auto scrollbar-hide transition-all duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-60'}
-    `}>
+        <aside className={`bg-[#340260] py-6 fixed h-dvh overflow-y-auto scrollbar-hide transition-all duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-60'}`}>
             <section className="mb-8 flex items-center justify-between px-6">
                 {!isCollapsed && <Image src="/logo.webp" width={120} height={30} alt="Techrity Logo" />}
                 <button
                     onClick={toggleCollapse}
                     className="cursor-pointer border-none bg-transparent text-white hover:text-[#1F0954] hover:bg-white p-2 rounded"
-                ><TbLayoutSidebar /></button>
+                >
+                    <TbLayoutSidebar />
+                </button>
             </section>
 
             <nav className="flex-1 px-4">
@@ -41,10 +45,15 @@ export default function Sidebar() {
                     {menuItems.map((item) => (
                         <li
                             key={item.label}
-                            className={`flex items-center relative gap-4 py-3 px-6 rounded-lg cursor-pointer hover:text-[#1F0954] hover:bg-white transition-colors ${item.active ? 'bg-white text-[#1F0954]' : 'text-[#C2C2C2]'} ${isCollapsed ? 'justify-center' : ''}`}
+                            className={`
+                                group flex items-center relative gap-4 py-3 px-6 rounded-lg cursor-pointer 
+                                hover:text-[#1F0954] hover:bg-white transition-colors
+                                ${item.active ? 'bg-white text-[#1F0954]' : 'text-[#C2C2C2]'}
+                                ${isCollapsed ? 'justify-center' : ''}
+                            `}
                         >
                             <span className="text-lg">{item.icon}</span>
-                            {!isCollapsed && (
+                            {!isCollapsed ? (
                                 <>
                                     <span>{item.label}</span>
                                     {item.label === "Analytics" && (
@@ -53,6 +62,22 @@ export default function Sidebar() {
                                         </span>
                                     )}
                                 </>
+                            ) : (
+                                // Hover tooltip for collapsed state
+                                <div className="
+                                    absolute left-full ml-2 px-3 py-2 rounded-md
+                                    bg-[#340260] text-white text-sm font-medium
+                                    shadow-lg whitespace-nowrap
+                                    opacity-0 group-hover:opacity-100
+                                    transition-opacity duration-200
+                                    pointer-events-none
+                                    z-20
+                                ">
+                                    {item.label}
+                                    <div className="absolute top-1/2 right-full -translate-y-1/2 w-2 h-2">
+                                        <div className="w-2 h-2 bg-[#340260] transform rotate-45" />
+                                    </div>
+                                </div>
                             )}
                         </li>
                     ))}
@@ -69,8 +94,22 @@ export default function Sidebar() {
                         </a>
                     </div>
                 ) : (
-                    <div className="flex justify-center py-2 cursor-pointer text-white hover:text-[#1F0954] hover:bg-white rounded">
+                    <div className="relative flex justify-center py-2 cursor-pointer text-white hover:text-[#1F0954] hover:bg-white rounded">
                         <BiUserPin />
+                        <div className="
+                            absolute left-full ml-2 px-3 py-2 rounded-md
+                            bg-[#340260] text-white text-sm font-medium
+                            shadow-lg whitespace-nowrap
+                            opacity-0 hover:opacity-100
+                            transition-opacity duration-200
+                            pointer-events-none
+                            z-20
+                        ">
+                            Help Center
+                            <div className="absolute top-1/2 right-full -translate-y-1/2 w-2 h-2">
+                                <div className="w-2 h-2 bg-[#340260] transform rotate-45" />
+                            </div>
+                        </div>
                     </div>
                 )}
 
