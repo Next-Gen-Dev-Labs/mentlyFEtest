@@ -1,26 +1,29 @@
 import Image from "next/image";
 import { BiUserPin } from "react-icons/bi";
-import { FiBook, FiGift, FiHome, FiUsers, FiLogOut, FiCalendar, FiSettings, FiBarChart2, FiDollarSign, FiMessageSquare } from "react-icons/fi";
+import { TbLogout2 } from "react-icons/tb";
+import { RiHome5Line } from "react-icons/ri";
+import { IoPersonOutline, IoWalletOutline } from "react-icons/io5";
+import { FiBook, FiGift, FiCalendar, FiSettings, FiBarChart2, FiMessageSquare } from "react-icons/fi";
 
 const menuItems = [
-    { icon: <FiHome />, label: "Dashboard", active: true },
+    { icon: <RiHome5Line />, label: "Dashboard", active: true },
     { icon: <FiBook />, label: "Programs" },
     { icon: <FiCalendar />, label: "Activities" },
-    { icon: <FiUsers />, label: "Users" },
+    { icon: <IoPersonOutline />, label: "Users" },
     { icon: <FiMessageSquare />, label: "Forums" },
-    { icon: <FiDollarSign />, label: "Finances" },
+    { icon: <IoWalletOutline />, label: "Finances" },
     { icon: <FiGift />, label: "Rewards" },
     { icon: <FiBarChart2 />, label: "Analytics" },
     { icon: <FiSettings />, label: "Settings" },
-    { icon: <FiLogOut />, label: "Logout" },
+    { icon: <TbLogout2 />, label: "Logout" },
 ];
 
 export default function Sidebar() {
     return (
-        <aside className="w-60 bg-[#340260] text-white fixed h-screen overflow-y-auto scrollbar-hide">
+        <aside className="z-10 w-60 bg-[#340260] text-white fixed h-screen overflow-y-auto scrollbar-hide">
             <div className="p-6 flex flex-col h-full">
                 <div className="mb-8">
-                    <Image src="/logo.webp" width={100} height={100} alt="Techrity Logo" />
+                    <Image src="/logo.webp" width={120} height={30} alt="Techrity Logo" />
                 </div>
 
                 <nav className="flex-1">
