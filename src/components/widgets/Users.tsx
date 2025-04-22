@@ -3,7 +3,7 @@ import Card from '../ui/Card'
 
 const Users = () => {
   return (
-    <Card>
+    <Card className="h-[270px]">
       <h1>Users</h1>
     </Card>
   )

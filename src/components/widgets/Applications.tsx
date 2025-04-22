@@ -3,7 +3,7 @@ import Card from '../ui/Card'
 
 const Applications = () => {
   return (
-    <Card>
+    <Card className="h-[465px]">
       <h1>Applications</h1>
     </Card>
   )
