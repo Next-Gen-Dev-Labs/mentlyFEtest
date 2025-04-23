@@ -48,7 +48,7 @@ export default function Sidebar({
             isCollapsed ? "w-[80px]" : "w-[250px]"
           } ${isMobile ? "fixed z-30 shadow-xl" : ""}`}
         >
-          <div className="p-4 flex items-center">
+          <div className="p-4 flex items-center mt-10">
             {isMobile && (
               <button
                 onClick={onMobileToggle}
