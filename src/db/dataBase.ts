@@ -38,9 +38,13 @@ export const GroupCalls = [
     title: "Weekly Meeting - Product Demo Review with Testers",
     date: "Mon. Jul 30, 2024",
     time: "9:00 - 11:00AM",
-    studyGroup: "UX Strategy Study group",
-    mentors: "Mentors",
-    avatars: ["mentor-avatar-1.png", "mentor-avatar-2.png"],
+    studyGroup: {
+      name: "UX Strategy Study group",
+      avatar: SvgImageOne,
+    },
+    mentors: {
+      avatars: [SvgImageOne, SvgImageTwo, SvgImageThree],
+    },
     backgroundImage: "group-call-smile.jpg",
   },
   {
@@ -48,19 +52,27 @@ export const GroupCalls = [
     title: "Weekly Meeting - Product Demo Review with Testers",
     date: "Mon. Jul 30, 2024",
     time: "9:00 - 11:00AM",
-    studyGroup: "UX Strategy Study group",
-    mentors: "Mentors",
-    avatars: ["mentor-avatar-1.png", "mentor-avatar-2.png"],
+    studyGroup: {
+      name: "UX Strategy Study group",
+      avatar: SvgImageTwo,
+    },
+    mentors: {
+      avatars: [SvgImageOne, SvgImageTwo, SvgImageThree],
+    },
     backgroundImage: "group-call-wave.jpg",
   },
   {
     status: "Ongoing",
     title: "Weekly Meeting - Product Demo Review with Testers",
     date: "Mon. Jul 30, 2024",
-    time: "9:00 -",
-    studyGroup: "UX Strategy Study group",
-    mentors: "Mentors",
-    avatars: ["mentor-avatar-1.png", "mentor-avatar-2.png"],
+    time: "9:00 - 11:00AM",
+    studyGroup: {
+      name: "UX Strategy Study group",
+      avatar: SvgImageThree,
+    },
+    mentors: {
+      avatars: [SvgImageOne, SvgImageTwo, SvgImageThree],
+    },
     backgroundImage: "group-call-muuk.jpg",
   },
 ];
