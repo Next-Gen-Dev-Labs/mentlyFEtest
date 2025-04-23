@@ -29,7 +29,7 @@ const activitiesData = [
 
 const RecentActivities = () => {
   return (
-    <div className="bg-white p-4 rounded-lg max-w-xs shadow-sm">
+    <div className="bg-white p-4 rounded-lg h-full shadow-sm">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center">
