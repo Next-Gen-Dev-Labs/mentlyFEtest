@@ -2,27 +2,45 @@
 
 import { useState, useContext, createContext } from 'react';
 
-type CollapseType = {
+type CollapseState = {
+  toggle: () => void;
   isCollapsed: boolean;
-  toggleCollapse: () => void;
-}
+};
 
-const Collapse = createContext<CollapseType | undefined>(undefined);
+type CollapseType = {
+  sidebar: CollapseState;
+  widgets: CollapseState;
+};
+
+export type CollapseProps = {
+  isCollapsed?: boolean;
+  toggleCollapse: () => void;
+};
+
+const CollapseContext = createContext<CollapseType | undefined>(undefined);
 
 export function CollapseProvider({ children }: { children: React.ReactNode }) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const toggleCollapse = () => setIsCollapsed(!isCollapsed);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [widgetsCollapsed, setWidgetsCollapsed] = useState(false);
 
   return (
-    <Collapse.Provider value={{ isCollapsed, toggleCollapse }}>
+    <CollapseContext.Provider value={{
+      sidebar: {
+        isCollapsed: sidebarCollapsed,
+        toggle: () => setSidebarCollapsed(!sidebarCollapsed)
+      },
+      widgets: {
+        isCollapsed: widgetsCollapsed,
+        toggle: () => setWidgetsCollapsed(!widgetsCollapsed)
+      }
+    }}>
       {children}
-    </Collapse.Provider>
-  )
+    </CollapseContext.Provider>
+  );
 }
 
 export function useCollapse() {
-  const context = useContext(Collapse)
+  const context = useContext(CollapseContext);
   if (context === undefined) {
     throw new Error('useCollapse must be used within a CollapseProvider');
   }

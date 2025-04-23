@@ -1,8 +1,7 @@
-'use client';
-
 import Image from "next/image";
 import { BiUserPin } from "react-icons/bi";
 import { LuBookText } from "react-icons/lu";
+import { CollapseProps } from "@/contexts/collapse";
 import { FiGift, FiSettings } from "react-icons/fi";
 import { RiHome5Line, RiLineChartLine } from "react-icons/ri";
 import { IoPersonOutline, IoWalletOutline } from "react-icons/io5";
@@ -21,16 +20,10 @@ const menuItems = [
     { icon: <TbLogout2 />, label: "Logout" },
 ];
 
-export default function Sidebar({
-    isCollapsed,
-    toggleCollapse
-}: {
-    isCollapsed: boolean;
-    toggleCollapse: () => void;
-}) {
+export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) {
     return (
-        <aside className={`bg-[#340260] py-6 fixed h-dvh overflow-y-auto scrollbar-hide transition-all duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-60'}`}>
-            <section className="mb-8 flex items-center justify-between px-6">
+        <aside className={`bg-[#340260] py-6 fixed h-dvh transition-all overflow-y-auto scrollbar-hide duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-60'}`}>
+            <section className="mb-6 flex items-center justify-between px-6">
                 {!isCollapsed && <Image src="/logo.webp" width={120} height={30} alt="Techrity Logo" />}
                 <button
                     onClick={toggleCollapse}
@@ -45,38 +38,31 @@ export default function Sidebar({
                     {menuItems.map((item) => (
                         <li
                             key={item.label}
-                            className={`
-                                group flex items-center relative gap-4 py-3 px-6 rounded-lg cursor-pointer 
-                                hover:text-[#1F0954] hover:bg-white transition-colors
-                                ${item.active ? 'bg-white text-[#1F0954]' : 'text-[#C2C2C2]'}
-                                ${isCollapsed ? 'justify-center' : ''}
-                            `}
+                            className={`group flex items-center relative gap-4 py-3 px-6 rounded-lg cursor-pointer hover:text-[#1F0954] hover:bg-white transition-colors ${item.active ? 'bg-white text-[#1F0954]' : 'text-[#C2C2C2]'} ${isCollapsed ? 'justify-center' : ''}`}
                         >
                             <span className="text-lg">{item.icon}</span>
                             {!isCollapsed ? (
                                 <>
                                     <span>{item.label}</span>
                                     {item.label === "Analytics" && (
-                                        <span className="absolute py-0.5 px-1.5 top-0 right-2 rounded-4xl bg-[#0214BD38] text-[10px] text-[#EFEFF8] z-10">
+                                        <span className="absolute py-0.5 px-1.5 top-0 right-2 rounded-4xl bg-[#0214BD38] text-[10px] text-[#EFEFF8] z-30">
                                             Coming Soon
                                         </span>
                                     )}
                                 </>
                             ) : (
-                                // Hover tooltip for collapsed state
                                 <div className="
-                                    absolute left-full ml-2 px-3 py-2 rounded-md
-                                    bg-[#340260] text-white text-sm font-medium
-                                    shadow-lg whitespace-nowrap
-                                    opacity-0 group-hover:opacity-100
-                                    transition-opacity duration-200
-                                    pointer-events-none
-                                    z-20
-                                ">
+                            pointer-events-none
+                            shadow-lg whitespace-nowrap
+                            transition-opacity duration-200
+                            opacity-0 group-hover:opacity-100
+                            z-20 [box-shadow:0px_4px_10px_#00000010]
+                            absolute left-full ml-3 px-3 py-2 rounded-md
+                            bg-white text-[#1F0954] text-sm font-medium
+                            min-w-max
+                        ">
                                     {item.label}
-                                    <div className="absolute top-1/2 right-full -translate-y-1/2 w-2 h-2">
-                                        <div className="w-2 h-2 bg-[#340260] transform rotate-45" />
-                                    </div>
+                                    <div className="w-2 h-2 bg-white transform rotate-45 absolute top-1/2 -left-1 -translate-y-1/2" />
                                 </div>
                             )}
                         </li>
@@ -84,7 +70,7 @@ export default function Sidebar({
                 </ul>
             </nav>
 
-            <section className="pt-6 px-6">
+            <section className="mt-6 px-6">
                 {!isCollapsed ? (
                     <div className="p-4 grid gap-2 rounded-lg bg-[#FFFFFF1F]">
                         <span className="text-lg"><BiUserPin /></span>
@@ -97,18 +83,17 @@ export default function Sidebar({
                     <div className="relative flex justify-center py-2 cursor-pointer text-white hover:text-[#1F0954] hover:bg-white rounded">
                         <BiUserPin />
                         <div className="
-                            absolute left-full ml-2 px-3 py-2 rounded-md
-                            bg-[#340260] text-white text-sm font-medium
-                            shadow-lg whitespace-nowrap
-                            opacity-0 hover:opacity-100
-                            transition-opacity duration-200
-                            pointer-events-none
-                            z-20
-                        ">
+                    absolute left-full ml-3 px-3 py-2 rounded-md
+                    bg-white text-[#1F0954] text-sm font-medium
+                    shadow-lg whitespace-nowrap
+                    opacity-0 hover:opacity-100
+                    transition-opacity duration-200
+                    pointer-events-none
+                    z-20
+                    min-w-max
+                ">
                             Help Center
-                            <div className="absolute top-1/2 right-full -translate-y-1/2 w-2 h-2">
-                                <div className="w-2 h-2 bg-[#340260] transform rotate-45" />
-                            </div>
+                            <div className="w-2 h-2 bg-white transform rotate-45 absolute top-1/2 -left-1 -translate-y-1/2" />
                         </div>
                     </div>
                 )}
