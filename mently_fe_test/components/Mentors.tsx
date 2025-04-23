@@ -1,7 +1,13 @@
+import SectionLeftHead from "./SectionLeftHead";
+import SectionRightHead from "./SectionRightHead";
+
 export default function Mentors() {
   return (
-    <div className="bg-white shadow p-4">
-      <h2 className="font-semibold text-lg">Mentors</h2>
-    </div>
+    <section className="w-[30%] shadow p-4 rounded">
+      <div className="flex justify-between">
+        <SectionRightHead title="Mentors" />
+        <SectionLeftHead />
+      </div>
+    </section>
   );
 }

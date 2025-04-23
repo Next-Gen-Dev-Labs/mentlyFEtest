@@ -17,7 +17,7 @@ const page = () => {
       <div className="p-8">
         <BodyNav />
 
-        <main className="flex-1 p-4 overflow-auto space-y-4">
+        <main className="flex-1 p-4 space-y-4">
           <Programs />
           <Users />
           <GroupCalls />

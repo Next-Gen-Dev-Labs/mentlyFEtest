@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <SideNav />
       </div>
       {/* <Navbar /> */}
-      <div className="w-full">{children}</div>
+      <div className="w-full overflow-scroll no-scrollbar">{children}</div>
     </div>
   );
 }

@@ -1,7 +1,13 @@
+import SectionLeftHead from "./SectionLeftHead";
+import SectionRightHead from "./SectionRightHead";
+
 export default function Applications() {
   return (
-    <div className="bg-white shadow p-4">
-      <h2 className="font-semibold text-lg">Applications</h2>
-    </div>
+    <section className="w-[30%] shadow p-4 rounded">
+      <div className="flex justify-between">
+        <SectionRightHead title="Applications" />
+        <SectionLeftHead />
+      </div>
+    </section>
   );
 }
