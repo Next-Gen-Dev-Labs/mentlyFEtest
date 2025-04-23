@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: #340260;
+  --color-primary-3: #53547b;
+  --color-secondary-3: #f0c074;
+  --color-in-neutral-def-light: #f2f2f2;
+
+  --color-grey-4: #c2c2c2;
+
+  --shadow-header: 0px 2px 4px 0px #00000010;
+
+  --font-chivo: "Chivo", "sans-serif";
+}
