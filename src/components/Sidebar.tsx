@@ -6,7 +6,7 @@ import { CollapseProps } from "@/contexts/collapse";
 
 export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) {
     return (
-        <aside className={`bg-[#340260] py-6 fixed h-dvh transition-all overflow-y-auto scrollbar-hide duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-60'}`}>
+        <aside className={`bg-[#340260] py-6 fixed h-dvh transition-all  scrollbar-hide duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-60'}`}>
             <section className="mb-6 flex items-center justify-between px-6">
                 {!isCollapsed && <Image src="/logo.webp" width={120} height={30} alt="Techrity Logo" />}
                 <button
@@ -64,10 +64,18 @@ export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) 
                         </a>
                     </div>
                 ) : (
-                    <div className="relative flex justify-center py-2 cursor-pointer text-white hover:text-[#1F0954] hover:bg-white rounded">
+                    <div className="relative group flex justify-center py-2 cursor-pointer text-white hover:text-[#1F0954] hover:bg-white rounded">
                         <BiUserPin />
-                        <div className="absolute left-full ml-3 px-3 py-2 rounded-md bg-white text-[#1F0954] text-sm font-medium shadow-lg whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity duration-200 pointer-events-none z-20 min-w-max">
-                            Help Center
+                        <div className="
+                                    min-w-max
+                                    pointer-events-none
+                                    shadow-lg whitespace-nowrap
+                                    transition-opacity duration-200
+                                    opacity-0 group-hover:opacity-100
+                                    z-20 [box-shadow:0px_4px_10px_#00000010]
+                                    absolute left-full ml-3 px-3 py-2 rounded-md
+                                    bg-white text-[#1F0954] text-sm font-medium
+                                ">Help
                             <div className="w-2 h-2 bg-white transform rotate-45 absolute top-1/2 -left-1 -translate-y-1/2" />
                         </div>
                     </div>

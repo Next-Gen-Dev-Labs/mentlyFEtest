@@ -57,3 +57,38 @@ body {
 .toggle:checked::after {
   left: calc(100% - 13px);
 }
+
+input.checkbox {
+  width: 18px;
+  height: 18px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 4px;
+  position: relative;
+  -moz-appearance: none;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  transition: all 0.2s ease;
+}
+
+input.checkbox:checked {
+  border-color: #07C500;
+  background-color: #07C500;
+}
+
+input.checkbox:checked::after {
+  width: 4px;
+  height: 8px;
+  content: '';
+  position: absolute;
+  border: solid white;
+  inset: 2px auto auto 6px;
+  transform: rotate(45deg);
+  border-width: 0 2px 2px 0;
+}
+
+input.checkbox:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -5,10 +5,10 @@ export default function Header({ toggleCollapse }: CollapseProps) {
     return (
         <section className="grid gap-4 mb-2">
             <div className="flex gap-1.5 items-center justify-end">
-                <button className="cursor-pointer text-[#A4A5B8] rotate-y-180 w-6 h-6">
+                <button className="cursor-pointer text-[#A4A5B8] origin-top-right rotate-y-180 w-7 h-7">
                     <TbListDetails />
                 </button>
-                <button className="cursor-pointer text-[#A4A5B8] rotate-y-180 w-6 h-6">
+                <button className="cursor-pointer text-[#A4A5B8] origin-right rotate-y-180 w-7 h-7">
                     <TbLayout />
                 </button>
                 <button onClick={toggleCollapse} className="text-[#1F0954] font-bold text-sm cursor-pointer bg-transparent border-none">Manage Widgets</button>

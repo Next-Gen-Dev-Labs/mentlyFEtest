@@ -1,8 +1,28 @@
+'use client';
+
 import { WidgetItem } from "@/data/items";
+import * as Widgets from "@/components/Widgets";
 import { HiBars4, HiEllipsisVertical } from "react-icons/hi2";
 
-export default function Widget({ widget }: { widget: WidgetItem; }) {
+interface WidgetComponents {
+    [key: string]: React.ComponentType;
+}
+
+const widgetComponents: WidgetComponents = {
+    'Forum': Widgets.Forum,
+    'Mentors': Widgets.Mentors,
+    'Earnings': Widgets.Earnings,
+    'Programs': Widgets.Programs,
+    'Group Calls': Widgets.GroupCalls,
+    'Application': Widgets.Application,
+    'Program Analysis': Widgets.ProgramAnalysis,
+    'Recent Activities': Widgets.RecentActivities,
+};
+
+export default function Widget({ widget }: { widget: WidgetItem }) {
     if (!widget.visible) return null;
+
+    const SpecificWidget = widgetComponents[widget.label];
 
     return (
         <section className="rounded-xl bg-white p-4 shadow-sm">
@@ -16,15 +36,11 @@ export default function Widget({ widget }: { widget: WidgetItem; }) {
                         See all
                     </button>
                     <button className="p-1 cursor-pointer hover:bg-gray-100 rounded">
-                        <HiEllipsisVertical />
+                        <HiEllipsisVertical className="text-gray-500" />
                     </button>
                 </div>
             </div>
-
-            {/* Widget-specific content would go here */}
-            <div className="mt-4 text-sm text-gray-500">
-                {widget.label} content will appear here
-            </div>
+            <SpecificWidget />
         </section>
     );
 }

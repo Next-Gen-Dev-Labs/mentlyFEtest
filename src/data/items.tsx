@@ -34,48 +34,48 @@ export const navItems: NavItem[] = [
 
 export const widgetItems: WidgetItem[] = [
   { 
+    visible: true,
     id: 'programs',
     label: 'Programs',
-    visible: true,
-    defaultVisible: true
+    defaultVisible: true,
   },
   { 
+    visible: true,
     id: 'group-calls',
     label: 'Group Calls',
-    visible: true,
-    defaultVisible: true
+    defaultVisible: true,
   },
   { 
     id: 'mentors',
-    label: 'Mentors',
     visible: true,
-    defaultVisible: true
+    label: 'Mentors',
+    defaultVisible: true,
   },
   { 
+    visible: true,
+    defaultVisible: true,
     id: 'recent-activities',
     label: 'Recent Activities',
-    visible: true,
-    defaultVisible: true
   },
   { 
+    visible: true,
     id: 'application',
     label: 'Application',
-    visible: true,
-    defaultVisible: true
+    defaultVisible: true,
   },
   { 
     id: 'earnings',
+    visible: false,
     label: 'Earnings',
-    visible: false
   },
   { 
     id: 'forum',
     label: 'Forum',
-    visible: false
+    visible: false,
   },
   { 
+    visible: false,
     id: 'program-analysis',
     label: 'Program Analysis',
-    visible: false
-  }
+  },
 ];

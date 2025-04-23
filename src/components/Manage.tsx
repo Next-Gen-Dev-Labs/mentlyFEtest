@@ -15,11 +15,11 @@ export default function Manage({ toggleCollapse }: CollapseProps) {
                     />
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-10">
                     <div>
                         <h3 className="text-[#6F01D0] text-3xl font-bold">Manage Widgets</h3>
                         <p className="text-[#374557] text-[12px] mt-4">
-                            Personalize your dashboard (minimum 2 widgets must be visible)
+                            Personalize your dashboard by managing widgets add, remove, or reorder them to fit your workflow. (minimum 2 widgets must be visible)
                         </p>
                     </div>
 
@@ -34,6 +34,7 @@ export default function Manage({ toggleCollapse }: CollapseProps) {
                                 </div>
                                 <input
                                     type="checkbox"
+                                    className="checkbox"
                                     checked={widget.visible}
                                     onChange={() => toggleWidget(widget.id)}
                                     disabled={visibleCount <= 2 && widget.visible}
