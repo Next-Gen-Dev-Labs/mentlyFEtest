@@ -1,24 +1,8 @@
 import Image from "next/image";
+import { navItems } from "@/data/items";
 import { BiUserPin } from "react-icons/bi";
-import { LuBookText } from "react-icons/lu";
+import { TbLayoutSidebar } from "react-icons/tb";
 import { CollapseProps } from "@/contexts/collapse";
-import { FiGift, FiSettings } from "react-icons/fi";
-import { RiHome5Line, RiLineChartLine } from "react-icons/ri";
-import { IoPersonOutline, IoWalletOutline } from "react-icons/io5";
-import { TbLogout2, TbChartBubble, TbClipboardText, TbLayoutSidebar } from "react-icons/tb";
-
-const menuItems = [
-    { icon: <RiHome5Line />, label: "Dashboard", active: true },
-    { icon: <LuBookText />, label: "Programs" },
-    { icon: <TbChartBubble />, label: "Activities" },
-    { icon: <IoPersonOutline />, label: "Users" },
-    { icon: <TbClipboardText />, label: "Forums" },
-    { icon: <IoWalletOutline />, label: "Finances" },
-    { icon: <FiGift />, label: "Rewards" },
-    { icon: <RiLineChartLine />, label: "Analytics" },
-    { icon: <FiSettings />, label: "Settings" },
-    { icon: <TbLogout2 />, label: "Logout" },
-];
 
 export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) {
     return (
@@ -35,7 +19,7 @@ export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) 
 
             <nav className="flex-1 px-4">
                 <ul className="space-y-1">
-                    {menuItems.map((item) => (
+                    {navItems.map((item) => (
                         <li
                             key={item.label}
                             className={`group flex items-center relative gap-4 py-3 px-6 rounded-lg cursor-pointer hover:text-[#1F0954] hover:bg-white transition-colors ${item.active ? 'bg-white text-[#1F0954]' : 'text-[#C2C2C2]'} ${isCollapsed ? 'justify-center' : ''}`}
@@ -44,23 +28,23 @@ export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) 
                             {!isCollapsed ? (
                                 <>
                                     <span>{item.label}</span>
-                                    {item.label === "Analytics" && (
+                                    {item.badge && (
                                         <span className="absolute py-0.5 px-1.5 top-0 right-2 rounded-4xl bg-[#0214BD38] text-[10px] text-[#EFEFF8] z-30">
-                                            Coming Soon
+                                            {item.badge}
                                         </span>
                                     )}
                                 </>
                             ) : (
                                 <div className="
-                            pointer-events-none
-                            shadow-lg whitespace-nowrap
-                            transition-opacity duration-200
-                            opacity-0 group-hover:opacity-100
-                            z-20 [box-shadow:0px_4px_10px_#00000010]
-                            absolute left-full ml-3 px-3 py-2 rounded-md
-                            bg-white text-[#1F0954] text-sm font-medium
-                            min-w-max
-                        ">
+                                    min-w-max
+                                    pointer-events-none
+                                    shadow-lg whitespace-nowrap
+                                    transition-opacity duration-200
+                                    opacity-0 group-hover:opacity-100
+                                    z-20 [box-shadow:0px_4px_10px_#00000010]
+                                    absolute left-full ml-3 px-3 py-2 rounded-md
+                                    bg-white text-[#1F0954] text-sm font-medium
+                                ">
                                     {item.label}
                                     <div className="w-2 h-2 bg-white transform rotate-45 absolute top-1/2 -left-1 -translate-y-1/2" />
                                 </div>
@@ -82,16 +66,7 @@ export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) 
                 ) : (
                     <div className="relative flex justify-center py-2 cursor-pointer text-white hover:text-[#1F0954] hover:bg-white rounded">
                         <BiUserPin />
-                        <div className="
-                    absolute left-full ml-3 px-3 py-2 rounded-md
-                    bg-white text-[#1F0954] text-sm font-medium
-                    shadow-lg whitespace-nowrap
-                    opacity-0 hover:opacity-100
-                    transition-opacity duration-200
-                    pointer-events-none
-                    z-20
-                    min-w-max
-                ">
+                        <div className="absolute left-full ml-3 px-3 py-2 rounded-md bg-white text-[#1F0954] text-sm font-medium shadow-lg whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity duration-200 pointer-events-none z-20 min-w-max">
                             Help Center
                             <div className="w-2 h-2 bg-white transform rotate-45 absolute top-1/2 -left-1 -translate-y-1/2" />
                         </div>
