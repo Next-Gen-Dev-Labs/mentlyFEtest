@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Sidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
@@ -140,20 +139,20 @@ const Index = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
       <Sidebar />
-      
+
       <div className="flex-1 flex flex-col">
         <Header username="Techrity Forum" userRole="Member" />
-        
-        <div className="flex-1 px-6 py-4 overflow-y-auto">
+
+        <div className="flex-1 px-2 sm:px-4 md:px-6 py-2 sm:py-4 overflow-y-auto">
           <WelcomeBanner username="Blessing" />
-          
+
           {/* Programs Section */}
           <div className="mt-6">
             <SectionHeader title="Programs" showFilter />
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {programsData.map(program => (
                 <ProgramCard 
                   key={program.id}
@@ -168,12 +167,12 @@ const Index = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             {/* Applications Section */}
             <div>
               <SectionHeader title="Applications" />
-              
+
               <div className="space-y-3">
                 {applicationsData.map(application => (
                   <ApplicationCard 
@@ -187,11 +186,11 @@ const Index = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* Mentors Section */}
             <div>
               <SectionHeader title="Mentors" />
-              
+
               <div className="space-y-3">
                 {mentorsData.map(mentor => (
                   <MentorCard 
@@ -203,29 +202,26 @@ const Index = () => {
                   />
                 ))}
               </div>
-              
+
               <div className="mt-4 text-center">
-                <button className="text-xs text-techrity-purple font-medium">
+                <button className="text-xs text-techrity-purple font-medium hover:underline focus:underline">
                   See all
                 </button>
               </div>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             {/* Users Section */}
-            <div className="bg-white rounded-lg shadow-sm p-4">
+            <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4">
               <SectionHeader title="Users" />
-              
               <div>
                 <UserStatsChart stats={userStatsData} />
               </div>
             </div>
-            
             {/* Recent Activities Section */}
-            <div className="bg-white rounded-lg shadow-sm p-4">
+            <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4">
               <SectionHeader title="Recent Activities" />
-              
               <div className="mt-4">
                 {activitiesData.map(activity => (
                   <ActivityItem 

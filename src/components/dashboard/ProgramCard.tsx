@@ -26,17 +26,17 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   participantsCount
 }) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-sm">
+    <div className="bg-white p-3 sm:p-4 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-in hover:scale-[1.03] hover-scale">
       <div 
-        className="h-36 w-full rounded-lg bg-cover bg-center mb-3" 
+        className="h-32 sm:h-36 w-full rounded-lg bg-cover bg-center mb-3 relative"
         style={{ backgroundImage: `url(${image})` }}
       >
-        <div className={`mt-2 ml-2 inline-block ${status === 'ongoing' ? 'badge-ongoing' : 'badge-upcoming'}`}>
+        <div className={`absolute top-2 left-2 inline-block ${status === 'ongoing' ? 'badge-ongoing' : 'badge-upcoming'}`}>
           {status === 'ongoing' ? 'Ongoing' : 'Upcoming'}
         </div>
       </div>
       
-      <h3 className="font-bold text-sm mb-1">{title}</h3>
+      <h3 className="font-bold text-xs sm:text-sm mb-1">{title}</h3>
       <p className="text-xs text-gray-500 mb-3">{description}</p>
       
       <div className="flex justify-between items-center mb-4">
@@ -51,12 +51,12 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
         <span className="text-xs text-gray-500">{timeAgo}</span>
       </div>
       
-      <div className="flex justify-between items-center">
-        <button className="view-button">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+        <button className="view-button animate-fade-in hover-scale">
           View Participants
         </button>
         
-        <button className="join-button flex items-center gap-1">
+        <button className="join-button flex items-center gap-1 hover:scale-105 transition-transform animate-fade-in">
           <span>Join Now</span>
         </button>
       </div>

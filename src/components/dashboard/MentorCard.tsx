@@ -16,9 +16,9 @@ const MentorCard: React.FC<MentorCardProps> = ({
   onMessage
 }) => {
   return (
-    <div className="flex items-center justify-between bg-white p-3 rounded-lg shadow-sm">
-      <div className="flex items-center gap-3">
-        <Avatar className="h-10 w-10">
+    <div className="flex items-center justify-between bg-white p-3 sm:p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 animate-fade-in">
+      <div className="flex items-center gap-2 sm:gap-3">
+        <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
           <AvatarImage src={avatarUrl} />
           <AvatarFallback>{name[0]}</AvatarFallback>
         </Avatar>
@@ -30,7 +30,7 @@ const MentorCard: React.FC<MentorCardProps> = ({
       </div>
       
       <button 
-        className="message-button"
+        className="message-button hover-scale"
         onClick={onMessage}
       >
         Message

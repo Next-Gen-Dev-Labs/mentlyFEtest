@@ -18,7 +18,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
   icon
 }) => {
   return (
-    <div className="flex gap-3 mb-4">
+    <div className="flex gap-2 sm:gap-3 mb-4 animate-fade-in">
       <Avatar className="h-8 w-8">
         {icon ? (
           <div className="flex items-center justify-center w-full h-full bg-techrity-purple-light/20 text-techrity-purple">
@@ -33,7 +33,7 @@ const ActivityItem: React.FC<ActivityItemProps> = ({
       </Avatar>
       
       <div className="flex-1">
-        <h4 className="font-medium text-sm">{title}</h4>
+        <h4 className="font-medium text-xs sm:text-sm">{title}</h4>
         <p className="text-xs text-gray-500">{description}</p>
         <p className="text-xs text-gray-400 mt-1">{timeAgo}</p>
       </div>
