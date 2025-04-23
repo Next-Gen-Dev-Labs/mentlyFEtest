@@ -77,9 +77,10 @@ export const GroupCalls = [
   },
 ];
 
-export const Applications = {
+export const ApplicationsData = {
   mentors: [
     {
+    image: SvgImageOne,
      name: "Maxwell Smith", 
      email: "maxwellsmith@gmail.com",
      skill: "Product Designer",
@@ -92,18 +93,22 @@ export const Applications = {
     {
       name: "Adeati Samuel",
       email: "adeatisa@gmail.com",
+      image: SvgImageOne,
     },
     {
       name: "Maxwell Smith",
       email: "maxwellsmith@gmail.com",
+      image: SvgImageTwo,
     },
     {
       name: "Adeati Samuel",
       email: "adeatisa@gmail.com",
+      image: SvgImageThree,
     },
     {
       name: "Maxwell Smith",
       email: "maxwellsmith@gmail.com",
+      image: SvgImageOne,
     },
   ],
 };
