@@ -27,7 +27,7 @@ const sidebarItems = [
   { name: "Forums", icon: forums, path: "#" },
   { name: "Finances", icon: finances, path: "#" },
   { name: "Rewards", icon: rewards, path: "#" },
-  { name: "Analytics", icon: analytics, path: "#" },
+  { name: "Analytics", icon: analytics, path: "#", comingSoon: true },
   { name: "Settings", icon: settings, path: "#" },
   { name: "Log Out", icon: logout, path: "#" },
 ];
@@ -83,7 +83,7 @@ const Sidebar = () => {
             const isActive =
               pathname === item.path || pathname.startsWith(`${item.path}/`);
             return (
-              <li key={item.name}>
+              <li key={item.name} className="relative">
                 <Link
                   href={item.path}
                   className={`flex items-center rounded-lg transition-colors ${
@@ -100,7 +100,16 @@ const Sidebar = () => {
                     width={24}
                     height={24}
                   />
-                  {!isCollapsed && <span>{item.name}</span>}
+                  {!isCollapsed && (
+                    <span className="flex items-center space-x-2 ">
+                      <span>{item.name}</span>
+                      {item.comingSoon && (
+                        <span className="absolute top-0  rounded-[50px] bg-[#0214BD38] px-1 py-0.5 right-3  text-[10px] text-[#EFEFF8] font-normal">
+                          Coming Soon
+                        </span>
+                      )}
+                    </span>
+                  )}
                 </Link>
               </li>
             );
