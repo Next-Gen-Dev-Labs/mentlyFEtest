@@ -41,7 +41,7 @@ export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) 
                                     shadow-lg whitespace-nowrap
                                     transition-opacity duration-200
                                     opacity-0 group-hover:opacity-100
-                                    z-20 [box-shadow:0px_4px_10px_#00000010]
+                                    z-20 [box-shadow:0px_2px_4px_0px_#00000010]
                                     absolute left-full ml-3 px-3 py-2 rounded-md
                                     bg-white text-[#1F0954] text-sm font-medium
                                 ">
@@ -72,7 +72,7 @@ export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) 
                                     shadow-lg whitespace-nowrap
                                     transition-opacity duration-200
                                     opacity-0 group-hover:opacity-100
-                                    z-20 [box-shadow:0px_4px_10px_#00000010]
+                                    z-20 [box-shadow:0px_2px_4px_0px_#00000010]
                                     absolute left-full ml-3 px-3 py-2 rounded-md
                                     bg-white text-[#1F0954] text-sm font-medium
                                 ">Help

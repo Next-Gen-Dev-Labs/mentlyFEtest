@@ -19,10 +19,8 @@ export default function Home() {
         <Topbar />
         <section className="pt-4 pb-6 px-8">
           <Header toggleCollapse={widgetsContext.toggle} />
-          <section className="grid gap-4">
-            {widgets
-              .filter(widget => widget.visible)
-              .map(widget => <Widget key={widget.id} widget={widget} />)}
+          <section className="grid grid-cols-3 grid-rows-3 gap-4">
+            {widgets.map(widget => <Widget key={widget.id} widget={widget} />)}
             {widgetsContext.isCollapsed && <Manage toggleCollapse={widgetsContext.toggle} />}
           </section>
         </section>

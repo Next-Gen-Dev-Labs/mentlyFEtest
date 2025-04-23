@@ -3,7 +3,7 @@ import { CollapseProps } from "@/contexts/collapse";
 import { HiBars4, HiMiniXMark } from "react-icons/hi2";
 
 export default function Manage({ toggleCollapse }: CollapseProps) {
-    const { widgets, toggleWidget, resetWidgets, visibleCount } = useWidgets();
+    const { widgets, toggleWidget, resetWidgets } = useWidgets();
 
     return (
         <aside className="w-100 px-10 py-6 fixed bg-white top-0 right-0 h-dvh transition-all overflow-y-auto scrollbar-hide duration-300 ease-in-out before:bg-[#E3D7FF29] before:backdrop-blur-xs before:fixed before:inset-0 before:-z-1">
@@ -24,23 +24,23 @@ export default function Manage({ toggleCollapse }: CollapseProps) {
                     </div>
 
                     <div className="space-y-4">
-                        {widgets.map(widget => (
-                            <div key={widget.id} className="flex items-center justify-between gap-2">
-                                <div className="flex gap-2 items-center">
-                                    <HiBars4 />
-                                    <span className="text-[#4F4F4F] font-bold text-sm">
-                                        {widget.label}
-                                    </span>
+                        {widgets
+                            .filter(widget => !widget.isUser)
+                            .map(widget => (
+                                <div key={widget.id} className="flex items-center justify-between gap-2">
+                                    <div className="flex gap-2 items-center">
+                                        <HiBars4 />
+                                        <span className="text-[#4F4F4F] font-bold text-sm">
+                                            {widget.label}
+                                        </span>
+                                    </div>
+                                    <input
+                                        type="checkbox"
+                                        className="checkbox"
+                                        onChange={() => toggleWidget(widget.id)}
+                                    />
                                 </div>
-                                <input
-                                    type="checkbox"
-                                    className="checkbox"
-                                    checked={widget.visible}
-                                    onChange={() => toggleWidget(widget.id)}
-                                    disabled={visibleCount <= 2 && widget.visible}
-                                />
-                            </div>
-                        ))}
+                            ))}
                     </div>
 
                     <div className="flex items-center justify-between gap-2">

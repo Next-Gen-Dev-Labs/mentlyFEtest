@@ -15,8 +15,8 @@ export interface NavItem {
 export interface WidgetItem {
   id: string;
   label: string;
-  visible: boolean;
-  defaultVisible?: boolean;
+  isUser?: boolean;
+  gridPosition?: string;
 }
 
 export const navItems: NavItem[] = [
@@ -33,48 +33,46 @@ export const navItems: NavItem[] = [
 ];
 
 export const widgetItems: WidgetItem[] = [
-  { 
-    visible: true,
-    id: 'programs',
+  {
+    id: 'program',
     label: 'Programs',
-    defaultVisible: true,
+    gridPosition: 'col-span-1 row-span-2 col-start-1 row-start-1'
   },
-  { 
-    visible: true,
-    id: 'group-calls',
+  {
+    id: 'group',
     label: 'Group Calls',
-    defaultVisible: true,
+    gridPosition: 'col-span-2 row-span-1 col-start-2 row-start-1'
   },
-  { 
-    id: 'mentors',
-    visible: true,
-    label: 'Mentors',
-    defaultVisible: true,
-  },
-  { 
-    visible: true,
-    defaultVisible: true,
-    id: 'recent-activities',
-    label: 'Recent Activities',
-  },
-  { 
-    visible: true,
+  {
     id: 'application',
     label: 'Application',
-    defaultVisible: true,
+    gridPosition: 'col-span-1 row-span-2 col-start-2 row-start-2'
   },
-  { 
+  {
+    id: 'mentor',
+    label: 'Mentors',
+    gridPosition: 'col-span-1 row-span-1 col-start-3 row-start-2'
+  },
+  {
+    id: 'recent',
+    label: 'Recent Activities',
+    gridPosition: 'col-span-1 row-span-1 col-start-3 row-start-3'
+  },
+  {
+    id: 'user',
+    isUser: true,
+    label: 'Users',
+    gridPosition: 'col-span-1 row-span-1 col-start-1 row-start-3'
+  },
+  {
     id: 'earnings',
-    visible: false,
     label: 'Earnings',
   },
-  { 
+  {
     id: 'forum',
     label: 'Forum',
-    visible: false,
   },
-  { 
-    visible: false,
+  {
     id: 'program-analysis',
     label: 'Program Analysis',
   },
