@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+body {
+  font-family: "Chivo", sans-serif;
+}
+
+@theme {
+  --color-sidebar-bg: #340260;
+  --color-primary: #6f01d0;
+}
+
+/* custom checkbox */
+:root {
+  --checkbox-border-color: #83a602;
+  --checkbox-checked-color: #83a602;
+  --checkbox-disabled-bg-color: #d9d9d9;
+}
+
+input[type="checkbox"] {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin: 6px;
+  padding: 0;
+  border: 1px solid var(--checkbox-border-color);
+  appearance: none;
+  background-color: transparent;
+  outline: none;
+  transition: outline 0.1s;
+  border-radius: 4px;
+}
+
+input[type="checkbox"]:checked {
+  background-size: cover;
+  padding: 2px;
+  background-color: #14a800;
+}
+
+input[type="checkbox"]:not(:disabled):checked {
+  border-color: var(--checkbox-checked-color);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" xml:space="preserve"><path style="fill:%23FFFFFF" d="M11.941,28.877l-11.941-11.942l5.695-5.696l6.246,6.246l14.364-14.364L32,8.818"/></svg>');
+  background-size: 13px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input[type="checkbox"]:disabled {
+  background-color: var(--checkbox-disabled-bg-color);
+}
+
+input[type="checkbox"]:disabled:checked {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" xml:space="preserve"><path style="fill: %2383A602" d="M11.941,28.877l-11.941-11.942l5.695-5.696l6.246,6.246l14.364-14.364L32,8.818"/></svg>');
+  background-size: 13px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 6px solid var(--checkbox-hover-color);
+  transform: scale(1.05);
+}
+
+/* Custom scrollbar styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(155, 155, 155, 0.8);
+}
