@@ -1,73 +1,52 @@
-# Welcome to your Lovable project
 
-## Project info
+# Techrity Dashboard
 
-**URL**: https://lovable.dev/projects/e9b10da4-10d4-4281-943a-b5427f2681fc
+# Submitted By: Rotimi Oluwafemi
 
-## How can I edit this code?
+- [GitHub](https://github.com/Itzfeminisce)
+- [LinkedIn](https://linkedin.com/in/Itzfeminisce)
+- [Portfolio](https://itzfeminisce.vercel.app)
 
-There are several ways of editing your application.
+A modern dashboard application built with React and TypeScript, featuring a clean UI with a purple theme.
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e9b10da4-10d4-4281-943a-b5427f2681fc) and start prompting.
+- **React**: Frontend library for building user interfaces
+- **TypeScript**: Static type-checking for JavaScript
+- **React Router**: For navigation between different sections
+- **Lucide Icons**: For consistent iconography throughout the application
+- **Tailwind CSS**: For styling with utility classes
 
-Changes made via Lovable will be committed automatically to this repo.
+## Project Structure
 
-**Use your preferred IDE**
+The application follows a component-based architecture:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- `src/components/layout`: Contains layout components like Sidebar
+- `src/mock-data.ts`: Contains mock data for development and testing
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Features
 
-Follow these steps:
+- **Responsive Sidebar**: Collapsible sidebar with navigation links
+- **Dashboard Overview**: Main dashboard with program cards and statistics
+- **Group Calls**: Interface for managing and joining video calls
+- **Notifications System**: Real-time notification display
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Color Scheme
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+The application uses a custom color palette:
+- Primary: Techrity Purple (`bg-techrity-purple`)
+- Accent: Techrity Rating color for highlights
+- Text: White with various opacity levels for hierarchy
+- Background: Dark theme with subtle gradients
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run the development server with `npm run dev`
+4. Access the application at `http://localhost:5173`
 
-**Edit a file directly in GitHub**
+## Screenshots
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+![Dashboard Overview](public/project.png)
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e9b10da4-10d4-4281-943a-b5427f2681fc) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)

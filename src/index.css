@@ -49,6 +49,24 @@
 @layer base {
   * {
     @apply border-border;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+      border-radius: 8px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(153, 133, 167, 0.1);
+      border-radius: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 8px;
+    }
   }
 
   body {
@@ -110,11 +128,11 @@
 
 @layer components {
   .badge-ongoing {
-    @apply bg-techrity-ongoing/10 text-techrity-ongoing text-xs font-medium py-1 px-2 rounded-md;
+    @apply bg-techrity-ongoing/20 text-techrity-ongoing text-xs font-medium py-1 px-2 rounded-md;
   }
   
   .badge-upcoming {
-    @apply bg-techrity-upcoming/10 text-techrity-upcoming text-xs font-medium py-1 px-2 rounded-md;
+    @apply bg-techrity-upcoming/20 text-techrity-upcoming text-xs font-medium py-1 px-2 rounded-md;
   }
 
   .sidebar-item {
@@ -122,7 +140,7 @@
   }
 
   .sidebar-item.active {
-    @apply bg-white/20 text-white;
+    @apply bg-white text-techrity-purple;
   }
 
   .card-action-button {
@@ -138,7 +156,7 @@
   }
 
   .reject-button {
-    @apply card-action-button border border-destructive/20 text-destructive hover:bg-destructive/10;
+    @apply card-action-button border border-destructive/20 bg-destructive/20 text-destructive hover:bg-destructive/10;
   }
 
   .accept-button {
@@ -146,6 +164,6 @@
   }
 
   .message-button {
-    @apply card-action-button bg-techrity-purple text-white hover:bg-techrity-purple/90;
+    @apply card-action-button rounded-full bg-techrity-purple text-white hover:bg-techrity-purple/90;
   }
 }

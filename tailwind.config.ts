@@ -69,7 +69,8 @@ export default {
 					'purple-bg': '#f8f5ff',
 					ongoing: '#7966e2',
 					upcoming: '#40ccbe',
-					rating: '#ffa726'
+					rating: '#ffa726',
+					muted: "#595564",
 				}
 			},
 			borderRadius: {

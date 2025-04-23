@@ -8,7 +8,7 @@ type WelcomeBannerProps = {
 const WelcomeBanner: React.FC<WelcomeBannerProps> = ({ username }) => {
   return (
     <div className="bg-gradient-to-r from-techrity-purple to-techrity-purple-light text-white p-4 sm:p-6 rounded-lg flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 animate-fade-in transition-all duration-300">
-      <div className="text-center md:text-left w-full">
+      <div className=" flex items-center justify-start gap-4 text-center md:text-left w-full">
         <h1 className="font-semibold text-lg sm:text-xl flex items-center gap-2 justify-center md:justify-start">
           Welcome Aboard, {username}
           <span className="text-xl">👋</span>

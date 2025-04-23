@@ -10,160 +10,9 @@ import UserStatsChart from '@/components/dashboard/UserStatsChart';
 import ActivityItem from '@/components/dashboard/ActivityItem';
 import { useToast } from '@/hooks/use-toast';
 import GroupCallsCarousel from '@/components/dashboard/GroupCallsCarousel';
+import { activitiesData, applicationsData, mentorsData, mockGroupCallsData, programsData, userStatsData } from '@/mock-data';
+import { PlusCircle } from 'lucide-react';
 
-// Mock data
-const programsData = [
-  {
-    id: 1,
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=300&q=80',
-    title: 'Fundamentals of User Interface & Experience',
-    description: 'This program aims to guide you through the foundations of UI/UX design and help you build a strong portfolio.',
-    instructors: [
-      { name: 'John Doe', avatarUrl: 'https://i.pravatar.cc/150?img=1' },
-      { name: 'Jane Smith', avatarUrl: 'https://i.pravatar.cc/150?img=2' },
-    ],
-    timeAgo: 'Started 1 hour ago',
-    status: 'ongoing',
-    participantsCount: 24,
-  },
-  {
-    id: 2,
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=300&q=80',
-    title: 'Colour Heist Practical Design Call',
-    description: 'This program aims to guide you through the foundations of UI/UX design and help you build a strong portfolio.',
-    instructors: [
-      { name: 'Sarah Brown', avatarUrl: 'https://i.pravatar.cc/150?img=3' },
-    ],
-    timeAgo: 'Started 2 hours ago',
-    status: 'ongoing',
-    participantsCount: 18,
-  },
-  {
-    id: 3,
-    image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=300&q=80',
-    title: 'Weekly Meeting - Product Demo Review with Testers',
-    description: 'This program aims to guide you through the foundations of UI/UX design and help you build a strong portfolio.',
-    instructors: [
-      { name: 'Michael Johnson', avatarUrl: 'https://i.pravatar.cc/150?img=4' },
-      { name: 'Emily Wilson', avatarUrl: 'https://i.pravatar.cc/150?img=5' },
-    ],
-    timeAgo: 'Started 30 minutes ago',
-    status: 'ongoing',
-    participantsCount: 12,
-  },
-];
-
-const applicationsData = [
-  {
-    id: 1,
-    name: 'Maxwell Smith',
-    email: 'maxwellsmith@gmail.com',
-    avatarUrl: 'https://i.pravatar.cc/150?img=6',
-  },
-  {
-    id: 2,
-    name: 'Adaafi Samuel',
-    email: 'adaafisamuel@gmail.com',
-    avatarUrl: 'https://i.pravatar.cc/150?img=7',
-  }
-];
-
-const mentorsData = [
-  {
-    id: 1,
-    name: 'Maxwell Smith',
-    role: 'Product Designer',
-    avatarUrl: 'https://i.pravatar.cc/150?img=8',
-  },
-  {
-    id: 2,
-    name: 'Adaafi Samuel',
-    role: 'Product Manager',
-    avatarUrl: 'https://i.pravatar.cc/150?img=9',
-  }
-];
-
-const userStatsData = {
-  active: 160,
-  inProgress: 52,
-  pending: 28,
-  total: 240,
-};
-
-const activitiesData = [
-  {
-    id: 1,
-    title: 'KYC Verification',
-    description: 'All new projects will have to verify on Monday',
-    timeAgo: '20 minutes ago',
-    iconUrl: 'https://i.pravatar.cc/150?img=10',
-  },
-  {
-    id: 2,
-    title: 'New User Sign Up!',
-    description: 'We have new users signed up on Monday',
-    timeAgo: '25 minutes ago',
-    iconUrl: 'https://i.pravatar.cc/150?img=11',
-  },
-  {
-    id: 3,
-    title: 'Withdrawal Request',
-    description: 'All new projects had entered to verify mode',
-    timeAgo: '30 minutes ago',
-    iconUrl: 'https://i.pravatar.cc/150?img=12',
-  }
-];
-
-const mockGroupCallsData = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=300&q=80",
-    title: "Colour Hack Practical Group Call",
-    description: "Collaborate live on color theory, palette sharing and live feedback.",
-    time: "9:00 AM - 10:00 AM",
-    tags: ["Group Call"],
-    participants: [
-      { name: 'Sarah Johnson', avatarUrl: 'https://i.pravatar.cc/150?img=13' },
-      { name: 'Michael Wilson', avatarUrl: 'https://i.pravatar.cc/150?img=14' },
-      { name: 'Adaafi Samuel', avatarUrl: 'https://i.pravatar.cc/150?img=15' }
-    ],
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=300&q=80",
-    title: "Weekly Meeting - Product Demo Review with Testers",
-    description: "Discuss and review new product test demos and insights from testers.",
-    time: "11:00 AM - 12:00 PM",
-    tags: [],
-    participants: [
-      { name: 'Blessing O.', avatarUrl: 'https://i.pravatar.cc/150?img=16' }
-    ],
-  },
-  {
-    id: 3,
-    image: "/lovable-uploads/8af282b5-01be-4a63-a3bf-5c809601140e.png",
-    title: "UI/UX Design Standup",
-    description: "Fast, daily catchup on team progress, blockers, and next steps.",
-    time: "2:00 PM - 2:30 PM",
-    tags: [],
-    participants: [
-      { name: 'John Doe', avatarUrl: 'https://i.pravatar.cc/150?img=1' },
-      { name: 'Jane Smith', avatarUrl: 'https://i.pravatar.cc/150?img=2' },
-      { name: 'Emily Wilson', avatarUrl: 'https://i.pravatar.cc/150?img=5' }
-    ],
-  },
-  {
-    id: 4,
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=300&q=80",
-    title: "Muuk Feedback Session",
-    description: "Gathering feedback and insights on the new Muuk feature updates.",
-    time: "4:00 PM - 5:00 PM",
-    tags: [],
-    participants: [
-      { name: 'Sarah Brown', avatarUrl: 'https://i.pravatar.cc/150?img=3' }
-    ],
-  }
-];
 
 const Index = () => {
   const { toast } = useToast();
@@ -191,112 +40,146 @@ const Index = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
-      <Sidebar />
-      <div className="flex-1 flex flex-col">
+    <div className="flex h-screen overflow-hidden bg-gray-50">
+      <div className="flex-shrink-0">
+        <Sidebar />
+      </div>
+
+      {/* Main content area - scrollable */}
+      <div className="flex-1 flex flex-col overflow-hidden">
         <Header username="Techrity Forum" userRole="Member" />
         <div className="flex-1 px-2 sm:px-4 md:px-6 py-2 sm:py-4 overflow-y-auto">
           <WelcomeBanner username="Blessing" />
 
-          <div className="mt-4 md:mt-6">
-            {/* Group Calls Carousel */}
-            <GroupCallsCarousel 
-              groupCalls={mockGroupCallsData}
-              onJoin={(id) => toast({
-                title: "You joined the call",
-                description: `You have joined group call #${id}.`,
-              })}
-              onViewParticipants={(id) => toast({
-                title: "Viewing participants",
-                description: `Showing participants for group call #${id}.`,
-              })}
-            />
-          </div>
-
           {/* Programs Section */}
-          <div className="mt-4 md:mt-6">
-            <SectionHeader title="Programs" showFilter />
+          <div className="mt-4 md:mt-6 flex flex-col md:flex-row gap-4">
+            {/* Programs on the left */}
+            <div className="md:w-1/3">
+              <SectionHeader title="Programs" showFilter />
+              <div className="">
+                {programsData.slice(0, 2).map(program => (
+                  <ProgramCard
+                    key={program.id}
+                    image={program.image}
+                    title={program.title}
+                    description={program.description}
+                    instructors={program.instructors}
+                    timeAgo={program.timeAgo}
+                    status={program.status as 'ongoing' | 'upcoming'}
+                    participantsCount={program.participantsCount}
+                  />
+                ))}
+              </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {programsData.map(program => (
-                <ProgramCard 
-                  key={program.id}
-                  image={program.image}
-                  title={program.title}
-                  description={program.description}
-                  instructors={program.instructors}
-                  timeAgo={program.timeAgo}
-                  status={program.status as 'ongoing' | 'upcoming'}
-                  participantsCount={program.participantsCount}
+              {/* Users Section */}
+              <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4 animate-fade-in w-full my-2 border">
+                <SectionHeader title="Users" />
+                <div>
+                  <UserStatsChart stats={userStatsData} />
+                </div>
+              </div>
+            </div>
+
+
+            {/* Additional content on the right */}
+            <div className="md:flex-1 md:w-2/3 overflow-hidden">
+              <div className="w-full">
+                {/* Group Calls Carousel */}
+                <GroupCallsCarousel
+                  groupCalls={mockGroupCallsData}
+                  onJoin={(id) => toast({
+                    title: "You joined the call",
+                    description: `You have joined group call #${id}.`,
+                  })}
+                  onViewParticipants={(id) => toast({
+                    title: "Viewing participants",
+                    description: `Showing participants for group call #${id}.`,
+                  })}
                 />
-              ))}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mt-4 md:mt-6">
+                {/* Applications Section */}
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <div className="w-full">
+                    <SectionHeader title="Applications" />
+                    <div className="space-y-2">
+                      <h2 className='text-techrity-muted/50 font-bold text-xs mb-2'>Mentors</h2>
+                      {applicationsData.mentors.map(application => (
+                        <ApplicationCard
+                          key={application.id}
+                          name={application.name}
+                          email={application.email}
+                          avatarUrl={application.avatarUrl}
+                          attribute={application.attribute}
+                          onAccept={() => handleAccept(application.name)}
+                          onReject={() => handleReject(application.name)}
+                        />
+                      ))}
+                    </div>
+
+                    <div className="space-y-4 mt-4">
+                      <h2 className='text-techrity-muted/50 font-bold text-xs mb-2'>Students</h2>
+                      {applicationsData.students.map(application => (
+                        <ApplicationCard
+                          key={application.id}
+                          name={application.name}
+                          email={application.email}
+                          avatarUrl={application.avatarUrl}
+                          onAccept={() => handleAccept(application.name)}
+                          onReject={() => handleReject(application.name)}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  {/* Mentors Section */}
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <SectionHeader title="Mentors" renderSeeAll={() => (
+                      <button>
+                        <PlusCircle className='text-techrity-muted/30' />
+                      </button>
+                    )} />
+                    <div className="space-y-3 mt-2">
+                      {mentorsData.map(mentor => (
+                        <MentorCard
+                          key={mentor.id}
+                          name={mentor.name}
+                          role={mentor.role}
+                          avatarUrl={mentor.avatarUrl}
+                          onMessage={() => handleMessage(mentor.name)}
+                        />
+                      ))}
+                    </div>
+                    <div className="mt-4">
+                      <button className="text-techrity-purple font-medium hover:underline focus:underline transition-colors bg-techrity-purple/20 w-full py-2 rounded-full text-md">
+                        See all
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Recent Activities Section */}
+                  <div className="bg-white rounded-lg shadow-sm p-4 animate-fade-in">
+                    <SectionHeader title="Recent Activities" />
+                    <div className="mt-3">
+                      {activitiesData.map(activity => (
+                        <ActivityItem
+                          key={activity.id}
+                          title={activity.title}
+                          description={activity.description}
+                          timeAgo={activity.timeAgo}
+                          iconUrl={activity.iconUrl}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 md:mt-6">
-            {/* Applications Section */}
-            <div>
-              <SectionHeader title="Applications" />
-              <div className="space-y-3">
-                {applicationsData.map(application => (
-                  <ApplicationCard 
-                    key={application.id}
-                    name={application.name}
-                    email={application.email}
-                    avatarUrl={application.avatarUrl}
-                    onAccept={() => handleAccept(application.name)}
-                    onReject={() => handleReject(application.name)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Mentors Section */}
-            <div>
-              <SectionHeader title="Mentors" />
-              <div className="space-y-3">
-                {mentorsData.map(mentor => (
-                  <MentorCard 
-                    key={mentor.id}
-                    name={mentor.name}
-                    role={mentor.role}
-                    avatarUrl={mentor.avatarUrl}
-                    onMessage={() => handleMessage(mentor.name)}
-                  />
-                ))}
-              </div>
-              <div className="mt-4 text-center">
-                <button className="text-xs text-techrity-purple font-medium hover:underline focus:underline transition-colors">
-                  See all
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 md:mt-6">
-            {/* Users Section */}
-            <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4 animate-fade-in">
-              <SectionHeader title="Users" />
-              <div>
-                <UserStatsChart stats={userStatsData} />
-              </div>
-            </div>
-            {/* Recent Activities Section */}
-            <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4 animate-fade-in">
-              <SectionHeader title="Recent Activities" />
-              <div className="mt-4">
-                {activitiesData.map(activity => (
-                  <ActivityItem 
-                    key={activity.id}
-                    title={activity.title}
-                    description={activity.description}
-                    timeAgo={activity.timeAgo}
-                    iconUrl={activity.iconUrl}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
