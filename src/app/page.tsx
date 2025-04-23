@@ -4,10 +4,12 @@ import Mentors from "@/components/widgets/Mentors";
 import RecentActivities from "@/components/widgets/RecentActivities";
 import UsersChart from "@/components/widgets/Users";
 import GroupCall from "@/components/widgets/GroupCall";
+import WelcomeMessage from "@/components/layout/WelcomeMessage";
 
 export default function Home() {
   return (
     <div className="h-screen p-4">
+      <WelcomeMessage />
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 gap-4 h-full">
         {/* Left Column */}
         <div className="lg:col-span-5 grid grid-rows-2 gap-4 h-full">

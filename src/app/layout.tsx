@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Sidebar from '@/components/layout/Sidebar'
 import Header from '@/components/layout/Header'
-import WelcomeMessage from '@/components/layout/WelcomeMessage'
 
 // Load font outside component
 const inter = Inter({ subsets: ['latin'] })
@@ -25,7 +24,7 @@ export default function RootLayout({
           <Sidebar />
           <div className="flex-1 flex flex-col overflow-hidden">
             <Header />
-            <WelcomeMessage />
+           
             <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
               {children}
             </main>

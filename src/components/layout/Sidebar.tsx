@@ -57,14 +57,14 @@ export default function Sidebar() {
           >
             <div className="flex items-center space-x-8">
               <span
-                className={`text-lg transition-colors duration-200 ease-in-out ${
+                className={`text-lg transition-colors h-[20px] w-[20px] duration-200 ease-in-out ${
                   pathname === item.path ? "text-[#1F0954]" : ""
                 } group-hover:text-[#1F0954]`}
               >
                 {item.icon}
               </span>
               <span
-                className={`text-4 transition-colors duration-200 ease-in-out ${
+                className={`text-base transition-colors duration-200 ease-in-out ${
                   pathname === item.path ? "text-[#1F0954]" : ""
                 } group-hover:text-[#1F0954]`}
               >
