@@ -53,33 +53,37 @@ const Programs = () => {
                   <p></p>
                 </div>
 
-                <p className="text-[#A3A3A3] text-xs font-normal">{programsItems.description}</p>
+                <p className="text-[#A3A3A3] text-xs font-normal">
+                  {programsItems.description}
+                </p>
 
                 <div className="flex justify-between items-center">
                   <div className="space-x-2 flex items-center">
                     {Array.isArray(programsItems.avatars) ? (
-                     <div className="flex relative">
-                      { programsItems.avatars.map((avatar, i) => (
-                        <Image 
-                          className="rounded-full border-2 border-white"
-                          style={{ marginLeft: i > 0 ? '-15px' : '0' }}
-                          key={i} 
-                          src={avatar} 
-                          alt={`avatar ${i + 1}`} 
-                          width={32} 
-                          height={32} 
-                        />
-                      ))}
-                     </div>
+                      <div className="flex relative">
+                        {programsItems.avatars.map((avatar, i) => (
+                          <Image
+                            className="rounded-full border-2 border-white"
+                            style={{ marginLeft: i > 0 ? "-15px" : "0" }}
+                            key={i}
+                            src={avatar}
+                            alt={`avatar ${i + 1}`}
+                            width={32}
+                            height={32}
+                          />
+                        ))}
+                      </div>
                     ) : (
-                      <Image 
-                        src={programsItems.avatar} 
-                        alt="avatar" 
-                        width={32} 
-                        height={32} 
+                      <Image
+                        src={programsItems.avatar}
+                        alt="avatar"
+                        width={32}
+                        height={32}
                       />
                     )}
-                    <h1 className="text-xs font-semibold text-[#6C6C6C]">{programsItems.mentors}</h1>
+                    <h1 className="text-xs font-semibold text-[#6C6C6C]">
+                      {programsItems.mentors}
+                    </h1>
                   </div>
 
                   <div className="flex items-center gap-2">
