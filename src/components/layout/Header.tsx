@@ -1,10 +1,12 @@
 "use client"
 
-import { Bell } from "lucide-react";
-import { ChevronDown } from "lucide-react";
+import { Bell, ChevronDown } from "lucide-react";
 import { HeaderImageIcon } from "../svgIcons/SvgIcons";
+import { useWidget } from "@/context/WidgetContext";
 
 export default function Header() {
+  const { toggleWidget } = useWidget();
+
   return (
     <header className="bg-[#FDFDFD] w-full flex px-12 justify-end shadow">
       <div className=" flex items-center h-20">
@@ -27,9 +29,12 @@ export default function Header() {
             </p>
             <p className="text-xs text-[#53547B] font-normal">Member</p>
           </div>
-          <div className="bg-[#8B72FC] px-1 py-1 rounded-sm">
+          <button 
+            onClick={toggleWidget}
+            className="bg-[#8B72FC] px-1 py-1 rounded-sm cursor-pointer"
+          >
             <ChevronDown className="" />
-          </div>
+          </button>
         </div>
       </div>
     </header>

@@ -1,3 +1,5 @@
+'use client'
+
 import Programs from "@/components/widgets/Programs";
 import Applications from "@/components/widgets/Applications";
 import Mentors from "@/components/widgets/Mentors";
@@ -5,10 +7,12 @@ import RecentActivities from "@/components/widgets/RecentActivities";
 import UsersChart from "@/components/widgets/Users";
 import GroupCall from "@/components/widgets/GroupCall";
 import WelcomeMessage from "@/components/layout/WelcomeMessage";
+import WidgetWrapper from "@/components/widgets/WidgetWrapper";
 
 export default function Home() {
   return (
     <div className="h-screen p-4">
+      <WidgetWrapper />
       <WelcomeMessage />
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 gap-4 h-full">
         {/* Left Column */}
