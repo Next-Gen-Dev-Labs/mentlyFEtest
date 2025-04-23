@@ -4,7 +4,7 @@ import { BiBell, BiShoppingBag } from "react-icons/bi";
 
 export default function Navbar() {
   return (
-    <nav className="w-full h-[82px] float-right flex flex-end end-0 justify-end items-center px-4 py-3 bg-[#FDFDFD] shadow">
+    <nav className="w-full  h-[82px] float-right flex flex-end end-0 justify-end items-center px-4 py-3 bg-[#FDFDFD] shadow">
       <div className="flex items-center gap-6 space-x-4">
         <div className="relative">
           <BiBell size={24} className="text-[#340260]" />
