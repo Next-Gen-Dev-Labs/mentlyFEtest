@@ -9,6 +9,7 @@ import MentorCard from '@/components/dashboard/MentorCard';
 import UserStatsChart from '@/components/dashboard/UserStatsChart';
 import ActivityItem from '@/components/dashboard/ActivityItem';
 import { useToast } from '@/hooks/use-toast';
+import GroupCallSection from '@/components/dashboard/GroupCallSection';
 
 // Mock data
 const programsData = [
@@ -113,6 +114,37 @@ const activitiesData = [
   }
 ];
 
+const groupCallParticipants = [
+  {
+    name: 'Sarah Johnson',
+    avatarUrl: 'https://i.pravatar.cc/150?img=13',
+    isMuted: false,
+    isVideoOn: true,
+    isSpeaking: true,
+  },
+  {
+    name: 'Michael Wilson',
+    avatarUrl: 'https://i.pravatar.cc/150?img=14',
+    isMuted: false,
+    isVideoOn: true,
+    isSpeaking: false,
+  },
+  {
+    name: 'Adaafi Samuel',
+    avatarUrl: 'https://i.pravatar.cc/150?img=15',
+    isMuted: true,
+    isVideoOn: false,
+    isSpeaking: false,
+  },
+  {
+    name: 'Blessing O.',
+    avatarUrl: 'https://i.pravatar.cc/150?img=16',
+    isMuted: false,
+    isVideoOn: true,
+    isSpeaking: false,
+  }
+];
+
 const Index = () => {
   const { toast } = useToast();
 
@@ -141,15 +173,27 @@ const Index = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
       <Sidebar />
-
       <div className="flex-1 flex flex-col">
         <Header username="Techrity Forum" userRole="Member" />
-
         <div className="flex-1 px-2 sm:px-4 md:px-6 py-2 sm:py-4 overflow-y-auto">
           <WelcomeBanner username="Blessing" />
 
+          <div className="mt-4 md:mt-6">
+            {/* Group Call Section */}
+            <GroupCallSection 
+              participants={groupCallParticipants}
+              callTitle="UI/UX Weekly Group Call"
+              time="Wed, 10:30am - 11:30am"
+              onLeave={() => toast({
+                title: "You left the call",
+                description: "You have left the group call.",
+                variant: "destructive"
+              })}
+            />
+          </div>
+
           {/* Programs Section */}
-          <div className="mt-6">
+          <div className="mt-4 md:mt-6">
             <SectionHeader title="Programs" showFilter />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -168,11 +212,10 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 md:mt-6">
             {/* Applications Section */}
             <div>
               <SectionHeader title="Applications" />
-
               <div className="space-y-3">
                 {applicationsData.map(application => (
                   <ApplicationCard 
@@ -190,7 +233,6 @@ const Index = () => {
             {/* Mentors Section */}
             <div>
               <SectionHeader title="Mentors" />
-
               <div className="space-y-3">
                 {mentorsData.map(mentor => (
                   <MentorCard 
@@ -202,25 +244,24 @@ const Index = () => {
                   />
                 ))}
               </div>
-
               <div className="mt-4 text-center">
-                <button className="text-xs text-techrity-purple font-medium hover:underline focus:underline">
+                <button className="text-xs text-techrity-purple font-medium hover:underline focus:underline transition-colors">
                   See all
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 md:mt-6">
             {/* Users Section */}
-            <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4">
+            <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4 animate-fade-in">
               <SectionHeader title="Users" />
               <div>
                 <UserStatsChart stats={userStatsData} />
               </div>
             </div>
             {/* Recent Activities Section */}
-            <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4">
+            <div className="bg-white rounded-lg shadow-sm p-2 sm:p-4 animate-fade-in">
               <SectionHeader title="Recent Activities" />
               <div className="mt-4">
                 {activitiesData.map(activity => (
