@@ -1,4 +1,4 @@
-# Mently - Mentorship Platform
+# Mently
 
 ## Overview
 
@@ -25,8 +25,8 @@ This is a Mently dashboard page
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/masterprecie/mently-test.git
-cd mently-test
+git clone https://github.com/Masterprecie/mentlyFEtest
+cd mentlyFEtest
 ```
 
 2. Install dependencies:
@@ -105,3 +105,7 @@ Tests are organized by component in the `__tests__` folders. Each component test
 - The sidebar automatically collapses on screens smaller than 768px
 - Use the `useIsMobile` hook to detect mobile screens
 - The layout adjusts to grid or list view based on screen size
+
+### Deployment
+
+- The Project Deployment Link [https://mently-six.vercel.app/](https://mently-six.vercel.app/)
