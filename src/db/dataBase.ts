@@ -76,3 +76,58 @@ export const GroupCalls = [
     backgroundImage: "group-call-muuk.jpg",
   },
 ];
+
+export const Applications = {
+  mentors: [
+    {
+     name: "Maxwell Smith", 
+     email: "maxwellsmith@gmail.com",
+     skill: "Product Designer",
+     experience: "4years Experience",
+     location: "Lagos, Nigeria",
+     timezone: "GMT +1",
+    }
+  ],
+  students: [
+    {
+      name: "Adeati Samuel",
+      email: "adeatisa@gmail.com",
+    },
+    {
+      name: "Maxwell Smith",
+      email: "maxwellsmith@gmail.com",
+    },
+    {
+      name: "Adeati Samuel",
+      email: "adeatisa@gmail.com",
+    },
+    {
+      name: "Maxwell Smith",
+      email: "maxwellsmith@gmail.com",
+    },
+  ],
+};
+
+
+export const RecentActivities = [
+  {
+    image: "group-call-smile.jpg",
+    title: "KYC Verification",
+    notification: "45 new persons just signed up on Mently.",
+    time: "25 minutes Ago",
+  },
+  {
+    image: "group-call-smile.jpg",
+    title: "New User Sign Up!",
+    notification: "45 new persons just signed up on Mently.",
+    time: "25 minutes Ago",
+  },
+  {
+    image: "group-call-smile.jpg",
+    title: "Withdrawal Request",
+    notification: "45 new persons just signed up on Mently.",
+    time: "25 minutes Ago",
+  },
+] 
+
+
