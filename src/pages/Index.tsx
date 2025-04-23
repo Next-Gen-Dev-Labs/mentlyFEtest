@@ -9,7 +9,7 @@ import MentorCard from '@/components/dashboard/MentorCard';
 import UserStatsChart from '@/components/dashboard/UserStatsChart';
 import ActivityItem from '@/components/dashboard/ActivityItem';
 import { useToast } from '@/hooks/use-toast';
-import GroupCallSection from '@/components/dashboard/GroupCallSection';
+import GroupCallsCarousel from '@/components/dashboard/GroupCallsCarousel';
 
 // Mock data
 const programsData = [
@@ -114,34 +114,54 @@ const activitiesData = [
   }
 ];
 
-const groupCallParticipants = [
+const mockGroupCallsData = [
   {
-    name: 'Sarah Johnson',
-    avatarUrl: 'https://i.pravatar.cc/150?img=13',
-    isMuted: false,
-    isVideoOn: true,
-    isSpeaking: true,
+    id: 1,
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=300&q=80",
+    title: "Colour Hack Practical Group Call",
+    description: "Collaborate live on color theory, palette sharing and live feedback.",
+    time: "9:00 AM - 10:00 AM",
+    tags: ["Group Call"],
+    participants: [
+      { name: 'Sarah Johnson', avatarUrl: 'https://i.pravatar.cc/150?img=13' },
+      { name: 'Michael Wilson', avatarUrl: 'https://i.pravatar.cc/150?img=14' },
+      { name: 'Adaafi Samuel', avatarUrl: 'https://i.pravatar.cc/150?img=15' }
+    ],
   },
   {
-    name: 'Michael Wilson',
-    avatarUrl: 'https://i.pravatar.cc/150?img=14',
-    isMuted: false,
-    isVideoOn: true,
-    isSpeaking: false,
+    id: 2,
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=300&q=80",
+    title: "Weekly Meeting - Product Demo Review with Testers",
+    description: "Discuss and review new product test demos and insights from testers.",
+    time: "11:00 AM - 12:00 PM",
+    tags: [],
+    participants: [
+      { name: 'Blessing O.', avatarUrl: 'https://i.pravatar.cc/150?img=16' }
+    ],
   },
   {
-    name: 'Adaafi Samuel',
-    avatarUrl: 'https://i.pravatar.cc/150?img=15',
-    isMuted: true,
-    isVideoOn: false,
-    isSpeaking: false,
+    id: 3,
+    image: "/lovable-uploads/8af282b5-01be-4a63-a3bf-5c809601140e.png",
+    title: "UI/UX Design Standup",
+    description: "Fast, daily catchup on team progress, blockers, and next steps.",
+    time: "2:00 PM - 2:30 PM",
+    tags: [],
+    participants: [
+      { name: 'John Doe', avatarUrl: 'https://i.pravatar.cc/150?img=1' },
+      { name: 'Jane Smith', avatarUrl: 'https://i.pravatar.cc/150?img=2' },
+      { name: 'Emily Wilson', avatarUrl: 'https://i.pravatar.cc/150?img=5' }
+    ],
   },
   {
-    name: 'Blessing O.',
-    avatarUrl: 'https://i.pravatar.cc/150?img=16',
-    isMuted: false,
-    isVideoOn: true,
-    isSpeaking: false,
+    id: 4,
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=300&q=80",
+    title: "Muuk Feedback Session",
+    description: "Gathering feedback and insights on the new Muuk feature updates.",
+    time: "4:00 PM - 5:00 PM",
+    tags: [],
+    participants: [
+      { name: 'Sarah Brown', avatarUrl: 'https://i.pravatar.cc/150?img=3' }
+    ],
   }
 ];
 
@@ -179,15 +199,16 @@ const Index = () => {
           <WelcomeBanner username="Blessing" />
 
           <div className="mt-4 md:mt-6">
-            {/* Group Call Section */}
-            <GroupCallSection 
-              participants={groupCallParticipants}
-              callTitle="UI/UX Weekly Group Call"
-              time="Wed, 10:30am - 11:30am"
-              onLeave={() => toast({
-                title: "You left the call",
-                description: "You have left the group call.",
-                variant: "destructive"
+            {/* Group Calls Carousel */}
+            <GroupCallsCarousel 
+              groupCalls={mockGroupCallsData}
+              onJoin={(id) => toast({
+                title: "You joined the call",
+                description: `You have joined group call #${id}.`,
+              })}
+              onViewParticipants={(id) => toast({
+                title: "Viewing participants",
+                description: `Showing participants for group call #${id}.`,
               })}
             />
           </div>

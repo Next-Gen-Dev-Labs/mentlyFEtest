@@ -1,8 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Animations for fade-in, fade-out, scale, and hover-scale */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -149,4 +149,3 @@
     @apply card-action-button bg-techrity-purple text-white hover:bg-techrity-purple/90;
   }
 }
-
