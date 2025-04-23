@@ -1,5 +1,5 @@
-"use client"
-import Link from "next/link"
+"use client";
+import Link from "next/link";
 import {
   Home,
   FileText,
@@ -16,10 +16,10 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
-} from "lucide-react"
-import Image from "next/image"
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+} from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Sidebar({
   isCollapsed,
@@ -28,7 +28,7 @@ export default function Sidebar({
   isMobileSidebarOpen = false,
   onMobileToggle,
 }) {
-  const [isToggled, setIsToggled] = useState(false)
+  const [isToggled, setIsToggled] = useState(false);
 
   return (
     <AnimatePresence>
@@ -38,7 +38,12 @@ export default function Sidebar({
           initial={isMobile ? { x: -250 } : { x: 0 }}
           animate={{ x: 0 }}
           exit={isMobile ? { x: -250 } : {}}
-          transition={{ duration: 0.2, type: "spring", stiffness: 400, damping: 25 }}
+          transition={{
+            duration: 0.2,
+            type: "spring",
+            stiffness: 400,
+            damping: 25,
+          }}
           className={`bg-[#340260] text-white flex flex-col h-full transition-all duration-300 ease-in-out ${
             isCollapsed ? "w-[80px]" : "w-[250px]"
           } ${isMobile ? "fixed z-30 shadow-xl" : ""}`}
@@ -53,15 +58,7 @@ export default function Sidebar({
                 <X size={20} />
               </button>
             )}
-            <div className="mr-2">
-              <Image
-                src="/placeholder.svg?height=24&width=24"
-                alt="Techrity Logo"
-                width={24}
-                height={24}
-                className="text-white"
-              />
-            </div>
+
             <AnimatePresence>
               {!isCollapsed && (
                 <motion.span
@@ -71,33 +68,98 @@ export default function Sidebar({
                   transition={{ duration: 0.2 }}
                   className="text-xl font-semibold whitespace-nowrap overflow-hidden"
                 >
-                  techrity
+                  <Image
+                    src={"/logo.png"}
+                    alt={""}
+                    width={150}
+                    height={150}
+                    className="ml-2"
+                  />
                 </motion.span>
               )}
             </AnimatePresence>
             {!isMobile && (
               <div className="ml-auto">
                 <button
-                  className="text-white p-1 rounded-md hover:bg-white/10 transition-colors duration-200"
+                  className="text-white p-1 rounded-md  transition-colors duration-200"
                   onClick={onToggle}
-                  aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+                  aria-label={
+                    isCollapsed ? "Expand sidebar" : "Collapse sidebar"
+                  }
                 >
-                  {isCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+                  {isCollapsed ? (
+                    <Image
+                      src={"/icon.png"}
+                      alt={""}
+                      width={30}
+                      height={30}
+                      className="ml-2"
+                    />
+                  ) : (
+                    <Image
+                      src={"/icon.png"}
+                      alt={""}
+                      width={30}
+                      height={30}
+                      className="ml-2"
+                    />
+                  )}
                 </button>
               </div>
             )}
           </div>
 
           <nav className="flex-1 mt-20 ml-4 mr-4 overflow-y-auto">
-            <NavItem href="/dashboard" icon={<Home size={20} />} label="Dashboard" active isCollapsed={isCollapsed} />
-            <NavItem href="/programs" icon={<FileText size={20} />} label="Programs" isCollapsed={isCollapsed} />
-            <NavItem href="/activities" icon={<Activity size={20} />} label="Activities" isCollapsed={isCollapsed} />
-            <NavItem href="/users" icon={<Users size={20} />} label="Users" isCollapsed={isCollapsed} />
-            <NavItem href="/forums" icon={<MessageSquare size={20} />} label="Forums" isCollapsed={isCollapsed} />
-            <NavItem href="/finances" icon={<DollarSign size={20} />} label="Finances" isCollapsed={isCollapsed} />
-            <NavItem href="/rewards" icon={<Award size={20} />} label="Rewards" isCollapsed={isCollapsed} />
+            <NavItem
+              href="/dashboard"
+              icon={<Home size={20} />}
+              label="Dashboard"
+              active
+              isCollapsed={isCollapsed}
+            />
+            <NavItem
+              href="/programs"
+              icon={<FileText size={20} />}
+              label="Programs"
+              isCollapsed={isCollapsed}
+            />
+            <NavItem
+              href="/activities"
+              icon={<Activity size={20} />}
+              label="Activities"
+              isCollapsed={isCollapsed}
+            />
+            <NavItem
+              href="/users"
+              icon={<Users size={20} />}
+              label="Users"
+              isCollapsed={isCollapsed}
+            />
+            <NavItem
+              href="/forums"
+              icon={<MessageSquare size={20} />}
+              label="Forums"
+              isCollapsed={isCollapsed}
+            />
+            <NavItem
+              href="/finances"
+              icon={<DollarSign size={20} />}
+              label="Finances"
+              isCollapsed={isCollapsed}
+            />
+            <NavItem
+              href="/rewards"
+              icon={<Award size={20} />}
+              label="Rewards"
+              isCollapsed={isCollapsed}
+            />
             <div className="relative">
-              <NavItem href="/analytics" icon={<BarChart2 size={20} />} label="Analytics" isCollapsed={isCollapsed} />
+              <NavItem
+                href="/analytics"
+                icon={<BarChart2 size={20} />}
+                label="Analytics"
+                isCollapsed={isCollapsed}
+              />
               <AnimatePresence>
                 {!isCollapsed && (
                   <motion.span
@@ -112,8 +174,18 @@ export default function Sidebar({
                 )}
               </AnimatePresence>
             </div>
-            <NavItem href="/settings" icon={<Settings size={20} />} label="Settings" isCollapsed={isCollapsed} />
-            <NavItem href="/logout" icon={<LogOut size={20} />} label="Log Out" isCollapsed={isCollapsed} />
+            <NavItem
+              href="/settings"
+              icon={<Settings size={20} />}
+              label="Settings"
+              isCollapsed={isCollapsed}
+            />
+            <NavItem
+              href="/logout"
+              icon={<LogOut size={20} />}
+              label="Log Out"
+              isCollapsed={isCollapsed}
+            />
           </nav>
 
           {!isCollapsed ? (
@@ -123,15 +195,18 @@ export default function Sidebar({
                 animate={{ opacity: 1 }}
                 className="bg-[#4C2073] p-3 rounded-md mb-4 hover:bg-[#4A1E70] transition-colors duration-200"
               >
-              
                 <div>
                   <Contact size={16} className="mr-2 mb-4" />
                 </div>
                 <div className="flex items-center mb-2">
-                  
-                  <div className="text-sm text-purple-200">Got some questions, enquiries or need help?</div>
+                  <div className="text-sm text-purple-200">
+                    Got some questions, enquiries or need help?
+                  </div>
                 </div>
-                <Link href="/help" className="text-xs text-yellow-300 underline transition-colors duration-200">
+                <Link
+                  href="/help"
+                  className="text-xs text-yellow-300 underline transition-colors duration-200"
+                >
                   Visit Mently Help Desk Here
                 </Link>
               </motion.div>
@@ -165,7 +240,7 @@ export default function Sidebar({
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }
 
 function NavItem({ href, icon, label, active = false, isCollapsed = false }) {
@@ -174,10 +249,18 @@ function NavItem({ href, icon, label, active = false, isCollapsed = false }) {
       href={href}
       className={`flex items-center px-4 py-3 mt-4 cursor-pointer rounded-lg text-sm ${
         active ? "bg-white text-[#3a0a5e]" : ""
-      } hover:bg-white rounded-lg hover:text-[#3a0a5e] ${isCollapsed ? "justify-center" : ""} transition-all duration-200 hover:shadow-md`}
+      } hover:bg-white rounded-lg hover:text-[#3a0a5e] ${
+        isCollapsed ? "justify-center" : ""
+      } transition-all duration-200 hover:shadow-md`}
       title={isCollapsed ? label : ""}
     >
-      <div className={`flex items-center justify-center ${isCollapsed ? "" : "mr-8"}`}>{icon}</div>
+      <div
+        className={`flex items-center justify-center ${
+          isCollapsed ? "" : "mr-8"
+        }`}
+      >
+        {icon}
+      </div>
       <AnimatePresence>
         {!isCollapsed && (
           <motion.span
@@ -192,5 +275,5 @@ function NavItem({ href, icon, label, active = false, isCollapsed = false }) {
         )}
       </AnimatePresence>
     </Link>
-  )
+  );
 }
