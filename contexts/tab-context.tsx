@@ -1,9 +1,9 @@
 "use client";
 
-import tabItems from "@/tabs.config";
+import tabItems from "@/components/sidebar/tabs.config";
 import { createContext, FC, ReactNode, useContext, useState } from "react";
 
-type TabKeys = (typeof tabItems)[number]["key"];
+export type TabKeys = (typeof tabItems)[number]["key"];
 
 type TabContextType = {
 	activeTab: TabKeys;

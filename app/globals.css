@@ -4,11 +4,13 @@
 	--color-background: #f4f5fa;
 	--color-foreground: #171717;
 	--font-chivo: "Chivo", sans-serif;
+	--licide--check: url("https://api.iconify.design/lucide/check.svg");
+	--animate-overshoot-inOut-smooth: "linear(0, -0.01 4.8%, -0.044 9.4%, -0.226 23.1%, -0.271 27.7%, -0.28 30.1%, -0.276 32.4%, -0.227 36.6%, -0.108 40.8%, 0.083 44.7%, 0.76 53%, 1.006 56.9%, 1.175 61.2%, 1.229 63.5%, 1.264 65.9%, 1.28 69.3%, 1.265 73.1%, 1.224 77.1%, 1.044 90.6%, 1.01 95.2%, 1)";
 }
 
 @layer base {
 	* {
-		@apply scroll-smooth;
+		@apply scroll-smooth select-none;
 		scrollbar-width: thin;
 		interpolate-size: allow-keywords;
 	}
@@ -17,11 +19,40 @@
 		@apply bg-background text-foreground h-full;
 		body {
 			@apply font-chivo flex h-full *:h-full *:overflow-auto;
+
 			button:not([aria-disabled="true"]):not(:disabled),
 			label:has(input:not([aria-disabled="true"]):not(:disabled)),
 			[role="button"]:not([aria-disabled="true"]):not(:disabled) {
 				@apply cursor-pointer;
 			}
+
+			button:has(iconify-icon:only-child),
+			label:has(input.sr-only + iconify-icon:last-child) {
+				@apply grid aspect-square place-items-center;
+			}
 		}
+
+		/* ::view-transition-group(.tab-items) {
+			z-index: 1;
+		}
+
+		::view-transition-group(active-tab-indicator) {
+			animation-duration: 375ms;
+			animation-timing-function: var(--animate-overshoot-inOut-smooth);
+		} */
 	}
+}
+
+@utility widget-checkbox {
+	@apply relative isolate ml-auto size-[1em] cursor-pointer appearance-none rounded-sm border-2 border-black/50 text-lg outline-offset-3 transition before:absolute before:bottom-0 before:flex before:h-2/3 before:w-full before:origin-top before:scale-75 before:items-center before:justify-center before:align-middle before:invert before:transition-all before:transition-discrete checked:border-[#07c500] checked:bg-[#07c500] checked:before:scale-100 checked:before:content-(--licide--check) hover:scale-105 focus-visible:scale-105 active:scale-95 starting:checked:before:scale-75 starting:checked:before:opacity-0;
+}
+
+@utility clone-anchor {
+	@apply fixed inset-auto -z-1 m-auto;
+	width: anchor-size(width);
+	height: anchor-size(height);
+	top: anchor(top);
+	right: anchor(right);
+	bottom: anchor(bottom);
+	left: anchor(left);
 }

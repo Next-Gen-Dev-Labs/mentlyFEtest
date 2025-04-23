@@ -1,6 +1,14 @@
 "use client";
 
-import { createContext, FC, ReactNode, useContext, useState } from "react";
+import transitionViewIfSupported from "@/utils/transitionViewIfSupported";
+import {
+	createContext,
+	FC,
+	ReactNode,
+	useContext,
+	useEffect,
+	useState,
+} from "react";
 
 interface SidebarContextType {
 	isSidebarOpen: boolean;
@@ -16,11 +24,26 @@ export const SidebarContextProvider: FC<{ children: ReactNode }> = ({
 }) => {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-	const openSidebar = () => setIsSidebarOpen(true);
+	useEffect(() => {
+		if (typeof window === "undefined") return;
 
-	const closeSidebar = () => setIsSidebarOpen(false);
+		const updateSidebarState = () =>
+			setIsSidebarOpen(window.innerWidth >= 1024);
 
-	const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
+		updateSidebarState();
+		window.addEventListener("resize", updateSidebarState);
+
+		return () => window.removeEventListener("resize", updateSidebarState);
+	}, []);
+
+	const openSidebar = () =>
+		transitionViewIfSupported(() => setIsSidebarOpen(true));
+
+	const closeSidebar = () =>
+		transitionViewIfSupported(() => setIsSidebarOpen(false));
+
+	const toggleSidebar = () =>
+		transitionViewIfSupported(() => setIsSidebarOpen((prev) => !prev));
 
 	return (
 		<SidebarContext.Provider

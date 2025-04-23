@@ -1,11 +1,11 @@
+import { SidebarContextProvider } from "@/contexts/sidebar-context";
 import { TabContextProvider } from "@/contexts/tab-context";
 import clsx from "clsx";
 import type { Metadata } from "next";
 import { Chivo } from "next/font/google";
 import "./globals.css";
-import { SidebarContextProvider } from "@/contexts/sidebar-context";
 
-const chivo = Chivo({ variable: "--font-family-chivo" });
+const chivo = Chivo({ variable: "--font-family-chivo", subsets: ["latin"] });
 
 export const metadata: Metadata = { title: "Techrity" };
 
@@ -15,7 +15,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html suppressHydrationWarning lang="en">
 			<body className={clsx(chivo.variable, "antialiased")}>
 				<TabContextProvider>
 					<SidebarContextProvider>{children}</SidebarContextProvider>
