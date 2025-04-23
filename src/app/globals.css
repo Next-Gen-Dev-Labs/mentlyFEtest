@@ -1,4 +1,21 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --font-geist-sans: 'Chivo', sans-serif;
+  --font-geist-mono: 'Chivo Mono', monospace;
+  --geist-background: #ffffff;
+  --geist-foreground: #171717;
+  --geist-foreground-inverse: #ffffff;
+  --geist-background-inverse: #171717;
+  --geist-border: #eaeaea;
+  --geist-border-inverse: #2a2a2a;
+  --geist-foreground-muted: #666666;
+  --geist-foreground-inverse-muted: #999999;
+  --geist-success: #0070f3;
+  --geist-success-hover: #0070f3;
+  --geist-success-border: #0070f3;
+}
 
 /* :root {
   --background: #ffffff;

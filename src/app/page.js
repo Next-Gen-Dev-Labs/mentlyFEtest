@@ -1,7 +1,17 @@
+import Activities from "./components/Activities";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import Programs from "./components/Programs";
+
 const Home = () => {
   return (
     <>
-      <h1 className="text-red-600">Welcome to the world</h1>
+      <Sidebar />
+      <Navbar />
+      <Dashboard />
+      <Programs />
+      <Activities />
     </>
   );
 }
