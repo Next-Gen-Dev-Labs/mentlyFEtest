@@ -1,39 +1,90 @@
 # MentlyFEtest Frontend Coding Challenge
 
-## Welcome
+## Project Overview
+This project is a frontend application developed as part of the MentlyFEtest coding challenge. The application is built using **Next.js** and **Tailwind CSS** to create a responsive, accessible, and user-friendly interface. The primary goal is to deliver a well-structured application that adheres to the provided design specifications from the Figma file, ensuring mobile and desktop responsiveness.
 
-This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+## Key Features
+- **Responsive Design**: Ensures the app works seamlessly on mobile, tablet, and desktop screens.
+- **Next.js Framework**: Built using Next.js to take advantage of its SSR (Server-Side Rendering) and optimization features.
+- **Tailwind CSS Styling**: Utilizes Tailwind CSS for a utility-first approach to styling, ensuring maintainable and scalable CSS.
+- **Animations**: Animations have been added using CSS to improve user experience.
+- **Accessibility**: Follows accessibility best practices to make the app usable for all users.
 
-## The Challenge
+## Technical Details
+- **Framework**: Next.js for SSR and page routing.
+- **Styling**: Tailwind CSS for fast and responsive styling.
+- **Responsiveness**: The app is designed to work well on a variety of screen sizes using media queries and flexible layouts.
+- **Accessibility**: Implemented proper ARIA attributes, keyboard navigation, and color contrast for better accessibility.
+- **Animations**: Animations have been added where appropriate to improve user interactions.
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=1391-1201&t=1K1umhLSyddg7sou-0).
+## Table of Contents
+1. [Project Structure](#project-structure)
+2. [Getting Started](#getting-started)
+3. [Technology Stack](#technology-stack)
+4. [Contributing](#contributing)
+5. [License](#license)
+6. [Deployment](#deployment)
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
+## Project Structure
+Here's an overview of the project's folder structure:
 
-**Bonus Points:**
+```
+/public
+  /images            # Static assets (e.g., icons)
+/src
+  /components        # React components
+  /pages             # Pages (e.g., Home, About, Contact)
+  /styles            # Global styles (Tailwind CSS configuration)
+/public/images      # Store your images here (e.g., icons)
+```
 
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
+## Getting Started
 
-## Submission
+- **Prerequisites**:
+  - **Node.js** (v14+ recommended)
+  - **npm** or **yarn**
 
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+- **Installation**:
+  - **Clone the repository**:
+    ```bash
+    git clone https://github.com/stefniey/mently-fe-test.git
+    cd mently-fe-test
+    ```
 
-## Evaluation Criteria
+  - **Install dependencies**:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-Your submission will be evaluated on the following criteria:
+  - **Start the development server**:
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
 
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
+  - **Access the application**: Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-We appreciate your time and effort in completing this challenge. Good luck!
+## Technology Stack
+- **Frontend**: React, TypeScript, Next.js
+- **Styling**: Tailwind CSS for utility-first styling
+- **Animations**: Subtle CSS animations have been added for smooth user interactions.
+- **Responsive Design**: Mobile-first design with media queries
+
+## Contributing
+- **Fork the repository**.
+- **Create a new branch** for your feature (`feature-name`).
+- **Commit your changes**.
+- **Push to your branch**.
+- **Open a pull request**.
+
+## License
+This project is licensed under the MIT License.
+
+## Deployment
+The application has been deployed to **Netlify**. You can view the live application on the provided Netlify URL.
+https://mently-test.netlify.app/
+
+---
