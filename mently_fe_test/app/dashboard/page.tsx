@@ -1,7 +1,12 @@
+import Navbar from "@/components/Navbar";
 import React from "react";
 
 const page = () => {
-  return <div>page vdfg</div>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 };
 
 export default page;
