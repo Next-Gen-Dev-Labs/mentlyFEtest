@@ -1,39 +1,52 @@
-# MentlyFEtest Frontend Coding Challenge
 
-## Welcome
+# Techrity Dashboard
 
-This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+# Submitted By: Rotimi Oluwafemi
 
-## The Challenge
+- [GitHub](https://github.com/Itzfeminisce)
+- [LinkedIn](https://linkedin.com/in/Itzfeminisce)
+- [Portfolio](https://itzfeminisce.vercel.app)
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=1391-1201&t=1K1umhLSyddg7sou-0).
+A modern dashboard application built with React and TypeScript, featuring a clean UI with a purple theme.
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
+## Tech Stack
 
-**Bonus Points:**
+- **React**: Frontend library for building user interfaces
+- **TypeScript**: Static type-checking for JavaScript
+- **React Router**: For navigation between different sections
+- **Lucide Icons**: For consistent iconography throughout the application
+- **Tailwind CSS**: For styling with utility classes
 
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
+## Project Structure
 
-## Submission
+The application follows a component-based architecture:
 
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+- `src/components/layout`: Contains layout components like Sidebar
+- `src/mock-data.ts`: Contains mock data for development and testing
 
-## Evaluation Criteria
+## Features
 
-Your submission will be evaluated on the following criteria:
+- **Responsive Sidebar**: Collapsible sidebar with navigation links
+- **Dashboard Overview**: Main dashboard with program cards and statistics
+- **Group Calls**: Interface for managing and joining video calls
+- **Notifications System**: Real-time notification display
 
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
+## Color Scheme
 
-We appreciate your time and effort in completing this challenge. Good luck!
+The application uses a custom color palette:
+- Primary: Techrity Purple (`bg-techrity-purple`)
+- Accent: Techrity Rating color for highlights
+- Text: White with various opacity levels for hierarchy
+- Background: Dark theme with subtle gradients
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run the development server with `npm run dev`
+4. Access the application at `http://localhost:5173`
+
+## Screenshots
+
+![Dashboard Overview](public/project.png)
+
