@@ -27,5 +27,13 @@
     "eslint-config-next": "15.3.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "eslintConfig": {
+    "extends": ["next", "eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended"],
+    "rules": {
+      "react/display-name": "off",
+      "react/no-unescaped-entities": "off",
+      "@typescript-eslint/no-explicit-any": "off"
+    }
   }
 }
