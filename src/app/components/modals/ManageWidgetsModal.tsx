@@ -101,7 +101,7 @@ export default function ManageWidgetsModal({
 
                     <Dialog.Title
                       as="h1"
-                      className="text-3xl font-bold text-purple-700 mb-2"
+                      className="text-3xl font-bold text-[#6F01D0] mb-2"
                     >
                       Manage Widget
                     </Dialog.Title>
@@ -175,7 +175,7 @@ export default function ManageWidgetsModal({
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="bg-purple-700 text-white py-3 px-4 rounded font-medium focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200"
+                      className="bg-[#6F01D0] text-white py-3 px-4 rounded font-medium focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200"
                       onClick={handleSaveChanges}
                     >
                       Save Changes
@@ -183,7 +183,7 @@ export default function ManageWidgetsModal({
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="border border-purple-700 text-purple-700 py-3 px-4 rounded font-medium focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200"
+                      className="border border-[#6F01D0] text-[#6F01D0] py-3 px-4 rounded font-medium focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200"
                       onClick={resetWidgetsToDefault}
                     >
                       Reset to Default
