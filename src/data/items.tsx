@@ -12,6 +12,13 @@ export interface NavItem {
   icon: React.ReactNode;
 }
 
+export interface ApplicationItem {
+  id: string;
+  name: string;
+  email: string;
+  image: string;
+}
+
 export interface WidgetItem {
   id: string;
   label: string;
@@ -40,15 +47,6 @@ export interface GroupCallItem {
   mentors: { alt: string; src: string; tooltip: string; }[];
 }
 
-export interface ApplicationItem {
-  id: string;
-  name: string;
-  email: string;
-  image: string;
-  type: 'mentor' | 'student';
-  tags: { text: string; bgColor: string; textColor: string; borderColor: string; }[];
-}
-
 export const navItems: NavItem[] = [
   { active: true, label: "Dashboard", icon: <RiHome5Line /> },
   { label: "Programs", icon: <LuBookText /> },
@@ -68,41 +66,41 @@ export const widgetItems: WidgetItem[] = [
     visible: true,
     label: 'Programs',
     defaultVisible: true,
-    gridPosition: 'col-span-1 row-span-2 col-start-1 row-start-1'
+    gridPosition: 'lg:col-span-1 lg:row-span-2 col-start-1 row-start-1'
   },
   {
     id: 'group',
     visible: true,
     label: 'Group Calls',
     defaultVisible: true,
-    gridPosition: 'col-span-2 row-span-1 col-start-2 row-start-1'
+    gridPosition: 'lg:col-span-2 lg:row-span-1 lg:col-start-2 lg:row-start-1'
   },
   {
     visible: true,
     id: 'application',
     label: 'Application',
     defaultVisible: true,
-    gridPosition: 'col-span-1 row-span-2 col-start-2 row-start-2'
+    gridPosition: 'lg:col-span-1 lg:row-span-2 lg:col-start-2 lg:row-start-2'
   },
   {
     id: 'mentor',
     visible: true,
     label: 'Mentors',
     defaultVisible: true,
-    gridPosition: 'col-span-1 row-span-1 col-start-3 row-start-2'
+    gridPosition: 'lg:col-span-1 lg:row-span-1 lg:col-start-3 lg:row-start-2'
   },
   {
     id: 'recent',
     visible: true,
     defaultVisible: true,
     label: 'Recent Activities',
-    gridPosition: 'col-span-1 row-span-1 col-start-3 row-start-3'
+    gridPosition: 'lg:col-span-1 lg:row-span-1 lg:col-start-3 lg:row-start-3'
   },
   {
     id: 'user',
     isUser: true,
     label: 'Users',
-    gridPosition: 'col-span-1 row-span-1 col-start-1 row-start-3'
+    gridPosition: 'lg:col-span-1 lg:row-span-1 lg:col-start-1 lg:row-start-3'
   },
   { id: 'earnings', label: 'Earnings' },
   { id: 'forum', label: 'Forum' },
@@ -185,45 +183,24 @@ export const groupCallItems: GroupCallItem[] = [
 export const applicationItems: ApplicationItem[] = [
   {
     id: '1',
-    type: 'mentor',
-    name: 'Maxwell Smith',
-    image: '/profile3.webp',
-    email: 'maxwellsmith@gmail.com',
-    tags: [
-      { text: 'Product Designer', borderColor: '#DDCEEE', bgColor: '#F3ECF9', textColor: '#9985A7' },
-      { text: '4years Experience', borderColor: '#A1BDBA', bgColor: '#E8FDFB', textColor: '#58948E' },
-      { text: 'Lagos, Nigeria', borderColor: '#ABBEE0', bgColor: '#E3ECF9', textColor: '#8196B5' },
-      { text: 'GMT+1', borderColor: '#C8C8C8', bgColor: '#F4F4F4', textColor: '#595564' }
-    ]
-  },
-  {
-    id: '2',
-    tags: [],
-    type: 'student',
     name: 'Adeati Samuel',
     image: '/profile7.webp',
     email: 'adeatisamuel@gmail.com',
   },
   {
     id: '2',
-    tags: [],
-    type: 'student',
     name: 'Maxwell Smith',
     image: '/profile3.webp',
     email: 'maxwellsmith@gmail.com',
   },
   {
-    id: '2',
-    tags: [],
-    type: 'student',
+    id: '3',
     name: 'Adeati Samuel',
     image: '/profile7.webp',
     email: 'adeatisamuel@gmail.com',
   },
   {
-    id: '2',
-    tags: [],
-    type: 'student',
+    id: '4',
     name: 'Maxwell Smith',
     image: '/profile3.webp',
     email: 'maxwellsmith@gmail.com',

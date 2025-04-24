@@ -16,8 +16,8 @@ export default function Programs() {
 
             {programItems.map((program, index) => (
                 <div key={index} className="rounded-[10px] p-4 grid gap-3 [box-shadow:0px_4.93px_5.17px_0px_#AFABAB4D]">
-                    <div className="relative w-full h-25 rounded-lg overflow-hidden">
-                        <div className="absolute w-[75%] h-full px-4 py-1 z-10 grid items-center">
+                    <div className="relative w-full h-20 rounded-lg overflow-hidden">
+                        <div className="absolute h-full px-4 py-1 z-10 grid items-center">
                             <h5 className="font-bold text-white text-lg 2xl:text-xl [line-height:1.2] text-pretty">{program.title}</h5>
                             <p className="gap-1 rounded-[10px] flex items-center mt-1 bg-[#D4E0F3] w-max py-0.5 px-2.5">
                                 <i className="rounded-full w-1.5 h-1.5" style={{ backgroundColor: program.typeColor }} />

@@ -6,10 +6,10 @@ export default function Header({ toggleCollapse }: CollapseProps) {
         <section className="grid gap-4 mb-3">
             <div className="flex gap-1.5 items-center justify-end">
                 <button className="cursor-pointer text-[#A4A5B8] hover:text-[#6F01D0] w-6 h-6">
-                    <TbListDetails />
+                    <TbListDetails className="rotate-y-180" />
                 </button>
                 <button className="cursor-pointer text-[#6F01D0] grid place-items-center rounded-[3px] border border-[#6F01D0] bg-[#6F01D01C] w-6 h-6">
-                    <TbLayout />
+                    <TbLayout className="rotate-y-180" />
                 </button>
                 <button onClick={toggleCollapse} className="text-[#1F0954] font-bold text-sm cursor-pointer bg-transparent border-none">Manage Widgets</button>
             </div>

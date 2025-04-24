@@ -6,7 +6,7 @@ export default function Manage({ toggleCollapse }: CollapseProps) {
     const { widgets, toggleWidget, resetWidgets } = useWidgets();
 
     return (
-        <aside className="z-50 w-100 px-10 py-6 fixed bg-white top-0 right-0 h-dvh transition-all overflow-y-auto scrollbar-hide duration-300 ease-in-out before:bg-[#E3D7FF29] before:backdrop-blur-xs before:fixed before:inset-0 before:-z-1">
+        <aside className="z-50 w-full md:w-100 px-10 py-6 fixed bg-white top-0 right-0 h-dvh transition-all overflow-y-auto scrollbar-hide duration-300 ease-in-out md:before:bg-[#E3D7FF29] md:before:backdrop-blur-xs md:before:fixed md:before:inset-0 md:before:-z-1">
             <section className="space-y-10">
                 <div className="flex justify-end gap-2 border-b-[#8D8D8D] border-b-[1px] pb-2">
                     <HiMiniXMark onClick={toggleCollapse} className="text-[#8D8D8D] hover:text-black cursor-pointer" />
@@ -16,7 +16,7 @@ export default function Manage({ toggleCollapse }: CollapseProps) {
                     <div>
                         <h3 className="text-[#6F01D0] text-3xl font-bold">Manage Widgets</h3>
                         <p className="text-[#374557] text-[12px] mt-4">
-                            Personalize your dashboard by managing widgets add, remove, or reorder them to fit your workflow. (minimum 2 widgets must be visible)
+                            Personalize your dashboard by managing widgets add, remove, or reorder them to fit your workflow.
                         </p>
                     </div>
 

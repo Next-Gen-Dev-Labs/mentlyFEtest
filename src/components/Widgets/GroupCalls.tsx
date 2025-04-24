@@ -11,8 +11,7 @@ export default function GroupCalls() {
             {groupCallItems.map((call, index) => (
                 <div
                     key={index}
-                    style={{ width: 'calc(50% - 0.75rem)' }}
-                    className={`bg-[#F9F7FF] rounded-[10px] p-3 grid gap-2 flex-shrink-0 w-full ${index >= 2 ? 'hidden 2xl:block' : 'block'}`}
+                    className={`bg-[#F9F7FF] rounded-[10px] p-5 grid gap-2 w-full ${index >= 2 ? 'hidden 2xl:block' : '2xl:block'}`}
                 >
                     <div className="relative w-full h-25 rounded-lg overflow-hidden">
                         <Image fill priority src={call.image} alt="Widget Image" className="object-cover" />

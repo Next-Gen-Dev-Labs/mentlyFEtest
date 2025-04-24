@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Users() {
     return (
-        <div className="mt-4 p-4 h-full flex items-center gap-2 justify-between">
+        <div className="mt-4 p-4 flex items-center gap-2 justify-around">
             <div className="relative">
                 <Image width={180} height={180} src="/donut.webp" alt="Widget Image" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center [line-height:0]">

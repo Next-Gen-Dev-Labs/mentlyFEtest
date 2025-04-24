@@ -16,10 +16,10 @@ export default function Home() {
     <>
       <Sidebar toggleCollapse={sidebar.toggle} isCollapsed={sidebar.isCollapsed} />
       <main className={`transition-all duration-300 ease-in-out ${sidebar.isCollapsed ? 'ml-20' : 'ml-60'}`}>
-        <Topbar />
-        <section className="pt-4 px-8">
+        <Topbar toggleCollapse={sidebar.toggle} />
+        <section className="py-4 px-8">
           <Header toggleCollapse={widgetsContext.toggle} />
-          <section className="grid grid-cols-3 grid-rows-3 gap-4">
+          <section className="grid grid-cols-3 gap-4">
             {widgets.map(widget => <Widget key={widget.id} widget={widget} />)}
             {widgetsContext.isCollapsed && <Manage toggleCollapse={widgetsContext.toggle} />}
           </section>
