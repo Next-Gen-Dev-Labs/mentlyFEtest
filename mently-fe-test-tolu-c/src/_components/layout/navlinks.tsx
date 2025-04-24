@@ -3,16 +3,35 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ComponentType, SVGProps } from "react";
-import { BookIcon, HomeIcon, LogoutIcon } from "~/assets/icons";
+import {
+  ActivityIcon,
+  BarChartIcon,
+  BookIcon,
+  FileTextIcon,
+  GiftIcon,
+  HomeIcon,
+  LogoutIcon,
+  SettingIcon,
+  UsersIcon,
+  WalletIcon,
+} from "~/assets/icons";
 import { cn } from "~/utils/cn";
 
 const navlinkList: Array<{
   name: string;
   path: string;
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
+  isComing?: boolean;
 }> = [
     { name: "Dashboard", path: "/", Icon: HomeIcon },
     { name: "Programs", path: "/programs", Icon: BookIcon },
+    { name: "Activities", path: "/activities", Icon: ActivityIcon },
+    { name: "Users", path: "/users", Icon: UsersIcon },
+    { name: "Forums", path: "/forums", Icon: FileTextIcon },
+    { name: "Finances", path: "/finances", Icon: WalletIcon },
+    { name: "Rewards", path: "/rewards", Icon: GiftIcon },
+    { name: "Analytics", path: "/analytics", Icon: BarChartIcon, isComing: true },
+    { name: "Settings", path: "/settings", Icon: SettingIcon },
   ];
 
 export const Navlinks = () => {

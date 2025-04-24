@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const Sidebar = () => {
   return (
-    <div className="w-60 flex-none h-full bg-bg-main text-white flex flex-col items-center py-9 px-4 gap-12">
+    <div className="w-60 flex-none h-full overflow-y-scroll bg-bg-main text-white flex flex-col items-center py-9 px-4 gap-12">
       <Link href={"/"}>
         <Image
           src={"/images/logo.png"}
