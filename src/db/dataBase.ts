@@ -114,21 +114,21 @@ export const ApplicationsData = {
 };
 
 
-export const RecentActivities = [
+export const RecentActivitiesData = [
   {
-    image: "group-call-smile.jpg",
+    image: SvgImageTwo,
     title: "KYC Verification",
     notification: "45 new persons just signed up on Mently.",
     time: "25 minutes Ago",
   },
   {
-    image: "group-call-smile.jpg",
+    image: SvgImageOne,
     title: "New User Sign Up!",
     notification: "45 new persons just signed up on Mently.",
     time: "25 minutes Ago",
   },
   {
-    image: "group-call-smile.jpg",
+    image: SvgImageThree,
     title: "Withdrawal Request",
     notification: "45 new persons just signed up on Mently.",
     time: "25 minutes Ago",
