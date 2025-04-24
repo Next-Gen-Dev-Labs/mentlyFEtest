@@ -1,7 +1,10 @@
+const { withNetlify } = require('@netlify/next');
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+ reactStrictMode: true,
+  swcMinify: true,
+  trailingSlash: false,
 };
 
-export default nextConfig;
+export default withNetlify(nextConfig);
