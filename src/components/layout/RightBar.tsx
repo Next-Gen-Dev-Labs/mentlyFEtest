@@ -21,7 +21,7 @@ const RightBar = () => {
 
       {/* Right Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-[85%] bg-white shadow-lg z-50 
+        className={`fixed top-0 right-0 h-full md:w-[450px] w-[85%] bg-white shadow-lg z-50 
           transition-transform duration-300 ease-in-out
           ${isRightBarOpen ? "translate-x-0" : "translate-x-full"}`}
       >

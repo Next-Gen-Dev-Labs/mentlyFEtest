@@ -11,30 +11,31 @@ import { Settings } from "lucide-react";
 const Programs = () => {
   return (
     <Card className="h-full relative">
-      <div className=" px-2 py-1">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Menu />
-            <h1 className="text-[#B0B0B0] text-base font-bold">Programs</h1>
-          </div>
-          <div className="flex items-center gap-2">
-            <h2 className="text-[#6F01D0] font-semibold text-xs">See all</h2>
-            <CiMenuKebab />
-          </div>
-        </div>
+      <div className="rounded-lg">
+        <div className="px-2 py-1">
+          <div>
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-2">
+                <Menu />
+                <h1 className="text-[#B0B0B0] text-base font-bold">Programs</h1>
+              </div>
+              <div className="flex items-center gap-2">
+                <h2 className="text-[#6F01D0] font-semibold text-xs">See all</h2>
+                <CiMenuKebab />
+              </div>
+            </div>
 
-        <div className="flex justify-end items-center gap-3 mx-6">
-          <p className="text-[#918C9C] text-xs font-medium">Filter</p>
-          <select className="text-xs border-2 outline-0 px-3 py-1.5 rounded-md border-[#E1E7EC] flex items-center gap-2 font-medium text-[#595564]">
-            <option value="Active">
-              Active
-              <ChevronDown />
-            </option>
-            <option value="Inactive">
-              Inactive
-              <ChevronDown />
-            </option>
-          </select>
+            <div className="flex justify-end items-center gap-3 mx-6">
+              <p className="text-[#918C9C] text-xs font-medium">Filter</p>
+              <div className="relative inline-flex items-center">
+                <select className="text-xs border appearance-none pr-8 rounded py-1">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+                <ChevronDown className="absolute right-2 pointer-events-none" size={16} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
