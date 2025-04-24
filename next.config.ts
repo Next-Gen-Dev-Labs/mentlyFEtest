@@ -1,9 +1,8 @@
 import path from 'path';
-import type { Configuration } from 'webpack';
+import type { NextConfig } from 'next';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  webpack: (config: Configuration) => {
+const nextConfig: NextConfig = {
+  webpack(config) {
     if (!config.resolve) config.resolve = {};
     config.resolve = {
       ...config.resolve,
@@ -12,7 +11,6 @@ const nextConfig = {
         '@': path.resolve(__dirname, 'src'),
       },
     };
-    
     return config;
   },
 };
