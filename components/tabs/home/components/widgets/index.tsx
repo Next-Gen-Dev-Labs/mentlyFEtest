@@ -19,7 +19,10 @@ export default function Widgets() {
 						fallback={<Icon icon="svg-spinners:blocks-scale" />}
 					>
 						<widget.Component
-							style={{ gridArea: `--${homeWidgets.indexOf(widget.key)}` }}
+							style={{
+								gridArea: `--${homeWidgets.indexOf(widget.key)}`,
+								viewTransitionName: `the-actual-${widget.key}-widget`,
+							}}
 						/>
 					</Suspense>
 				);

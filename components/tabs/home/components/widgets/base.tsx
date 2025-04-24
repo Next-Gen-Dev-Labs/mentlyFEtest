@@ -14,7 +14,7 @@ export default function WidgetBase(props: PropsWithChildren<WidgetBase>) {
 			)}
 			style={props.style}
 		>
-			<header className="flex items-center gap-3 pb-5">
+			<header className="sticky flex items-center gap-3 bg-gradient-to-b from-white to-transparent pb-5">
 				<button type="button" className="cursor-grab active:cursor-grabbing">
 					<Icon icon="famicons:reorder-four-outline" />
 				</button>

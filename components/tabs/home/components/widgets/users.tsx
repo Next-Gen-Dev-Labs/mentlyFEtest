@@ -13,7 +13,8 @@ export default function Users({ style }: { style?: CSSProperties }) {
 				dataLabels: { enabled: false },
 				labels: ["Students", "Mentors", "Programs", "Others", "Unknown"],
 				legend: {
-					formatter: (name, { w, seriesIndex }) =>
+					// eslint-disable-next-line @typescript-eslint/no-explicit-any
+					formatter: (name: string, { w, seriesIndex }: Record<string, any>) =>
 						`<span class="flex items-center justify-between text-sm font-bold"><span class="text-xs font-normal">${name}</span>${w?.globals?.series?.[seriesIndex]}</span>`,
 					position: "right",
 				},
