@@ -19,13 +19,8 @@ export default function Dashboard() {
   const [isWidgetModalOpen, setIsWidgetModalOpen] = useState(false);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
-  const {
-    toggleSidebar,
-    isSidebarExpanded,
-    widgets,
-    setWidgets,
-    resetWidgetsToDefault,
-  } = useLayoutContext();
+  const { toggleSidebar, isSidebarExpanded, widgets, setWidgets } =
+    useLayoutContext();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -41,16 +36,6 @@ export default function Dashboard() {
     if (typeof window !== "undefined") {
       localStorage.setItem("dashboardViewMode", mode);
     }
-  };
-
-  const handleWidgetChange = (
-    widgetKey: keyof typeof widgets,
-    value: boolean
-  ) => {
-    setWidgets({
-      ...widgets,
-      [widgetKey]: value,
-    });
   };
 
   return (

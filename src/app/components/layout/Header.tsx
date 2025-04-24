@@ -6,7 +6,6 @@ import Image from "next/image";
 import Logo from "../../../../public/images/icons/HeaderLogo.svg";
 import MenuIcon from "../../../../public/images/icons/menuIcon.svg";
 import BellIcon from "../../../../public/images/icons/bellIcon.svg";
-import useResponsive from "../../hooks/useResponsive";
 import { BsChevronDown } from "react-icons/bs";
 
 interface HeaderProps {
