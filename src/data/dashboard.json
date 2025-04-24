@@ -1,0 +1,457 @@
+{
+    "sidebar": {
+        "logo":{
+            "url":"/png/logo.png",
+            "text": "techrity"
+            
+        },
+        "userTag": {
+            "h5": "Got some questions, enquiries or need help?",
+            "a": {
+                "text": "Visit Mently Help Desk Here",
+                "href": "#"
+            }
+        }
+        
+    },
+    "topbar": {
+        "notification": "/svg/notification.svg",
+        "logo": "/techrity.png",
+        "boxa": {
+            "text1": "Techrity  Foun...",
+            "text2": "Member"
+
+        },
+        "dropdown": "/svg/dropdown.svg"
+    },
+    "widget": {
+        "btn": "Manage Widgets",
+        "sidebar": {
+            "h2": "Manage Widget",
+            "p": "Personalize your dashboard by managing widgets add, remove, or reorder them to fit your workflow.",
+            "checkboxes": [
+                {
+                    "icon": "/svg/outline.svg",
+                    "name": "Programs",
+                    "checked": true
+                },
+                {
+                    "icon": "/svg/outline.svg",
+                    "name": "Group Calls",
+                    "checked": true
+                },
+                {
+                    "icon": "/svg/outline.svg",
+                    "name": "Mentors",
+                    "checked": true
+                },
+                {
+                    "icon": "/svg/outline.svg",
+                    "name": "Recent Activities",
+                    "checked": true
+                },
+                {
+                    "icon": "/svg/outline.svg",
+                    "name": "Application",
+                    "checked": true
+                },
+                {
+                    "icon": "/svg/outline.svg",
+                    "name": "Earnings",
+                    "checked": false
+                },
+                {
+                    "icon": "/svg/outline.svg",
+                    "name": "Forum",
+                    "checked": false
+                },
+                {
+                    "icon": "/svg/outline.svg",
+                    "name": "Program Analysis",
+                    "checked": false
+                }
+            ]
+        }
+    },
+    "welcome": {
+        "user": {
+            "firstName": "Blessing"
+        },
+        "greet": "Welcome Aboard, ",
+        "emoji": "👋",
+        "comment": "We’re thrilled to have you join Techrity Team!",
+        "button": "Update Profile"
+    },
+    "boxes": {
+        "programs": {
+            "top": {
+                "title": "Programs",
+                "outline": "/svg/outline.svg",
+                "more": "/svg/more.svg",
+                "btn": "See all"
+
+            },
+            "filter": {
+                "label": "Filter",
+                "selects": [
+                    "Active",
+                    "Inactive"
+                ]
+            },
+            "cards": [
+                {
+                    "img": {
+                        "url": "/jpeg/img1.jpeg",
+                        "setting": true,
+                        "h2": "Fundamentals of User interface & Experience ",
+                        "button": {
+                            "bg": "#D4E0F3",
+                            "bg-tail": "bg-[#D4E0F3]",
+                            "text-tail": "text-[#0077FF]",
+                            "color": "#0077FF",
+                            "text": "Bootcamp"
+                        }
+
+                    },
+                    "disc": "This  program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
+                    "footer": {
+                        "mentors": {
+                            "state": true,
+                            "text": "Mentors",
+                            "mentors": [
+                                "/png/user1.png",
+                                "/png/user2.png",
+                                "/png/user3.png"
+                            ]
+                        },
+                        "hosted": {
+                            "state": false
+                        },
+                        "btns": {
+                            "text1": "View Details",
+                            "text2": "View Details"
+                        }
+                    }
+
+                },
+                {
+                    "img": {
+                        "url": "/jpeg/img2.jpeg",
+                        "setting": false,
+                        "h2": "Colour Hack Practical Group Call ",
+                        "button": {
+                            "bg": "#D4F3D4",
+                            "bg-tail": "bg-[#D4F3D4]",
+                            "text-tail": "text-[#008000]",
+                            "color": "#008000",
+                            "text": "Group Call"
+                        }
+
+                    },
+                    "disc": "This  program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
+                    "footer": {
+                        "mentors": {
+                            "state": false
+                           
+                        },
+                        "hosted": {
+                            "state": true,
+                            "avater": "/png/user5.png",
+                            "label": "Hosted By: ",
+                            "name": "Faith Okolo",
+                            "icon": true
+                        },
+                        "btns": {
+                            "text1": "View Details",
+                            "text2": "View Details"
+                        }
+                    }
+
+                },
+                {
+                    "img": {
+                        "url": "/jpeg/img2.jpeg",
+                        "setting": false,
+                        "h2": "Colour Hack Practical Group Call ",
+                        "button": {
+                            "bg": "#D4F3D4",
+                            "bg-tail": "bg-[#D4F3D4]",
+                            "text-tail": "text-[#008000]",
+                            "color": "#008000",
+                            "text": "Group Call"
+                        }
+
+                    },
+                    "disc": "This  program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
+                    "footer": {
+                        "mentors": {
+                            "state": false
+                           
+                        },
+                        "hosted": {
+                            "state": true,
+                            "avater": "/png/user5.png",
+                            "label": "Hosted By: ",
+                            "name": "Self"
+                        },
+                        "btns": {
+                            "text1": "View Details",
+                            "text2": "View Details"
+                        }
+                    }
+
+                }
+               
+            ]
+            
+        },
+        "groupcalls": {
+            "top": {
+                "title": "Group Calls",
+                "outline": "/svg/outline.svg",
+                "more": "/svg/more.svg",
+                "btn": "See all"
+
+            },
+            "cards": [
+                {
+                    "img": {
+                        "position": "bg-center",
+                        "url": "/jpeg/img2.jpeg"
+                       
+
+                    },
+                    "status": {
+                        "bg": "#2AC10033",
+                        "bg-tail": "bg-[#2AC10033]",
+                        "text-tail": "text-[#1F8B01]",
+                        "color": "#1F8B01",
+                        "text": "Ongoing"
+                    },
+                    "h2": "Weekly Meeting - Product Demo Review with Testers",
+                    "schedule": {
+                        "date": {
+                            "icon": "/svg/calender.svg",
+                            "date": "Mon. Jul 30, 2024"
+                        },
+                        "time": {
+                            "icon": "/svg/clock.svg",
+                            "time": "9:00 - 11:00AM"
+                        }
+
+                    },
+                    "footer": {
+                        "mentors": {
+                            "text": "Mentors",
+                            "mentors": [
+                                "/png/user1.png",
+                                "/png/user2.png",
+                                "/png/user3.png"
+                            ]
+                        },
+                        "group": {
+                            "text": "Study Group",
+                            "label": "UX Strategy  Study group",
+                            "mentors": [
+                                "/jpeg/ux.jpeg"
+                            ]
+                           
+                        },
+                       
+                        "btns": {
+                            "text1": "View Participants",
+                            "bg": "bg-white",
+                            "text2": {
+                                "text": "Join Now",
+                                "icon": "/svg/arrowRight.svg",
+                                "bg": "bg-[#6F01D0]"
+                            }
+                        }
+                    }
+
+                },
+                {
+                    "img": {
+                        "position": "bg-top",
+                        "url": "/jpeg/img3.jpeg"
+                       
+
+                    },
+                    "status": {
+                        "bg": "#E0DDFF",
+                        "bg-tail": "bg-[#E0DDFF]",
+                        "text-tail": "text-[#1C0AE1]",
+                        "color": "#1C0AE1",
+                        "text": "Upcoming"
+                    },
+                    "h2": "Weekly Meeting - Product Demo Review with Testers",
+                    "schedule": {
+                        "date": {
+                            "icon": "/svg/calender.svg",
+                            "date": "Mon. Jul 30, 2024"
+                        },
+                        "time": {
+                            "icon": "/svg/clock.svg",
+                            "time": "9:00 - 11:00AM"
+                        }
+
+                    },
+                    "footer": {
+                        "mentors": {
+                            "text": "Mentors",
+                            "mentors": [
+                                "/png/user1.png",
+                                "/png/user2.png",
+                                "/png/user3.png"
+                            ]
+                        },
+                        "group": {
+                            "text": "Study Group",
+                            "mentors": [
+                                "/jpeg/ux.jpeg"
+                            ]
+                           
+                        },
+                       
+                        "btns": {
+                            "text1": "View Participants",
+                            "bg": "bg-white",
+                            "text2": {
+                                "text": "Join Now",
+                                "icon": "/svg/arrowRight.svg",
+                                "bg": "bg-[#6F01D04D]"
+                            }
+                        }
+                    }
+
+                },
+                {
+                    "img": {
+                        "position": "bg-top",
+                        "url": "/jpeg/img4.jpeg"
+                       
+
+                    },
+                    "status": {
+                        "bg": "#2AC10033",
+                        "bg-tail": "bg-[#2AC10033]",
+                        "text-tail": "text-[#1F8B01]",
+                        "color": "#1F8B01",
+                        "text": "Ongoing"
+                    },
+                    "h2": "Weekly Meeting - Product Demo Review with Testers",
+                    "schedule": {
+                        "date": {
+                            "icon": "/svg/calender.svg",
+                            "date": "Mon. Jul 30, 2024"
+                        },
+                        "time": {
+                            "icon": "/svg/clock.svg",
+                            "time": "9:00 - 11:00AM"
+                        }
+
+                    },
+                    "footer": {
+                        "mentors": {
+                            "text": "Mentors",
+                            "mentors": [
+                                "/png/user1.png",
+                                "/png/user2.png",
+                                "/png/user3.png"
+                            ]
+                        },
+                        "group": {
+                            "text": "Study Group",
+                            "mentors": [
+                                "/jpeg/ux.jpeg"
+                            ]
+                           
+                        },
+                       
+                        "btns": {
+                            "text1": "View Participants",
+                            "bg": "bg-white",
+                            "text2": {
+                                "text": "Join Now",
+                                "icon": "/svg/arrowRight.svg",
+                                "bg": "bg-[#6F01D0]"
+                            }
+                        }
+                    }
+
+                },
+                {
+                    "img": {
+                        "position": "bg-top",
+                        "url": "/jpeg/img2.jpeg"
+                       
+
+                    },
+                    "status": {
+                        "bg": "#2AC10033",
+                        "bg-tail": "bg-[#2AC10033]",
+                        "text-tail": "text-[#1F8B01]",
+                        "color": "#1F8B01",
+                        "text": "Ongoing"
+                    },
+                    "h2": "Weekly Meeting - Product Demo Review with Testers",
+                    "schedule": {
+                        "date": {
+                            "icon": "/svg/calender.svg",
+                            "date": "Mon. Jul 30, 2024"
+                        },
+                        "time": {
+                            "icon": "/svg/clock.svg",
+                            "time": "9:00 - 11:00AM"
+                        }
+
+                    },
+                    "footer": {
+                        "mentors": {
+                            "text": "Mentors",
+                            "mentors": [
+                                "/png/user1.png",
+                                "/png/user2.png",
+                                "/png/user3.png"
+                            ]
+                        },
+                        "group": {
+                            "text": "Study Group",
+                            "mentors": [
+                                "/jpeg/ux.jpeg"
+                            ]
+                           
+                        },
+                       
+                        "btns": {
+                            "text1": "View Participants",
+                            "bg": "bg-white",
+                            "text2": {
+                                "text": "Join Now",
+                                "icon": "/svg/arrowRight.svg",
+                                "bg": "bg-[#6F01D0]"
+                            }
+                        }
+                    }
+
+                }
+            ]
+        },
+        "users": {
+            "filter": {
+                "label": "Users",
+                "selects": [
+                    "All",
+                    "Highest"
+                ]
+            },
+            "data": [
+                { "id": 0, "value": "200","color": "#62B2FD", "label": "Students" },
+                { "id": 1, "value": "8","color": "#9BDFC4", "label": "Mentors" },
+                { "id": 2, "value": "22","color": "#F99BAB", "label": "Programs" },
+                { "id": 3, "value": "10","color": "#FFB44F", "label": "Others " }
+              ]
+        }
+    }
+
+}
