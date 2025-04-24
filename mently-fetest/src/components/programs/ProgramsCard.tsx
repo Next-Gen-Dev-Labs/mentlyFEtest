@@ -23,7 +23,7 @@ function ProgramsCard({
    contactInfo,
 }: Props) {
    return (
-      <div>
+      <div className="w-[262px] mx-auto p-2">
          <div className="relative ">
             <div className="relative w-[265px] h-[69px]">
                <Image src={img} alt={img} fill className="object-contain" />
