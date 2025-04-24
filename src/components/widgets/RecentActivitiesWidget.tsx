@@ -29,7 +29,7 @@ const RecentActivitiesWidget = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg p-4 shadow-sm w-[65%] border border-gray-200">
+    <div className="bg-white rounded-lg p-4 shadow-sm w-full border border-gray-200">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
       <div className="flex items-center gap-2">

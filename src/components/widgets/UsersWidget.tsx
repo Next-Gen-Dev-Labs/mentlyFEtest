@@ -53,7 +53,7 @@ const UsersWidget = () => {
   return (
     <div className="bg-white rounded-lg p-4 pb-20 shadow-sm w-full border border-gray-200">
       {/* Header */}
-      <div className="flex justify-between items-center mb-20">
+      <div className="flex justify-between items-center mb-10">
       <div className="flex items-center gap-2">
             <button className="text-black hover:text-gray-700">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -82,10 +82,10 @@ const UsersWidget = () => {
         </div>
       </div>
 
-      {/* Chart and Legend */}
-      <div className="flex items-center gap-6">
+      {/* Chart and Legend: Stack vertically on mobile, row on sm+ */}
+      <div className="flex flex-col sm:flex-row items-center gap-6">
         {/* Donut Chart */}
-        <div className="relative w-40 h-40">
+        <div className="relative w-40 h-40 flex-shrink-0">
           <Doughnut data={data} options={options} />
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <span className="text-2xl font-bold text-gray-700">240</span>
@@ -93,8 +93,8 @@ const UsersWidget = () => {
           </div>
         </div>
 
-        {/* Legend */}
-        <div className="flex flex-col gap-3">
+        {/* Legend: Ensure full width on mobile */}
+        <div className="flex flex-col gap-3 w-full sm:w-auto">
           {data.labels.map((label, index) => (
             <div key={label} className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-2">

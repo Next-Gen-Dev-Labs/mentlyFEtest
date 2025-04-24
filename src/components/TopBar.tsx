@@ -1,18 +1,49 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 const TopBar = () => {
   const [hasNotifications, setHasNotifications] = useState(true);
 
+  // Function to toggle the mobile sidebar
+  const toggleMobileSidebar = () => {
+    // Call the toggleMobileSidebar function from the Sidebar component
+    if (typeof window !== "undefined" && (window as any).toggleMobileSidebar) {
+      (window as any).toggleMobileSidebar();
+    }
+  };
+
   return (
-    <div className="fixed top-0 left-48 right-0 h-16 bg-white border-b border-gray-200 px-6 flex items-center justify-end z-10">
+    <div className="fixed top-0 left-0 lg:left-48 right-0 h-16 bg-white border-b border-gray-200 px-2 sm:px-4 md:px-6 flex items-center justify-between z-40 w-full max-w-full overflow-hidden">
+      {/* Left Section (Mobile Menu Button) */}
+      <button
+        className="lg:hidden p-2 -ml-2 mr-2 hover:bg-gray-100 rounded-full transition-colors"
+        onClick={toggleMobileSidebar}
+        aria-label="Toggle sidebar menu"
+      >
+        {/* Basic Hamburger Icon */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-gray-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
       {/* Right Section */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4 md:gap-6">
         {/* Notification Icon */}
         <div className="relative">
-          <button 
+          <button
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
             onClick={() => setHasNotifications(!hasNotifications)}
           >
@@ -29,21 +60,10 @@ const TopBar = () => {
           )}
         </div>
 
-        {/* Profile Section */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-[#8B72FC] flex items-center justify-center overflow-hidden">
-            <Image
-              src="/profile-default.png"
-              alt="profile"
-              width={24}
-              height={24}
-              className="w-6 h-6 object-cover"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-medium text-gray-900">John Doe</span>
-            <span className="text-xs text-gray-500">Administrator</span>
-          </div>
+        {/* Profile Section: Hide text on smaller screens */}
+        <div className="hidden sm:flex flex-col">
+          <span className="text-sm font-medium text-gray-900">John Doe</span>
+          <span className="text-xs text-gray-500">Administrator</span>
         </div>
 
         {/* Widget Icon */}
@@ -61,4 +81,4 @@ const TopBar = () => {
   );
 };
 
-export default TopBar; 
+export default TopBar;

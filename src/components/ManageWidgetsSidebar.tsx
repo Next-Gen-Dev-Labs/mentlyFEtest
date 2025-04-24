@@ -16,6 +16,7 @@ const ManageWidgetsSidebar = ({ isOpen, onClose, onWidgetsChange }: { isOpen: bo
   const [widgets, setWidgets] = useState<Widget[]>([
     { id: 'programs', name: 'Programs', isVisible: true, component: 'ProgramsWidget' },
     { id: 'group-calls', name: 'Group Calls', isVisible: true, component: 'GroupCallsWidget' },
+    { id: 'users', name: 'Users', isVisible: true, component: 'UsersWidget' },
     { id: 'mentors', name: 'Mentors', isVisible: true, component: 'MentorsWidget' },
     { id: 'recent-activities', name: 'Recent Activities', isVisible: true, component: 'RecentActivitiesWidget' },
     { id: 'applications', name: 'Application', isVisible: true, component: 'ApplicationsWidget' },
@@ -35,7 +36,7 @@ const ManageWidgetsSidebar = ({ isOpen, onClose, onWidgetsChange }: { isOpen: bo
   const handleReset = () => {
     const defaultWidgets = widgets.map(widget => ({
       ...widget,
-      isVisible: ['programs', 'group-calls', 'mentors', 'recent-activities', 'applications'].includes(widget.id)
+      isVisible: ['programs', 'group-calls', 'users', 'mentors', 'recent-activities', 'applications'].includes(widget.id)
     }));
     setWidgets(defaultWidgets);
     onWidgetsChange(defaultWidgets);
@@ -58,12 +59,12 @@ const ManageWidgetsSidebar = ({ isOpen, onClose, onWidgetsChange }: { isOpen: bo
   return (
     <DndProvider backend={HTML5Backend}>
       <div 
-        className={`fixed right-0 top-0 h-screen w-80 bg-white shadow-lg transform transition-all duration-300 ease-in-out z-20 ${
+        className={`fixed right-0 top-0 h-screen w-full sm:w-100 bg-white shadow-lg transform transition-all duration-300 ease-in-out z-20 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Header */}
-        <div className="px-4">
+        <div className="px-4 py-4">
           <div className="flex justify-end">
             <button 
               onClick={onClose} 
