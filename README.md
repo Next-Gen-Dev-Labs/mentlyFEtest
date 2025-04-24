@@ -1,39 +1,41 @@
-# MentlyFEtest Frontend Coding Challenge
+# Mently Frontend Coding Challenge Submission
 
-## Welcome
+Welcome! 👋  
+This repository contains my completed solution for the **Mently Frontend Coding Challenge**.
 
-This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+---
 
-## The Challenge
+## 🛠️ Implementation Details
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=1391-1201&t=1K1umhLSyddg7sou-0).
+This project was built with a strong focus on clean code, responsiveness, and accessibility. Below is an overview of key features and enhancements included in the solution.
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
+---
 
-**Bonus Points:**
+## ✅ Key Features Implemented
 
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
+- ⚛️ **Built with Next.js** for a structured and optimized React application.
+- 🎨 **Styled using Tailwind CSS** to deliver a modern and maintainable UI.
+- 📱 **Fully responsive** design for seamless experiences across desktop and mobile devices.
+- ♿ **Accessibility best practices** followed to ensure an inclusive UI.
+- 🧼 **Clean, maintainable codebase** built for scalability and readability.
 
-## Submission
+---
 
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+## ✨ Bonus Enhancements
 
-## Evaluation Criteria
+- 🎞️ **Smooth animations** and interactions to enhance user experience.
+- 🧪 **Basic unit tests** added to ensure component reliability.
+- 🔗 **Deployed version** available for live preview and testing.
 
-Your submission will be evaluated on the following criteria:
+👉 **Live Site:** [techrity-mently.vercel.app/](https://techrity-mently.vercel.app/)
 
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
+---
 
-We appreciate your time and effort in completing this challenge. Good luck!
+## 📌 Notes
+
+I closely followed the Figma design provided, aiming for pixel-perfect implementation while upholding best development practices. Please feel free to reach out if any adjustments or refinements are required.
+
+---
+
+## 🚀 Looking forward to your review!
+Thank you for the opportunity and your time!
