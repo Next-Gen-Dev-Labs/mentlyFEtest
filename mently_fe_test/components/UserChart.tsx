@@ -18,7 +18,6 @@ const data = {
       backgroundColor: colors,
       borderWidth: 0,
       borderRadius: 10,
-      cutout: "65%", // Makes it a donut
     },
   ],
 };
@@ -28,10 +27,10 @@ const options = {
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      display: false, // ❌ Remove default legend
+      display: false,
     },
     tooltip: {
-      enabled: false, // Optional: disable tooltips if not needed
+      enabled: false,
     },
   },
 };
@@ -48,7 +47,6 @@ export default function UserChart() {
         </div>
       </div>
 
-      {/* Custom Legend */}
       <div className="w-1/2 space-y-4">
         {labels.map((label, index) => (
           <div key={index} className="flex items-center gap-2">

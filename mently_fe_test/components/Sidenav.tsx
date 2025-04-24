@@ -3,15 +3,17 @@ import Link from "next/link";
 import { BiUserCircle } from "react-icons/bi";
 import NavLinks from "./NavLinks";
 import ToggleSwitch from "./ToggleSwitch";
+import { Grid4 } from "iconsax-react";
 
 export default function SideNav() {
   return (
-    <div className="flex bg-[#340260] overflow-y-auto no-scrollbar flex-col px-4 py-6 md:px-4 md:py-8 md:">
+    <div className="flex bg-[#340260] overflow-y-auto no-scrollbar flex-col px-4 md:pb-18 md:px-4  md:">
       <Link
-        className="mb-4 flex items-center justify-start p-4 md:h-40"
+        className="mb-6 flex items-center justify-between  md:h-30"
         href="/"
       >
         <Image src="/logo.png" width={116} height={27} alt="techrity" />
+        <Grid4 color="#AAAAAA" size={24} variant="Linear" />
       </Link>
 
       <div className="flex-grow space-y-4 overflow-y-auto md:overflow-hidden">

@@ -1,5 +1,4 @@
 import React from "react";
-import { CgMore, CgMoreVertical } from "react-icons/cg";
 import { GrMoreVertical } from "react-icons/gr";
 
 const SectionLeftHead = () => {

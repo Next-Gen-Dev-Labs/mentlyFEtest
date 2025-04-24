@@ -27,7 +27,7 @@ const page = () => {
                 <GroupCalls />
                 <div className="lg:flex gap-4">
                   <Applications />
-                  <div className="bg-[#FFFFFF] gap-4">
+                  <div className="bg-[#FFFFFF] flex flex-col gap-4">
                     <Mentors />
                     <RecentActivities />
                   </div>

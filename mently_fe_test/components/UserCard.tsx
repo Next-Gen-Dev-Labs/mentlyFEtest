@@ -20,7 +20,7 @@ export default function UserCard({ name, email, image }: Props) {
           <h2 className="text-[14px] font-semibold text-[#4F4F4F]">{name}</h2>
           <p className="text-[10px] text-[#7D8DA6]">{email}</p>
         </div>
-        <div className="mt-2 flex lg:flex-none sm:flex-wrap gap-2">
+        <div className="mt-2 flex mobile lg:flex-none sm:flex-wrap gap-2">
           <Button
             variant="outline"
             size="sm"

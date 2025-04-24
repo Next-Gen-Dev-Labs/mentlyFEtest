@@ -207,4 +207,9 @@ body {
   .phone {
     display: block;
   }
+
+  .mobile {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }

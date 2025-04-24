@@ -29,7 +29,7 @@ const users = [
 
 export default function Applications() {
   return (
-    <section className="applicationContainer">
+    <section className="applicationContainer shadow rounded bg-[#FFFFFF] pb-0">
       <div>
         <div className="app_head">
           <SectionRightHead title="Applications" />
@@ -51,7 +51,7 @@ export default function Applications() {
                   <h2 className="app_h2">{users[0].name}</h2>
                   <p className="app_p">{users[0].email}</p>
                 </div>
-                <div className="app_card_btn">
+                <div className="app_card_btn mobile">
                   <Button variant="outline" size="sm" className="app_btn1">
                     Reject
                   </Button>

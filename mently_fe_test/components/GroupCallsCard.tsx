@@ -10,8 +10,8 @@ const callData = [
     date: "Mon. Jul 30, 2024",
     time: "9:00 - 11:00AM",
     status: "Ongoing",
-    statusColor: "#2AC10033", // background
-    dotColor: "#1F8B01", // for the small status dot
+    statusColor: "#2AC10033",
+    dotColor: "#1F8B01",
   },
   {
     image: "/groupCall2.png",
@@ -27,9 +27,9 @@ const callData = [
     name: "Design Sync - UI Feedback Loop",
     date: "Tue. Aug 5, 2024",
     time: "2:00 - 3:00PM",
-    status: "Upcoming",
-    statusColor: "#E0DDFF",
-    dotColor: "#1C0AE1",
+    status: "Ongoing",
+    statusColor: "#2AC10033",
+    dotColor: "#1F8B01",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function GroupCallsCard() {
 
           <div className="group_call_card_container">
             <span
-              className="groupcall_card_container_span"
+              className="groupcall_card_container_span mt-2"
               style={{
                 backgroundColor: call.statusColor,
                 color: call.dotColor,

@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div
         className={`transform  transition-transform duration-300 ease-in-out ${
           showSidebar ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 md:static md:block md:w-[240px] bg-[#340260] h-full fixed top-0 left-0 z-40 shadow-md overflow-y-auto no-scrollbar`}
+        } md:translate-x-0 md:static md:block md:w-[290px] bg-[#340260] h-full fixed top-0 left-0 z-40 shadow-md overflow-y-auto no-scrollbar`}
       >
         <SideNav />
       </div>

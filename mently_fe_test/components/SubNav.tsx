@@ -4,7 +4,7 @@ import { PiVectorThree } from "react-icons/pi";
 
 const SubNav = () => {
   return (
-    <div className="text-black p-4">
+    <div className="text-black pb-0 p-4">
       <div className="flex gap-4 justify-end">
         <div className="flex gap-4">
           <PiVectorThree className="text-[#A4A5B8]" />

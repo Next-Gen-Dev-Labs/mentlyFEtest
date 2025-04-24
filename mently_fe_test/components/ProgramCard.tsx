@@ -53,7 +53,7 @@ function Card({
   profileImg,
 }: any) {
   return (
-    <div className="w-[270px]  p-2 max-w-xl mx-auto">
+    <div className="lg:w-[270px] shadow rounded p-2 max-w-xl mx-auto">
       <div className="relative bg-[#000000]">
         <img
           src={image}

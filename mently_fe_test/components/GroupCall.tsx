@@ -5,7 +5,7 @@ import SectionRightHead from "./SectionRightHead";
 
 export default function GroupCalls() {
   return (
-    <section className="groupcall_container">
+    <section className="groupcall_container bg-[#FFFFFF]">
       <div className="groupcall_head">
         <SectionRightHead title="Group Calls" />
         <SectionLeftHead />

@@ -28,7 +28,7 @@ const activities = [
 
 export default function RecentActivities() {
   return (
-    <section className="p-4">
+    <section className="p-4 bg-[#FFFFFF] shadow rounded-2xl">
       <div className="flex justify-between">
         <SectionRightHead title="Recent Activities" />
         <SectionLeftHead />

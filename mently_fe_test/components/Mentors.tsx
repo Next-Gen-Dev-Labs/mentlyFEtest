@@ -20,7 +20,7 @@ const mentorsData = [
 
 export default function Mentors() {
   return (
-    <section className="bg-[#FFFFFF] p-4">
+    <section className="shadow rounded-2xl bg-[#FFFFFF] p-4">
       <div className="flex items-center justify-between">
         <SectionRightHead title="Mentors" />
         <div className="flex items-center gap-2">
