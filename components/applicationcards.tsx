@@ -46,14 +46,35 @@ const UserEntry = ({
   </div>
 );
 
-const Section = ({ title, users }: { title: string; users: Array<any> }) => (
+type Student = {
+  name: string;
+  email: string;
+  avatar?: string;
+};
+
+type Mentor = {
+  id: string;
+  name: string;
+  email: string;
+  avatar: string;
+  role: string;
+  experience: string;
+  location: string;
+  country: string;
+  countryCode: string;
+  timezone: string;
+};
+
+type User = Student | Mentor;
+
+const Section = ({ title, users }: { title: string; users: User[] }) => (
   <>
     <p className="text-xs text-muted-foreground font-medium mb-2">{title}</p>
     <div className="space-y-4">
       {users.map((user, index) => (
         <React.Fragment key={user.email}>
           {title === "Mentors" ? (
-            <SubMentorCard mentor={user} />
+            <SubMentorCard mentor={user as Mentor} />
           ) : (
             <UserEntry {...user} />
           )}
