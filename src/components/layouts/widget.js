@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image'
 import Icon from '@/assets/icons/Vector (1).svg'
 import { IoMdClose } from "react-icons/io";
@@ -13,21 +14,21 @@ export default function Widget({ onClose }) {
         { id: 8, name: "Program Analysis" },
     ]
     return(
-        <div className="bg-white w-full px-3 xl:px-11 py-3.5 xl:py-14 space-y-4 xl:space-y-16 overflow-y-scroll h-screen scrollbar-hide">
+        <div className="bg-white w-full px-3 xl:px-11 py-3.5 xl:py-14 space-y-4 xl:space-y-16 overflow-y-scroll h-screen scrollbar-hide" role="dialog" data-testid="widget-container">
         <div className='flex justify-end border-b border-[#D7D7D7] pb-2.5'>
-        <button onClick={onClose}><IoMdClose className='text-[#8D8D8D] text-2xl'/></button>
+        <button onClick={onClose} data-testid="close-button"><IoMdClose className='text-[#8D8D8D] text-2xl'/></button>
         </div>
-        <div className='space-y-7'>
+        <div className='space-y-7' data-testid="widget-content">
         <div className='space-y-4'>
             <h1 className="text-[#6F01D0] text-3xl font-bold">Manage Widget</h1>
             <p className="text-[#374557] text-sm">Personalize your dashboard by managing widgets add, remove, or reorder them to fit your workflow.</p>
         </div>
         <ul className='space-y-2'>
             {widgetData.map((widget)=>(
-                <li key={widget.id} className='flex items-center justify-between p-2'>
+                <li key={widget.id} className='flex items-center justify-between p-2' data-testid={`widget-item-${widget.id}`}>
                     <div className='flex items-center gap-4'>
                     <Image src={Icon} alt='icon' className='h-4 w-4'/>
-                    <h4 className="text-sm font-bold text-[#4F4F4F]">{widget.name}</h4>
+                    <h4 className="text-sm font-bold text-[#4F4F4F]" data-testid="widget-title">{widget.name}</h4>
                     </div>
                     <input
               type="checkbox"

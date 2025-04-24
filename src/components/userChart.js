@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import { IoIosArrowDown } from "react-icons/io";
 import { useMediaQuery } from "react-responsive";
@@ -23,7 +24,7 @@ const outerRadius = isLargeScreen ? 80 : isMediumScreen ? 70 : 80;
     <div className="bg-[#E7DDFF4D] rounded-xl w-full lg:w-[300px] xl:w-[329px] border border-[#E1E7EC]">
       <div className="flex justify-between items-center py-3 px-6 border-b border-[#E1E7EC]">
         <h2 className="text-lg font-semibold text-[#595564]">Users</h2>
-        <button className="border text-sm px-3 py-2 rounded-md text-[#595564] border-[#E1E7EC] flex items-center gap-3 font-medium">
+        <button className="border text-sm px-3 py-2 rounded-md hover:bg-white cursor-pointer text-[#595564] border-[#E1E7EC] flex items-center gap-3 font-medium">
           All <IoIosArrowDown size={20} className=""/>
         </button>
       </div>

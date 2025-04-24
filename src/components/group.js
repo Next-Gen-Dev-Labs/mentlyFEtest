@@ -1,3 +1,4 @@
+import React from "react";
 import GroupCard from "./cards/groupCard";
 import Header from "./reusables/menu";
 import { groups } from "@/data";

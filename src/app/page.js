@@ -30,7 +30,7 @@ export default function Home() {
           <Image src={Icon1} alt="Icon"/>
           <Image src={Icon2} alt="Icon"/>
           <button
-              className="text-[#1F0954] font-bold cursor-pointer"
+              className="text-[#1F0954] hover:text-[#6F01D0] font-bold cursor-pointer"
               onClick={() => setIsWidgetOpen(true)} // Open the Widget
             >
               Manage Widgets
@@ -39,7 +39,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between px-3.5 lg:px-7 bg-[#6F01D0] rounded py-1.5 gap-2">
           <h2 className="font-semibold text-base lg:text-2xl text-white">Welcome Aboard, Blessing 👋</h2>
           <p className="text-[#BDBDBD] font-semibold text-sm lg:text-xl">We’re thrilled to have you join Techrity Team!</p>
-          <button className="text-[#1F0954] text-sm lg:text-base font-bold bg-white py-2.5 px-6 rounded-lg">Update Profile</button>
+          <button className="text-[#1F0954] text-sm lg:text-base font-bold bg-white py-2.5 px-6 rounded-lg hover:text-[#6F01D0]">Update Profile</button>
         </div>
         <div className="mt-2 flex  gap-3 w-full">
           <div className="space-y-4 hidden lg:block">
