@@ -96,7 +96,7 @@ export function UsersAnalytics({
           </SelectContent>
         </Select>
       </CardHeader>
-      <CardContent className="flex justify-center flex-wrap gap-6 flex-row items-center flex-1 pb-0">
+      <CardContent className="flex justify-center  gap-6 flex-row items-center flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
           key={selectedFilter}

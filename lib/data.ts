@@ -11,6 +11,7 @@ import {
   Setting2,
   type Icon,
 } from "iconsax-reactjs";
+import { TProgramTag } from "./types";
 
 export type LinkItem = {
   title: string;
@@ -114,5 +115,120 @@ export const dummyData = {
     { type: "mentors", users: 8 },
     { type: "programs", users: 22 },
     { type: "others", users: 10 },
+  ],
+
+  programs: [
+    {
+      cover: "/images/program-1.jpeg",
+      title: "Fundamentals of User interface & Experience ",
+      description:
+        "This  program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
+      tags: [{ name: "Group call", variant: "success" }] as TProgramTag[],
+      hosts: [
+        {
+          name: "John Doe",
+          image: "/avi/faith-0.png",
+          role: "Mentor",
+        },
+        {
+          name: "Jane Doe",
+          image: "/avi/adeati.png",
+          role: "Mentor",
+        },
+        { name: "Maxwell", image: "/avi/maxwell.png", role: "Mentor" },
+      ],
+      actions: ["View Details", "Analysis"],
+    },
+    {
+      title: "Colour Hack Practical Group Call",
+      description:
+        "This  program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
+      tags: [{ name: "Group call", variant: "success" }] as TProgramTag[],
+      hosts: [
+        {
+          name: "Faith O",
+          image: "/avi/faith-0.png",
+          role: "Mentor",
+        },
+      ],
+      actions: ["View Details", "Analysis"],
+    },
+    {
+      title: "Colour Hack Practical Group Call",
+      description:
+        "This  program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
+      tags: [{ name: "Group call", variant: "success" }] as TProgramTag[],
+      hosts: [
+        {
+          name: "Self",
+          image: "/avi/faith-0.png",
+          role: "Mentor",
+        },
+      ],
+      actions: ["View Details", "Analysis"],
+    },
+  ],
+  calls: [
+    {
+      cover: "/images/program-1.jpeg",
+      title: "Fundamentals of User interface & Experience ",
+      status: { name: "Group call", variant: "success" } as TProgramTag,
+      schedule: { date: "", time: "" },
+      hosts: [
+        {
+          name: "John Doe",
+          image: "/avi/faith-0.png",
+          role: "Mentor",
+        },
+        {
+          name: "Jane Doe",
+          image: "/avi/adeati.png",
+          role: "Mentor",
+        },
+        { name: "Maxwell", image: "/avi/maxwell.png", role: "Mentor" },
+      ],
+      group: { image: "", name: "UX Strategy  Study group" },
+      actions: ["View Details", "Analysis"],
+    },
+    {
+      title: "Fundamentals of User interface & Experience ",
+      status: { name: "Group call", variant: "success" } as TProgramTag,
+      schedule: { date: "Mon. Jul 30, 2024", time: "9:00 - 11:00AM" },
+      hosts: [
+        {
+          name: "John Doe",
+          image: "/avi/faith-0.png",
+          role: "Mentor",
+        },
+        {
+          name: "Jane Doe",
+          image: "/avi/adeati.png",
+          role: "Mentor",
+        },
+        { name: "Maxwell", image: "/avi/maxwell.png", role: "Mentor" },
+      ],
+      group: { image: "", name: "UX Strategy  Study group" },
+      actions: ["View Details", "Analysis"],
+    },
+    {
+      title: "Fundamentals of User interface & Experience ",
+      status: { name: "Group call", variant: "success" } as TProgramTag,
+      schedule: { date: "Mon. Jul 30, 2024", time: "9:00 - 11:00AM" },
+      hosts: [
+        {
+          name: "John Doe",
+          image: "/avi/faith-0.png",
+          role: "Mentor",
+        },
+        {
+          name: "Jane Doe",
+          image: "/avi/adeati.png",
+          role: "Mentor",
+        },
+        { name: "Maxwell", image: "/avi/maxwell.png", role: "Mentor" },
+      ],
+      group: { image: "", name: "UX Strategy  Study group" },
+      actions: ["View Details", "Analysis"],
+    },
   ],
 };

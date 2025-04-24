@@ -4,7 +4,7 @@ import { WidgetsLayout } from "./_components/widgets-layout";
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-full">
+    <div className="flex flex-col min-h-full @container/dashboard">
       <ManageWidgets className="ml-auto w-fit mb-5" />
       <WelcomeSection />
       <WidgetsLayout />
