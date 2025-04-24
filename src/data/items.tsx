@@ -16,7 +16,9 @@ export interface WidgetItem {
   id: string;
   label: string;
   isUser?: boolean;
+  visible?: boolean;
   gridPosition?: string;
+  defaultVisible?: boolean;
 }
 
 export interface ProgramItem {
@@ -38,6 +40,15 @@ export interface GroupCallItem {
   mentors: { alt: string; src: string; tooltip: string; }[];
 }
 
+export interface ApplicationItem {
+  id: string;
+  name: string;
+  email: string;
+  image: string;
+  type: 'mentor' | 'student';
+  tags: { text: string; bgColor: string; textColor: string; borderColor: string; }[];
+}
+
 export const navItems: NavItem[] = [
   { active: true, label: "Dashboard", icon: <RiHome5Line /> },
   { label: "Programs", icon: <LuBookText /> },
@@ -54,26 +65,36 @@ export const navItems: NavItem[] = [
 export const widgetItems: WidgetItem[] = [
   {
     id: 'program',
+    visible: true,
     label: 'Programs',
+    defaultVisible: true,
     gridPosition: 'col-span-1 row-span-2 col-start-1 row-start-1'
   },
   {
     id: 'group',
+    visible: true,
     label: 'Group Calls',
+    defaultVisible: true,
     gridPosition: 'col-span-2 row-span-1 col-start-2 row-start-1'
   },
   {
+    visible: true,
     id: 'application',
     label: 'Application',
+    defaultVisible: true,
     gridPosition: 'col-span-1 row-span-2 col-start-2 row-start-2'
   },
   {
     id: 'mentor',
+    visible: true,
     label: 'Mentors',
+    defaultVisible: true,
     gridPosition: 'col-span-1 row-span-1 col-start-3 row-start-2'
   },
   {
     id: 'recent',
+    visible: true,
+    defaultVisible: true,
     label: 'Recent Activities',
     gridPosition: 'col-span-1 row-span-1 col-start-3 row-start-3'
   },
@@ -159,4 +180,52 @@ export const groupCallItems: GroupCallItem[] = [
       { alt: "Mentor 3", src: "/profile3.webp", tooltip: "Taylor Smith" }
     ]
   }
+];
+
+export const applicationItems: ApplicationItem[] = [
+  {
+    id: '1',
+    type: 'mentor',
+    name: 'Maxwell Smith',
+    image: '/profile3.webp',
+    email: 'maxwellsmith@gmail.com',
+    tags: [
+      { text: 'Product Designer', borderColor: '#DDCEEE', bgColor: '#F3ECF9', textColor: '#9985A7' },
+      { text: '4years Experience', borderColor: '#A1BDBA', bgColor: '#E8FDFB', textColor: '#58948E' },
+      { text: 'Lagos, Nigeria', borderColor: '#ABBEE0', bgColor: '#E3ECF9', textColor: '#8196B5' },
+      { text: 'GMT+1', borderColor: '#C8C8C8', bgColor: '#F4F4F4', textColor: '#595564' }
+    ]
+  },
+  {
+    id: '2',
+    tags: [],
+    type: 'student',
+    name: 'Adeati Samuel',
+    image: '/profile7.webp',
+    email: 'adeatisamuel@gmail.com',
+  },
+  {
+    id: '2',
+    tags: [],
+    type: 'student',
+    name: 'Maxwell Smith',
+    image: '/profile3.webp',
+    email: 'maxwellsmith@gmail.com',
+  },
+  {
+    id: '2',
+    tags: [],
+    type: 'student',
+    name: 'Adeati Samuel',
+    image: '/profile7.webp',
+    email: 'adeatisamuel@gmail.com',
+  },
+  {
+    id: '2',
+    tags: [],
+    type: 'student',
+    name: 'Maxwell Smith',
+    image: '/profile3.webp',
+    email: 'maxwellsmith@gmail.com',
+  },
 ];

@@ -5,7 +5,10 @@ import { widgetItems } from "@/data/items";
 
 export function useWidgets() {
     const [widgets, setWidgets] = useState(() =>
-        widgetItems.map(item => ({ ...item }))
+        widgetItems.map(item => ({
+            ...item,
+            visible: item.defaultVisible ?? false
+        }))
     );
 
     const visibleCount = widgets.filter(w => w.visible).length;
@@ -26,7 +29,7 @@ export function useWidgets() {
     const resetWidgets = () => {
         setWidgets(widgetItems.map(item => ({
             ...item,
-            visible: item.defaultVisible || false
+            visible: item.defaultVisible ?? false
         })));
     };
 

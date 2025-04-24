@@ -15,9 +15,9 @@ export default function Home() {
   return (
     <>
       <Sidebar toggleCollapse={sidebar.toggle} isCollapsed={sidebar.isCollapsed} />
-      <main className={`flex-1 overflow-auto transition-all duration-300 ease-in-out ${sidebar.isCollapsed ? 'ml-20' : 'ml-60'}`}>
+      <main className={`transition-all duration-300 ease-in-out ${sidebar.isCollapsed ? 'ml-20' : 'ml-60'}`}>
         <Topbar />
-        <section className="pt-4 pb-6 px-8">
+        <section className="pt-4 px-8">
           <Header toggleCollapse={widgetsContext.toggle} />
           <section className="grid grid-cols-3 grid-rows-3 gap-4">
             {widgets.map(widget => <Widget key={widget.id} widget={widget} />)}

@@ -6,7 +6,7 @@ import { CollapseProps } from "@/contexts/collapse";
 
 export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) {
     return (
-        <aside className={`z-40 bg-[#340260] py-6 fixed h-dvh transition-all  scrollbar-hide duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-60'}`}>
+        <aside className={`z-40 bg-[#340260] py-6 fixed grid h-dvh transition-all duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-60'}`}>
             <section className="mb-6 flex items-center justify-between px-6">
                 {!isCollapsed && <Image src="/logo.webp" width={120} height={30} alt="Techrity Logo" />}
                 <button
@@ -17,7 +17,7 @@ export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) 
                 </button>
             </section>
 
-            <nav className="flex-1 px-4">
+            <nav className="px-4 overflow-auto scrollbar-hide">
                 <ul className="space-y-1">
                     {navItems.map((item) => (
                         <li
@@ -35,16 +35,7 @@ export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) 
                                     )}
                                 </>
                             ) : (
-                                <div className="
-                                    min-w-max
-                                    pointer-events-none
-                                    shadow-lg whitespace-nowrap
-                                    transition-opacity duration-200
-                                    opacity-0 group-hover:opacity-100
-                                    z-20 [box-shadow:0px_2px_4px_0px_#00000010]
-                                    absolute left-full ml-3 px-3 py-2 rounded-md
-                                    bg-white text-[#1F0954] text-sm font-medium
-                                ">
+                                <div className="min-w-max pointer-events-none shadow-lg whitespace-nowrap transition-opacity duration-200 opacity-0 group-hover:opacity-100 z-20 [box-shadow:0px_2px_4px_0px_#00000010] absolute left-full ml-3 px-3 py-2 rounded-md bg-white text-[#1F0954] text-sm font-medium">
                                     {item.label}
                                     <div className="w-2 h-2 bg-white transform rotate-45 absolute top-1/2 -left-1 -translate-y-1/2" />
                                 </div>
@@ -57,25 +48,17 @@ export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) 
             <section className="mt-6 px-6">
                 {!isCollapsed ? (
                     <div className="p-4 grid gap-2 rounded-lg bg-[#FFFFFF1F]">
-                        <span className="text-lg"><BiUserPin /></span>
+                        <span className="text-lg text-white"><BiUserPin /></span>
                         <p className="text-white text-[12px] font-bold">Got some questions, enquiries or need help?</p>
-                        <a href="#" className="text-yellow-400 underline hover:text-yellow-300 text-[10px]">
+                        <a href="#" onClick={e => e.preventDefault()} className="text-[#F0C074] underline text-[10px]">
                             Visit Mently Help Desk Here
                         </a>
                     </div>
                 ) : (
                     <div className="relative group flex justify-center py-2 cursor-pointer text-white hover:text-[#1F0954] hover:bg-white rounded">
                         <BiUserPin />
-                        <div className="
-                                    min-w-max
-                                    pointer-events-none
-                                    shadow-lg whitespace-nowrap
-                                    transition-opacity duration-200
-                                    opacity-0 group-hover:opacity-100
-                                    z-20 [box-shadow:0px_2px_4px_0px_#00000010]
-                                    absolute left-full ml-3 px-3 py-2 rounded-md
-                                    bg-white text-[#1F0954] text-sm font-medium
-                                ">Help
+                        <div className="min-w-max pointer-events-none shadow-lg whitespace-nowrap transition-opacity duration-200 opacity-0 group-hover:opacity-100 z-20 [box-shadow:0px_2px_4px_0px_#00000010] absolute left-full top-0 ml-3 px-3 py-2 rounded-md bg-white text-[#1F0954] text-sm font-medium">
+                            Help
                             <div className="w-2 h-2 bg-white transform rotate-45 absolute top-1/2 -left-1 -translate-y-1/2" />
                         </div>
                     </div>

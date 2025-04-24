@@ -9,10 +9,7 @@ export default function Manage({ toggleCollapse }: CollapseProps) {
         <aside className="z-50 w-100 px-10 py-6 fixed bg-white top-0 right-0 h-dvh transition-all overflow-y-auto scrollbar-hide duration-300 ease-in-out before:bg-[#E3D7FF29] before:backdrop-blur-xs before:fixed before:inset-0 before:-z-1">
             <section className="space-y-10">
                 <div className="flex justify-end gap-2 border-b-[#8D8D8D] border-b-[1px] pb-2">
-                    <HiMiniXMark
-                        onClick={toggleCollapse}
-                        className="text-[#8D8D8D] hover:text-black cursor-pointer"
-                    />
+                    <HiMiniXMark onClick={toggleCollapse} className="text-[#8D8D8D] hover:text-black cursor-pointer" />
                 </div>
 
                 <div className="space-y-10">
@@ -37,6 +34,7 @@ export default function Manage({ toggleCollapse }: CollapseProps) {
                                     <input
                                         type="checkbox"
                                         className="checkbox"
+                                        checked={widget.visible}
                                         onChange={() => toggleWidget(widget.id)}
                                     />
                                 </div>

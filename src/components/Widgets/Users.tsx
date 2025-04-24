@@ -5,8 +5,8 @@ export default function Users() {
         <div className="mt-4 p-4 h-full flex items-center gap-2 justify-between">
             <div className="relative">
                 <Image width={180} height={180} src="/donut.webp" alt="Widget Image" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                    <p className="text-2xl font-bold text-[#222529] m-0">240</p>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center [line-height:0]">
+                    <p className="text-2xl font-bold text-[#222529]">240</p>
                     <span className="text-sm font-[400] text-[#595564]">Users</span>
                 </div>
             </div>

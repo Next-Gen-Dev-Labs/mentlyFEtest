@@ -24,11 +24,11 @@ export default function Widget({ widget }: { widget: WidgetItem }) {
     const isUser = widget.label === 'Users';
     const isMentor = widget.label === 'Mentors';
     const wrapperClasses = isUser
-        ? 'border-[#E1E7EC] border-[1px] bg-[#E7DDFF4D] h-80'
+        ? 'border-[#E1E7EC] border-[1px] bg-[#E7DDFF4D]'
         : 'bg-white p-4 shadow-sm';
 
     return (
-        <section className={`w-full h-full rounded-xl ${wrapperClasses} ${widget.gridPosition}`}>
+        <section className={`w-full rounded-xl ${wrapperClasses} ${widget.gridPosition}`}>
             <div className={`flex items-center justify-between mb-2 ${isUser ? 'border-b-2 border-[#E1E7EC] py-3 px-6' : ''}`}>
                 {!isUser ? (
                     <>
