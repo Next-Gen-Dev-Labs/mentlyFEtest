@@ -2,7 +2,7 @@
 
 import { WidgetItem } from "@/data/items";
 import * as Widgets from "@/components/Widgets";
-import { HiBars4, HiChevronDown, HiEllipsisVertical } from "react-icons/hi2";
+import { HiBars4, HiChevronDown, HiEllipsisVertical, HiOutlinePlusCircle } from "react-icons/hi2";
 
 interface WidgetComponents {
     [key: string]: React.ComponentType;
@@ -22,6 +22,7 @@ export default function Widget({ widget }: { widget: WidgetItem }) {
     if (!SpecificWidget) return null;
 
     const isUser = widget.label === 'Users';
+    const isMentor = widget.label === 'Mentors';
     const wrapperClasses = isUser
         ? 'border-[#E1E7EC] border-[1px] bg-[#E7DDFF4D] h-80'
         : 'bg-white p-4 shadow-sm';
@@ -36,9 +37,11 @@ export default function Widget({ widget }: { widget: WidgetItem }) {
                             <h4 className="text-[#B0B0B0] text-[16px] font-medium">{widget.label}</h4>
                         </div>
                         <div className="flex items-center gap-2">
-                            <button className="text-[#6F01D0] text-[12px] bg-transparent border-none cursor-pointer hover:underline">
-                                See all
-                            </button>
+                            {!isMentor ? (
+                                <button className="text-[#6F01D0] text-[12px] font-[600] bg-transparent border-none cursor-pointer hover:underline">
+                                    See all
+                                </button>
+                            ) : <HiOutlinePlusCircle />}
                             <button className="p-1 cursor-pointer hover:bg-gray-100 rounded">
                                 <HiEllipsisVertical className="text-gray-500" />
                             </button>
