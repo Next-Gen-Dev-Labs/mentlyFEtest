@@ -14,41 +14,37 @@ export default function Home() {
     <div className="h-screen p-4">
       <WidgetWrapper />
       <WelcomeMessage />
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 gap-4 h-full">
-        {/* Left Column */}
-        <div className="lg:col-span-5 grid grid-rows-2 gap-4 h-full">
-          <div className="h-full">
-            <Programs />
-          </div>
-          <div className="h-full">
-            <UsersChart />
-          </div>
+      
+      {/* Main grid container - changed to single column on mobile */}
+      <div className="grid grid-cols-1 gap-4 h-full">
+        {/* Programs Widget */}
+        <div className="h-[400px] md:h-[450px] lg:h-[500px]">
+          <Programs />
         </div>
 
-        {/* Right Column */}
-        <div className="lg:col-span-7 grid grid-rows-[30%_70%] gap-4 h-full">
-          {/* Group Calls - 30% height */}
-          <div className="h-full">
-            <GroupCall />
-          </div>
+        {/* Users Chart Widget */}
+        <div className="h-[400px] md:h-[450px] lg:h-[500px]">
+          <UsersChart />
+        </div>
 
-          {/* Bottom Content - 70% height */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 gap-4 h-full">
-            {/* Applications */}
-            <div className="md:col-span-2 lg:col-span-4 h-full">
-              <Applications />
-            </div>
-            
-            {/* Mentors and Recent Activities */}
-            <div className="md:col-span-1 lg:col-span-3 grid grid-rows-2 gap-4 h-full">
-              <div className="h-full">
-                <Mentors />
-              </div>
-              <div className="h-full">
-                <RecentActivities />
-              </div>
-            </div>
-          </div>
+        {/* Group Call Widget */}
+        <div className="h-[400px] md:h-[450px] lg:h-[500px]">
+          <GroupCall />
+        </div>
+
+        {/* Applications Widget */}
+        <div className="h-[400px] md:h-[450px] lg:h-[500px]">
+          <Applications />
+        </div>
+
+        {/* Mentors Widget */}
+        <div className="h-[400px] md:h-[450px] lg:h-[500px]">
+          <Mentors />
+        </div>
+
+        {/* Recent Activities Widget */}
+        <div className="h-[400px] md:h-[450px] lg:h-[500px]">
+          <RecentActivities />
         </div>
       </div>
     </div>
