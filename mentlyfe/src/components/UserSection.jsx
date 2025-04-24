@@ -12,7 +12,7 @@ export default function UserSection() {
   });
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-sm">
+    <div className="p-6">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-medium">Users</h2>
         <div className="border border-gray-200 rounded px-2 py-1 text-sm">

@@ -1,9 +1,17 @@
+import Image from "next/image";
 export default function MentorCard({ mentor }) {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center">
         <div className="w-10 h-10 rounded-full bg-gray-200 mr-3 flex items-center justify-center text-xs">
-          {mentor.name.charAt(0)}
+          {/* {mentor.name.charAt(0)} */}
+          <Image
+            src={mentor.image}
+            alt={mentor.name}
+            width={32}
+            height={32}
+            className="rounded-full object-cover"
+          />
         </div>
         <div>
           <div className="font-medium text-sm">{mentor.name}</div>

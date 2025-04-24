@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ActivityItem({ activity }) {
   const getIconColor = (type) => {
     if (type.includes("KYC")) return "bg-yellow-500";
@@ -9,24 +11,17 @@ export default function ActivityItem({ activity }) {
   return (
     <div className="flex items-start">
       <div
-        className={`w-8 h-8 rounded-full ${getIconColor(
+        className={`w-10 h-10 rounded-full bg-gray-200 ${getIconColor(
           activity.type
         )} mr-3 flex items-center justify-center text-white`}
       >
-        <svg
-          className="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-          ></path>
-        </svg>
+        <Image
+          src={activity.image}
+          alt={activity.name}
+          width={32}
+          height={32}
+          className="rounded-full object-cover"
+        />
       </div>
 
       <div>

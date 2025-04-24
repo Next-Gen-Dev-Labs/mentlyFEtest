@@ -1,5 +1,9 @@
 import ActivityItem from "./ActivityItem";
 
+import Image1 from "../assets/maxwell2.jpg";
+import Image2 from "../assets/maxwell3.png";
+import Image3 from "../assets/maxwell4.jpg";
+
 export default function RecentActivitiesSection() {
   const activities = [
     {
@@ -7,28 +11,31 @@ export default function RecentActivitiesSection() {
       type: "KYC Verification",
       description: "45 new persons just signed up on Mently",
       time: "25 minutes Ago",
-      icon: "alert-triangle"
+      icon: "alert-triangle",
+      image: Image1
     },
     {
       id: 2,
       type: "New User Sign Up!",
       description: "45 new persons just signed up on Mently",
       time: "25 minutes Ago",
-      icon: "user-plus"
+      icon: "user-plus",
+      image: Image2
     },
     {
       id: 3,
       type: "Withdrawal Request",
       description: "Marshall requested a withdrawal",
       time: "25 minutes Ago",
-      icon: "dollar-sign"
+      icon: "dollar-sign",
+      image: Image3
     }
   ];
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-sm">
+    <div className="p-6">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-medium">Recent Activities</h2>
+        <h2 className="text-lg text-gray-400 font-normal">Recent Activities</h2>
         <a href="#" className="text-purple-600 text-sm hover:underline">
           See all
         </a>

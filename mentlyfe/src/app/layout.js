@@ -18,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppresshydrationWarning="true" data-qb-installed="true">
+    <html lang="en" suppresshydrationwarning="true" data-qb-installed="true">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
