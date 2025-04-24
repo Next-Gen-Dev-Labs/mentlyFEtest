@@ -451,6 +451,192 @@
                 { "id": 2, "value": "22","color": "#F99BAB", "label": "Programs" },
                 { "id": 3, "value": "10","color": "#FFB44F", "label": "Others " }
               ]
+        },
+        "applications": {
+            "top": {
+                "title": "Applications",
+                "outline": "/svg/outline.svg",
+                "more": "/svg/more.svg",
+                "btn": "See all"
+
+            },
+            "mentors": {
+                "h5": "Mentors",
+                "data": [
+                    {
+                        "avater": "/png/user1.png",
+                        "name": "Maxwell Smith",
+                        "email": "maxwellsmith@gmail.com",
+                    "profession": {
+                        "text1": "Product Designer",
+                        "bg": "bg-[#DDCEEE]",
+                        "text": "text-[#9985A7] "
+                    },
+                        "experience":  {
+                            "text1": "4years Experience",
+                            "bg": "bg-[#A1BDBA]",
+                            "text": "text-[#58948E] "
+                        },
+                        "location": {
+                            "icon": "/svg/flagNig.svg",
+                            "text1": "Lagos, Nigeria",
+                            "bg": "bg-[#ABBEE0]",
+                            "text": "text-[#8196B5] "
+                            
+                        },
+                        "timezone": {
+                            "text1": "GMT +1",
+                            "bg": "bg-[#C8C8C8]",
+                            "text": "text-[#595564] "
+                        },
+                        "btns": {
+                            "accept": {
+                                "text1": "Reject",
+                                "bg": "bg-[#D09696]",
+                                "text": "text-[#D83535] "
+
+                            },
+                            "reject": {
+                                "text1": "Accept",
+                                "bg": "bg-[#6F01D0]",
+                                "text": "text-[#FFFFFF] "
+
+                            }
+                        }
+                    }
+                ]
+            },
+            "students": {
+                "h5": "Students",
+                "data": [
+                    {
+                        "avater": "/png/user4.png",
+                        "name": "Maxwell Smith",
+                        "email": "maxwellsmith@gmail.com",
+                        "btns": {
+                            "accept": {
+                                "text1": "Reject",
+                                "bg": "bg-[#D09696]",
+                                "text": "text-[#D83535] "
+
+                            },
+                            "reject": {
+                                "text1": "Accept",
+                                "bg": "bg-[#6F01D0]",
+                                "text": "text-[#FFFFFF] "
+
+                            }
+                        }
+                    },
+                    {
+                        "avater": "/png/user1.png",
+                        "name": "Adeati Samuel",
+                        "email": "maxwellsmith@gmail.com",
+                        "btns": {
+                            "accept": {
+                                "text1": "Reject",
+                                "bg": "bg-[#D09696]",
+                                "text": "text-[#D83535] "
+
+                            },
+                            "reject": {
+                                "text1": "Accept",
+                                "bg": "bg-[#6F01D0]",
+                                "text": "text-[#FFFFFF] "
+
+                            }
+                        }
+                    },
+                    {
+                        "avater": "/png/user4.png",
+                        "name": "Maxwell Smith",
+                        "email": "maxwellsmith@gmail.com",
+                        "btns": {
+                            "accept": {
+                                "text1": "Reject",
+                                "bg": "bg-[#D09696]",
+                                "text": "text-[#D83535] "
+
+                            },
+                            "reject": {
+                                "text1": "Accept",
+                                "bg": "bg-[#6F01D0]",
+                                "text": "text-[#FFFFFF] "
+
+                            }
+                        }
+                    },
+                    {
+                        "avater": "/png/user1.png",
+                        "name": "Adeati Samuel",
+                        "email": "maxwellsmith@gmail.com",
+                        "btns": {
+                            "accept": {
+                                "text1": "Reject",
+                                "bg": "bg-[#D09696]",
+                                "text": "text-[#D83535] "
+
+                            },
+                            "reject": {
+                                "text1": "Accept",
+                                "bg": "bg-[#6F01D0]",
+                                "text": "text-[#FFFFFF] "
+
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "mentors": {
+            "top": {
+                "title": "Mentors",
+                "outline": "/svg/outline.svg",
+                "more": "/svg/more.svg",
+                "btn": "/svg/plus.svg"
+
+            },
+            "mentors": [
+                {
+                    "avater": "/png/user1.png",
+                    "name":"Maxwell Smith",
+                    "profession":"Product Designer"
+                },
+                {
+                    "avater": "/png/user4.png",
+                    "name":"Adeati Samuel",
+                    "profession":"Product Designer"
+                }
+            ],
+            "recent": {
+                "top": {
+                    "title": "Recent Activities",
+                    "outline": "/svg/outline.svg",
+                    "more": "/svg/more.svg",
+                    "btn": "See all"
+    
+                },
+                "data": [
+                    {
+                        "avater": "/png/user5.png",
+                        "name": "KYC Verification",
+                        "p": "45 new persons just signed up on Mently.",
+                        "time": "25 minutes Ago"
+                    },
+                    {
+                        "avater": "/jpeg/img4.jpeg",
+                        "name": "New User Sign Up!",
+                        "p": "45 new persons just signed up on Mently.",
+                        "time": "25 minutes Ago"
+                    },
+                    {
+                        "avater": "/jpeg/img5.jpeg",
+                        "name": "Withdrawal Request",
+                        "p": "Mardian requested a withdrawal..",
+                        "time": "25 minutes Ago"
+                    }
+                ]
+            }
         }
     }
 

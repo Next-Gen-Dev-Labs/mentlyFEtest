@@ -2,10 +2,12 @@ import React from 'react'
 import ProgramsBox from './dashboxBoxes/ProgramsBox'
 import GroupCallsBox from './dashboxBoxes/GroupCallsBox'
 import UserBox from './dashboxBoxes/UsersBox'
+import ApplicationBox from './dashboxBoxes/ApplicationBox'
+import MentorsBox from './dashboxBoxes/MentorsBox'
 
 const Dashboard = () => {
   return (
-    <div className='grid grid-cols-[1fr] xl:grid-cols-[329px_1fr] gap-[10px] mt-2 ms-[15px] md:ms-[62px] me-[15px] md:me-[37px] mb-[23px] ' >
+    <div className='grid grid-cols-[1fr] xl:grid-cols-[329px_1fr] gap-[10px] mt-2 ms-[15px] md:ms-[22px] me-[15px] md:me-[7px] mb-[23px] ' >
       {/* boxa */}
       <div className=" grid grid-cols-1 gap-[10px] ">
         {/* box Programs */}
@@ -17,11 +19,11 @@ const Dashboard = () => {
       <div className="  grid grid-cols-1 gap-[10px]">
         {/* box Group Calls */}
         <div className=" bg-white rounded-[12px] py-2 px-4 min-h-[320px]   "> <GroupCallsBox /> </div>
-        <div className=" grid grid-cols-1 xl:grid-cols-2 gap-[10px]">
-          {/* box Mentors */}
-          <div className=" bg-white rounded-[12px] py-2 px-4 h-[605px]">Mentors</div>
+        <div className=" grid grid-cols-1 xl:grid-cols-[415px_320px] gap-[10px]">
         {/* box Applications */}
-          <div className=" bg-white rounded-[12px] py-2 px-4 h-[605px]">Applications</div>
+          <div className=" bg-white rounded-[12px] py-2 px-4 h-[605px]"> <ApplicationBox /> </div>
+          {/* box Mentors */}
+          <div className=" bg-white rounded-[12px] py-2 px-4 h-[605px]"> <MentorsBox /> </div>
         </div>
       </div>
     </div>

@@ -13,9 +13,21 @@ const data = [
 
 export default function UserBox() {
   const [radius, setRadius] = React.useState(50);
+
+  const [hasMounted, setHasMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+
   const totalValue = React.useMemo(() => {
     return data.reduce((sum, item) => sum + item.value, 0);
   }, [data]);
+
+
+  if (!hasMounted) return null;
+
   return (
     <>
       {/* filter */}

@@ -22,6 +22,7 @@ module.exports = {
               901: '#D7D7D7',
               902: '#374557',
               903: '#E1E7EC',
+              904: '#7D8DA6',
               dark: '#4D4D4D',
             },
             blue: {
