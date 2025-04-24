@@ -18,7 +18,7 @@ export default function Application() {
                                 <span className="text-[#7D8DA6] font-[400] text-[12px]">maxwellsmith@gmail.com</span>
                             </div>
                         </div>
-                        <div className="flex items-center justify-between gap-2 xl:gap-1 2xl:gap-2 xl:flex-col 2xl:flex-row">
+                        <div className="flex items-center justify-between gap-2 xl:gap-1 2xl:gap-2 flex-col 2xl:flex-row">
                             <button className="text-[#D83535] border-[0.61px] rounded-[6px] font-medium text-[12px] border-[#D09696] cursor-pointer px-6 py-2.5 xl:py-1 2xl:py-2.5 xl:px-3 2xl:px-4 bg-[#FFEDED]">
                                 Reject
                             </button>
@@ -28,16 +28,16 @@ export default function Application() {
                         </div>
                     </div>
                     <div className="flex gap-2 items-center justify-center">
-                        <button className="border-[0.86px] border-[#DDCEEE] rounded-lg px-2 xl:px-1 2xl:px-2 bg-[#F3ECF9]">
+                        <button className="border-[0.86px] border-[#DDCEEE] rounded-lg px-1.5 xl:px-1 2xl:px-2 bg-[#F3ECF9]">
                             <span className="text-[#9985A7] text-[10px] xl:text-[8px] 2xl:text-[10px] font-medium">Product Designer</span>
                         </button>
-                        <button className="border-[0.86px] border-[#A1BDBA] rounded-lg px-2 xl:px-1 2xl:px-2 bg-[#E8FDFB]">
+                        <button className="border-[0.86px] border-[#A1BDBA] rounded-lg px-1.5 xl:px-1 2xl:px-2 bg-[#E8FDFB]">
                             <span className="text-[#58948E] text-[10px] xl:text-[8px] 2xl:text-[10px] font-medium">4years Experience</span>
                         </button>
-                        <button className="border-[0.86px] border-[#ABBEE0] rounded-lg px-2 xl:px-1 2xl:px-2 bg-[#E3ECF9]">
+                        <button className="border-[0.86px] border-[#ABBEE0] rounded-lg px-1.5 xl:px-1 2xl:px-2 bg-[#E3ECF9]">
                             <span className="text-[#8196B5] text-[10px] xl:text-[8px] 2xl:text-[10px] font-medium">Lagos, Nigeria</span>
                         </button>
-                        <button className="border-[0.86px] border-[#C8C8C8] rounded-lg px-2 xl:px-1 2xl:px-2 bg-[#F4F4F4]">
+                        <button className="border-[0.86px] border-[#C8C8C8] rounded-lg px-1.5 xl:px-1 2xl:px-2 bg-[#F4F4F4]">
                             <span className="text-[#595564] text-[10px] xl:text-[8px] 2xl:text-[10px] font-medium">GMT+1</span>
                         </button>
                     </div>
@@ -57,7 +57,7 @@ export default function Application() {
                                 <span className="text-[#7D8DA6] font-[400] text-[12px]">{student.email}</span>
                             </div>
                         </div>
-                        <div className="flex items-center justify-between gap-2 xl:gap-1 2xl:gap-2 xl:flex-col 2xl:flex-row">
+                        <div className="flex items-center justify-between gap-2 xl:gap-1 2xl:gap-2 flex-col 2xl:flex-row">
                             <button className="text-[#D83535] border-[0.61px] rounded-[6px] font-medium text-[12px] border-[#D09696] cursor-pointer px-6 py-2.5 xl:py-1 2xl:py-2.5 xl:px-3 2xl:px-4 bg-[#FFEDED]">
                                 Reject
                             </button>

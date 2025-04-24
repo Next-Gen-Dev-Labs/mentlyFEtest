@@ -29,7 +29,7 @@ export default function Programs() {
                         </div>
                         <Image fill priority src={program.image} alt="Widget Image" className="object-cover" />
                     </div>
-                    <p className="text-[#A3A3A3]">This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach</p>
+                    <p className="text-[#A3A3A3]">This program is a hands-on guide for designers who want to master color theory and apply it to their designs.</p>
                     <div className="flex items-center justify-between">
                         <div className={`flex items-center ${program.mentors.length > 1 ? 'overflow-hidden' : ''}`}>
                             <Avatar overlap={1.5} images={program.mentors} size={program.mentors.length > 1 ? "md" : "lg"} />
