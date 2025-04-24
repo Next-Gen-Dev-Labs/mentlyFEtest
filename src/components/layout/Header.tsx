@@ -1,7 +1,7 @@
 "use client"
 
 import { Bell, ChevronDown } from "lucide-react";
-import { HeaderImageIcon } from "../svgIcons/SvgIcons";
+import { HeaderImageIcon } from "@/components/svgIcons/SvgIcons";
 import { useWidget } from "@/context/WidgetContext";
 import { ChevronLeft } from 'lucide-react';
 
