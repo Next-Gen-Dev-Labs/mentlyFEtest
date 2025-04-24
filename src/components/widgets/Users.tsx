@@ -55,7 +55,7 @@ const Users = () => {
       </div>
 
       <main className="absolute inset-x-0 bottom-0 top-[3rem] -left-5 overflow-y-auto scrollbar-hide p-1">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-center space-x-3">
           {/* Chart container */}
           <div className="relative w-[200px] h-[200px]">
             <PieChart width={200} height={200}>
