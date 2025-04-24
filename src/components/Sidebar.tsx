@@ -6,7 +6,7 @@ import { CollapseProps } from "@/contexts/collapse";
 
 export default function Sidebar({ isCollapsed, toggleCollapse }: CollapseProps) {
     return (
-        <aside className={`z-40 bg-[#340260] py-6 fixed grid h-dvh transition-all duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-60'}`}>
+        <aside className={`z-40 bg-[#340260] py-6 fixed grid h-dvh transition-all duration-300 ease-in-out md:translate-x-0 ${isCollapsed ? 'w-20' : 'w-60'} ${!isCollapsed ? 'translate-x-0' : '-translate-x-full'}`}>
             <section className="mb-6 flex items-center justify-between px-6">
                 {!isCollapsed && <Image src="/logo.webp" width={120} height={30} alt="Techrity Logo" />}
                 <button

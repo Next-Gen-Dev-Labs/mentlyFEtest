@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Sidebar toggleCollapse={sidebar.toggle} isCollapsed={sidebar.isCollapsed} />
-      <main className={`transition-all duration-300 ease-in-out ${sidebar.isCollapsed ? 'ml-20' : 'ml-60'}`}>
+      <main className={`flex-1 transition-all duration-300 ease-in-out ${sidebar.isCollapsed ? 'md:ml-20' : 'md:ml-60'}`}>
         <Topbar toggleCollapse={sidebar.toggle} />
         <section className="py-4 px-8">
           <Header toggleCollapse={widgetsContext.toggle} />
