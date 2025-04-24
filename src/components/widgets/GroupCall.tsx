@@ -31,7 +31,7 @@ const GroupCall = () => {
               className="p-4 bg-[#F9F7FF] min-w-[350px] max-w-[350px]"
             >
               <Image
-                src="/path/to/your/image.jpg"
+                src={meeting.backgroundImage}
                 alt="Description of the image"
                 width={500}
                 height={200}
