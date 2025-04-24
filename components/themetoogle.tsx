@@ -15,7 +15,10 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+    if (!localStorage.getItem("theme")) {
+      setTheme("light");
+    }
+  }, [setTheme]);
 
   const isDarkMode = mounted && theme === "dark";
 
