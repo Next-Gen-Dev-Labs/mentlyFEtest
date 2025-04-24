@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --foreground: #0a0a0a;
+  --background: #f9f7ff;
+}
+
+@theme inline {
+  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.toggle {
+  width: 32px;
+  height: 16px;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  border-radius: 16px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #D0D0D0;
+  background-color: #F6F6F6;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.toggle::after {
+  inset: 1px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border-radius: 50%;
+  background: #D0D0D0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.toggle:checked::after {
+  border-color: #1F0954;
+  background-color: #1F0954;
+}
+
+.toggle:checked::after {
+  left: calc(100% - 13px);
+}
+
+input.checkbox {
+  width: 18px;
+  height: 18px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 4px;
+  position: relative;
+  -moz-appearance: none;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  transition: all 0.2s ease;
+}
+
+input.checkbox:checked {
+  border-color: #07C500;
+  background-color: #07C500;
+}
+
+input.checkbox:checked::after {
+  width: 4px;
+  height: 8px;
+  content: '';
+  position: absolute;
+  border: solid white;
+  inset: 2px auto auto 6px;
+  transform: rotate(45deg);
+  border-width: 0 2px 2px 0;
+}
+
+input.checkbox:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
