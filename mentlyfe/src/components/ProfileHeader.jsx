@@ -6,7 +6,7 @@ export default function ProfileHeader({ toggleWidgetPanel }) {
   return (
     <>
       <div className="bg-white">
-        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto">
           {/* Top navigation bar */}
           <div className="flex justify-between items-center bg-white rounded-md shadow h-16">
             <div className="flex-1"></div>
@@ -17,9 +17,9 @@ export default function ProfileHeader({ toggleWidgetPanel }) {
               </button>
 
               {/* User profile info */}
-              <div className="flex items-center space-x-2 pr-4">
+              <div className="flex items-center space-x-2 lg:pr-8 pr-4">
                 <div className="flex flex-col items-end text-sm">
-                  <span className="font-medium text-purple-700">
+                  <span className="font-medium text-[#6F01D0]">
                     Techrity Foundation
                   </span>
                   <span className="text-gray-500">Member</span>

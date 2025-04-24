@@ -26,7 +26,7 @@ const itemVariants = {
 
 export default function Dashboard() {
   return (
-    <div>
+    <div role="main">
       <WidgetPanel />
 
       <motion.div
@@ -38,6 +38,7 @@ export default function Dashboard() {
         <div className="flex flex-col lg:flex-row gap-4 md:gap-6">
           {/* Left sidebar - 30% width */}
           <motion.div
+            data-testid="sidebar"
             className="w-full lg:w-[30%] lg:min-w-[300px] lg:max-w-[400px] flex flex-col gap-4"
             variants={itemVariants}
           >
@@ -57,6 +58,7 @@ export default function Dashboard() {
 
           {/* Right content area - 70% width */}
           <motion.div
+            data-testid="content-area"
             className="w-full lg:w-[70%] flex flex-col gap-4"
             variants={itemVariants}
           >

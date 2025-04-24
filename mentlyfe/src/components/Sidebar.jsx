@@ -1,10 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import logo from "../../public/logo.png";
+import { useState, useEffect, memo } from "react";
 import {
   CiHome,
   CiViewList,
@@ -13,11 +9,16 @@ import {
   CiGift,
   CiSettings
 } from "react-icons/ci";
+import Link from "next/link";
+import Image from "next/image";
+import logo from "../../public/logo.png";
+import { LuBookUser } from "react-icons/lu";
 import { FiActivity } from "react-icons/fi";
-import { MdOutlineForum } from "react-icons/md";
 import { IoAnalytics } from "react-icons/io5";
-import { HiOutlineLogout } from "react-icons/hi";
 import { BiMenuAltRight } from "react-icons/bi";
+import { MdOutlineForum } from "react-icons/md";
+import { HiOutlineLogout } from "react-icons/hi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const sidebarVariants = {
   open: {
@@ -58,7 +59,7 @@ const menuItemVariants = {
   }
 };
 
-export default function Sidebar() {
+const Sidebar = memo(function Sidebar() {
   const [activeItem, setActiveItem] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
@@ -100,7 +101,7 @@ export default function Sidebar() {
         initial="open"
         animate={isSidebarOpen ? "open" : "closed"}
         className={`
-          fixed inset-y-0 left-0 z-40 
+          fixed inset-0 min-h-screen left-0 z-40 
           w-64 bg-[#340260] text-white 
           lg:relative lg:flex lg:flex-col
           transform transition-transform duration-300 ease-in-out
@@ -141,7 +142,7 @@ export default function Sidebar() {
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* {item.icon} */} <item.icon className="w-5 h-5" />
+                <item.icon className="w-5 h-5" />
               </motion.div>
               <span className="ml-3">{item.name}</span>
             </motion.div>
@@ -154,19 +155,22 @@ export default function Sidebar() {
           className="p-4 mt-auto border-t border-purple-800"
         >
           <div className="flex items-center mb-2">
-            <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center mr-2">
-              <span className="text-xs">MN</span>
-            </div>
-            <div>
-              <div className="text-sm">Mohammed Nasir</div>
-              <div className="text-xs text-gray-300">
-                Got some questions, enquiries or need help?
-              </div>
+            <div className="w-8 h-8 rounded-fullflex items-center justify-center mr-2">
+              <LuBookUser className="w-8 h-8" />
             </div>
           </div>
-          <div className="text-xs text-center text-blue-300 cursor-pointer">
+          <div>
+            {/* <div className="text-sm">Mohammed Nasir</div> */}
+            <div className="text-xs text-gray-300">
+              Got some questions, enquiries or need help?
+            </div>
+          </div>
+          <Link
+            href="#"
+            className="text-xs text-center text-blue-300 cursor-pointer"
+          >
             Visit Mently Help Desk Here
-          </div>
+          </Link>
           <div className="mt-4 flex items-center justify-between text-xs">
             <span>Switch to Classic Mode</span>
             <div className="w-10 h-5 bg-purple-700 rounded-full p-1 cursor-pointer">
@@ -190,4 +194,6 @@ export default function Sidebar() {
       </AnimatePresence>
     </>
   );
-}
+});
+
+export default Sidebar
