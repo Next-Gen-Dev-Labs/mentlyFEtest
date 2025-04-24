@@ -16,7 +16,7 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
-import React, { ChangeEvent, FormEvent, useEffect, useRef } from "react";
+import React, { ChangeEvent, FormEvent, memo, useEffect, useRef } from "react";
 import { useWidgetManagerContext } from "../contexts/widget-manager-context";
 import {
 	HomeWidgetsKeys,
@@ -182,45 +182,49 @@ export default function WidgetManager() {
 	);
 }
 
-const SortableItem = ({
-	id,
-	label,
-	isChecked,
-	onCheckboxChange,
-}: Readonly<{
-	id: HomeWidgetsKeys;
-	label: (typeof widgets)[number]["label"];
-	isChecked: boolean;
-	onCheckboxChange: (e: ChangeEvent<HTMLInputElement>) => void;
-}>) => {
-	const { attributes, listeners, setNodeRef, transform, transition } =
-		useSortable({ id });
+const SortableItem = memo(
+	({
+		id,
+		label,
+		isChecked,
+		onCheckboxChange,
+	}: Readonly<{
+		id: HomeWidgetsKeys;
+		label: (typeof widgets)[number]["label"];
+		isChecked: boolean;
+		onCheckboxChange: (e: ChangeEvent<HTMLInputElement>) => void;
+	}>) => {
+		const { attributes, listeners, setNodeRef, transform, transition } =
+			useSortable({ id });
 
-	const style = {
-		transform: CSS.Transform.toString(transform),
-		transition,
-		viewTransitionName: `widget-item-${id}`,
-	};
+		const style = {
+			transform: CSS.Transform.toString(transform),
+			transition,
+			viewTransitionName: `widget-item-${id}`,
+		};
 
-	return (
-		<li ref={setNodeRef} style={style}>
-			<button
-				type="button"
-				{...listeners}
-				{...attributes}
-				className="cursor-grab active:cursor-grabbing"
-			>
-				<Icon icon="famicons:reorder-four-outline" />
-			</button>
-			<label htmlFor={id}>{label}</label>
-			<input
-				type="checkbox"
-				id={id}
-				value={id}
-				checked={isChecked}
-				onChange={onCheckboxChange}
-				className="widget-checkbox"
-			/>
-		</li>
-	);
-};
+		return (
+			<li ref={setNodeRef} style={style}>
+				<button
+					type="button"
+					{...listeners}
+					{...attributes}
+					className="cursor-grab active:cursor-grabbing"
+				>
+					<Icon icon="famicons:reorder-four-outline" />
+				</button>
+				<label htmlFor={id}>{label}</label>
+				<input
+					type="checkbox"
+					id={id}
+					value={id}
+					checked={isChecked}
+					onChange={onCheckboxChange}
+					className="widget-checkbox"
+				/>
+			</li>
+		);
+	},
+);
+
+SortableItem.displayName = "SortableItem";

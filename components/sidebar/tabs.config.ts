@@ -1,5 +1,5 @@
 import Home from "@/components/tabs/home";
-import { lazy } from "react";
+import dynamic from "next/dynamic";
 
 const tabItems = [
 	{
@@ -12,37 +12,37 @@ const tabItems = [
 		label: "Programs",
 		icon: "solar:book-2-linear",
 		key: "programs-tab",
-		Component: lazy(() => import("@/components/tabs/programs")),
+		Component: dynamic(() => import("@/components/tabs/programs")),
 	},
 	{
 		label: "Activities",
 		icon: "arcticons:emoji-bubbles",
 		key: "activities-tab",
-		Component: lazy(() => import("@/components/tabs/activities")),
+		Component: dynamic(() => import("@/components/tabs/activities")),
 	},
 	{
 		label: "Users",
 		icon: "solar:user-linear",
 		key: "users-tab",
-		Component: lazy(() => import("@/components/tabs/users")),
+		Component: dynamic(() => import("@/components/tabs/users")),
 	},
 	{
 		label: "Forums",
 		icon: "solar:clipboard-text-linear",
 		key: "forums-tab",
-		Component: lazy(() => import("@/components/tabs/forums")),
+		Component: dynamic(() => import("@/components/tabs/forums")),
 	},
 	{
 		label: "Finances",
 		icon: "solar:wallet-2-linear",
 		key: "finances-tab",
-		Component: lazy(() => import("@/components/tabs/finances")),
+		Component: dynamic(() => import("@/components/tabs/finances")),
 	},
 	{
 		label: "Rewards",
 		icon: "solar:medal-star-linear",
 		key: "rewards-tab",
-		Component: lazy(() => import("@/components/tabs/rewards")),
+		Component: dynamic(() => import("@/components/tabs/rewards")),
 	},
 	{
 		label: "Analytics",
@@ -54,7 +54,7 @@ const tabItems = [
 		label: "Settings",
 		icon: "solar:settings-linear",
 		key: "settings-tab",
-		Component: lazy(() => import("@/components/tabs/settings")),
+		Component: dynamic(() => import("@/components/tabs/settings")),
 	},
 	{
 		label: "Log Out",

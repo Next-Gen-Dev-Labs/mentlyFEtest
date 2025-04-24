@@ -4,7 +4,7 @@ import transitionViewIfSupported from "@/utils/transitionViewIfSupported";
 import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
 import Image from "next/image";
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, Fragment } from "react";
 import tabItems from "./tabs.config";
 
 export default function Sidebar() {
@@ -24,10 +24,10 @@ export default function Sidebar() {
 				<div className="mx-auto flex h-20 w-11/12 items-center justify-between lg:w-5/6">
 					<Image
 						src="/logo.png"
-						width="408"
-						height="95"
+						width="120"
+						height="30"
 						alt="Techrity logo"
-						className="h-auto w-29"
+						className="h-auto w-30"
 					/>
 					<button
 						type="button"
@@ -49,11 +49,10 @@ export default function Sidebar() {
 					}
 				/>
 				{tabItems.map((item) => (
-					<>
+					<Fragment key={item.key}>
 						<label
 							className="flex w-full items-center gap-8 rounded-lg px-8 py-4 transition not-[:has(:disabled),:has([aria-disabled='true']),:has(:checked)]:hover:bg-white/5 has-checked:text-[#1f0954]"
 							htmlFor={item.key}
-							key={item.key}
 							style={
 								{
 									anchorName: `--tab-item-${item.key}${item.key === activeTab ? ", --tab-item-active" : ""}`,
@@ -95,7 +94,7 @@ export default function Sidebar() {
 								Coming Soon
 							</span>
 						)}
-					</>
+					</Fragment>
 				))}
 			</nav>
 			<div className="mx-auto mt-12 mb-8 w-11/12 rounded-lg bg-white/12 px-3.5 py-2.5 text-white lg:w-5/6">

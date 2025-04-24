@@ -13,9 +13,12 @@
 		"@dnd-kit/sortable": "^10.0.0",
 		"@dnd-kit/utilities": "^3.2.2",
 		"@iconify-icon/react": "^2.3.0",
+		"apexcharts": "^4.6.0",
+		"change-case": "^5.4.4",
 		"clsx": "^2.1.1",
 		"next": "15.3.1",
 		"react": "^19.0.0",
+		"react-apexcharts": "^1.7.0",
 		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {

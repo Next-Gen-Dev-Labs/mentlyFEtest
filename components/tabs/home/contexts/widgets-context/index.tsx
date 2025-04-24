@@ -21,12 +21,13 @@ const HomeWidgets = createContext<HomeWidgetsType | null>(null);
 const defaultHomeWidgets: HomeWidgetsKeys[] = [
 	"programs-widget",
 	"group-calls-widget",
+	"users-widget",
+	"applications-widget",
 	"mentors-widget",
 	"recent-activities-widget",
-	"application-widget",
 ];
 
-const LOCAL_STORAGE_KEY = "techrityHomeWidgetsOrder";
+const LOCAL_STORAGE_KEY = "techrityHomeWidgets";
 
 export const HomeWidgetsProvider: FC<{ children: ReactNode }> = ({
 	children,
@@ -36,14 +37,12 @@ export const HomeWidgetsProvider: FC<{ children: ReactNode }> = ({
 			const savedWidgets = localStorage.getItem(LOCAL_STORAGE_KEY);
 			if (savedWidgets) {
 				try {
-					// Parse the saved string. Ensure it's an array and contains valid keys.
-					const parsedWidgets: HomeWidgetsKeys[] = JSON.parse(savedWidgets);
-					// Basic validation: check if it's an array and contains valid keys from widgets.config
+					const parsedWidgets = JSON.parse(savedWidgets);
 					if (
 						Array.isArray(parsedWidgets) &&
 						parsedWidgets.every((key) => widgets.some((w) => w.key === key))
 					) {
-						return parsedWidgets;
+						return parsedWidgets as HomeWidgetsKeys[];
 					} else {
 						console.error(
 							"Invalid data found in localStorage for homeWidgets. Using default.",

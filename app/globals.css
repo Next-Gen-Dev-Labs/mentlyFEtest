@@ -30,6 +30,32 @@
 			label:has(input.sr-only + iconify-icon:last-child) {
 				@apply grid aspect-square place-items-center;
 			}
+
+			.homePageWidgetsWrapper {
+				@apply grid gap-x-2.5 gap-y-5;
+				@container home-main (width >= 42rem) {
+					@apply grid-cols-4;
+					grid-template-areas:
+						"--0 --0 --1 --1"
+						"--0 --0 --1 --1"
+						"--2 --2 --3 --3"
+						"--4 --4 --3 --3"
+						"--5 --5 --5 --5";
+				}
+				@container home-main (width >= 64rem) {
+					@apply grid-cols-11;
+					grid-template-areas:
+						"--0 --0 --0 --0 --1 --1 --1 --1 --1 --1 --1"
+						"--0 --0 --0 --0 --1 --1 --1 --1 --1 --1 --1"
+						"--0 --0 --0 --0 --1 --1 --1 --1 --1 --1 --1"
+						"--0 --0 --0 --0 --3 --3 --3 --3 --4 --4 --4"
+						"--0 --0 --0 --0 --3 --3 --3 --3 --4 --4 --4"
+						"--0 --0 --0 --0 --3 --3 --3 --3 --4 --4 --4"
+						"--2 --2 --2 --2 --3 --3 --3 --3 --5 --5 --5"
+						"--2 --2 --2 --2 --3 --3 --3 --3 --5 --5 --5"
+						"--2 --2 --2 --2 --3 --3 --3 --3 --5 --5 --5";
+				}
+			}
 		}
 
 		/* ::view-transition-group(.tab-items) {
@@ -44,7 +70,7 @@
 }
 
 @utility widget-checkbox {
-	@apply relative isolate ml-auto size-[1em] cursor-pointer appearance-none rounded-sm border-2 border-black/50 text-lg outline-offset-3 transition before:absolute before:bottom-0 before:flex before:h-2/3 before:w-full before:origin-top before:scale-75 before:items-center before:justify-center before:align-middle before:invert before:transition-all before:transition-discrete checked:border-[#07c500] checked:bg-[#07c500] checked:before:scale-100 checked:before:content-(--licide--check) hover:scale-105 focus-visible:scale-105 active:scale-95 starting:checked:before:scale-75 starting:checked:before:opacity-0;
+	@apply relative isolate ml-auto size-[1em] cursor-pointer appearance-none rounded-sm border-2 border-black/50 text-lg outline-offset-3 transition before:absolute before:bottom-0 before:left-1/2 before:flex before:h-2/3 before:w-[calc(100%-4px)] before:origin-top before:-translate-x-1/2 before:scale-75 before:items-center before:justify-center before:align-middle before:invert before:transition-all before:transition-discrete checked:border-[#07c500] checked:bg-[#07c500] checked:before:scale-100 checked:before:content-(--licide--check) hover:scale-105 focus-visible:scale-105 active:scale-95 starting:checked:before:scale-75 starting:checked:before:opacity-0;
 }
 
 @utility clone-anchor {

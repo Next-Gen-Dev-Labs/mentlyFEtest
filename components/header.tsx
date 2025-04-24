@@ -47,9 +47,9 @@ export default function Header() {
 							<Image
 								src="/logo.symbol.png"
 								width="32"
-								height="27"
+								height="26"
 								alt="Techrity symbol"
-								className=""
+								className="h-auto w-8"
 							/>
 						</div>
 						<div className="space-y-1 text-xs text-[#53547b]">
@@ -62,7 +62,7 @@ export default function Header() {
 							type="button"
 							className="rounded bg-[#6f01d0] text-gray-400"
 						>
-							<Icon icon="solar:alt-arrow-down-linear" />
+							<Icon icon="tabler:chevron-down" />
 						</button>
 					</div>
 				</div>
