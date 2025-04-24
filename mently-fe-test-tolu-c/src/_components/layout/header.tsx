@@ -3,7 +3,7 @@ import { DropdownIcon, NotificationIcon } from "~/assets/icons";
 
 export const Header = () => {
   return (
-    <div className="w-full sticky z-50 h-[82px] bg-[#fdfdfd] shadow-header flex justify-end items-center px-13 gap-11">
+    <div className="w-full sticky z-50 flex-none top-0 h-[82px] bg-[#fdfdfd] shadow-header flex justify-end items-center px-13 gap-11">
       <div className="relative size-6">
         <span className="size-2 bg-[#FF3E3E] rounded-full absolute top-0 right-1"></span>
         <NotificationIcon className="size-6 text-[#4D4D4D]" />
