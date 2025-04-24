@@ -31,7 +31,7 @@ export default function Programs() {
                     </div>
                     <p className="text-[#A3A3A3]">This program is a hands-on guide for designers who want to master color theory and apply it to their designs.</p>
                     <div className="flex items-center justify-between">
-                        <div className={`flex items-center ${program.mentors.length > 1 ? 'overflow-hidden' : ''}`}>
+                        <div className="flex items-center">
                             <Avatar overlap={1.5} images={program.mentors} size={program.mentors.length > 1 ? "md" : "lg"} />
                             <span className="hidden 2xl:block font-[600] text-[12px] text-[#6C6C6C] overflow-ellipsis whitespace-nowrap">
                                 {program.mentors.length > 1 ? "Mentors" : `Hosted By: ${program.hostedBy}`}
