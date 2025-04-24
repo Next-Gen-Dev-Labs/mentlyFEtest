@@ -1,4 +1,4 @@
-const { withNetlify } = require('@netlify/next');
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -7,4 +7,4 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
 };
 
-export default withNetlify(nextConfig);
+export default nextConfig;

@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.2",
-    "@netlify/next": "^1.4.9",
     "autoprefixer": "^10.4.21",
     "chart.js": "^4.4.9",
     "framer-motion": "^12.7.4",
