@@ -27,7 +27,7 @@ export function WidgetSidebar({ open, onOpenChange }: WidgetSidebarProps) {
     }
   }, [open, widgets]);
 
-  const handleWidgetToggle = (id: any, checked: boolean) => {
+  const handleWidgetToggle = (id: string | number, checked: boolean) => {
     setTempWidgets((prev) =>
       prev.map((widget) =>
         widget.id === id ? { ...widget, enabled: checked } : widget
