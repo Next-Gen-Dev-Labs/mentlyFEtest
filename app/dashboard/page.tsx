@@ -1,19 +1,14 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
+import WelcomeSection from "./_components/welcome-section";
+import { ManageWidgets } from "./_components/manage-widgets";
+import { WidgetsLayout } from "./_components/widgets-layout";
 
 export default function Page() {
-  return <div>dash</div>;
+  return (
+    <div className="flex flex-col min-h-full">
+      <ManageWidgets className="ml-auto w-fit mb-5" />
+      <WelcomeSection />
+      <WidgetsLayout />
+      {/* <UsersAnalytics data={dummyData.usersAnaylytics} /> */}
+    </div>
+  );
 }

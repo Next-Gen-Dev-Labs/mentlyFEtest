@@ -94,7 +94,25 @@ export const dummyData = {
   user: {
     email: "founder@techrity.com",
     name: "Techrity Founder",
-    avatar: "/techrity-icon.svg",
+    avatar: "",
     role: "Member",
   },
+
+  workflows: [
+    { id: 1, name: "Programs", isActive: true },
+    { id: 2, name: "Group Calls", isActive: true },
+    { id: 3, name: "Mentors", isActive: true },
+    { id: 4, name: "Recent Activities", isActive: true },
+    { id: 5, name: "Application", isActive: true },
+    { id: 6, name: "Earnings", isActive: false },
+    { id: 7, name: "Forum", isActive: false },
+    { id: 8, name: "Program Analysis", isActive: false },
+  ],
+
+  usersAnaylytics: [
+    { type: "students", users: 200 },
+    { type: "mentors", users: 8 },
+    { type: "programs", users: 22 },
+    { type: "others", users: 10 },
+  ],
 };

@@ -2,13 +2,10 @@ import type { Metadata } from "next";
 import { Chivo } from "next/font/google";
 import "./globals.css";
 import { AppSidebar } from "@/components/app-sidebar";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-import { Separator } from "@/components/ui/separator";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+
 import { AppHeader } from "@/components/app-header";
+import { WorkflowProvider } from "@/contexts/workflows-context";
 
 const chivo = Chivo({
   subsets: ["latin"],
@@ -36,15 +33,19 @@ export default function RootLayout({
       <body
         className={`overflow-x-hidden bg-background text-foreground ${chivo.variable} font-sans antialiased`}
       >
-        <SidebarProvider>
-          {/* <AppSidebar /> {children} */}
-          <AppSidebar />
-          <SidebarInset>
-            <AppHeader />
-            <div className="flex-1">{children}</div>
-          </SidebarInset>
-        </SidebarProvider>
-        {/* <Toaster position="top-right" visibleToasts={2} /> */}
+        <WorkflowProvider>
+          <SidebarProvider>
+            {/* <AppSidebar /> {children} */}
+            <AppSidebar />
+            <SidebarInset>
+              <AppHeader />
+              <div className="flex-1 pt-4 pb-12 px-6 md:px-8 lg:px-10">
+                {children}
+              </div>
+            </SidebarInset>
+          </SidebarProvider>
+          {/* <Toaster position="top-right" visibleToasts={2} /> */}
+        </WorkflowProvider>
       </body>
     </html>
   );

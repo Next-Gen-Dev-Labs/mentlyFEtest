@@ -1,8 +1,5 @@
-"use client";
-
 import {
   Verify,
-  ArrowSquareDown,
   Notification,
   Card,
   Logout,
@@ -25,6 +22,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import Image from "next/image";
 
 export function NavUser({
   user,
@@ -36,8 +34,6 @@ export function NavUser({
     role?: string;
   };
 }) {
-  const { isMobile } = useSidebar();
-
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -45,11 +41,19 @@ export function NavUser({
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-primary data-[state=open]:text-primary-foreground hover:bg-background gap-2 !p-0.5 rounded-full hover:text-foreground "
+              className="data-[state=open]:bg-primary  data-[state=open]:text-primary-foreground hover:bg-background gap-2 !p-0.5 rounded-full hover:text-foreground "
             >
-              <Avatar className="size-11 rounded-full bg-[#8B72FC] p-2">
+              <Avatar className="size-11 rounded-full">
                 <AvatarImage src={user.avatar} alt={user.name} />
-                <AvatarFallback className="rounded-lg">{"TF"}</AvatarFallback>
+                <AvatarFallback className="rounded-lg p-2 bg-[#8B72FC]">
+                  <Image
+                    src="/techrity-icon.svg"
+                    width={44}
+                    height={44}
+                    className="object-contain"
+                    alt={user.name}
+                  />
+                </AvatarFallback>
               </Avatar>
               <div className="grid max-w-[106px] truncate flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
@@ -58,12 +62,9 @@ export function NavUser({
                 </span>
               </div>
 
-              <button
-                type="button"
-                className="size-5  bg-primary text-primary-foreground rounded-sm inline-flex justify-center items-center"
-              >
+              <span className="size-5 bg-primary text-primary-foreground rounded-sm inline-flex justify-center items-center">
                 <ArrowDown2 className="size-4" />
-              </button>
+              </span>
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
