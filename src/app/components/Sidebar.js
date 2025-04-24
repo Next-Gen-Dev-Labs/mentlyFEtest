@@ -26,7 +26,7 @@ const Sidebar = () => {
     }
 
     return (
-        <div className={`fixed z-30 bg-[#340260] h-full transition-all duration-300 px-2 ${toggleSidebar ? 'w-[4.5%] overflow-x-hidden' : 'w-[18.75%] overflow-x-hidden'}`}>
+        <div className={`fixed z-[4] top-[0] bg-[#340260] h-full transition-all duration-300 px-2 ${toggleSidebar ? 'w-[4.5%] overflow-x-hidden' : 'w-[18.75%] overflow-x-hidden'}`}>
             <div className='flex justify-between items-center py-4'>
                 <Link href='/' className={`${toggleSidebar ? 'hidden' : 'block'}`}>
                     <Image

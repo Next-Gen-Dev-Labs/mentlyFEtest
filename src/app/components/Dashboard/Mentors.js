@@ -7,7 +7,7 @@ const Mentors = () => {
             <div className="flex justify-between items-center">
                 <Image src="/menu.svg" alt="Menu" width={16} height={16} />
 
-                <div className="flex items-center justify-between gap-[14rem]">
+                <div className="flex items-center justify-between gap-[13rem]">
                     <h1 className="text-left text-[#B0B0B0] text-base font-bold">Mentors</h1>
                     <button>
                         <Image src="/add.svg" alt="add-icon" width={24} height={24} />
@@ -44,7 +44,7 @@ const Mentors = () => {
                     Message
                 </button>
             </div>
-            <button className='text-sm font-semibold mt-12 p-4 bg-[#DDD6FB] text-[#6F01D0] rounded-full w-full'>
+            <button className='text-sm font-semibold mt-12 p-3 bg-[#DDD6FB] text-[#6F01D0] rounded-full w-full'>
                 See All
             </button>
         </div>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Navbar = () => {
     return (
-        <div className=" bg-white shadow-md p-4 flex justify-end items-center pr-9">
+        <div className="fixed top-0 w-full z-[2] bg-white shadow-md p-4 flex justify-end items-center pr-9">
             <div className="flex justify-between items-center gap-7">
                 <button>
                     <Image src="/notifications.svg" alt="Notification Icon" width={24} height={24} />

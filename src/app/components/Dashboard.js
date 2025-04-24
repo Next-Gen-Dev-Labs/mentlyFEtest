@@ -14,7 +14,7 @@ const Dashboard = () => {
     const { boardChanger } = useGlobalBoard()
     const [widget, setWidget] = useState(false)
     return boardChanger === 'Dashboard' && (
-        <div className='ml-[4.5rem]'>
+        <div className='ml-[4.5rem] mt-[5.5rem]'>
             <div className="flex items-center justify-center my-4">
                 <div className='flex items-center justify-end gap-5 w-full pr-9'>
                     <div className='flex items-center justify-center gap-3'>
@@ -36,7 +36,7 @@ const Dashboard = () => {
                 <p className='text-[#BDBDBD]'>We're thrilled to have you join Techrity Team!</p>
                 <button className='bg-[#ffffff] text-[#1F0954] rounded-md p-2 px-4 text-base font-bold'>Update Profile</button>
             </div>
-            <div className='grid grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1.5fr_1fr] w-full justify-center p-4 pl-5 gap-3'>
+            <div className='grid grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1.5fr_1fr] w-full justify-center p-4 pl-5 gap-3 max-h-[76rem]'>
                 <Programs />
                 <GroupCalls />
                 <Users />

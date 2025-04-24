@@ -29,7 +29,7 @@ const RecentActivities = () => {
             <div className="flex justify-between items-center mb-4">
                 <Image src="/menu.svg" alt="Menu" width={16} height={16} />
 
-                <div className="flex items-center gap-[9.5rem]">
+                <div className="flex items-center gap-[9rem]">
                     <h1 className="text-left text-[#B0B0B0] text-base font-bold">Recent Activities</h1>
                     <button className="font-semibold text-xs text-[#6F01D0]">See All</button>
                 </div>
