@@ -1,39 +1,107 @@
-# MentlyFEtest Frontend Coding Challenge
 
-## Welcome
 
-This challenge is designed to assess your Frontend development skills. We're excited to see your approach to building user interfaces with Next.js and Tailwind CSS.
+# Techrity Dashboard
 
-## The Challenge
+Techrity Dashboard is a responsive web application designed for the Techrity Foundation. It provides an intuitive interface for managing programs, users, and activities, with features like user role management, notifications, and search functionality.
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=1391-1201&t=1K1umhLSyddg7sou-0).
+View [https://mently-test-61hm.vercel.app
+] the deployed version.
+---
 
-**Key Requirements:**
-* **Use Next.js:**  The application should be built using the Next.js framework.
-* **Use Tailwind CSS:** Style the application using Tailwind CSS.
-* **Responsiveness:** Ensure the application is responsive and works well on different screen sizes.
-* **Accessibility:**  Follow accessibility best practices to make the application usable for everyone.
-* **Code Quality:**  Write clean, well-documented, and maintainable code.
+## Features
 
-**Bonus Points:**
+- **Interactive Sidebar Navigation**: Easily navigate between different sections of the dashboard.
+- **Dashboard Welcome Banner**: Displays a personalized greeting for users.
+- **Program and Group Call Cards**: View, join, or manage programs and group calls.
+- **User Role Management**: Assign roles (Admin, Moderator, User) to users.
+- **Notifications System**: View recent updates and alerts.
+- **Search Functionality**: Quickly search for programs, users, or activities.
+- **User Statistics Visualization**: Interactive charts for visualizing user data.
+- **Recent Activities Feed**: Displays notifications with timestamps.
+- **Responsive Design**: Fully optimized for all device sizes.
 
-* **Animations/Interactions:** Add subtle animations or interactions to enhance the user experience.
-* **Testing:** Include unit tests for your components.
-* **Deployment:** Send your Pull request to this Repo
-* **Mobile Responsive:** Desktop and mobile responsive screens
+---
 
-## Submission
+## Tech Stack
 
-Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+- **Framework**: Next.js 13+ (App Router)
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Charts**: Recharts
+- **Icons**: Lucide React
 
-## Evaluation Criteria
+---
 
-Your submission will be evaluated on the following criteria:
+## Folder Structure
 
-* **Completeness:**  How closely the implementation matches the Figma design.
-* **Code Quality:**  Cleanliness, organization, and maintainability of the code.
-* **Functionality:**  Correctness and efficiency of the application's features.
-* **Responsiveness:**  How well the application adapts to different screen sizes.
-* **Accessibility:**  Adherence to accessibility guidelines.
+```
+.
+├── app/                     # Application pages and layouts
+│   ├── globals.css          # Global styles
+│   ├── layout.tsx           # Root layout
+│   ├── page.tsx             # Main dashboard page
+│   └── coming-soon/         # Coming soon page
+├── components/              # Reusable components
+│   ├── dashboard/           # Dashboard-specific components
+│   │   ├── UserRoleManager.tsx  # User role management feature
+│   │   ├── Notifications.tsx    # Notifications system
+│   │   └── SearchBar.tsx        # Search functionality
+│   ├── ui/                  # UI components (e.g., buttons, cards)
+├── hooks/                   # Custom React hooks
+├── lib/                     # Utility functions and libraries
+├── public/                  # Static assets (e.g., images)
+├── .next/                   # Build output (generated)
+├── tailwind.config.ts       # Tailwind CSS configuration
+├── tsconfig.json            # TypeScript configuration
+└── package.json             # Project dependencies and scripts
+```
 
-We appreciate your time and effort in completing this challenge. Good luck!
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the dashboard.
+
+---
+
+## Building for Production
+
+To build the project for production, run:
+
+```bash
+npm run build
+```
+
+The optimized output will be available in the .next directory.
+
+---
+
+
+## Removed Features
+
+- **Light/Dark Mode**: The light/dark mode toggle has been removed for simplicity.
+
+---
+
