@@ -19,8 +19,7 @@ export default function Dashboard() {
   const [isWidgetModalOpen, setIsWidgetModalOpen] = useState(false);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
-  const { toggleSidebar, isSidebarExpanded, widgets, setWidgets } =
-    useLayoutContext();
+  const { toggleSidebar, isSidebarExpanded, widgets } = useLayoutContext();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
