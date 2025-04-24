@@ -99,46 +99,15 @@ export default function Sidebar({ isMobile: propIsMobile }: SidebarProps) {
       {/* Sidebar */}
       <aside
         data-sidebar="true"
+        role="complementary"
         className={cn(
-          "flex flex-col h-screen bg-[#2D0A5A] text-white z-50 transition-all duration-300 ease-in-out",
-          isMobile ? "fixed" : "fixed w-64",
-          isMobile && isMobileOpen ? "w-[280px] translate-x-0" : isMobile ? "w-[280px] -translate-x-full" : "",
+          "flex flex-col h-screen bg-[#2D0A5A] text-white z-50 transition-all duration-300 ease-in-out fixed",
+          isMobile ? (isMobileOpen ? "w-[280px] translate-x-0" : "w-[280px] -translate-x-full") : "w-64",
         )}
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center gap-2">
-            {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 6C13.1046 6 14 5.10457 14 4C14 2.89543 13.1046 2 12 2C10.8954 2 10 2.89543 10 4C10 5.10457 10.8954 6 12 6Z"
-                fill="white"
-              />
-              <path
-                d="M18 8C19.1046 8 20 7.10457 20 6C20 4.89543 19.1046 4 18 4C16.8954 4 16 4.89543 16 6C16 7.10457 16.8954 8 18 8Z"
-                fill="white"
-              />
-              <path
-                d="M18 20C19.1046 20 20 19.1046 20 18C20 16.8954 19.1046 16 18 16C16.8954 16 16 16.8954 16 18C16 19.1046 16.8954 20 18 20Z"
-                fill="white"
-              />
-              <path
-                d="M6 8C7.10457 8 8 7.10457 8 6C8 4.89543 7.10457 4 6 4C4.89543 4 4 4.89543 4 6C4 7.10457 4.89543 8 6 8Z"
-                fill="white"
-              />
-              <path
-                d="M6 20C7.10457 20 8 19.1046 8 18C8 16.8954 7.10457 16 6 16C4.89543 16 4 16.8954 4 18C4 19.1046 4.89543 20 6 20Z"
-                fill="white"
-              />
-              <path
-                d="M14 18C14 16.8954 13.1046 16 12 16C10.8954 16 10 16.8954 10 18C10 19.1046 10.8954 20 12 20C13.1046 20 14 19.1046 14 18Z"
-                fill="white"
-              />
-              <path
-                d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"
-                fill="white"
-              />
-            </svg>
-            <span className="text-xl font-medium">techrity</span> */}
             <Image src="/SVGs/logo.svg" width={116} height={27} alt="techrity_logo" />
           </div>
           <div className="flex items-center gap-2">

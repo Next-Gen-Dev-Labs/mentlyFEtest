@@ -1,7 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest"
 import { render, screen } from "../../test-utils"
-import DashboardHeader from "../../../components/header/DashboardHeader"
-
+import DashboardHeader from "@/components/header/DashboardHeader"
 
 describe("DashboardHeader Component Edge Cases", () => {
   beforeEach(() => {
@@ -23,9 +22,14 @@ describe("DashboardHeader Component Edge Cases", () => {
   it("handles empty userName gracefully", () => {
     render(<DashboardHeader userName="" />)
 
-    // Check if avatar fallback is empty
-    const avatarFallback = screen.getByTestId("avatar-fallback")
-    expect(avatarFallback.textContent).toBe("")
+    // Check if avatar fallback exists and has the correct structure
+    // Using the class selector instead of data-slot
+    const avatarFallback = document.querySelector(
+      ".flex.size-full.items-center.justify-center.rounded-full.bg-purple-100",
+    )
+    expect(avatarFallback).toBeInTheDocument()
+    // Empty username should result in empty avatar fallback
+    expect(avatarFallback?.textContent?.trim()).toBe("")
   })
 
   it("handles extremely long userName and userRole", () => {

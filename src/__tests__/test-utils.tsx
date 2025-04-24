@@ -32,7 +32,7 @@ export const renderServerComponent = async (Component: any, props = {}) => {
 //   }
 // }
 
-// Custom query to find elements by attribute
+// Add the custom getByAttribute helper function
 const getByAttribute = (container: HTMLElement, attribute: string, value: string) => {
   const elements = container.querySelectorAll(`[${attribute}="${value}"]`)
   if (elements.length === 0) {

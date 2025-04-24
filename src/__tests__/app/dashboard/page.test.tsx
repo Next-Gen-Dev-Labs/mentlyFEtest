@@ -23,7 +23,7 @@ vi.mock("@/components/programs/ProgramsSection", () => ({
   default: () => <div data-testid="programs-section-component">Programs Section Component</div>,
 }))
 
-vi.mock("@/components/UsersAnalytics", () => ({
+vi.mock("@/components/user-analytics/UsersAnalytics", () => ({
   default: () => <div data-testid="users-analytics-component">Users Analytics Component</div>,
 }))
 

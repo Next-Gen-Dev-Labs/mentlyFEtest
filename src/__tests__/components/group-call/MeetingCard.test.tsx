@@ -12,8 +12,11 @@ describe("MeetingCard Component", () => {
   it("renders correctly with ongoing tag", () => {
     render(<MeetingCard {...defaultProps} />)
 
-    // Check if the image is rendered
-    const image = screen.getByTestId("next-image")
+    // Check if the image is rendered by finding all images and filtering by alt text
+    const images = screen.getAllByTestId("next-image")
+    const image = Array.from(images).find((img) => img.getAttribute("alt") === "img1")
+
+    expect(image).toBeInTheDocument()
     expect(image).toHaveAttribute("src", "/SVGs/program-banner2.svg")
 
     // Check if the tag is rendered with correct styling
@@ -63,8 +66,8 @@ describe("MeetingCard Component", () => {
     expect(mainDiv).toHaveClass("rounded-xl")
     expect(mainDiv).toHaveClass("bg-[#F9F7FF]")
 
-    // Check if separator is rendered
-    const separator = screen.getByRole("separator")
+    // Check if separator is rendered - using the correct role attribute
+    const separator = screen.getByRole("none")
     expect(separator).toBeInTheDocument()
     expect(separator).toHaveClass("my-4")
 

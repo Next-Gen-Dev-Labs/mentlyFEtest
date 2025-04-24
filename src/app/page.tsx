@@ -9,7 +9,7 @@ import MeetingCard from "@/components/group-call/MeetingCard"
 import Applications from "@/components/applications/Applications"
 import MentorCard from "@/components/mentors/MentorCard"
 import RecentActivities from "@/components/recent-activities/RecentActivities"
-import UsersAnalytics from "@/components/UsersAnalytics"
+import UsersAnalytics from "@/components/user-analytics/UsersAnalytics"
 import Divider from "@/components/header/Divider"
 
 const meetingData = [

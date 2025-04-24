@@ -53,10 +53,12 @@ describe("ProgramCard Component", () => {
   it("renders settings icon when settings prop is true", () => {
     render(<ProgramCard {...defaultProps} settings={true} />)
 
-    // Check if settings icon is rendered
-    const settingsIcon = screen.getByTestId("next-image")
+    // Check if settings icon is rendered by finding all images and filtering by alt text
+    const images = screen.getAllByTestId("next-image")
+    const settingsIcon = Array.from(images).find((img) => img.getAttribute("alt") === "settings-icon")
+
+    expect(settingsIcon).toBeInTheDocument()
     expect(settingsIcon).toHaveAttribute("src", "/SVGs/settings.svg")
-    expect(settingsIcon).toHaveAttribute("alt", "settings-icon")
   })
 
   it("does not render settings icon when settings prop is false", () => {

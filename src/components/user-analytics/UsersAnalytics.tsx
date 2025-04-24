@@ -1,7 +1,7 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
-import { Separator } from "./ui/separator"
+import { Separator } from "../ui/separator"
 
 export default function UsersAnalytics() {
   // User statistics data
