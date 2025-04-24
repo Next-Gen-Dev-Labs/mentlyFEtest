@@ -18,14 +18,17 @@ const Navbar = () => {
       document.body.style.overflow = "auto";
     };
   }, [openMenu]);
-  
+
   return (
     <div className="bg-[#FDFDFD] p-4 flex lg:justify-end justify-between items-center gap-8">
       <div className="cursor-pointer lg:hidden block" data-testid="menu-icon">
         <MenuButton onClick={() => setOpenMenu(!openMenu)} />
       </div>
       <div className="flex items-center gap-8 justify-end">
-        <div className="relative cursor-pointer">
+        <div
+          className="relative cursor-pointer"
+          data-testid="notifications-icon"
+        >
           <ICONS.Notifications />
           <div className="absolute top-0 right-1 w-2 h-2 bg-[#FF3E3E] rounded-full" />
         </div>
@@ -58,7 +61,11 @@ const Navbar = () => {
 };
 
 const MenuButton = ({ onClick }: { onClick: () => void }) => (
-  <div onClick={onClick} className="cursor-pointer">
+  <div
+    onClick={onClick}
+    className="cursor-pointer"
+    data-testid="sidebar-overlay"
+  >
     <ICONS.Menu />
   </div>
 );

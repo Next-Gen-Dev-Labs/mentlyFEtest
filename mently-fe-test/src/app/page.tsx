@@ -32,6 +32,7 @@ const Home = () => {
           <ICONS.ViewThumbnail />
           <ICONS.GalleryThumbnail />
           <p
+          data-testid="toggle-manage-widgets"
             onClick={() => setManageWidgets(!manageWidgets)}
             className="font-bold max-lg:text-sm text-[#1F0954] cursor-pointer hover:text-[#6F01D0] hover:underline"
           >

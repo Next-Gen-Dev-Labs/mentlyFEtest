@@ -24,7 +24,7 @@ const Application = () => {
       </div>
       <div className="my-8 border-b border-[#DBDBDB] pb-4">
         <p className="text-[10px] text-[#7D8DA6] ml-6 mb-8">Mentors</p>
-        <div className="flex sm:flex-row flex-col max-sm:items-start items-center max-md:justify-between gap-3 mt-3">
+        <div className="flex sm:flex-row flex-col max-sm:items-start items-center justify-between gap-3 mt-3">
           <div className="flex items-center gap-3">
             <Checkbox className="w-4 h-4" />
             <div className="flex items-center gap-3">
@@ -74,7 +74,7 @@ const Application = () => {
         <p className="text-[10px] text-[#7D8DA6] ml-6 mb-8">Students</p>
         {StudentsApplication.map((student, index) => (
           <div
-            className={`flex sm:flex-row flex-col max-sm:items-start items-center gap-3 max-md:justify-between mt-3 ${
+            className={`flex sm:flex-row flex-col max-sm:items-start items-center gap-3 justify-between mt-3 ${
               index < 2 ? "border-b border-[#DBDBDB]" : ""
             } pb-4`}
             key={index}

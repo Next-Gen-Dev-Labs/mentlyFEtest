@@ -1,10 +1,11 @@
 "use client";
 
 import { ICONS } from "@/assets";
+import Switch from "@/ui-component/Switch";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface ISidebar {
@@ -24,7 +25,7 @@ export const sidebarItem = [
   { label: "Rewards", icon: ICONS.Award, path: "/dashboard/rewards" },
   { label: "Analytics", icon: ICONS.Chart, path: "/dashboard/analytics" },
   { label: "Settings", icon: ICONS.Settings, path: "/dashboard/settings" },
-  { label: "Logout", icon: ICONS.Logout, path: "/dashboard/logout" },
+  { label: "Log Out", icon: ICONS.Logout, path: "/dashboard/logout" },
 ];
 
 const Sidebar: FC<ISidebar> = ({
@@ -34,6 +35,7 @@ const Sidebar: FC<ISidebar> = ({
   setisCollpased,
 }) => {
   const pathname = usePathname();
+  const [classicMode, setClassicMode] = useState(false);
 
   return (
     <div
@@ -99,7 +101,16 @@ const Sidebar: FC<ISidebar> = ({
             <item.icon
               stroke={pathname === item.path ? "#1F0954" : "#C2C2C2"}
             />
-            {!isCollapsed && <p>{item.label}</p>}
+            {!isCollapsed && (
+              <div className="flex items-center gap-2 relative">
+                <p>{item.label}</p>
+                {item.label.toLowerCase() === "analytics" && (
+                  <span className="  absolute -top-6 left-12 text-[10px] text-[#EFEFF8] w-full rounded bg-[#0214BD38] p-1">
+                    Coming Soon
+                  </span>
+                )}
+              </div>
+            )}
           </Link>
         ))}
       </div>
@@ -116,8 +127,18 @@ const Sidebar: FC<ISidebar> = ({
         </div>
       )}
 
-      <div className="">
-        <p className="text-white font-bold text-sm">Switch to Classic Mode</p>
+      <div
+        className={twMerge(
+          "flex items-center",
+          isCollapsed ? "justify-center" : "justify-between"
+        )}
+      >
+        {!isCollapsed && (
+          <p className="text-white font-bold text-xs">Switch to Classic Mode</p>
+        )}
+        <div className="" data-testid="switch">
+          <Switch checked={classicMode} onChange={setClassicMode} />
+        </div>
       </div>
     </div>
   );
