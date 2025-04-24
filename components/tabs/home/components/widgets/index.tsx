@@ -26,7 +26,7 @@ export default function Widgets() {
 						<widget.Component
 							style={{
 								gridArea: `--${homeWidgets.indexOf(widget.key)}`,
-								viewTransitionName: `the-actual-${widget.key}-widget`,
+								// viewTransitionName: `the-actual-${widget.key}-widget`,
 							}}
 						/>
 					</Suspense>

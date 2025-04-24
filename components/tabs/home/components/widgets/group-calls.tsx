@@ -142,7 +142,7 @@ const MeetingCard = memo(
 						{format(startMs, "HH:mm")} - {format(endMs, "HH:mm")}
 					</time>
 				</div>
-				<div className="mt-2.5 mb-1.5 flex items-end gap-1">
+				<div className="mt-2.5 mb-2 flex items-end gap-1">
 					<Image
 						src={groupImage}
 						width="12"
@@ -151,11 +151,11 @@ const MeetingCard = memo(
 						className="size-3.5 rounded-md object-cover object-center"
 					/>
 					<div className="mr-auto leading-none">
-						<div className="font-semibold">{groupLabel}</div>
+						<div className="font-semibold opacity-50">{groupLabel}</div>
 						<div className="">{groupSubtitle}</div>
 					</div>
 					<div>
-						<div>Mentors</div>
+						<div className="opacity-50">Mentors</div>
 						<div className="flex -space-x-1.5">
 							{mentors.map((m, i) => (
 								<Image
@@ -170,14 +170,17 @@ const MeetingCard = memo(
 						</div>
 					</div>
 				</div>
-				<div className="flex justify-between text-xs font-medium text-[#6f01d0] *:rounded-md *:border *:border-[#6d01d0] *:p-2">
-					<button type="button">View Participants</button>
+				<div className="flex justify-between text-xs font-medium text-[#6f01d0] *:rounded-md *:border *:border-[#6d01d0] *:p-2 *:transition">
+					<button type="button" className="hover:bg-current/5">
+						View Participants
+					</button>
 					<button
 						type="button"
 						aria-disabled={now > endMs}
-						className="bg-[#6f01d0] text-white aria-disabled:opacity-30"
+						className="flex items-center gap-1 bg-[#6f01d0] text-white aria-disabled:opacity-30"
 					>
-						Join Now
+						<span>Join Now</span>
+						<Icon icon="solar:arrow-right-linear" />
 					</button>
 				</div>
 			</article>

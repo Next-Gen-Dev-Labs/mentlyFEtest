@@ -1,3 +1,4 @@
+import { Icon } from "@iconify-icon/react";
 import { pascalCase } from "change-case";
 import Image from "next/image";
 import React, { CSSProperties, Fragment } from "react";
@@ -9,6 +10,15 @@ export default function Mentors({ style }: { style?: CSSProperties }) {
 			title="Mentors"
 			className="max-h-112 [&>div]:flex [&>div]:flex-col [&>div]:items-stretch"
 			style={style}
+			extraHeaderActions={[
+				<button
+					key="mentors-widget-add-something-button"
+					type="button"
+					className="rounded-full border p-1.25 text-sm text-[#9d92a6]"
+				>
+					<Icon icon="ic:outline-plus" className="-m-px" />
+				</button>,
+			]}
 			moreOptions={[
 				{
 					icon: "material-symbols:feedback",
@@ -33,7 +43,7 @@ export default function Mentors({ style }: { style?: CSSProperties }) {
 						</div>
 						<button
 							type="button"
-							className="rounded-full bg-[#6f01d0] px-3 py-1 text-white"
+							className="rounded-full bg-[#6f01d0] px-3 py-1 text-white outline-1 -outline-offset-1 outline-transparent transition hover:bg-white hover:text-[#6f01d0] hover:outline-current focus-visible:bg-white focus-visible:text-[#6f01d0] focus-visible:outline-current"
 						>
 							Message
 						</button>
@@ -43,9 +53,9 @@ export default function Mentors({ style }: { style?: CSSProperties }) {
 			))}
 			<button
 				type="button"
-				className="mt-auto block w-full rounded-full bg-current/10 p-3 text-sm font-semibold text-[#6f01d0]"
+				className="mt-auto block w-full rounded-full bg-current/10 p-3 text-sm font-semibold text-[#6f01d0] -outline-offset-2 transition *:inline-block *:transition hover:bg-current/7.5 hover:*:scale-105 focus-visible:bg-current/7.5 focus-visible:*:scale-105 active:*:scale-95"
 			>
-				See all
+				<span>See all</span>
 			</button>
 		</WidgetBase>
 	);

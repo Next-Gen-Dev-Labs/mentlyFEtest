@@ -1,7 +1,12 @@
 import { Icon, IconifyIcon } from "@iconify-icon/react";
 import { pascalCase } from "change-case";
 import clsx from "clsx";
-import React, { CSSProperties, PropsWithChildren, useEffect } from "react";
+import React, {
+	CSSProperties,
+	PropsWithChildren,
+	ReactNode,
+	useEffect,
+} from "react";
 
 export default function WidgetBase(props: PropsWithChildren<WidgetBase>) {
 	const key = props.title.replace(/\W/, "");
@@ -29,11 +34,12 @@ export default function WidgetBase(props: PropsWithChildren<WidgetBase>) {
 				<button type="button" className="cursor-grab active:cursor-grabbing">
 					<Icon icon="famicons:reorder-four-outline" />
 				</button>
-				<h2 className="grow font-bold">{props.title}</h2>
+				<h2 className="mr-auto shrink-0 font-bold">{props.title}</h2>
+				{props.extraHeaderActions}
 				{props.seeAllAction && (
 					<button
 						type="button"
-						className="text-xs font-semibold text-[#6f01d0]"
+						className="rounded-xs px-1.5 text-xs font-semibold text-[#6f01d0] outline outline-transparent transition-colors hover:bg-current/5 hover:outline-current/25 focus-visible:bg-current/5 focus-visible:outline-current/25"
 						onClick={props.seeAllAction}
 					>
 						See all
@@ -49,12 +55,13 @@ export default function WidgetBase(props: PropsWithChildren<WidgetBase>) {
 									anchorName: `--widget-${key}-more-options-button`,
 								} as CSSProperties
 							}
+							className="rounded-full p-1 outline outline-offset-1 outline-transparent transition hover:bg-current/5 focus-visible:outline-current/50"
 						>
 							<Icon icon="solar:menu-dots-bold" rotate="90deg" />
 						</button>
 						<div
 							popover=""
-							className="inset-auto top-[anchor(bottom)] m-0 [justify-self:anchor-center] rounded-sm bg-white py-0.75 text-left text-sm shadow"
+							className="inset-auto top-[anchor(bottom)] m-0 h-auto w-28 flex-col items-stretch [justify-self:anchor-center] rounded-sm bg-white py-0.75 text-left text-sm shadow open:flex"
 							id={`widget-${key}-more-options-dropdown`}
 							style={
 								{
@@ -65,11 +72,12 @@ export default function WidgetBase(props: PropsWithChildren<WidgetBase>) {
 							{props.moreOptions.map(({ label, icon, actionFn }) => (
 								<button
 									key={`widget-${key}-more-options-${pascalCase(label)}`}
-									className="flex items-center gap-1.5 px-2.5 py-1"
+									className="flex items-center gap-1.5 px-2.5 py-1 transition *:transition hover:bg-current/5 hover:*:scale-105 focus-visible:*:scale-105 active:*:scale-95"
+									type="button"
 									onClick={actionFn}
 								>
 									<Icon icon={icon} className="text-lg" />
-									{label}
+									<span>{label}</span>
 								</button>
 							))}
 						</div>
@@ -92,4 +100,5 @@ type WidgetBase = Readonly<{
 	className?: string;
 	style?: CSSProperties;
 	updateStyle?: (newStyle: CSSProperties) => void;
+	extraHeaderActions?: ReactNode[];
 }>;

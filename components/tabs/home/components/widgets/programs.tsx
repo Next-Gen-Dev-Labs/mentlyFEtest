@@ -17,7 +17,7 @@ export default function Programs({ style }: { style?: CSSProperties }) {
 				},
 			]}
 			style={style}
-			className="max-h-151"
+			className="@2xl\\/home-main:max-h-none max-h-151"
 		>
 			<div className="sticky top-0 flex justify-end bg-gradient-to-bl from-white to-transparent pb-2">
 				<label
@@ -28,7 +28,7 @@ export default function Programs({ style }: { style?: CSSProperties }) {
 					<div className="grid shrink-0 grid-cols-1 grid-rows-1 *:col-start-1 *:row-start-1">
 						<select
 							id="programs-widget-filter"
-							className="field-sizing-content appearance-none rounded-xs border border-gray-200 px-2.5 py-0.5 pr-8"
+							className="field-sizing-content appearance-none rounded-sm border border-gray-200 px-2.5 py-0.5 pr-8"
 						>
 							{selectOptions.map((o) => (
 								<option key={o.key} value={o.key}>
@@ -102,24 +102,32 @@ const Program = memo(
 	({ type, title, bannerImage, description, ...rest }: ProgramType) => (
 		<article className="mb-2 rounded-xl bg-white p-3.5 text-xs shadow-md">
 			<div
-				className="aspect-[265/70] w-full rounded-md bg-black/60 bg-cover bg-center bg-no-repeat p-2 text-white bg-blend-darken"
+				className="flex aspect-[265/70] w-full flex-col items-stretch rounded-md bg-black/60 bg-cover bg-center bg-no-repeat p-2 text-white bg-blend-darken"
 				style={
 					{
 						backgroundImage: `url(${bannerImage})`,
 					} as CSSProperties
 				}
 			>
-				<div className="flex items-start justify-between gap-8">
+				<div
+					className={clsx({
+						"flex items-start justify-between gap-8":
+							BadgeTitles.bootcamp === type,
+					})}
+				>
 					<h3 className="line-clamp-2 grow text-base font-bold">{title}</h3>
 					{BadgeTitles.bootcamp === type && (
-						<button type="button" className="text-sm">
+						<button
+							type="button"
+							className="rounded-full p-1 text-sm transition hover:rotate-180 hover:bg-current/10 focus-visible:rotate-180"
+						>
 							<Icon icon="solar:settings-linear" />
 						</button>
 					)}
 				</div>
 				<span
 					className={clsx(
-						"inline-flex items-center gap-1 rounded-full px-2 py-px font-bold",
+						"mt-auto mr-auto inline-flex items-center gap-1 rounded-full px-2 py-px font-bold",
 						{
 							"bg-green-50 text-green-700": type === BadgeTitles.bootcamp,
 							"bg-blue-50 text-blue-700": type === BadgeTitles.groupCall,
@@ -170,10 +178,8 @@ const Program = memo(
 						) : null}
 					</p>
 				</div>
-				<div className="flex items-center gap-1.5 text-[#6f01d0] *:rounded-sm *:border *:border-[#6f01d0] *:px-3.5 *:py-1.5">
-					<button type="button" className="">
-						View Details
-					</button>
+				<div className="flex items-center gap-1.5 text-[#6f01d0] *:rounded-sm *:border *:border-[#6f01d0] *:px-3.5 *:py-1.5 *:transition *:hover:scale-103 *:focus-visible:scale-103 *:active:scale-98">
+					<button type="button">View Details</button>
 					<button type="button" className="bg-[#6f01d0] text-white">
 						{"host" in rest && /Self/.test(rest.host.name)
 							? "Assign Mentor"

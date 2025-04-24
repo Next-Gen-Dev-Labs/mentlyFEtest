@@ -1,3 +1,4 @@
+import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
 import React, { CSSProperties, useMemo } from "react";
@@ -34,13 +35,19 @@ export default function Users({ style }: { style?: CSSProperties }) {
 	return (
 		<WidgetBase
 			title="Users"
-			seeAllAction={() => {}}
-			moreOptions={[
-				{
-					icon: "material-symbols:feedback",
-					label: "Feedback",
-					actionFn: () => {},
-				},
+			extraHeaderActions={[
+				<div
+					key="users-widget-filter-el-wrapper"
+					className="grid grid-cols-1 grid-rows-1 *:col-start-1 *:row-start-1"
+				>
+					<select className="field-sizing-content appearance-none rounded-sm border border-gray-200 px-2.5 py-0.5 pr-8">
+						<option value="">All</option>
+					</select>
+					<Icon
+						icon="tabler:chevron-down"
+						className="pointer-events-none mr-2.5 self-center justify-self-end text-base"
+					/>
+				</div>,
 			]}
 			className={clsx(
 				"[&_.apexcharts-canvas]:[anchor-name:--apexcharts-pie-doughnut] [&_.apexcharts-legend]:min-w-28 [&_.apexcharts-legend]:!items-stretch [&_.apexcharts-legend]:gap-3 [&_.apexcharts-legend]:!p-0 [&_.apexcharts-legend-marker]:!mr-0 [&_.apexcharts-legend-marker]:!ml-0.5 [&_.apexcharts-legend-marker]:size-2 [&_.apexcharts-legend-marker]:!rounded-full [&_.apexcharts-legend-marker]:!p-1 [&_.apexcharts-legend-marker]:*:rounded-full [&_.apexcharts-legend-series]:!m-0 [&_.apexcharts-legend-series]:justify-between [&_.apexcharts-legend-text]:!-ml-4 [&_.apexcharts-legend-text]:grow [&_.apexcharts-legend-text]:!pl-4",

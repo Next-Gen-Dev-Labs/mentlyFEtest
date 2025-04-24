@@ -106,7 +106,10 @@ export default function Sidebar() {
 				<p className="mt-5 mb-6 text-sm font-bold">
 					Got some questions, enquiries or need help?
 				</p>
-				<button type="button" className="text-xs text-[#f0c074] underline">
+				<button
+					type="button"
+					className="text-xs text-[#f0c074] underline hover:no-underline focus-visible:no-underline"
+				>
 					Visit Mently Help Desk
 				</button>
 			</div>
