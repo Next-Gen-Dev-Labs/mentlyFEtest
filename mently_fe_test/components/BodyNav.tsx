@@ -2,7 +2,7 @@ import React from "react";
 
 const BodyNav = () => {
   return (
-    <div className="bg-[#6F01D0] flex items-center justify-center gap-2 p-2 rounded">
+    <div className="bg-[#6F01D0] mb-2 flex items-center justify-center gap-2 p-2 rounded">
       <h2 className="text-[#FFFFFF] text-[26px] font-bold">
         Welcome Aboard, Blessing 👋
       </h2>

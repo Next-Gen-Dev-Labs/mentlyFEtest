@@ -18,14 +18,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </button>
 
       <div
-        className={`fixed top-0 left-0 z-40 h-full w-64 transform bg-[#340260] transition-transform duration-300 ease-in-out
+        className={`fixed top-0 left-0 z-40 h-full w-[240px] transform bg-[#340260] transition-transform duration-300 ease-in-out
         ${
           showSidebar ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 md:static md:block`}
       >
         <SideNav />
       </div>
-      {/* <Navbar /> */}
       <div className="w-full overflow-scroll no-scrollbar">{children}</div>
     </div>
   );

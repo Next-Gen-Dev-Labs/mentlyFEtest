@@ -11,21 +11,31 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="flex flex-col">
+    <div className="container flex flex-col">
       <Navbar />
       <SubNav />
       <div className="p-8">
         <BodyNav />
 
-        <main className="flex-1 p-4 space-y-4">
-          <Programs />
-          <Users />
-          <GroupCalls />
-          <div className="grid grid-cols-2 gap-4">
-            <Applications />
-            <Mentors />
+        <main className="">
+          <div className="">
+            <div className="flex md:flex-row lg:w-[329px] w-[30%]">
+              <div>
+                <Programs />
+                <Users />
+              </div>
+              <div className="px-2">
+                <GroupCalls />
+                <div className="flex gap-4">
+                  <Applications />
+                  <div>
+                    <Mentors />
+                    <RecentActivities />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <RecentActivities />
         </main>
       </div>
     </div>
