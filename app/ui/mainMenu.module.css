@@ -1,0 +1,38 @@
+
+.menuItems li {
+  color: #fff!important;
+  list-style-type: none;
+  padding: 0 20px;
+  font-family: Varta;
+}
+
+
+@media screen and (max-width:1000px) {
+.menuContainer {
+  margin-bottom:10px;
+  position:fixed;
+  top:0;
+  width:98vw;
+  padding:10px 10px 5px;
+  justify-content: space-between;
+  overflow-x:hidden!important;
+}
+.menuItemsWrapper {display:none; width:0;}
+.MenuRightContact {width:60%;}
+.menuContact {
+  padding: 7px 10px;
+  font-size:15px;
+  cursor:pointer;
+}
+.menuContact:hover {
+ padding:7px 10px;
+}
+.text {font-size:30px; font-weight:500;}
+}
+
+@media screen and (max-width:700px) {
+  .menuContainer {
+    width:95vw;
+    overflow-x:hidden!important;
+  }
+}
