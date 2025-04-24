@@ -29,7 +29,7 @@ const Applications = () => {
         <div className="flex flex-col gap-4">
           {ApplicationsData.mentors.map((mentor, index) => (
             <div key={index} className="flex flex-col gap-4">
-              <div className="flex items-center justify-between">
+              <div className="flex space-x-10 items-center justify-between">
                 <div className="flex items-center gap-3">
                   <input 
                     className="w-4 h-4 border rounded border-[#A5A5A5]" 
@@ -91,33 +91,36 @@ const Applications = () => {
         </div>
         <div className="flex flex-col gap-4">
           {ApplicationsData.students.map((student, index) => (
-            <div key={index} className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <input 
-                  className="w-4 h-4 border rounded border-[#A5A5A5]" 
-                  type="checkbox" 
-                />
-                <Image
-                  src={student.image}
-                  alt={student.name}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-                <div>
-                  <p className="text-[#4F4F4F] font-semibold text-sm">
-                    {student.name}
-                  </p>
-                  <p className="text-[#7D8DA6] text-xs">
-                    {student.email}
-                  </p>
+            <div key={index} className="flex flex-col gap-4">
+              <div className="flex space-x-10 items-center w-full">
+                <div className="flex items-center gap-3 flex-1">
+                  <input 
+                    className="w-4 h-4 border rounded border-[#A5A5A5]" 
+                    type="checkbox" 
+                  />
+                  <Image
+                    src={student.image}
+                    alt={student.name}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                  <div>
+                    <p className="text-[#4F4F4F] font-semibold text-sm">
+                      {student.name}
+                    </p>
+                    <p className="text-[#7D8DA6] text-xs">
+                      {student.email}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-2 min-w-[200px] justify-end">
+                  <ButtonRedBorder className="px-6 py-2 text-xs rounded-md w-[90px]" value="Reject" />
+                  <ButtonPurple className="px-6 py-2 text-xs rounded-md w-[90px]" value="Accept" />
                 </div>
               </div>
-              
-              <div className="flex items-center gap-2">
-                <ButtonRedBorder className="px-6 py-2 text-xs rounded-md" value="Reject" />
-                <ButtonPurple className="px-6 py-2 text-xs rounded-md" value="Accept" />
-              </div>
+              <div className="border-b border-[#DBDBDB] w-full"></div>
             </div>
           ))}
         </div>
