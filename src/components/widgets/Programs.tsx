@@ -1,9 +1,9 @@
 import React from "react";
-import Card from "../ui/Card";
+import Card from "@/components/ui/Card";
 import { programs } from "@/db/dataBase";
 import Image from "next/image";
 import ButtonWithBorderPurple from "@/components/ui/ButtonWithBorderPurple";
-import ButtonPurple from "../ui/ButtonPurple";
+import ButtonPurple from "@/components/ui/ButtonPurple";
 import { ChevronDown, Menu } from "lucide-react";
 import { CiMenuKebab } from "react-icons/ci";
 import { Settings } from "lucide-react";

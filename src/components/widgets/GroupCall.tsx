@@ -1,13 +1,13 @@
 import React from "react";
-import Card from "../ui/Card";
-import ButtonPurple from "../ui/ButtonPurple";
+import Card from "@/components/ui/Card";
+import ButtonPurple from "@/components/ui/ButtonPurple";
 import { CalendarIcon, Clock } from "lucide-react";
-import ButtonWithBorderPurple from "../ui/ButtonWithBorderPurple";
-import { ChevronDown, Menu } from "lucide-react";
+import ButtonWithBorderPurple from "@/components/ui/ButtonWithBorderPurple";
+import { Menu } from "lucide-react";
 import { CiMenuKebab } from "react-icons/ci";
 import Image from "next/image";
 import { GroupCalls } from "@/db/dataBase";
-import { GroupCallIcon } from "../svgIcons/SvgIcons";
+import { GroupCallIcon } from "@/components/svgIcons/SvgIcons";
 
 const GroupCall = () => {
   return (
@@ -48,7 +48,13 @@ const GroupCall = () => {
                   }
                 `}
                 >
-                  <span className={meeting.status === "Ongoing" ? "w-2 h-2 bg-[#1F8B01] rounded-full mr-1.5" : "w-2 h-2 bg-[#1C0AE1] rounded-full mr-1.5" }></span>
+                  <span
+                    className={
+                      meeting.status === "Ongoing"
+                        ? "w-2 h-2 bg-[#1F8B01] rounded-full mr-1.5"
+                        : "w-2 h-2 bg-[#1C0AE1] rounded-full mr-1.5"
+                    }
+                  ></span>
                   {meeting.status}
                 </span>
               </div>
@@ -62,33 +68,41 @@ const GroupCall = () => {
               <div className="flex items-center gap-6 mb-2">
                 <div className="flex items-center gap-2">
                   <CalendarIcon className="w-4 font-medium h-4 text-[#595564]" />
-                  <span className="text-xs text-[#595564] font-medium">{meeting.date}</span>
+                  <span className="text-xs text-[#595564] font-medium">
+                    {meeting.date}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 font-medium text-[#595564]" />
-                  <span className="text-xs font-medium text-[#595564]">{meeting.time}</span>
+                  <span className="text-xs font-medium text-[#595564]">
+                    {meeting.time}
+                  </span>
                 </div>
               </div>
 
               {/* Study Group and Mentors */}
               <div className="flex justify-between items-center mb-4">
-                <div >
-                  <p className="text-xs font-normal text-[#A195C0] ml-8">Study Group</p>
+                <div>
+                  <p className="text-xs font-normal text-[#A195C0] ml-8">
+                    Study Group
+                  </p>
                   <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={meeting.studyGroup.avatar}
-                      alt="Study Group"
-                      className="w-6 h-6 rounded-full"
-                    />
-                    <span className="text-xs font-semibold text-[#595564]">
-                      {meeting.studyGroup.name}
-                    </span>
-                  </div>
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src={meeting.studyGroup.avatar}
+                        alt="Study Group"
+                        className="w-6 h-6 rounded-full"
+                      />
+                      <span className="text-xs font-semibold text-[#595564]">
+                        {meeting.studyGroup.name}
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-col items-center">
-                  <span className="text-xs -ml-7 font-normal text-[#A195C0]">Mentors</span>
+                  <span className="text-xs -ml-7 font-normal text-[#A195C0]">
+                    Mentors
+                  </span>
                   <div className="flex -space-x-2">
                     {meeting.mentors.avatars.map((avatar, i) => (
                       <Image

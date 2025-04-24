@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import Card from '../ui/Card'
+import Card from '@/components/ui/Card'
 import { PieChart, Pie, Cell, Tooltip } from 'recharts'
 import { CiMenuKebab } from "react-icons/ci"
 

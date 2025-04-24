@@ -1,15 +1,18 @@
 import React from "react";
-import Card from "../ui/Card";
+import Card from "@/components/ui/Card";
 import { ApplicationsData } from "@/db/dataBase";
 import Image from "next/image";
 import { CiMenuKebab } from "react-icons/ci";
-import { CirclePlus } from 'lucide-react';
+import { CirclePlus, Menu } from 'lucide-react';
 
 const Mentors = () => {
   return (
     <Card className="h-full relative">
       <div className="flex items-center justify-between px-3 py-2">
-        <h1 className="text-base text-[#B0B0B0] font-bold">Mentors</h1>
+      <div className="flex gap-2">
+      <Menu />
+      <h1 className="text-base text-[#B0B0B0] font-bold">Mentors</h1>
+      </div>
         <div className="flex items-center gap-2">
         <CirclePlus className="text-[#B0B0B0] text-2xl" />
         <button className=" rounded-full hover:bg-gray-100">

@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../ui/Card";
+import Card from "@/components/ui/Card";
 import { CiMenuKebab } from "react-icons/ci";
 import { Menu } from "lucide-react";
 import { RecentActivitiesData } from "@/db/dataBase";

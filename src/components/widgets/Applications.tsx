@@ -1,11 +1,11 @@
 import React from "react";
-import Card from "../ui/Card";
+import Card from "@/components/ui/Card";
 import { CiMenuKebab } from "react-icons/ci";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import { ApplicationsData } from "@/db/dataBase";
-import ButtonPurple from "../ui/ButtonPurple";
-import ButtonRedBorder from "../ui/ButtonRedBorder";
+import ButtonPurple from "@/components/ui/ButtonPurple";
+import ButtonRedBorder from "@/components/ui/ButtonRedBorder";
 
 const Applications = () => {
   return (

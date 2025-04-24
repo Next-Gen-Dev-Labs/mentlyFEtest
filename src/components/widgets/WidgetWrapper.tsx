@@ -1,7 +1,7 @@
 'use client'
 
 import { useWidget } from "@/context/WidgetContext";
-import ManageWidgets from "./ManageWidgets";
+import ManageWidgets from "@/components/widgets/ManageWidgets";
 
 export default function WidgetWrapper() {
   const { isWidgetVisible } = useWidget();

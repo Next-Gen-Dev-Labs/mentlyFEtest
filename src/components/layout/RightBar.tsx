@@ -2,8 +2,8 @@
 
 import { useWidget } from "@/context/WidgetContext";
 import { X } from 'lucide-react';
-import ButtonPurple from "../ui/ButtonPurple";
-import ButtonWithBorderPurple from "../ui/ButtonWithBorderPurple";
+import ButtonPurple from "@/components/ui/ButtonPurple";
+import ButtonWithBorderPurple from "@/components/ui/ButtonWithBorderPurple";
 import { Menu } from "lucide-react";
 
 
