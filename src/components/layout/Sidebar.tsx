@@ -18,6 +18,7 @@ import TechrityLogo from "@/components/assets/T4G23 Style Guide V2_Updated 2 (1)
 import ToggleSidebarIcon from "@/components/svgIcons/grid-4.svg";
 import Image from "next/image";
 import { useState } from "react";
+import { X } from "lucide-react";
 
 const menuItems = [
   { name: "Dashboard", icon: <Home />, path: "/" },
@@ -52,7 +53,7 @@ export default function Sidebar() {
         <Image
           src={ToggleSidebarIcon}
           alt="Menu"
-          className="w-6 h-6"
+          className="w-6 cursor-pointer h-6 mt-3 md:mt-0"
         />
       </button>
 
@@ -83,7 +84,7 @@ export default function Sidebar() {
               className="md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <span className="text-white text-xl border-1 border-white rounded-md p-1">×</span>
+              <X className="text-white cursor-pointer text-xl border-1 border-white rounded-md p-1" />
             </button>
             <Image
               src={ToggleSidebarIcon}

@@ -11,15 +11,15 @@ export default function Header() {
   return (
     <header className="bg-[#FDFDFD] w-full flex px-12 justify-end shadow">
       <div className=" flex items-center h-20">
-        <div className="relative mr-8">
+        <div className="relative block sm:mr-8 mr-2">
           <Bell />
-          <div className="absolute -top-1 -right-1 bg-red-500 rounded-full w-2.5 h-2.5 flex items-center justify-center">
+          <div className="absolute -top-1 -right-[-3px] bg-red-500 rounded-full w-2.5 h-2.5 flex items-center justify-center">
           </div>
         </div>
         <div className="flex space-x-4 items-center gap-2">
-          <div className="bg-[#8B72FC] rounded-full flex items-center justify-center w-[50px] h-[50px] ">
+          <div className="bg-[#8B72FC] rounded-full flex items-center justify-center sm:w-[50px] w-[40px] h-[40px] sm:h-[50px] p-1 ">
             <HeaderImageIcon
-              className=""
+              className=" sm:w-full sm:h-full  w-[30px] h-[30px]"
               width={32}
               height={32}
             />
