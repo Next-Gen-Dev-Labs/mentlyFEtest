@@ -1,5 +1,4 @@
 import React from 'react';
-import { Hand } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WelcomeBanner = () => {
@@ -12,7 +11,7 @@ const WelcomeBanner = () => {
                     Welcome Aboard, Blessing 👋
                 </h1>
                 <span className="hidden lg:inline-block opacity-90 text-[20px] text-[#BDBDBD] font-chivo font-semibold">
-                    We're thrilled to have you join Techrity Team!
+                    {"We're thrilled to have you join Techrity Team!"}      
                 </span>
             </div>
             <div className="mt-2 md:mt-0">
