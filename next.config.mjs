@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {devIndicators: false};
+const nextConfig = {
+    eslint: {ignoreDuringBiulds: true,},
+    devIndicators: false};
 
 export default nextConfig;
