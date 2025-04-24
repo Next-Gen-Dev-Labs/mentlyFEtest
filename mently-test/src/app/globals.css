@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap');
+@tailwind utilities;
+
+:root {
+  --background: #F4F5FA;
+  --foreground: #171717;
+  --color-primary: #340260;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-chivo: var(var(--font-chivo));
+  --font-mono: var(--font-geist-mono); 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #F4F5FA;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-chivo), Arial, Helvetica, sans-serif; 
+}
+
+
+/* globals.css */
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid #d1d5db; 
+  border-radius: 0.25rem;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-color: #07C500;
+  border-color: #10b981; 
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  background-color: #07C500;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3); 
+}
