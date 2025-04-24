@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useMemo } from 'react'
 import Card from '@/components/ui/Card'
 import { PieChart, Pie, Cell, Tooltip } from 'recharts'
