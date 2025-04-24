@@ -41,7 +41,7 @@ export default function Programs() {
                             <button className="text-[#6F01D0] border-[0.82px] rounded-[7px] text-[13px] border-[#6F01D0] cursor-pointer px-4 py-2">
                                 View Details
                             </button>
-                            <button className="hidden 2xl:block text-white text-[13px] border-[0.82px] bg-[#6F01D0] rounded-[7px] border-[#6F01D0] cursor-pointer px-4 py-2">
+                            <button className="md:hidden 2xl:block text-white text-[13px] border-[0.82px] bg-[#6F01D0] rounded-[7px] border-[#6F01D0] cursor-pointer px-4 py-2">
                                 Analysis
                             </button>
                         </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function RecentActivities() {
     return (
-        <div className="mt-2 p-4 space-y-3">
+        <div className="p-2 space-y-2">
             <div className="flex items-start gap-2 border-b border-[#F1EFEF] py-1">
                 <div className="rounded-full w-10 h-10 relative overflow-hidden">
                     <Image fill priority src="/profile8.webp" alt="Widget Image" className="object-cover" />
