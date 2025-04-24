@@ -16,7 +16,12 @@ export default function Widgets() {
 				return (
 					<Suspense
 						key={widget.key}
-						fallback={<Icon icon="svg-spinners:blocks-scale" />}
+						fallback={
+							<Icon
+								icon="svg-spinners:blocks-scale"
+								className="suspense-fallback"
+							/>
+						}
 					>
 						<widget.Component
 							style={{

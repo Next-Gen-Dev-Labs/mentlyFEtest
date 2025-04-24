@@ -1,5 +1,6 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import clsx from "clsx";
+import { format } from "date-fns";
 import Image from "next/image";
 import React, { CSSProperties, memo } from "react";
 import WidgetBase from "./base";
@@ -104,12 +105,6 @@ const MeetingCard = memo(
 		const isOngoing = now >= startMs && now < endMs;
 
 		const dt = new Date(start);
-		const dateFmt = new Intl.DateTimeFormat(undefined, {
-			dateStyle: "medium",
-		}).format(dt);
-		const timeFmt = new Intl.DateTimeFormat(undefined, {
-			timeStyle: "short",
-		}).format(dt);
 
 		return (
 			<article
@@ -142,11 +137,11 @@ const MeetingCard = memo(
 				<div className="flex items-center justify-between *:flex *:items-center *:gap-1.5">
 					<time dateTime={start} className="">
 						<Icon icon="solar:calendar-minimalistic-linear" />
-						{dateFmt}
+						{format(dt, "MMM dd, yyyy")}
 					</time>
 					<time dateTime={start} className="">
 						<Icon icon="solar:clock-circle-linear" />
-						{timeFmt}
+						{format(dt, "h:mm aaaa")}
 					</time>
 				</div>
 				<div className="mt-2.5 mb-1.5 flex items-end gap-1">

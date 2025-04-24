@@ -4,7 +4,8 @@ import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import tabItems from "@/components/sidebar/tabs.config";
 import { useTabContext } from "@/contexts/tab-context";
-import { Suspense, useMemo } from "react";
+import { Icon } from "@iconify-icon/react";
+import { CSSProperties, Suspense, useMemo } from "react";
 
 export default function Page() {
 	const { activeTab } = useTabContext();
@@ -16,10 +17,21 @@ export default function Page() {
 	return (
 		<>
 			<Sidebar />
-			<main className="flex w-full flex-col items-stretch">
+			<main
+				className="flex w-full flex-col items-stretch"
+				style={{ anchorName: "--layout-main-wrapper" } as CSSProperties}
+			>
 				<Header />
 				{ActiveTab && "Component" in ActiveTab && (
-					<Suspense fallback={<div>Loading {ActiveTab.label}...</div>}>
+					<Suspense
+						fallback={
+							<Icon
+								data-testid="loading-spinner"
+								icon="svg-spinners:blocks-scale"
+								className="suspense-fallback"
+							/>
+						}
+					>
 						<ActiveTab.Component />
 					</Suspense>
 				)}

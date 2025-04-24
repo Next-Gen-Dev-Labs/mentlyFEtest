@@ -59,9 +59,13 @@ export default function Sidebar() {
 									viewTransitionName: `tab-item-${item.key}`,
 								} as CSSProperties
 							}
+							{...(item.key === "logout-action" && { onClick: item.action })}
 						>
 							<input
-								disabled={"disabled" in item && item.disabled}
+								disabled={
+									("disabled" in item && item.disabled) ||
+									item.key === "logout-action"
+								}
 								aria-disabled={item.key === activeTab}
 								type="radio"
 								name="sidebar_tabs"

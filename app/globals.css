@@ -82,3 +82,10 @@
 	bottom: anchor(bottom);
 	left: anchor(left);
 }
+
+@utility suspense-fallback {
+	@apply fixed text-5xl;
+	color: #6f01d0;
+	position-anchor: --layout-main-wrapper;
+	position-area: center;
+}
