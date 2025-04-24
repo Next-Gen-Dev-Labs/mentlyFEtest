@@ -15,7 +15,7 @@ const Navbar = () => {
                         <Image src="/member-logo.svg" alt="Company Icon" width={24} height={24} className='w-[24px] h-[24px]' />
                     </div>
                     <div className="text-sm leading-tight">
-                        <p className="font-medium">Techrity Foun...</p>
+                        <p className="text-sm">Techrity Foun...</p>
                         <p className="text-gray-500 text-[12px]">Member</p>
                     </div>
                     <div className='flex items-center w-[19px] h-[19px] bg-[#6F01D0] rounded-md'>

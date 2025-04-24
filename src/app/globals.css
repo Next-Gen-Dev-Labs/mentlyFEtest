@@ -17,6 +17,25 @@
   --geist-success-border: #0070f3;
 }
 
+input[type="checkbox"]:checked {
+  background-color: #22c55e; /* Tailwind's green-500 */
+  border-color: #22c55e;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.down{
+  padding-bottom: 10px;
+  border-bottom: 0.5px groove #D0D5DD;
+}
+
+.bottom{
+  padding-bottom: 10px;
+  border-bottom: 0.5px groove #F3F3F3;
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

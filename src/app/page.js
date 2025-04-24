@@ -1,5 +1,5 @@
 import Activities from "./components/Activities";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Programs from "./components/Programs";

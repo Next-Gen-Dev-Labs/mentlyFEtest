@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css"; // adjust if your path is different
-import { BoardProvider } from './components/controller'; // named import
+import "./globals.css";
+import { BoardProvider } from './components/controller';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "MentlyFEtest Frontend Coding Challenge",
   description: "Learn more about our challenge",
+  icons: {
+    icon: "/favicon.svg", 
+  },
 };
 
 export default function RootLayout({ children }) {
