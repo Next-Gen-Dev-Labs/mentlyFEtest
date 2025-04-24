@@ -26,7 +26,7 @@ const itemVariants = {
 
 export default function Dashboard() {
   return (
-    <div role="main">
+    <div>
       <WidgetPanel />
 
       <motion.div
