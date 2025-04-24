@@ -7,11 +7,10 @@ import Programs from "@/components/Programs";
 import RecentActivities from "@/components/RecentActivities";
 import SubNav from "@/components/SubNav";
 import Users from "@/components/Users";
-import React from "react";
 
 const page = () => {
   return (
-    <div className="container flex flex-col">
+    <div className="mx-auto container flex flex-col">
       <Navbar />
       <SubNav />
       <div className="p-8">
@@ -19,16 +18,16 @@ const page = () => {
 
         <main className="">
           <div className="">
-            <div className="flex md:flex-row lg:w-[329px] w-[30%]">
+            <div className="flex con phone">
               <div>
                 <Programs />
                 <Users />
               </div>
               <div className="px-2">
                 <GroupCalls />
-                <div className="flex gap-4">
+                <div className="lg:flex gap-4">
                   <Applications />
-                  <div>
+                  <div className="bg-[#FFFFFF] gap-4">
                     <Mentors />
                     <RecentActivities />
                   </div>

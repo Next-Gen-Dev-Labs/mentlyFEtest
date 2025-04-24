@@ -1,5 +1,3 @@
-// components/UserCard.tsx
-import Image from "next/image";
 import Button from "@/components/Button";
 
 type Props = {
@@ -10,20 +8,19 @@ type Props = {
 
 export default function UserCard({ name, email, image }: Props) {
   return (
-    <div className=" max-w-sm rounded-2xl shadow p-4 flex items-center gap-4">
-      <Image
+    <div className="border-b border-[#DBDBDB] p-4 flex items-center gap-2">
+      <input type="checkbox" />
+      <img
         src={image}
         alt={name}
-        width={50}
-        height={50}
-        className="rounded-full object-cover"
+        className="rounded-full w-[32px] h-[32px] object-cover"
       />
-      <div className="flex">
+      <div className="flex items-center gap-2">
         <div className="flex flex-col">
-          <h2 className="text-sm font-semibold text-gray-800">{name}</h2>
-          <p className="text-xs text-gray-500">{email}</p>
+          <h2 className="text-[14px] font-semibold text-[#4F4F4F]">{name}</h2>
+          <p className="text-[10px] text-[#7D8DA6]">{email}</p>
         </div>
-        <div className="mt-2 flex gap-2">
+        <div className="mt-2 flex lg:flex-none sm:flex-wrap gap-2">
           <Button
             variant="outline"
             size="sm"
@@ -33,7 +30,7 @@ export default function UserCard({ name, email, image }: Props) {
           </Button>
           <Button
             size="sm"
-            className="bg-[#6F01D0] hover:bg-green-700 text-white"
+            className="bg-[#6F01D0] hover:opacity-30 text-white"
           >
             Accept
           </Button>

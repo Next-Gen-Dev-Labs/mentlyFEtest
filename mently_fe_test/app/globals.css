@@ -26,6 +26,138 @@ body {
 }
 
 
+/* my styles */
+
+.applicationContainer {
+  @apply lg:w-[380px] p-2
+}
+
+.app_head {
+  @apply flex justify-between
+}
+
+.app_men {
+  @apply text-[10px] text-[#7D8DA6] font-medium
+}
+
+.app_main {
+  @apply border-b border-[#DBDBDB]
+}
+
+.app_body {
+  @apply p-4 flex items-center gap-2
+}
+
+.app_img {
+  @apply rounded-full w-[32px] h-[32px] object-cover
+}
+
+.app_card {
+  @apply flex items-center justify-between gap-2
+}
+
+.app_card_sub {
+  @apply flex flex-col
+}
+
+.app_h2 {
+  @apply text-[14px] font-semibold text-[#4F4F4F]
+}
+
+.app_p {
+  @apply text-[10px] text-[#7D8DA6]
+}
+
+.app_card_btn {
+  @apply mt-2 flex gap-2
+}
+
+.app_btn1 {
+  @apply text-red-600 border-red-300 hover:bg-red-50
+}
+
+.app_btn2 {
+  @apply bg-[#6F01D0] hover:opacity-30 text-[#FFFFFF]
+}
+
+.app_tag {
+  @apply flex items-center mb-4 justify-between
+}
+
+.app_role {
+  @apply text-[8.6px] text-[#9985A7] px-3 py-0.5 bg-[#F3ECF9] border border-[#DDCEEE] rounded
+}
+
+.app_ex {
+  @apply text-[8.6px] text-[#58948E] px-3 py-0.5 bg-[#E8FDFB] border border-[#A1BDBA] rounded
+}
+
+.app_loc {
+  @apply text-[8.6px] flex gap-2 items-center text-[#8196B5] px-3 py-0.5 bg-[#E3ECF9] border border-[#ABBEE0] rounded
+}
+
+.app_time {
+  @apply text-[8.6px] text-[#595564] px-3 py-0.5 bg-[#F4F4F4] border border-[#C8C8C8] rounded
+}
+
+.bodynav_container {
+  @apply bg-[#6F01D0] mb-2 flex items-center justify-center gap-2 p-2 rounded
+}
+
+.bodynav_h2 {
+  @apply text-[#FFFFFF] text-[26px] font-bold
+}
+
+.bodynav_p {
+  @apply text-[#BDBDBD] text-[20px] font-bold
+}
+
+.bodynav_btn {
+  @apply bg-[#FFFFFF] text-[#1F0954] py-1 font-bold text-[16px] p-4 rounded
+}
+
+.groupcall_container {
+  @apply overflow-hidden py-4
+}
+
+.groupcall_head {
+  @apply flex p-2 justify-between
+}
+
+.groupcall_card {
+  @apply flex md:flex-col lg:flex-row gap-2 justify-center
+}
+
+.groupcall_card_box {
+  @apply bg-[#F9F7FF] min-w-[250px] max-w-[380px] p-2 overflow-hidden rounded-xl shadow mt-2
+}
+
+.groupcall_card_img_box {
+  @apply relative rounded
+}
+
+.groupcall_card_img {
+  @apply w-full h-[72px] object-cover rounded-lg
+}
+
+.groupcall_card_container {
+  @apply mt-4 border-b border-[#D0D5DD] p-2 space-y-1
+}
+
+.groupcall_card_container_span {
+  @apply flex items-center w-fit gap-2 text-[8px] font-semibold px-2 py-1 rounded-3xl
+}
+
+.groupcall_card_status {
+  @apply h-[4px] w-[4px] rounded-full
+}
+
+.groupcall_card_name {
+  @apply text-[16px] font-bold text-[#595564]
+}
+
+
+
 /* custom css */
 
 /* Hide scrollbar but keep scrolling */
@@ -38,4 +170,41 @@ body {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+}
+
+
+
+/* mobile */
+
+@media (max-width:640px) {
+  .con {
+    flex-direction: col;
+  }
+
+  .bodynav_h2 {
+    font-size: 16px;
+  }
+
+  .bodynav_p {
+    font-size: 12px;
+  }
+
+  .bodynav_btn {
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  .nav {
+    width: 100px;
+  }
+
+  .con {
+    display: block;
+  }
+}
+
+@media (max-width:900px) {
+  .phone {
+    display: block;
+  }
 }

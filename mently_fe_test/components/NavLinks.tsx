@@ -3,20 +3,20 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { PiUserCircleDuotone } from "react-icons/pi";
 import { FcDocument } from "react-icons/fc";
 import { BiHome, BiLogOut, BiUser, BiWallet } from "react-icons/bi";
 import { BsActivity } from "react-icons/bs";
 import { MdForum } from "react-icons/md";
-import { GrAnalytics } from "react-icons/gr";
+import { GrAnalytics, GrHome } from "react-icons/gr";
 import { CiSettings } from "react-icons/ci";
+import { PiParallelogramThin } from "react-icons/pi";
 
 const links = [
-  { name: "Dashboard", href: "/dashboard", icon: BiHome },
+  { name: "Dashboard", href: "/dashboard", icon: GrHome },
   {
     name: "Programs",
     href: "/",
-    icon: FcDocument,
+    icon: PiParallelogramThin,
   },
   {
     name: "Activities",

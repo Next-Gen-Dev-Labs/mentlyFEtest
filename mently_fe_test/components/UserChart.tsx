@@ -1,59 +1,67 @@
 "use client";
 
-import {
-  PieChart as RePieChart,
-  Pie as RePie,
-  Cell as ReCell,
-  ResponsiveContainer,
-} from "recharts";
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement } from "chart.js";
 
-const data = [
-  { name: "Students", value: 400, color: "#3B82F6" },
-  { name: "Purple Category", value: 200, color: "#A855F7" },
-  { name: "Programs", value: 150, color: "#EC4899" },
-  { name: "Others", value: 50, color: "#F97316" },
-  { name: "Mentors", value: 100, color: "#22C55E" },
-];
+ChartJS.register(ArcElement);
 
-const total = data.reduce((sum, item) => sum + item.value, 0);
+const labels = ["Students", "Mentors", "Programs", "Others"];
+const values = [200, 8, 22, 10];
+const colors = ["#3B82F6", "#22C55E", "#EC4899", "#F97316"];
+const total = values.reduce((sum, val) => sum + val, 0);
+
+const data = {
+  labels,
+  datasets: [
+    {
+      data: values,
+      backgroundColor: colors,
+      borderWidth: 0,
+      borderRadius: 10,
+      cutout: "65%", // Makes it a donut
+    },
+  ],
+};
+
+const options = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false, // ❌ Remove default legend
+    },
+    tooltip: {
+      enabled: false, // Optional: disable tooltips if not needed
+    },
+  },
+};
 
 export default function UserChart() {
   return (
-    <div className="flex items-center justify-between w-full p-6">
+    <div className="flex items-center mt-4 justify-between w-full">
       {/* Donut Chart */}
-      <div className="w-1/2 flex justify-center items-center relative h-[250px]">
-        <ResponsiveContainer width="100%" height="100%">
-          <RePieChart>
-            <RePie
-              data={data}
-              dataKey="value"
-              cx="50%"
-              cy="50%"
-              innerRadius={60}
-              outerRadius={100}
-              paddingAngle={5}
-              isAnimationActive={false}
-            >
-              {data.map((entry, index) => (
-                <ReCell key={`cell-${index}`} fill={entry.color} />
-              ))}
-            </RePie>
-          </RePieChart>
-        </ResponsiveContainer>
-        <div className="absolute text-center text-lg font-bold text-gray-800">
-          {total} Users
+      <div className="relative w-[150px] h-[150px]">
+        <Doughnut data={data} options={options} />
+        <div className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 text-center">
+          <p className="text-[24px] font-bold text-[#222529]">{total}</p>
+          <span className="text-sm">Users</span>
         </div>
       </div>
 
-      {/* Legend */}
-      <div className=" space-y-4">
-        {data.map((item, index) => (
+      {/* Custom Legend */}
+      <div className="w-1/2 space-y-4">
+        {labels.map((label, index) => (
           <div key={index} className="flex items-center gap-2">
             <span
-              className="w-4 h-4 rounded-full"
-              style={{ backgroundColor: item.color }}
+              className="w-2 h-2 rounded-full"
+              style={{ backgroundColor: colors[index] }}
             ></span>
-            <span className="text-sm text-gray-700">{item.name}</span>
+            <div className="flex items-center justify-between">
+              <p className="text-[10px] text-[#595564]">{label}</p>
+              <p className="font-bold text-[12px] text-[#595564]">
+                {values[index]}
+              </p>
+            </div>
           </div>
         ))}
       </div>

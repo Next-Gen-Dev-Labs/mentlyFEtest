@@ -5,14 +5,12 @@ import SectionRightHead from "./SectionRightHead";
 
 export default function GroupCalls() {
   return (
-    <section className="shadow overflow-hidden p-4 rounded">
-      <div className="flex justify-between">
+    <section className="groupcall_container">
+      <div className="groupcall_head">
         <SectionRightHead title="Group Calls" />
         <SectionLeftHead />
       </div>
-      <div className="flex">
-        <GroupCallsCard />
-        <GroupCallsCard />
+      <div>
         <GroupCallsCard />
       </div>
     </section>

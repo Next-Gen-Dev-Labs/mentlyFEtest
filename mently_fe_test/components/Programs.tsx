@@ -4,9 +4,9 @@ import SectionRightHead from "./SectionRightHead";
 
 export default function Programs() {
   return (
-    <section className="w-full shadow p-4 rounded">
+    <section className="lg:w-[300px] md:w-[300px] shadow p-4 rounded">
       <div>
-        <div className="flex justify-between">
+        <div className="flex mb-2 justify-between">
           <SectionRightHead title="Programs" />
           <SectionLeftHead />
         </div>
@@ -19,9 +19,7 @@ export default function Programs() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4">
-        <ProgramCard />
-        <ProgramCard />
+      <div className="flex flex-col">
         <ProgramCard />
       </div>
     </section>

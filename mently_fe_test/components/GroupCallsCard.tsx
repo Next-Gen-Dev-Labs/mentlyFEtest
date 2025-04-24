@@ -1,56 +1,113 @@
+import Image from "next/image";
+import { BsArrowRight, BsClock } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
+import { IoCalendarClearOutline } from "react-icons/io5";
+
+const callData = [
+  {
+    image: "/sectionsImg.jpg",
+    name: "Weekly Meeting - Product Demo Review with Testers",
+    date: "Mon. Jul 30, 2024",
+    time: "9:00 - 11:00AM",
+    status: "Ongoing",
+    statusColor: "#2AC10033", // background
+    dotColor: "#1F8B01", // for the small status dot
+  },
+  {
+    image: "/groupCall2.png",
+    name: "Design Sync - UI Feedback Loop",
+    date: "Tue. Aug 5, 2024",
+    time: "2:00 - 3:00PM",
+    status: "Upcoming",
+    statusColor: "#E0DDFF",
+    dotColor: "#1C0AE1",
+  },
+  {
+    image: "/groupCall3.png",
+    name: "Design Sync - UI Feedback Loop",
+    date: "Tue. Aug 5, 2024",
+    time: "2:00 - 3:00PM",
+    status: "Upcoming",
+    statusColor: "#E0DDFF",
+    dotColor: "#1C0AE1",
+  },
+];
 
 export default function GroupCallsCard() {
   return (
-    <div className="bg-white w-[250px] overflow-hidden rounded-xl shadow p-2 max-w-xl mx-auto">
-      <div className="relative">
-        <img
-          src="/programImg1.png"
-          alt="Banner"
-          className="w-full h-[72px] object-cover rounded-lg"
-        />
-      </div>
-
-      <div className="mt-4 space-y-1">
-        <span className="flex items-center w-[30%] gap-2 bottom-1 left-2 bg-[#2AC10033] text-[#1F8B01] text-[8px] font-semibold px-2 py-1 rounded-3xl">
-          <div className="bg-[#1F8B01] h-[4px] w-[4px] rounded-full"></div>
-          Ongoing
-        </span>
-        <p className="text-[16px] font-bold text-[#595564]">
-          Weekly Meeting - Product Demo Review with Testers
-        </p>
-      </div>
-
-      <div className="flex justify-between items-center mt-4">
-        <div className="flex items-center">
-          <div className="flex -space-x-2">
-            <img
-              className="w-8 h-8 rounded-full border-2 border-white"
-              src="/mentor1.png"
-            />
-            <img
-              className="w-full h-8 rounded-full border-2 border-white"
-              src="/mentor2.png"
-            />
-            <img
-              className="w-full h-8 rounded-full border-2 border-white"
-              src="/mentor3.png"
-            />
+    <div className="groupcall_card con">
+      {callData.map((call, index) => (
+        <div key={index} className="groupcall_card_box">
+          <div className="groupcall_card_img_box">
+            <img src={call.image} alt="Banner" className="groupcall_card_img" />
           </div>
-          <span className=" text-[8px] text-[#6C6C6C] font-medium">
-            Mentors
-          </span>
-        </div>
 
-        <div className="flex space-x-1">
-          <button className="border border-[#6F01D0] text-[#6F01D0] text-[8px] px-2 py-1.5 rounded hover:bg-gray-200">
-            View Details
-          </button>
-          <button className="bg-[#6F01D0] text-[#FFFFFF] text-[8px] px-2 py-1.5 rounded hover:bg-blue-700">
-            Analysis
-          </button>
+          <div className="group_call_card_container">
+            <span
+              className="groupcall_card_container_span"
+              style={{
+                backgroundColor: call.statusColor,
+                color: call.dotColor,
+              }}
+            >
+              <div
+                className="groupcall_card_status"
+                style={{ backgroundColor: call.dotColor }}
+              ></div>
+              {call.status}
+            </span>
+            <p className="groupcall_card_name">{call.name}</p>
+          </div>
+
+          <div className="flex items-center my-4 justify-between">
+            <div className="flex gap-2 items-center px-2 border-r border-[#D0D5DD]">
+              <IoCalendarClearOutline color="#1F0954" size={11} />
+              <p className="text-[8px] text-[#595564]">{call.date}</p>
+            </div>
+            <div className="flex items-center px-2 gap-2">
+              <BsClock color="#1F0954" size={11} />
+              <p className="text-[8px] text-[#595564]">{call.time}</p>
+            </div>
+          </div>
+
+          <div className="flex items-center px-2 gap-8">
+            <div className="flex gap-2">
+              <img
+                src="/studyGroup.jpg"
+                alt=""
+                className="rounded-full w-4 h-4"
+              />
+              <div className="flex flex-col">
+                <p className="text-[#A195C0] text-[6px]">Study Group</p>
+                <p className="text-[8px] text-[#595564]">
+                  UX Strategy Study group
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-[#A195C0] text-[6px]">Mentors</p>
+              <div className="flex -space-x-2">
+                <img className="w-4 h-4 rounded-full " src="/mentor1.png" />
+                <img className="w-4 h-4 rounded-full " src="/mentor1.png" />
+                <img className="w-4 h-4 rounded-full " src="/mentor1.png" />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <div className="flex justify-between">
+              <button className="border border-[#6F01D0] text-[#6F01D0] text-[12px] px-2 py-1.5 rounded hover:bg-gray-200">
+                View Participants
+              </button>
+              <button className="bg-[#6F01D0] flex items-center gap-4 text-[#FFFFFF] text-[12px] px-2 py-1.5 rounded hover:bg-blue-700">
+                Join Now
+                <BsArrowRight />
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }
