@@ -3,9 +3,10 @@
 import { Bell, ChevronDown } from "lucide-react";
 import { HeaderImageIcon } from "../svgIcons/SvgIcons";
 import { useWidget } from "@/context/WidgetContext";
+import { ChevronLeft } from 'lucide-react';
 
 export default function Header() {
-  const { toggleWidget } = useWidget();
+  const { toggleWidget, isWidgetVisible } = useWidget();
 
   return (
     <header className="bg-[#FDFDFD] w-full flex px-12 justify-end shadow">
@@ -33,7 +34,8 @@ export default function Header() {
             onClick={toggleWidget}
             className="bg-[#8B72FC] px-1 py-1 rounded-sm cursor-pointer"
           >
-            <ChevronDown className="" />
+            {isWidgetVisible && <ChevronDown className="" />}
+            {!isWidgetVisible && <ChevronLeft className="" />}
           </button>
         </div>
       </div>

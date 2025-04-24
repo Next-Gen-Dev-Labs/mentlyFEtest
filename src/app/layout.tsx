@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Sidebar from '@/components/layout/Sidebar'
 import Header from '@/components/layout/Header'
+import RightBar from '@/components/layout/RightBar'
 import Providers from '@/components/providers/Providers'
 
 // Load font outside component
@@ -31,6 +32,7 @@ export default function RootLayout({
                 {children}
               </main>
             </div>
+            <RightBar />
           </div>
         </Providers>
       </body>
