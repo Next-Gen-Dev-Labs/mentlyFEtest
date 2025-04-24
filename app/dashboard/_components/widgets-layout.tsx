@@ -11,7 +11,7 @@ import { UsersAnalytics } from "./users-analytics";
 import { dummyData } from "@/lib/data";
 import { ProgramCard } from "@/app/_components/program-card";
 import Link from "next/link";
-import { GroupCallsCard } from "@/app/_components/group-calls-card";
+// import { GroupCallsCard } from "@/app/_components/group-calls-card";
 
 export const WidgetsLayout = () => {
   return (
@@ -48,9 +48,10 @@ export const WidgetsLayout = () => {
             actions={<MoreVerticalIcon />}
           />
           <WidgetContainerContent className="flex items-center gap-2">
-            {dummyData.calls.map((call, idx) => (
+            {/* {dummyData.calls.map((call, idx) => (
               <GroupCallsCard key={idx} {...call} />
-            ))}
+            ))} */}
+            In progress
           </WidgetContainerContent>
         </WidgetContainer>
       </div>
@@ -61,7 +62,7 @@ export const WidgetsLayout = () => {
             widgetTitle="Applications"
             actions={<MoreVerticalIcon />}
           />
-          3
+          In progress
         </WidgetContainer>
       </div>
 
@@ -71,7 +72,7 @@ export const WidgetsLayout = () => {
             widgetTitle="Mentors"
             actions={<MoreVerticalIcon />}
           />
-          4
+          In progress
         </WidgetContainer>
       </div>
 
@@ -81,7 +82,7 @@ export const WidgetsLayout = () => {
             widgetTitle="Recent Activities"
             actions={<MoreVerticalIcon />}
           />
-          6
+          In progress
         </WidgetContainer>
       </div>
     </section>
