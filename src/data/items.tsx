@@ -66,41 +66,41 @@ export const widgetItems: WidgetItem[] = [
     visible: true,
     label: 'Programs',
     defaultVisible: true,
-    gridPosition: 'lg:col-span-1 lg:row-span-2 col-start-1 row-start-1'
+    gridPosition: 'sm:col-span-1 sm:row-span-2 col-start-1 row-start-1'
   },
   {
     id: 'group',
     visible: true,
     label: 'Group Calls',
     defaultVisible: true,
-    gridPosition: 'lg:col-span-2 lg:row-span-1 lg:col-start-2 lg:row-start-1'
+    gridPosition: 'sm:col-span-1 lg:col-span-2 sm:row-span-1 lg:row-span-1 col-start-1 sm:col-start-2 row-start-2 sm:row-start-1'
   },
   {
     visible: true,
     id: 'application',
     label: 'Application',
     defaultVisible: true,
-    gridPosition: 'lg:col-span-1 lg:row-span-2 lg:col-start-2 lg:row-start-2'
+    gridPosition: 'sm:col-span-1 lg:col-span-1 sm:row-span-2 lg:row-span-2 col-start-1 sm:col-start-1 lg:col-start-2 row-start-3 sm:row-start-2'
   },
   {
     id: 'mentor',
     visible: true,
     label: 'Mentors',
     defaultVisible: true,
-    gridPosition: 'lg:col-span-1 lg:row-span-1 lg:col-start-3 lg:row-start-2'
+    gridPosition: 'sm:col-span-1 lg:col-span-1 col-start-1 sm:col-start-2 lg:col-start-3 row-start-5 sm:row-start-4 lg:row-start-2'
   },
   {
     id: 'recent',
     visible: true,
     defaultVisible: true,
     label: 'Recent Activities',
-    gridPosition: 'lg:col-span-1 lg:row-span-1 lg:col-start-3 lg:row-start-3'
+    gridPosition: 'sm:col-span-1 lg:col-span-1 col-start-1 sm:col-start-1 lg:col-start-3 row-start-6 sm:row-start-5 lg:row-start-3'
   },
   {
     id: 'user',
     isUser: true,
     label: 'Users',
-    gridPosition: 'lg:col-span-1 lg:row-span-1 lg:col-start-1 lg:row-start-3'
+    gridPosition: 'sm:col-span-1 lg:col-span-1 col-start-1 sm:row-start-3 md:row-start-1 lg:row-start-3'
   },
   { id: 'earnings', label: 'Earnings' },
   { id: 'forum', label: 'Forum' },

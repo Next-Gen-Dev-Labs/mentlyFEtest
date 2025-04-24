@@ -3,7 +3,7 @@ import { applicationItems } from "@/data/items";
 
 export default function Application() {
     return (
-        <div className="mt-4 space-y-10">
+        <div className="mt-2 p-4 space-y-10">
             <div className="grid gap-4">
                 <span className="text-[12px] font-[400] text-[#7D8DA6] pl-5.5">Mentors</span>
                 <div className="grid gap-2 pb-6 border-b border-[#DBDBDB]">
@@ -27,17 +27,17 @@ export default function Application() {
                             </button>
                         </div>
                     </div>
-                    <div className="flex gap-2 items-center justify-evenly">
-                        <button className="border-[0.86px] border-[#DDCEEE] rounded-lg px-2 py-0 bg-[#F3ECF9]">
+                    <div className="flex gap-2 items-center justify-center">
+                        <button className="border-[0.86px] border-[#DDCEEE] rounded-lg px-2 bg-[#F3ECF9]">
                             <span className="text-[#9985A7] text-[10px] font-medium">Product Designer</span>
                         </button>
-                        <button className="border-[0.86px] border-[#A1BDBA] rounded-lg px-2 py-0 bg-[#E8FDFB]">
+                        <button className="border-[0.86px] border-[#A1BDBA] rounded-lg px-2 bg-[#E8FDFB]">
                             <span className="text-[#58948E] text-[10px] font-medium">4years Experience</span>
                         </button>
-                        <button className="border-[0.86px] border-[#ABBEE0] rounded-lg px-2 py-0 bg-[#E3ECF9]">
+                        <button className="border-[0.86px] border-[#ABBEE0] rounded-lg px-2 bg-[#E3ECF9]">
                             <span className="text-[#8196B5] text-[10px] font-medium">Lagos, Nigeria</span>
                         </button>
-                        <button className="border-[0.86px] border-[#C8C8C8] rounded-lg px-2 py-0 bg-[#F4F4F4]">
+                        <button className="border-[0.86px] border-[#C8C8C8] rounded-lg px-2 bg-[#F4F4F4]">
                             <span className="text-[#595564] text-[10px] font-medium">GMT+1</span>
                         </button>
                     </div>

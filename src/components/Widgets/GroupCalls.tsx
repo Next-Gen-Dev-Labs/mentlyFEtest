@@ -7,11 +7,13 @@ import { GoClock, GoArrowRight } from "react-icons/go";
 export default function GroupCalls() {
     return (
         <div className="mt-4 flex gap-3 pb-2">
-            {/* Hide third card on screens below 2xl */}
             {groupCallItems.map((call, index) => (
                 <div
                     key={index}
-                    className={`bg-[#F9F7FF] rounded-[10px] p-5 grid gap-2 w-full ${index >= 2 ? 'hidden 2xl:block' : '2xl:block'}`}
+                    className={`bg-[#F9F7FF] rounded-[10px] p-5 grid gap-2 w-full
+                        ${index > 0 ? 'hidden xl:block' : ''}
+                        ${index > 1 ? 'xl:hidden 2xl:block' : ''}
+                    `}
                 >
                     <div className="relative w-full h-25 rounded-lg overflow-hidden">
                         <Image fill priority src={call.image} alt="Widget Image" className="object-cover" />

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Mentors() {
     return (
-        <div className="mt-4 space-y-6">
+        <div className="mt-2 p-4 space-y-6">
             <div className="grid gap-3">
                 <div className="flex items-center py-2 justify-between border-b border-[#F3F3F3]">
                     <div className="flex items-center gap-2">

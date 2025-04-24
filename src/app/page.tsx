@@ -15,11 +15,11 @@ export default function Home() {
   return (
     <>
       <Sidebar toggleCollapse={sidebar.toggle} isCollapsed={sidebar.isCollapsed} />
-      <main className={`flex-1 transition-all duration-300 ease-in-out ${sidebar.isCollapsed ? 'md:ml-20' : 'md:ml-60'}`}>
+      <main className={`transition-all duration-300 ease-in-out ${sidebar.isCollapsed ? 'md:ml-20' : 'md:ml-60'}`}>
         <Topbar toggleCollapse={sidebar.toggle} />
-        <section className="py-4 px-8">
+        <section className="py-4 px-4 md:px-8">
           <Header toggleCollapse={widgetsContext.toggle} />
-          <section className="grid grid-cols-3 gap-4">
+          <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {widgets.map(widget => <Widget key={widget.id} widget={widget} />)}
             {widgetsContext.isCollapsed && <Manage toggleCollapse={widgetsContext.toggle} />}
           </section>

@@ -28,8 +28,8 @@ export default function Widget({ widget }: { widget: WidgetItem }) {
         : 'bg-white p-4 shadow-sm';
 
     return (
-        <section className={`overflow-hidden rounded-xl ${wrapperClasses} ${widget.gridPosition}`}>
-            <div className={`flex items-center justify-between mb-2 ${isUser ? 'border-b-2 border-[#E1E7EC] py-3 px-6' : ''}`}>
+        <section className={`overflow-hidden rounded-xl ${wrapperClasses} ${widget.gridPosition} w-full h-full`}>
+            <div className={`flex items-center justify-between mb-2 ${isUser ? 'border-b-2 border-[#E1E7EC] py-3 px-4 sm:px-6' : ''}`}>
                 {!isUser ? (
                     <>
                         <div className="flex items-center gap-2">
