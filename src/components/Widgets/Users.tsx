@@ -1,10 +1,14 @@
+import Image from "next/image";
 
 export default function Users() {
     return (
         <div className="mt-4 p-4 h-full flex items-center gap-2 justify-between">
-            <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-gray-700">All Users</span>
-                <span className="text-xs text-gray-500">5 online</span>
+            <div className="relative">
+                <Image width={180} height={180} src="/donut.webp" alt="Widget Image" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                    <p className="text-2xl font-bold text-[#222529] m-0">240</p>
+                    <span className="text-sm font-[400] text-[#595564]">Users</span>
+                </div>
             </div>
             <div className="grid gap-3 w-30">
                 <div className="flex text-[#595564] items-center justify-between">
