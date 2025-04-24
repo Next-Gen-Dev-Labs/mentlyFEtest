@@ -1,10 +1,11 @@
 
 
-# Techrity Modern Dashboard Tast by Mently 
-
+# Techrity Dashboard
 
 Techrity Dashboard is a responsive web application designed for the Techrity Foundation. It provides an intuitive interface for managing programs, users, and activities, with features like user role management, notifications, and search functionality.
 
+View [https://mently-test-61hm.vercel.app
+] the deployed version.
 ---
 
 ## Features
@@ -103,3 +104,4 @@ The optimized output will be available in the .next directory.
 - **Light/Dark Mode**: The light/dark mode toggle has been removed for simplicity.
 
 ---
+
