@@ -4,8 +4,8 @@ import { CiMenuKebab } from "react-icons/ci";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import { ApplicationsData } from "@/db/dataBase";
-import ButtonPurple from "@/components/ui/ButtonPurple";
-import ButtonRedBorder from "@/components/ui/ButtonRedBorder";
+import ButtonPurple from "../ui/ButtonPurple";
+import ButtonRedBorder from "../ui/ButtonRedBorder";
 
 const Applications = () => {
   return (

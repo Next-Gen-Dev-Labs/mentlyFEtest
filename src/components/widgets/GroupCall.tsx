@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "@/components/ui/Card";
-import ButtonPurple from "@/components/ui/ButtonPurple";
+import ButtonPurple from "../ui/ButtonPurple";
 import { CalendarIcon, Clock } from "lucide-react";
-import ButtonWithBorderPurple from "@/components/ui/ButtonWithBorderPurple";
+import ButtonWithBorderPurple from "../ui/ButtonWithBorderPurple";
 import { Menu } from "lucide-react";
 import { CiMenuKebab } from "react-icons/ci";
 import Image from "next/image";
