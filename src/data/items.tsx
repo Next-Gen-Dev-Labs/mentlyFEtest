@@ -28,6 +28,16 @@ export interface ProgramItem {
   mentors: { alt: string; src: string; tooltip: string; }[];
 }
 
+export interface GroupCallItem {
+  date: string;
+  time: string;
+  image: string;
+  title: string;
+  status: 'ongoing' | 'upcoming';
+  group: { name: string; type: string; };
+  mentors: { alt: string; src: string; tooltip: string; }[];
+}
+
 export const navItems: NavItem[] = [
   { active: true, label: "Dashboard", icon: <RiHome5Line /> },
   { label: "Programs", icon: <LuBookText /> },
@@ -106,5 +116,47 @@ export const programItems: ProgramItem[] = [
     image: "/widget2.webp",
     title: "Colour Hack Practical Group Call",
     mentors: [{ alt: "Mentor 1", src: "/profile4.webp", tooltip: "Self" }],
+  }
+];
+
+export const groupCallItems: GroupCallItem[] = [
+  {
+    status: "ongoing",
+    time: "9:00 - 11:00AM",
+    image: "/widget3.webp",
+    date: "Mon. Jul 30, 2024",
+    title: "Weekly Meeting - Product Demo Review with Testers",
+    group: { type: "Study Group", name: "UX Strategy Study Group" },
+    mentors: [
+      { alt: "Mentor 1", src: "/profile1.webp", tooltip: "Sam Wilson" },
+      { alt: "Mentor 2", src: "/profile2.webp", tooltip: "Alex Johnson" },
+      { alt: "Mentor 3", src: "/profile3.webp", tooltip: "Taylor Smith" }
+    ]
+  },
+  {
+    status: "upcoming",
+    time: "9:00 - 11:00AM",
+    image: "/widget4.webp",
+    date: "Mon. Jul 30, 2024",
+    title: "Weekly Meeting - Product Demo Review with Testers",
+    group: { type: "Study Group", name: "UX Strategy Study Group" },
+    mentors: [
+      { alt: "Mentor 1", src: "/profile1.webp", tooltip: "Sam Wilson" },
+      { alt: "Mentor 2", src: "/profile2.webp", tooltip: "Alex Johnson" },
+      { alt: "Mentor 3", src: "/profile3.webp", tooltip: "Taylor Smith" }
+    ]
+  },
+  {
+    status: "ongoing",
+    image: "/widget5.webp",
+    time: "9:00 - 11:00AM",
+    date: "Mon. Jul 30, 2024",
+    title: "Weekly Meeting - Product Demo Review with Testers",
+    group: { type: "Study Group", name: "UX Strategy Study Group" },
+    mentors: [
+      { alt: "Mentor 1", src: "/profile1.webp", tooltip: "Sam Wilson" },
+      { alt: "Mentor 2", src: "/profile2.webp", tooltip: "Alex Johnson" },
+      { alt: "Mentor 3", src: "/profile3.webp", tooltip: "Taylor Smith" }
+    ]
   }
 ];

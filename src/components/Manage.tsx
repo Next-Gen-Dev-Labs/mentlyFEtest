@@ -6,7 +6,7 @@ export default function Manage({ toggleCollapse }: CollapseProps) {
     const { widgets, toggleWidget, resetWidgets } = useWidgets();
 
     return (
-        <aside className="w-100 px-10 py-6 fixed bg-white top-0 right-0 h-dvh transition-all overflow-y-auto scrollbar-hide duration-300 ease-in-out before:bg-[#E3D7FF29] before:backdrop-blur-xs before:fixed before:inset-0 before:-z-1">
+        <aside className="z-50 w-100 px-10 py-6 fixed bg-white top-0 right-0 h-dvh transition-all overflow-y-auto scrollbar-hide duration-300 ease-in-out before:bg-[#E3D7FF29] before:backdrop-blur-xs before:fixed before:inset-0 before:-z-1">
             <section className="space-y-10">
                 <div className="flex justify-end gap-2 border-b-[#8D8D8D] border-b-[1px] pb-2">
                     <HiMiniXMark

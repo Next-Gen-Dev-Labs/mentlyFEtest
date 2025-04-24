@@ -20,7 +20,7 @@ export type CollapseProps = {
 const CollapseContext = createContext<CollapseType | undefined>(undefined);
 
 export function CollapseProvider({ children }: { children: React.ReactNode }) {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
   const [widgetsCollapsed, setWidgetsCollapsed] = useState(false);
 
   return (

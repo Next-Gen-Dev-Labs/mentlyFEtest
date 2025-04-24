@@ -17,8 +17,8 @@ export default function Programs() {
             {programItems.map((program, index) => (
                 <div key={index} className="rounded-[10px] p-4 grid gap-3 [box-shadow:0px_4.93px_5.17px_0px_#AFABAB4D]">
                     <div className="relative w-full h-25 rounded-lg overflow-hidden">
-                        <div className="absolute w-[60%] h-full px-4 py-1 z-10 grid items-center">
-                            <h5 className="font-bold text-white text-lg 2xl:text-xl [line-height:1.2]">{program.title}</h5>
+                        <div className="absolute w-[75%] h-full px-4 py-1 z-10 grid items-center">
+                            <h5 className="font-bold text-white text-lg 2xl:text-xl [line-height:1.2] text-pretty">{program.title}</h5>
                             <p className="gap-1 rounded-[10px] flex items-center mt-1 bg-[#D4E0F3] w-max py-0.5 px-2.5">
                                 <i className="rounded-full w-1.5 h-1.5" style={{ backgroundColor: program.typeColor }} />
                                 <span className="text-[10px] font-bold" style={{ color: program.typeColor }}>{program.type}</span>
@@ -29,12 +29,8 @@ export default function Programs() {
                     <p className="text-[#A3A3A3]">This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach</p>
                     <div className="flex items-center justify-between">
                         <div className={`flex items-center ${program.mentors.length > 1 ? 'overflow-hidden' : ''}`}>
-                            <Avatar
-                                size={program.mentors.length > 1 ? "md" : "lg"}
-                                overlap={1.5}
-                                images={program.mentors}
-                            />
-                            <span className="font-[600] text-[12px] text-[#6C6C6C] overflow-ellipsis whitespace-nowrap">
+                            <Avatar overlap={1.5} images={program.mentors} size={program.mentors.length > 1 ? "md" : "lg"} />
+                            <span className="hidden 2xl:block font-[600] text-[12px] text-[#6C6C6C] overflow-ellipsis whitespace-nowrap">
                                 {program.mentors.length > 1 ? "Mentors" : `Hosted By: ${program.hostedBy}`}
                             </span>
                         </div>

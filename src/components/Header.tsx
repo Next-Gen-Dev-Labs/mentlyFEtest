@@ -3,7 +3,7 @@ import { TbLayout, TbListDetails } from "react-icons/tb";
 
 export default function Header({ toggleCollapse }: CollapseProps) {
     return (
-        <section className="grid gap-4 mb-2">
+        <section className="grid gap-4 mb-3">
             <div className="flex gap-1.5 items-center justify-end">
                 <button className="cursor-pointer text-[#A4A5B8] origin-top-right rotate-y-180 w-7 h-7">
                     <TbListDetails />
