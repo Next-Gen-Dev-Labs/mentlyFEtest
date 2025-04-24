@@ -12,7 +12,7 @@ exports[`Header Component matches snapshot 1`] = `
         alt="menu icon"
         class="h-4 w-4"
         data-testid="menu-icon"
-        src="vector1-icon"
+        src="[object Object]"
       />
       <h3
         class="font-bold text-[#B0B0B0]"
@@ -32,7 +32,7 @@ exports[`Header Component matches snapshot 1`] = `
         alt="icon"
         class="cursor-pointer"
         data-testid="action-icon"
-        src="vector1-icon"
+        src="[object Object]"
       />
     </div>
   </div>

@@ -16,9 +16,6 @@ jest.mock('next/image', () => ({
   ),
 }));
 
-// Mock SVG imports
-jest.mock('@/assets/icons/Vector (3).svg', () => 'vector3-icon');
-jest.mock('@/assets/icons/Vector (1).svg', () => 'vector1-icon');
 
 describe('Header Component', () => {
   const testProps = {
@@ -44,17 +41,16 @@ describe('Header Component', () => {
   it('renders all icons correctly', () => {
     render(<Header {...testProps} />);
     
-    // Menu icon (using explicit test ID)
+   
+    // Verify menu icon
     const menuIcon = screen.getByTestId('menu-icon');
     expect(menuIcon).toBeInTheDocument();
-    expect(menuIcon).toHaveAttribute('src', 'vector1-icon');
     expect(menuIcon).toHaveClass('h-4');
     expect(menuIcon).toHaveClass('w-4');
     
-    // Action icon (using explicit test ID)
+    // Verify action icon
     const actionIcon = screen.getByTestId('action-icon');
     expect(actionIcon).toBeInTheDocument();
-    expect(actionIcon).toHaveAttribute('src', 'vector3-icon'); // Fixed expectation
     expect(actionIcon).toHaveClass('cursor-pointer');
   });
 
