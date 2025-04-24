@@ -1,7 +1,18 @@
 // components/SidebarLink.tsx
 import { useState } from "react";
 import Link from "next/link";
-import { DashboardIcon, ProgramsIcon } from "./SidebarIcons";
+import {
+  ActivitiesIcon,
+  AnaylyticsIcon,
+  DashboardIcon,
+  FinancesIcon,
+  ForumsIcon,
+  LogoutIcon,
+  ProgramsIcon,
+  RewardIcon,
+  SettingsIcon,
+  UsersIcon,
+} from "./SidebarIcons";
 
 import { motion } from "motion/react";
 import { div } from "motion/react-client";
@@ -26,6 +37,14 @@ const iconComponents: Record<
 > = {
   Dashboard: DashboardIcon,
   Programs: ProgramsIcon,
+  Activities: ActivitiesIcon,
+  Users: UsersIcon,
+  Forums: ForumsIcon,
+  Finances: FinancesIcon,
+  Rewards: RewardIcon,
+  Analytics: AnaylyticsIcon,
+  Settings: SettingsIcon,
+  LogOut: LogoutIcon,
 };
 
 export const SidebarLink: React.FC<SidebarLinkProps> = ({
@@ -42,7 +61,7 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
       <Link href={link.href} passHref>
         <motion.div
           layout
-          className={`relative flex items-center gap-[32px] my-4 rounded-lg cursor-pointer transition-all duration-200
+          className={`relative flex items-center gap-[32px] my-2 rounded-lg cursor-pointer transition-all duration-200
           ${isActive ? " text-white" : "hover:bg-secondary/10"} `}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}

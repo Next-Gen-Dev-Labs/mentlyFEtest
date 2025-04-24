@@ -10,8 +10,15 @@ import { Widget } from "../types/types";
 
 export const links: LinkItem[] = [
   { id: 1, label: "Dashboard", href: "/" },
-  { id: 2, label: "Dashboard", href: "/d" },
-  { id: 3, label: "Programs", href: "/programs", notifs: "coming soon" },
+  { id: 2, label: "Programs", href: "/programs" },
+  { id: 3, label: "Activities", href: "/activities" },
+  { id: 4, label: "Users", href: "/users" },
+  { id: 5, label: "Forums", href: "/forums" },
+  { id: 6, label: "Finances", href: "/finances" },
+  { id: 7, label: "Rewards", href: "/rewards" },
+  { id: 8, label: "Analytics", href: "/analytics", notifs: "coming soon" },
+  { id: 9, label: "Settings", href: "/settings" },
+  { id: 10, label: "LogOut", href: "/logout" },
 ];
 
 export const studentData: Student[] = [

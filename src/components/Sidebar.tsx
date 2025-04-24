@@ -35,7 +35,7 @@ export const Sidebar: React.FC = () => {
   return (
     <motion.nav
       layout
-      className="sticky top-0 h-screen shrink-0 bg-primary text-textnotactive transition-all duration-300 shadow-lg z-50"
+      className="sticky top-0 h-screen overflow-y-auto shrink-0 bg-primary text-textnotactive transition-all duration-300 shadow-lg pb-10 z-50"
       style={{
         width: open ? "240px" : "55px",
         minWidth: open ? "55px" : "55px", // Ensure minimum width for content
