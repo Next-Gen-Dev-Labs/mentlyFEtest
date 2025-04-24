@@ -2,6 +2,16 @@ import SvgImageOne from "@/components/assets/svgImages/svgOne.svg";
 import SvgImageTwo from "@/components/assets/svgImages/svgTwo.svg";
 import SvgImageThree from "@/components/assets/svgImages/svgThree.svg";
 
+// programsImage
+import ProgramsImageOne from '@/components/assets/Program banner with Image (1).png'
+import ProgramsImageTwo from '@/components/assets/Rectangle 12322.png'
+import ProgramsImageThree from '@/components/assets/Rectangle 12322.png'
+
+// GroupCell Image
+import GroupCallImageOne from "@/components/assets/Rectangle 12322 (1).png";
+import GroupCallImageTwo from "@/components/assets/Rectangle 12322 (2).png";
+import GroupCallImageThree from "@/components/assets/Rectangle 12322 (3).png";
+
 export const programs = [
   {
     title: "Fundamentals of User interface & Experience",
@@ -10,7 +20,7 @@ export const programs = [
       "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
     mentors: "Mentors",
     avatars: [SvgImageOne, SvgImageTwo, SvgImageThree],
-    backgroundImage: "fundamentals-ui.jpg",
+    backgroundImage: ProgramsImageOne,
   },
   {
     title: "Colour Hack Practical Group Call",
@@ -19,7 +29,7 @@ export const programs = [
       "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
     mentors: "Mentors",
     avatar: SvgImageTwo,
-    backgroundImage: "group-call-1.jpg",
+    backgroundImage: ProgramsImageTwo,
   },
   {
     title: "Colour Hack Practical Group Call",
@@ -28,7 +38,7 @@ export const programs = [
       "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
     mentors: "Mentors",
     avatar: SvgImageThree,
-    backgroundImage: "group-call-2.jpg",
+    backgroundImage: ProgramsImageThree,
   },
 ];
 
@@ -45,7 +55,7 @@ export const GroupCalls = [
     mentors: {
       avatars: [SvgImageOne, SvgImageTwo, SvgImageThree],
     },
-    backgroundImage: "group-call-smile.jpg",
+    backgroundImage: GroupCallImageOne,
   },
   {
     status: "Upcoming",
@@ -59,7 +69,7 @@ export const GroupCalls = [
     mentors: {
       avatars: [SvgImageOne, SvgImageTwo, SvgImageThree],
     },
-    backgroundImage: "group-call-wave.jpg",
+    backgroundImage: GroupCallImageTwo,
   },
   {
     status: "Ongoing",
@@ -73,7 +83,7 @@ export const GroupCalls = [
     mentors: {
       avatars: [SvgImageOne, SvgImageTwo, SvgImageThree],
     },
-    backgroundImage: "group-call-muuk.jpg",
+    backgroundImage: GroupCallImageThree,
   },
 ];
 

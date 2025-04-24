@@ -34,4 +34,8 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 } 

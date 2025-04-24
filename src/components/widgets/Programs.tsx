@@ -6,6 +6,7 @@ import ButtonWithBorderPurple from "@/components/ui/ButtonWithBorderPurple";
 import ButtonPurple from "../ui/ButtonPurple";
 import { ChevronDown, Menu } from "lucide-react";
 import { CiMenuKebab } from "react-icons/ci";
+import { Settings } from "lucide-react";
 
 const Programs = () => {
   return (
@@ -42,15 +43,42 @@ const Programs = () => {
           {programs.map((programsItems, index) => (
             <Card key={index} className="p-3">
               <div className="space-y-2.5">
-                <div>
+                <div className="relative w-full h-[160px] rounded-lg overflow-hidden">
                   <Image
-                    src="/path/to/your/image.jpg"
+                    src={programsItems.backgroundImage}
                     alt="Description of the image"
-                    width={500}
-                    height={300}
+                    fill
+                    objectFit="cover"
                   />
-                  <h1></h1>
-                  <p></p>
+
+                  {/* Title and tag */}
+                  <div className="absolute bottom-4 left-0 top-0 right-0 px-4">
+                    <div className="flex justify-between mt-8">
+                      <h1 className="text-base font-bold text-white">
+                        {programsItems.title}
+                      </h1>
+
+                      {index === 0 && <Settings color="#fff" />}
+                    </div>
+                    <span
+                      className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium
+                  ${
+                    programsItems.tag === "Bootcamp"
+                      ? "bg-[#D4E0F3] text-[#0077FF]"
+                      : " bg-[#D4F3D4] text-[#008000]"
+                  }
+                `}
+                    >
+                      <span
+                        className={
+                          programsItems.tag !== "Bootcamp"
+                            ? "w-2 h-2 bg-[#1F8B01] rounded-full mr-1.5"
+                            : "w-2 h-2 bg-[#1C0AE1] rounded-full mr-1.5"
+                        }
+                      ></span>
+                      {programsItems.tag}
+                    </span>
+                  </div>
                 </div>
 
                 <p className="text-[#A3A3A3] text-xs font-normal">
