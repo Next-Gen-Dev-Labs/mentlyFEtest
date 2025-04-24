@@ -27,7 +27,7 @@ export default function RootLayout({
         <Sidebar />
         <div className="w-full flex-1 h-full self-start flex flex-col items-start overflow-y-scroll">
           <Header />
-          <main className="w-full flex flex-col items-start px-10 py-4 bg-[#F4F5FA]">
+          <main className="w-full flex flex-col items-start px-5 lg:px-10 py-4 bg-[#F4F5FA]">
             {children}
           </main>
         </div>

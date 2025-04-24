@@ -9,7 +9,7 @@ export const WidgetManagement = ({
 }) => {
   return (
     <SidebarPortal open={open} close={close}>
-      WidgetManagement
+      <div className="border w-full">WidgetManagement</div>
     </SidebarPortal>
   );
 };
