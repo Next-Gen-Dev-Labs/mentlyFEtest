@@ -10,7 +10,7 @@ export default function Header() {
           <div className="cursor-pointer relative group">
             <span className="bg-red-500 absolute -top-0.5 right-0 size-2 rounded-full" />
             <Bell />
-            <div className="hidden group-hover:flex absolute md:-translate-x-[300px] translate-y-4 top-5 items-center justify-center rounded-lg bg-white shadow-sm p-4 w-80 h-80">
+            <div className="hidden group-hover:flex absolute z-10 md:-translate-x-[300px] translate-y-4 top-5 items-center justify-center rounded-lg bg-white shadow-sm p-4 w-80 h-80">
               <p className="text-black text-base font-medium">
                 You have no new notifications
               </p>
@@ -31,7 +31,7 @@ export default function Header() {
             <span className="p-1 rounded-sm bg-[var(--primary-light)] peer">
               <ChevronDown className="stroke-[#C2C2C2] size-4" />
             </span>
-            <div className="peer-hover:block absolute hidden right-0 top-[100%] p-4 rounded-lg shadow-sm bg-white">
+            <div className="peer-hover:block absolute hidden right-0 top-[100%] p-4 z-10 rounded-lg shadow-sm bg-white">
               <p>Logout</p>
             </div>
           </div>
