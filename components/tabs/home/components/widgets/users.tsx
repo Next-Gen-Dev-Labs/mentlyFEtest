@@ -23,6 +23,7 @@ export default function Users({ style }: { style?: CSSProperties }) {
 		}),
 		[],
 	);
+	// make the #totals "attached" to the .apexcharts-inner.apexcharts-graphical element, however you can, there doesnt seem to be a way to "inset" something into the apexcharts "context", i've tried all i know
 
 	const total = useMemo<number | null>(() => {
 		if (!Array.isArray(state.series)) return null;
@@ -48,12 +49,7 @@ export default function Users({ style }: { style?: CSSProperties }) {
 		>
 			<Chart {...state} type="donut" height={352} />
 			{total !== null && (
-				<div
-					className="fixed inset-auto top-[calc(anchor-size(height)/2)] left-[calc(anchor-size(width)/2)] m-0 text-center"
-					style={
-						{ positionAnchor: "--apexcharts-pie-doughnut" } as CSSProperties
-					}
-				>
+				<div id="totals" className="fixed inset-auto hidden text-center">
 					<p className="text-2xl font-bold">{total}</p>
 					<p className="text-xs text-[#595564]">Users</p>
 				</div>

@@ -2,7 +2,7 @@ import { Icon } from "@iconify-icon/react";
 import { pascalCase } from "change-case";
 import clsx from "clsx";
 import Image from "next/image";
-import React, { CSSProperties, Fragment, memo } from "react";
+import React, { CSSProperties, Fragment, memo, ReactNode } from "react";
 import WidgetBase from "./base";
 
 export default function Applications({ style }: { style?: CSSProperties }) {
@@ -36,19 +36,23 @@ export default function Applications({ style }: { style?: CSSProperties }) {
 							}
 						>
 							<BaseApplication {...o} />
-							<div className="hidden flex-wrap items-center">
-								{Object.keys(otherInfo).map((otherInfoKey, ii) => (
-									<span
-										key={`mentor-application-${i}-${otherInfoKey}-${ii}`}
-										className="rounded border"
-									>
-										{
-											otherInfo[
-												otherInfoKey as keyof ExtendedDetails["otherInfo"]
-											]
-										}
-									</span>
-								))}
+							<div className="flex flex-wrap items-center gap-1">
+								{Object.keys(otherInfo).map((otherInfoKey, ii) => {
+									if (!otherInfo[otherInfoKey].value) return null;
+									return (
+										<span
+											key={`mentor-application-${i}-${otherInfoKey}-${ii}`}
+											style={
+												{
+													"--accent-color": otherInfo[otherInfoKey].accentColor,
+												} as CSSProperties
+											}
+											className="rounded border border-current bg-current/10 px-2.5 py-0.5 text-xs font-medium text-(--accent-color)"
+										>
+											{otherInfo[otherInfoKey].value}
+										</span>
+									);
+								})}
 							</div>
 						</div>
 						<hr
@@ -67,23 +71,10 @@ export default function Applications({ style }: { style?: CSSProperties }) {
 				<p className="sticky top-0 mb-6 bg-gradient-to-br from-white to-transparent pl-6 text-xs text-[#7d8da6]">
 					Students
 				</p>
-				{studentApplications.map((s, i) => (
+				{studentApplications.map((s) => (
 					<Fragment key={s.id}>
-						<BaseApplication
-							{...s}
-							className={clsx({ "mt-4": i !== 0 })}
-							style={
-								{ anchorName: `--student-application-${s.id}` } as CSSProperties
-							}
-						/>
-						<hr
-							style={
-								{
-									positionAnchor: `--student-application-${s.id}`,
-								} as CSSProperties
-							}
-							className="fixed top-[anchor(bottom)] w-[anchor-size(width)] border-[#dbdbdb] last:hidden"
-						/>
+						<hr className="my-2 border-[#dbdbdb] first-of-type:hidden" />
+						<BaseApplication {...s} />
 					</Fragment>
 				))}
 			</div>
@@ -97,10 +88,10 @@ const mentorApplications: ExtendedDetails[] = [
 		name: "Maxwell Smith",
 		email: "maxwellsmith@gmail.com",
 		otherInfo: {
-			role: "Product Designer",
-			exp: 4,
-			location: "Lagos, Nigeria",
-			timezone: "GMT+1",
+			role: { value: "Product Designer", accentColor: "#9985A7" },
+			exp: { value: "4yrs Experience", accentColor: "#58948E" },
+			location: { value: "Lagos, Nigeria", accentColor: "#8196B5" },
+			timezone: { value: "GMT+1", accentColor: "#595564" },
 		},
 		id: pascalCase("Mentor Application Maxwell Smith 0"),
 	},
@@ -142,7 +133,7 @@ type BaseDetails = {
 };
 
 type ExtendedDetails = BaseDetails & {
-	otherInfo: { role: string; exp: number; location: string; timezone: string };
+	otherInfo: Record<string, { value: ReactNode; accentColor: string }>;
 };
 
 const BaseApplication = memo(

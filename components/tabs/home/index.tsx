@@ -11,7 +11,7 @@ export default function Home() {
 		<HomeLayoutProvider>
 			<WidgetManagerProvider>
 				<HomeWidgetsProvider>
-					<div className="@container/home-main grow overflow-x-clip overflow-y-auto pt-5 pb-6 *:mx-auto">
+					<div className="dashboard-homepage @container/home-main grow overflow-x-clip overflow-y-auto pt-5 pb-6 *:mx-auto">
 						<Header />
 						<div className="@container/banner mt-5 mb-2 w-11/12 rounded bg-[#6F01D0] font-semibold text-white">
 							<div className="mx-auto flex w-24/25 items-center justify-between gap-2.5 py-1.5 **:truncate lg:gap-6 2xl:gap-0">

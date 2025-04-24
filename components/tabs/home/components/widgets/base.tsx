@@ -1,10 +1,21 @@
 import { Icon, IconifyIcon } from "@iconify-icon/react";
 import { pascalCase } from "change-case";
 import clsx from "clsx";
-import React, { CSSProperties, PropsWithChildren } from "react";
+import React, { CSSProperties, PropsWithChildren, useEffect } from "react";
 
 export default function WidgetBase(props: PropsWithChildren<WidgetBase>) {
 	const key = props.title.replace(/\W/, "");
+
+	useEffect(() => {
+		return () => {
+			if (props.style && "gridArea" in props.style) {
+				const newStyle = { ...props.style };
+				delete newStyle.gridArea;
+
+				props.updateStyle?.(newStyle);
+			}
+		};
+	}, [props, props.style]); // Re-run effect when style changes
 
 	return (
 		<section
@@ -80,4 +91,5 @@ type WidgetBase = Readonly<{
 	}[];
 	className?: string;
 	style?: CSSProperties;
+	updateStyle?: (newStyle: CSSProperties) => void;
 }>;

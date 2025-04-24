@@ -18,7 +18,7 @@ export default function GroupCalls({ style }: { style?: CSSProperties }) {
 					actionFn: () => {},
 				},
 			]}
-			className="@container/group-calls-widget max-h-151 [&>div]:max-w-full [&>div]:shrink-0 [&>div]:grow [&>div]:space-y-2 [&>div]:gap-x-2 [&>div]:*:shrink-0 @xl/group-calls-widget:[&>div]:flex @xl/group-calls-widget:[&>div]:space-y-0 @xl/group-calls-widget:[&>div]:*:w-2/5 @xl/group-calls-widget:[&>div]:*:max-w-80"
+			className="@container/group-calls-widget max-h-151 @xl/group-calls-widget:max-h-none [&>div]:max-w-full [&>div]:space-y-2 [&>div]:gap-x-2 @xl/group-calls-widget:[&>div]:flex @xl/group-calls-widget:[&>div]:space-y-0 @xl/group-calls-widget:[&>div]:*:w-2/5 @xl/group-calls-widget:[&>div]:*:max-w-80 @xl/group-calls-widget:[&>div]:*:shrink-0"
 		>
 			{meetings.map((m) => (
 				<MeetingCard key={m.id} {...m} />
@@ -104,8 +104,6 @@ const MeetingCard = memo(
 		const endMs = Date.parse(end);
 		const isOngoing = now >= startMs && now < endMs;
 
-		const dt = new Date(start);
-
 		return (
 			<article
 				className="overflow-hidden rounded-xl bg-[#f9f7ff] px-3.5 py-4 text-xs shadow-sm"
@@ -121,7 +119,7 @@ const MeetingCard = memo(
 				/>
 				<span
 					className={clsx(
-						"my-1.6 inline-flex items-center gap-1 rounded-full px-2 py-px text-xs",
+						"my-1.5 inline-flex items-center gap-1 rounded-full px-2 py-px text-xs",
 						isOngoing
 							? "bg-green-50 text-green-700"
 							: "bg-blue-50 text-blue-700",
@@ -133,15 +131,15 @@ const MeetingCard = memo(
 				<h3 id={`title-${id}`} className="line-clamp-2 text-base">
 					{title}
 				</h3>
-				<hr className="my-1.5 w-full border-[#d0d5dd]" />
+				<hr className="my-1.5 border-[#d0d5dd]" />
 				<div className="flex items-center justify-between *:flex *:items-center *:gap-1.5">
 					<time dateTime={start} className="">
 						<Icon icon="solar:calendar-minimalistic-linear" />
-						{format(dt, "MMM dd, yyyy")}
+						{format(startMs, "MMM dd, yyyy")}
 					</time>
 					<time dateTime={start} className="">
 						<Icon icon="solar:clock-circle-linear" />
-						{format(dt, "h:mm aaaa")}
+						{format(startMs, "HH:mm")} - {format(endMs, "HH:mm")}
 					</time>
 				</div>
 				<div className="mt-2.5 mb-1.5 flex items-end gap-1">
@@ -156,27 +154,28 @@ const MeetingCard = memo(
 						<div className="font-semibold">{groupLabel}</div>
 						<div className="">{groupSubtitle}</div>
 					</div>
-					<div className="flex -space-x-1.5">
-						{mentors.map((m, i) => (
-							<Image
-								key={i}
-								width="14"
-								height="14"
-								src={m.avatarUrl}
-								alt={m.name}
-								className="size-3.5 rounded-full object-cover object-center"
-							/>
-						))}
+					<div>
+						<div>Mentors</div>
+						<div className="flex -space-x-1.5">
+							{mentors.map((m, i) => (
+								<Image
+									key={i}
+									width="14"
+									height="14"
+									src={m.avatarUrl}
+									alt={m.name}
+									className="size-3.5 rounded-full object-cover object-center"
+								/>
+							))}
+						</div>
 					</div>
 				</div>
 				<div className="flex justify-between text-xs font-medium text-[#6f01d0] *:rounded-md *:border *:border-[#6d01d0] *:p-2">
 					<button type="button">View Participants</button>
 					<button
 						type="button"
-						aria-disabled={isOngoing}
-						className={clsx("bg-[#6f01d0] text-white", {
-							"opacity-30": isOngoing,
-						})}
+						aria-disabled={now > endMs}
+						className="bg-[#6f01d0] text-white aria-disabled:opacity-30"
 					>
 						Join Now
 					</button>

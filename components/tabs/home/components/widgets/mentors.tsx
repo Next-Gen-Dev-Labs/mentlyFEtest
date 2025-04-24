@@ -19,10 +19,7 @@ export default function Mentors({ style }: { style?: CSSProperties }) {
 		>
 			{mentors.map(({ imageUrl, name, role, id }) => (
 				<Fragment key={id}>
-					<div
-						className="mb-4 flex items-center justify-between gap-2 py-2 text-xs last-of-type:mb-8"
-						style={{ anchorName: `--mentor-line-${id}` } as CSSProperties}
-					>
+					<div className="flex items-center justify-between gap-2 py-2 text-xs last-of-type:mb-8">
 						<Image
 							src={imageUrl}
 							width="32"
@@ -41,10 +38,7 @@ export default function Mentors({ style }: { style?: CSSProperties }) {
 							Message
 						</button>
 					</div>
-					<hr
-						style={{ positionAnchor: `--mentor-line-${id}` } as CSSProperties}
-						className="fixed top-[anchor(bottom)] w-[anchor-size(width)] translate-y-2 border-[#f3f3f3]"
-					/>
+					<hr className="my-2 border-[#f3f3f3] last-of-type:hidden" />
 				</Fragment>
 			))}
 			<button

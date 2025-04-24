@@ -40,7 +40,7 @@
 						"--0 --0 --1 --1"
 						"--2 --2 --3 --3"
 						"--4 --4 --3 --3"
-						"--5 --5 --5 --5";
+						"--5 --5 --x --x";
 				}
 				@container home-main (width >= 64rem) {
 					@apply grid-cols-11;
@@ -67,6 +67,14 @@
 			animation-timing-function: var(--animate-overshoot-inOut-smooth);
 		} */
 	}
+}
+
+.dashboard-homepage > :first-child ~ * {
+	view-transition-class: all-the-widgets;
+}
+
+::view-transition-group(all-the-widgets) {
+	z-index: 1;
 }
 
 @utility widget-checkbox {
