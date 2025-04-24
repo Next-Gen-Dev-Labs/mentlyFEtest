@@ -22,7 +22,7 @@ export default function Home() {
           <div className="h-[400px] lg:h-full">
             <Programs />
           </div>
-          <div className="h-[400px] lg:h-full">
+          <div className="h-[300px] lg:h-full">
             <UsersChart />
           </div>
         </div>
@@ -43,10 +43,10 @@ export default function Home() {
             
             {/* Mentors and Recent Activities */}
             <div className="lg:col-span-3 grid lg:grid-rows-2 gap-4 h-full">
-              <div className="h-[400px] lg:h-full">
+              <div className="h-[250px] lg:h-full">
                 <Mentors />
               </div>
-              <div className="h-[400px] lg:h-full">
+              <div className="h-[300px] mb-5 lg:h-full">
                 <RecentActivities />
               </div>
             </div>

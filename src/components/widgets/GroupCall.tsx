@@ -38,7 +38,7 @@ const GroupCall = () => {
                 className="w-full "
               />
               {/* Status Badge */}
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 my-2">
                 <span
                   className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium
                   ${

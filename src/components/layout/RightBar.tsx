@@ -6,6 +6,7 @@ import ButtonPurple from "../ui/ButtonPurple";
 import ButtonWithBorderPurple from "../ui/ButtonWithBorderPurple";
 import { Menu } from "lucide-react";
 
+
 const RightBar = () => {
   const { isRightBarOpen, toggleRightBar } = useWidget();
 
@@ -20,12 +21,12 @@ const RightBar = () => {
 
       {/* Right Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[450px] bg-white shadow-lg z-50 
+        className={`fixed top-0 right-0 h-full w-[85%] bg-white shadow-lg z-50 
           transition-transform duration-300 ease-in-out
           ${isRightBarOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex justify-end py-3 mx-5 border-b border-[#D7D7D7] mt-8">
-            <X  />
+            <X onClick={toggleRightBar} />
         </div>
         <div className="p-6 mt-2">
           <div className="space-x-5">
@@ -50,7 +51,7 @@ const RightBar = () => {
               <div key={index} className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                     <Menu />
-                  <span className="text-gray-700">{item}</span>
+                  <span className="text-[#4F4F4F] text-sm font-bold">{item}</span>
                 </div>
                 <input
                   type="checkbox"

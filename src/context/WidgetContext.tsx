@@ -29,6 +29,7 @@ export function WidgetProvider({ children }: { children: ReactNode }) {
       isRightBarOpen,
       toggleWidget,
       toggleRightBar 
+      
     }}>
       {children}
     </WidgetContext.Provider>

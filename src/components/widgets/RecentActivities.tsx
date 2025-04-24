@@ -11,7 +11,7 @@ const RecentActivities = () => {
       <div className="flex px-2 py-4 justify-between items-center">
         <div className="flex items-center gap-2">
           <Menu />
-          <h1 className="text-[#B0B0B0] text-base font-bold">Programs</h1>
+          <h1 className="text-[#B0B0B0] text-base font-bold">Recent Activities</h1>
         </div>
         <div className="flex items-center gap-2">
           <h2 className="text-[#6F01D0] font-semibold text-xs">See all</h2>
