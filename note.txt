@@ -1,0 +1,57 @@
+<div className='grid-template-layout w-full min-h-[130vh] p-3 '>
+    <header className="area-header bg-white rounded ">
+        <Programs />
+    </header>
+      <aside className="area-sidebar bg-gray-200 rounded border">
+        <GroupCallsSection />
+      </aside>
+      <main className="area-main bg-white border rounded">
+        <ApplicationsSection />
+      </main>
+      <footer className="area-footer bg-blue-100 rounded border">Footer</footer>
+      <footer className="area-mentor bg-blue-200 rounded border">
+        <MentorsSection />
+      </footer>
+      <footer className="area-kyc bg-blue-200 rounded border">
+        <RecentActivitiesSection />
+      </footer>
+    </div>
+
+
+
+
+
+
+
+     <div className='min-h-screen flex p-3 gap-3 flex-col md:flex-row'>
+      <div className='md:w-[30%] flex flex-col gap-3'>
+        <div className=' overflow-hidden bg-white rounded-[12px]'>
+        <SectionHeader title="Programs" seeAllLink="#" />
+          <Programs />
+          </div> 
+        <div className='h-[320px] border bg-white '>
+          <UsersSection />
+        </div>
+      </div>
+      <div className=' flex-1 flex  flex-col gap-3 p-3 '>
+        <div className=' w-full bg-white rounded-xl'>
+          <SectionHeader title="Group Calls" seeAllLink="#" />
+          <GroupCallsSection />
+        </div>
+        <div className='w-full flex-1 flex flex-col md:flex-row  gap-3 p-2'>
+          <div className=' flex-1 bg-white rounded-xl'>
+            <SectionHeader title="Applications" seeAllLink="#" />
+            <ApplicationsSection />
+          </div>
+          <div className='  flex md:w-[40%] flex-col gap-3 p-2'>
+            <div className=' flex-1 bg-white rounded-xl'>
+              <MentorsSection />
+            </div>
+            <div className=' flex-1 bg-white rounded-xl'>
+            <SectionHeader title="Recent Activities" seeAllLink="#" />
+              <RecentActivitiesSection />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
