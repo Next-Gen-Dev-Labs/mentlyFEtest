@@ -59,7 +59,7 @@ export default function Sidebar() {
       {/* Overlay */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 transition-all blur-xs bg-bg-transparent duration-300 ease-in-out bg-opacity-50 z-30 md:hidden"
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 ease-in-out z-30 md:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
