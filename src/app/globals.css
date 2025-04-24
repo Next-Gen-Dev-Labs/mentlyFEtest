@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #f4f5fa;
+  --foreground: #171717;
+}
+
+@theme inline {
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground)
+
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Chivo", sans-serif !important;
+}
+
+@theme {
+  --font-chivo: "Chivo", sans-serif;
+  --color-primary: #340260;
+  --color-primary-100: #DDD6FB;
+  --color-primary-lite: #6F01D0;
+  --color-primary-300: #53547B;
+  --color-secondary: #F0C074;
+  --color-Title-Text: #B0B0B0;
+  --color-Grey: #AAA;
+  --color-Grey-2: #4d4d4d;
+  --color-Grey-3: #333;
+  --color-Grey-4: #c2c2c2;
+  --color-error: #FF3E3E;
+  --color-mently-blue: #1F0954;
+  --color-font: #595564;
+  --color-borderCol: #e1e7ec;
+}
+
+.groupflip:hover .flip {
+  animation: flip .8s ease-in-out
+}
+
+@keyframes flip {
+  0%{
+    transform: rotatex(0deg);
+  }
+  50%{
+    transform: rotatex(180deg);
+  }
+  100%{
+    transform: rotatex(0deg);
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: #D5E5FF;
+width: 4px;
+border-radius: 10px;
+box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-track {
+background-color: transparent;
+width: 4px;
+border-radius: 10px;
+}
