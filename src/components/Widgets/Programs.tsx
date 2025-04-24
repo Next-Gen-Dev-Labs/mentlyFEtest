@@ -15,7 +15,10 @@ export default function Programs() {
             </div>
 
             {programItems.map((program, index) => (
-                <div key={index} className="rounded-[10px] p-4 grid gap-3 [box-shadow:0px_4.93px_5.17px_0px_#AFABAB4D]">
+                <div key={index} className={`
+                    rounded-[10px] p-4 grid gap-3 [box-shadow:0px_4.93px_5.17px_0px_#AFABAB4D] w-full
+                    ${index > 1 ? 'hidden 2xl:block' : ''}
+                `}>
                     <div className="relative w-full h-20 rounded-lg overflow-hidden">
                         <div className="absolute h-full px-4 py-1 z-10 grid items-center">
                             <h5 className="font-bold text-white text-lg 2xl:text-xl [line-height:1.2] text-pretty">{program.title}</h5>

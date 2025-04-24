@@ -11,8 +11,8 @@ export default function GroupCalls() {
                 <div
                     key={index}
                     className={`bg-[#F9F7FF] rounded-[10px] p-5 grid gap-2 w-full
-                        ${index > 0 ? 'hidden xl:block' : ''}
-                        ${index > 1 ? 'xl:hidden 2xl:block' : ''}
+                        ${index > 0 ? 'hidden xl:grid' : ''}
+                        ${index > 1 ? 'xl:hidden 2xl:grid' : ''}
                     `}
                 >
                     <div className="relative w-full h-25 rounded-lg overflow-hidden">
