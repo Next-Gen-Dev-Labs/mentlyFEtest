@@ -6,7 +6,7 @@ This challenge is designed to assess your Frontend development skills. We're exc
 
 ## The Challenge
 
-Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=0-1&node-type=canvas&t=B30FPyMAYW7jtBcX-0).
+Your task is to build a frontend page based on the designs (Website and Mobile Responsive) provided in this [Figma file](https://www.figma.com/design/TJoaUZPIgzakOHleCtJeNb/Mently-Frontend-Test?node-id=1391-1201&t=1K1umhLSyddg7sou-0).
 
 **Key Requirements:**
 * **Use Next.js:**  The application should be built using the Next.js framework.
