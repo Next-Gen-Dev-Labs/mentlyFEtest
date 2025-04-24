@@ -19,6 +19,15 @@ export interface WidgetItem {
   gridPosition?: string;
 }
 
+export interface ProgramItem {
+  type: string;
+  image: string;
+  title: string;
+  hostedBy: string;
+  typeColor: string;
+  mentors: { alt: string; src: string; tooltip: string; }[];
+}
+
 export const navItems: NavItem[] = [
   { active: true, label: "Dashboard", icon: <RiHome5Line /> },
   { label: "Programs", icon: <LuBookText /> },
@@ -64,16 +73,38 @@ export const widgetItems: WidgetItem[] = [
     label: 'Users',
     gridPosition: 'col-span-1 row-span-1 col-start-1 row-start-3'
   },
+  { id: 'earnings', label: 'Earnings' },
+  { id: 'forum', label: 'Forum' },
+  { id: 'program-analysis', label: 'Program Analysis' },
+];
+
+export const programItems: ProgramItem[] = [
   {
-    id: 'earnings',
-    label: 'Earnings',
+    type: "Bootcamp",
+    hostedBy: "Mentors",
+    typeColor: "#0077FF",
+    image: "/widget1.webp",
+    title: "Fundamentals of User Interface & Experience",
+    mentors: [
+      { alt: "Mentor 1", src: "/profile1.webp", tooltip: "Sam Wilson" },
+      { alt: "Mentor 2", src: "/profile2.webp", tooltip: "Alex Johnson" },
+      { alt: "Mentor 3", src: "/profile3.webp", tooltip: "Taylor Smith" }
+    ],
   },
   {
-    id: 'forum',
-    label: 'Forum',
+    type: "Group Call",
+    typeColor: "#008000",
+    image: "/widget2.webp",
+    hostedBy: "Faith Okolo",
+    title: "Colour Hack Practical Group Call",
+    mentors: [{ alt: "Mentor 1", src: "/profile4.webp", tooltip: "Faith Okolo" }],
   },
   {
-    id: 'program-analysis',
-    label: 'Program Analysis',
-  },
+    hostedBy: "Self",
+    type: "Group Call",
+    typeColor: "#008000",
+    image: "/widget2.webp",
+    title: "Colour Hack Practical Group Call",
+    mentors: [{ alt: "Mentor 1", src: "/profile4.webp", tooltip: "Self" }],
+  }
 ];
