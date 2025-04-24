@@ -10,10 +10,10 @@ import ButtonRedBorder from "../ui/ButtonRedBorder";
 const Applications = () => {
   return (
     <Card className="h-full relative">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center p-4">
         <div className="flex items-center gap-2">
           <Menu />
-          <h1 className="text-[#B0B0B0] text-base font-bold">Programs</h1>
+          <h1 className="text-[#B0B0B0] text-base font-bold">Applications</h1>
         </div>
         <div className="flex items-center gap-2">
           <h2 className="text-[#6F01D0] font-semibold text-xs">See all</h2>
@@ -23,67 +23,100 @@ const Applications = () => {
 
       <main className="absolute inset-x-0 bottom-0 top-[3rem] overflow-y-auto scrollbar-hide p-4">
         {/* Mentors */}
-        <div>
+        <div className="mb-4">
           <h2 className="text-[#7D8DA6] font-normal text-xs">Mentors</h2>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           {ApplicationsData.mentors.map((mentor, index) => (
-            <div key={index} className="flex flex-col gap-4 border-b border-[#DBDBDB] pb-6">
-              <div className="flex items-center gap-2">
-                <input className="w-3.5 border rounded-xs outline-none border-[#A5A5A5] h-3.5" type="checkbox" />
-                <Image
-                  src={mentor.image}
-                  alt={mentor.name}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-                <div>
-                  <p className="text-[#4F4F4F] font-bold text-sm">
-                    {mentor.name}
-                  </p>
-                  <p className="text-[#7D8DA6] font-normal text-xs">
-                    {mentor.email}
-                  </p>
+            <div key={index} className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <input 
+                    className="w-4 h-4 border rounded border-[#A5A5A5]" 
+                    type="checkbox" 
+                  />
+                  <Image
+                    src={mentor.image}
+                    alt={mentor.name}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                  <div>
+                    <p className="text-[#4F4F4F] font-semibold text-sm">
+                      {mentor.name}
+                    </p>
+                    <p className="text-[#7D8DA6] text-xs">
+                      {mentor.email}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="flex items-center gap-1.5">
-                  <ButtonRedBorder className="px-6 py-2 font-medium text-xs" value="Reject" />
-                  <ButtonPurple className="px-6 py-2 font-medium text-xs" value="Accept" />
+                <div className="flex items-center gap-2">
+                  <ButtonRedBorder className="px-6 py-2 text-xs rounded-md" value="Reject" />
+                  <ButtonPurple className="px-6 py-2 text-xs rounded-md" value="Accept" />
                 </div>
               </div>
 
-              <div className="flex justify-between items-center space-x-2">
-                <p className="text-[#9985A7] px-1 py-2 font-[Chivo] w-[500px] text-xs font-medium rounded-sm border border-[#DDCEEE] bg-[#F3ECF9]">{mentor.skill}</p>
-                <p className="text-[#9985A7] px-1 py-2 font-[Chivo] text-xs font-medium rounded-sm border border-[#DDCEEE] bg-[#F3ECF9]">{mentor.experience}</p>
-                <p className="text-[#9985A7] px-1 py-2 font-[Chivo] text-xs font-medium rounded-sm border border-[#DDCEEE] bg-[#F3ECF9]">{mentor.location}</p>
-                <p className="text-[#9985A7] px-1 py-2 font-[Chivo] text-xs font-medium rounded-sm border border-[#DDCEEE] bg-[#F3ECF9]">{mentor.timezone}</p>
+              <div className="flex items-center gap-2 mb-4">
+                <span className={`text-xs px-3 py-1 rounded border ${
+                  mentor.skill && "bg-[#F3ECF9] text-[#9985A7] border-[#DDCEEE]"
+                }`}>
+                  {mentor.skill}
+                </span>
+                <span className={`text-xs px-3 py-1 rounded border ${
+                  mentor.experience && "bg-[#E8FDFB] text-[#58948E] border-[#DDCEEE]"
+                }`}>
+                  {mentor.experience}
+                </span>
+                <span className={`text-xs px-3 py-1 rounded border ${
+                  mentor.location && "bg-[#E3ECF9] text-[#8196B5] border-[#DDCEEE]"
+                }`}>
+                  {mentor.location}
+                </span>
+                <span className={`text-xs px-3 py-1 rounded border ${
+                  mentor.timezone && "bg-[#F4F4F4] text-[#595564] border-[#DDCEEE]"
+                }`}>
+                  {mentor.timezone}
+                </span>
               </div>
+              <div className="border-b border-[#DBDBDB] mb-4"></div>
             </div>
           ))}
         </div>
 
         {/* Students */}
-        <div className="mt-5">
-          <h2 className="text-[#6F01D0] font-semibold text-xs">Students</h2>
+        <div className="mt-6 mb-4">
+          <h2 className="text-[#7D8DA6] font-normal text-xs">Students</h2>
         </div>
-        <div className="flex flex-col px-10 gap-2">
+        <div className="flex flex-col gap-4">
           {ApplicationsData.students.map((student, index) => (
-            <div className="flex justify-center items-center" key={index}>
-              <input type="checkbox" />
-              <div className="flex items-center">
+            <div key={index} className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <input 
+                  className="w-4 h-4 border rounded border-[#A5A5A5]" 
+                  type="checkbox" 
+                />
                 <Image
                   src={student.image}
                   alt={student.name}
                   width={40}
                   height={40}
+                  className="rounded-full"
                 />
-                <p>{student.name}</p>
-                <p>{student.email}</p>
+                <div>
+                  <p className="text-[#4F4F4F] font-semibold text-sm">
+                    {student.name}
+                  </p>
+                  <p className="text-[#7D8DA6] text-xs">
+                    {student.email}
+                  </p>
+                </div>
               </div>
+              
               <div className="flex items-center gap-2">
-                <ButtonRedBorder value="Reject" />
-                <ButtonPurple value="Accept" />
+                <ButtonRedBorder className="px-6 py-2 text-xs rounded-md" value="Reject" />
+                <ButtonPurple className="px-6 py-2 text-xs rounded-md" value="Accept" />
               </div>
             </div>
           ))}
