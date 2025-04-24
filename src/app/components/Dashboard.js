@@ -42,7 +42,7 @@ const Dashboard = () => {
                 <Users />
                 <Applications />
                 <Mentors />
-                {/* <RecentActivities /> */}
+                <RecentActivities />
             </div>
         </div>
     );
