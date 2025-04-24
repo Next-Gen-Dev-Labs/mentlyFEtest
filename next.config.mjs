@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     eslint: { ignoreDuringBuilds: true },
-    devIndicators: false, // you probably meant to disable the loading bar on dev
+    devIndicators: false,
+    async rewrites() {
+      return [
+        {
+          source: '/dashboard',
+          destination: '/', // or wherever you want to redirect it
+        },
+      ];
+    },
   };
-
-export default nextConfig;
+  
+  export default nextConfig;
+  
