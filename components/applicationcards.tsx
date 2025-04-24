@@ -28,7 +28,7 @@ const UserEntry = ({
       />
 
       <div className="flex-1">
-        <h3 className="text-[13px] md:text-base font-medium text-foreground">
+        <h3 className="text-[14px] md:text-base font-medium text-foreground">
           {name}
         </h3>
         <p className="text-[12px] md:text-sm text-muted-foreground">{email}</p>

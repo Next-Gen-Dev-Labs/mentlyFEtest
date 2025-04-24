@@ -60,10 +60,10 @@ const MentorCards = () => {
 
               {/* Mentor Info */}
               <div className="flex-1">
-                <h3 className="text-sm font-medium text-foreground">
+                <h3 className="text-[13px] font-medium text-foreground">
                   {mentor.name}
                 </h3>
-                <p className="text-[12px] text-muted-foreground">
+                <p className="text-[10px] text-muted-foreground">
                   {mentor.role}
                 </p>
               </div>

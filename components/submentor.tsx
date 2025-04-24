@@ -54,7 +54,7 @@ const SubMentorCard = ({ mentor }: { mentor: Mentor }) => (
       </div>
     </div>
 
-    <div className="flex flex-wrap gap-1 mt-2 ml-7 w-full">
+    <div className="flex flex-wrap gap-1 mt-2 ml-3 w-full">
       <span className="px-3 py-1 text-[10px] font-medium rounded-full bg-[#F3ECF9] text-[#9985A7]">
         {mentor.role}
       </span>
