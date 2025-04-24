@@ -26,7 +26,7 @@ export const GroupCallsCard = ({
   };
 }) => {
   return (
-    <Card className="p-3.5 border-none shadow-lg gap-1.5 w-[270px] max-w-11/12 mx-auto group/prog">
+    <Card className="p-3.5 flex-1 border-none shadow-lg gap-1.5 w-[270px] max-w-11/12 mx-auto group/prog">
       <div>
         <div className="w-full relative p-0 rounded-md flex items-center overflow-hidden h-[85px]">
           <Image

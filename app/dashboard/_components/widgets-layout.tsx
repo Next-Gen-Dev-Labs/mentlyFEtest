@@ -47,7 +47,7 @@ export const WidgetsLayout = () => {
             widgetTitle="Group Calls"
             actions={<MoreVerticalIcon />}
           />
-          <WidgetContainerContent className="flex items-center">
+          <WidgetContainerContent className="flex items-center gap-2">
             {dummyData.calls.map((call, idx) => (
               <GroupCallsCard key={idx} {...call} />
             ))}
