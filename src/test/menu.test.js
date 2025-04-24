@@ -3,16 +3,15 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Header from '@/components/reusables/menu';
 
-
 // Mock next/image
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ src, alt, className }) => (
+  default: ({ src, alt, className, 'data-testid': testId }) => (
     <img 
       src={src} 
       alt={alt} 
       className={className}
-      data-testid={`image-${alt.replace(/\s+/g, '-').toLowerCase()}`}
+      data-testid={testId || `image-${alt.toLowerCase().replace(/\s+/g, '-')}`}
     />
   ),
 }));
@@ -45,19 +44,19 @@ describe('Header Component', () => {
   it('renders all icons correctly', () => {
     render(<Header {...testProps} />);
     
-
-const menuIcon = screen.getByTestId('menu-icon');
+    // Menu icon (using explicit test ID)
+    const menuIcon = screen.getByTestId('menu-icon');
     expect(menuIcon).toBeInTheDocument();
     expect(menuIcon).toHaveAttribute('src', 'vector1-icon');
     expect(menuIcon).toHaveClass('h-4');
     expect(menuIcon).toHaveClass('w-4');
     
-    // Fix: Use the correct test ID based on alt text
+    // Action icon (using explicit test ID)
     const actionIcon = screen.getByTestId('action-icon');
     expect(actionIcon).toBeInTheDocument();
-    expect(actionIcon).toHaveAttribute('src', 'vector3-icon');
+    expect(actionIcon).toHaveAttribute('src', 'vector3-icon'); // Fixed expectation
     expect(actionIcon).toHaveClass('cursor-pointer');
-});
+  });
 
   it('has correct layout structure', () => {
     const { container } = render(<Header {...testProps} />);
@@ -92,7 +91,6 @@ const menuIcon = screen.getByTestId('menu-icon');
     expect(seeAllButton).toHaveClass('hover:text-[#6f01d0d1]');
   });
 
-  // Add this if you implement click handlers in the future
   it('handles icon clicks when provided', () => {
     // Currently no onClick handlers, but this is how you'd test them:
     // const mockClick = jest.fn();

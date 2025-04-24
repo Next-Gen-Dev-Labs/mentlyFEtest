@@ -70,7 +70,9 @@ export default function SideBar() {
             <div className={`fixed lg:static w-[240px] lg:w-[100px] xl:w-[240px] top-0 left-0 h-full  bg-[#340260] z-40 transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 px-4 md:space-y-[89px] pt-20 md:pt-9 pb-5 md:pb-12`} data-testid="sidebar">
                 <div className="flex justify-between ">
                     <Image src={Logo} alt="Logo" className='hidden xl:block' />
-                    <Image src={Logo2} alt='logo' className="hidden lg:block xl:hidden"/>
+                    <div className="hidden lg:block xl:hidden h-11 w-11 rounded-full">
+                    <Image src={Logo2} alt='logo' />
+                    </div>
                     <Image 
                         src={Menu} 
                         alt="Menus" 

@@ -17,7 +17,7 @@ jest.mock('next/image', () => ({
 }));
 
 // Mock SVG import
-jest.mock('@/assets/icons/setting-2.svg', () => 'setting-icon');
+jest.mock('/src/assets/icons/setting-2.svg', () => 'setting-icon');
 
 describe('ProgramCard Component', () => {
   const mockProgram = {
@@ -53,8 +53,8 @@ describe('ProgramCard Component', () => {
     // Check description
     expect(screen.getByText('Learn advanced React patterns and best practices')).toBeInTheDocument();
     
-    // Check host info
-    expect(screen.getByTestId('image-host')).toBeInTheDocument();
+    // Check host info - use the generated test ID from alt text
+    expect(screen.getByTestId('image-john-doe')).toBeInTheDocument();
     expect(screen.getByText('Hosted by: John Doe')).toBeInTheDocument();
     
     // Check buttons
@@ -118,8 +118,11 @@ describe('ProgramCard Component', () => {
   it('renders responsive classes correctly', () => {
     render(<ProgramCard program={mockProgram} />);
     
-    const card = screen.getByTestId('image-programs').closest('div').parentElement.parentElement;
+    // Get the card container by finding a parent element of the program image
+    const programImage = screen.getByTestId('image-programs');
+    const card = programImage.closest('div[class*="bg-[#FFFFFF]"]'); // Find div with bg-white class
+    
     expect(card).toHaveClass('p-1.5');
     expect(card).toHaveClass('xl:p-3');
-  });
+});
 });

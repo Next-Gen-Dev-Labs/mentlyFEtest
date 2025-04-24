@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Setting from '/src/assets/icons/setting-2.svg';
 export default function ProgramCard({program}) {
     return(
-        <div className='w-[291px] md:w-[271px] xl:w-[291px] p-1.5 xl:p-3 rounded-[10px] bg-[#FFFFFF] shadow-lg space-y-1.5 flex-none'>
+        <div className='w-[291px] md:w-[271px] xl:w-[291px] p-1.5 xl:p-3 rounded-[10px] bg-[#FFFFFF] shadow-lg space-y-1.5 flex-none' data-testid="program-card">
             <div className='relative'>
             <Image
             src={program.progImg}

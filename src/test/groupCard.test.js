@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import GroupCard from '@/components/cards/groupCard';
 
-
 // Mock next/image
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -64,14 +63,15 @@ describe('GroupCard Component', () => {
     // Check group name
     expect(screen.getByText('React Masters')).toBeInTheDocument();
     
-    // Check mentor images
-    expect(screen.getByTestId('image-host')).toBeInTheDocument();
+    // Check mentor images - use getAllByTestId since there are multiple
+    const hostImages = screen.getAllByTestId('image-host');
+    expect(hostImages).toHaveLength(3);
     
     // Check buttons
     expect(screen.getByText('View Participants')).toBeInTheDocument();
-    const joinButton = screen.getByText('Join Now');
+    const joinButton = screen.getByRole('button', { name: /join now/i });
     expect(joinButton).toBeInTheDocument();
-    expect(joinButton.parentElement).toHaveClass('bg-[#6F01D0]');
+    expect(joinButton).toHaveClass('bg-[#6F01D0]');
     expect(screen.getByTestId('arrow-icon')).toBeInTheDocument();
   });
 
@@ -88,7 +88,7 @@ describe('GroupCard Component', () => {
     expect(statusIndicator).toHaveClass('text-[#1C0AE1]');
     
     // Check join button is disabled
-    const joinButton = screen.getByText('Join Now').parentElement;
+    const joinButton = screen.getByRole('button', { name: /join now/i });
     expect(joinButton).toHaveClass('bg-[#6F01D04D]');
     expect(joinButton).toHaveClass('cursor-not-allowed');
     expect(joinButton).toBeDisabled();
@@ -121,13 +121,13 @@ describe('GroupCard Component', () => {
     render(<GroupCard group={mockGroup} />);
     
     // View Participants button
-    const viewButton = screen.getByText('View Participants');
+    const viewButton = screen.getByRole('button', { name: /view participants/i });
     expect(viewButton).toHaveClass('border-[#6F01D0]');
     expect(viewButton).toHaveClass('text-[#6F01D0]');
     expect(viewButton).toHaveClass('hover:bg-white');
     
     // Join Now button (ongoing)
-    const joinButton = screen.getByText('Join Now').parentElement;
+    const joinButton = screen.getByRole('button', { name: /join now/i });
     expect(joinButton).toHaveClass('bg-[#6F01D0]');
     expect(joinButton).toHaveClass('hover:bg-[#6f01d0d1]');
     expect(joinButton).not.toBeDisabled();

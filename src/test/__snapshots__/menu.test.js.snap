@@ -11,7 +11,7 @@ exports[`Header Component matches snapshot 1`] = `
       <img
         alt="menu icon"
         class="h-4 w-4"
-        data-testid="image-menu-icon"
+        data-testid="menu-icon"
         src="vector1-icon"
       />
       <h3
@@ -31,7 +31,7 @@ exports[`Header Component matches snapshot 1`] = `
       <img
         alt="icon"
         class="cursor-pointer"
-        data-testid="image-icon"
+        data-testid="action-icon"
         src="vector1-icon"
       />
     </div>
