@@ -37,14 +37,3 @@ Your submission will be evaluated on the following criteria:
 * **Accessibility:**  Adherence to accessibility guidelines.
 
 We appreciate your time and effort in completing this challenge. Good luck!
-
-## Assessment Solution
-
-The solution is located in the `mently-test/` directory. It contains a Next.js project built with TypeScript, TailwindCSS, and dynamic routing.
-
-To run locally:
-
-```bash
-cd mently-test
-npm install
-npm run dev
