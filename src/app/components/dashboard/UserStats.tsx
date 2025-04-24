@@ -1,13 +1,31 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+import { ChartOptions } from "chart.js";
+import { BsChevronDown } from "react-icons/bs";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+interface UserCategory {
+  name: string;
+  value: number;
+  color: string;
+}
 
 export default function UserStats() {
-  // For a real project, we'd use a charting library like Chart.js or Recharts
-  // Here I'm mocking the chart appearance with a simple component
+  const [selectedFilter, setSelectedFilter] = useState<string>("all");
+  const [isClient, setIsClient] = useState(false);
+  const chartRef = useRef(null);
 
-  const data = {
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const userData = {
     totalUsers: 240,
     students: 200,
     mentors: 8,
@@ -15,15 +33,94 @@ export default function UserStats() {
     others: 10,
   };
 
+  const categories: UserCategory[] = [
+    { name: "Students", value: userData.students, color: "#60A5FA" },
+    { name: "Mentors", value: userData.mentors, color: "#F59E0B" },
+    { name: "Programs", value: userData.programs, color: "#E879F9" },
+    { name: "Others", value: userData.others, color: "#10B981" },
+  ];
+
+  const chartData = {
+    labels: categories.map((c) => c.name),
+    datasets: [
+      {
+        data: categories.map((c) => c.value),
+        backgroundColor: categories.map((c) => c.color),
+        borderColor: "transparent",
+        borderWidth: 0,
+        hoverOffset: 5,
+        spacing: 2,
+      },
+    ],
+  };
+
+  const chartOptions: ChartOptions<"doughnut"> = {
+    cutout: "65%",
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        enabled: true,
+        callbacks: {
+          label: function (context) {
+            return `${context.label}: ${context.raw}`;
+          },
+        },
+      },
+    },
+    animation: {
+      animateRotate: true,
+      animateScale: true,
+      duration: 1000,
+      easing: "easeOutQuart",
+    },
+    elements: {
+      arc: {
+        borderWidth: 0,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4 },
+    },
+  };
+
   return (
-    <div className="bg-white p-4 rounded-lg shadow">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold">Users</h2>
+    <motion.div
+      className="bg-[#E7DDFF] p-6 rounded-lg w-full mx-auto h-full overflow-y-hidden"
+      variants={cardVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <div className="flex justify-between items-center mb-6 ">
+        <h2 className="text-xl font-semibold text-gray-800">Users</h2>
 
         <div className="relative">
           <select
-            className="text-sm border rounded py-1 px-2 appearance-none pr-8 focus:outline-none focus:ring-2 focus:ring-purple-300"
-            defaultValue="all"
+            className=" bg-[#E7DDFF] text-gray-700 text-sm border border-[#D0D5DD] rounded-md py-2 px-3 pr-8 appearance-none focus:outline-none focus:ring-0  focus:border-none transition-all"
+            value={selectedFilter}
+            onChange={(e) => setSelectedFilter(e.target.value)}
             aria-label="Filter users"
           >
             <option value="all">All</option>
@@ -31,106 +128,70 @@ export default function UserStats() {
             <option value="mentors">Mentors</option>
             <option value="programs">Programs</option>
           </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-            <svg
-              className="fill-current h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+            <BsChevronDown className="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+      <div className="h-px bg-[#D0D5DD] my-3"></div>
+      {/* Chart and Legend  */}
+      <div className="max-w-xl w-full mx-auto flex flex-col lg:flex-row lg:flex-wrap justify-between items-center lg:items-start gap-4 md:gap-6">
+        <motion.div className="w-fit relative mx-auto" variants={itemVariants}>
+          <div className="w-40 h-40 md:w-48 md:h-48 lg:w-60 lg:h-60 relative mx-auto">
+            {isClient && (
+              <Doughnut
+                ref={chartRef}
+                data={chartData}
+                options={chartOptions}
+              />
+            )}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+              <motion.span
+                className="text-3xl font-bold text-gray-800"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.4 }}
+              >
+                {userData.totalUsers}
+              </motion.span>
+              <motion.span
+                className="text-sm text-gray-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.4 }}
+              >
+                Users
+              </motion.span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Legend */}
+        <div className="w-full space-y-4 md:flex-1 md:self-center">
+          {categories.map((category) => (
+            <motion.div
+              key={category.name}
+              className="flex items-center justify-between w-full"
+              variants={itemVariants}
+              whileHover={{
+                x: 4,
+                transition: { duration: 0.2 },
+              }}
             >
-              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-            </svg>
-          </div>
+              <div className=" flex items-center">
+                <span
+                  className="w-3 h-3 rounded-full mr-3"
+                  style={{ backgroundColor: category.color }}
+                ></span>
+                <span className="text-sm text-gray-700">{category.name}</span>
+              </div>
+              <span className="text-sm font-medium text-gray-800">
+                {category.value}
+              </span>
+            </motion.div>
+          ))}
         </div>
       </div>
-
-      <div className="flex justify-center mb-6">
-        <div className="relative w-48 h-48">
-          {/* Mock donut chart - in a real project, use a charting library */}
-          <svg viewBox="0 0 100 100" className="w-full h-full">
-            <circle
-              cx="50"
-              cy="50"
-              r="40"
-              fill="transparent"
-              stroke="#60a5fa"
-              strokeWidth="20"
-              strokeDasharray="209.4 251.3"
-              transform="rotate(-90 50 50)"
-            />
-            <circle
-              cx="50"
-              cy="50"
-              r="40"
-              fill="transparent"
-              stroke="#f59e0b"
-              strokeWidth="20"
-              strokeDasharray="8.8 251.3"
-              strokeDashoffset="-209.4"
-              transform="rotate(-90 50 50)"
-            />
-            <circle
-              cx="50"
-              cy="50"
-              r="40"
-              fill="transparent"
-              stroke="#10b981"
-              strokeWidth="20"
-              strokeDasharray="22 251.3"
-              strokeDashoffset="-218.2"
-              transform="rotate(-90 50 50)"
-            />
-            <circle
-              cx="50"
-              cy="50"
-              r="40"
-              fill="transparent"
-              stroke="#6b7280"
-              strokeWidth="20"
-              strokeDasharray="10.5 251.3"
-              strokeDashoffset="-240.2"
-              transform="rotate(-90 50 50)"
-            />
-          </svg>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <span className="text-3xl font-bold">{data.totalUsers}</span>
-            <span className="text-sm text-gray-500">Users</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <span className="w-3 h-3 bg-blue-400 rounded-full mr-2"></span>
-            <span className="text-sm">Students</span>
-          </div>
-          <span className="text-sm font-medium">{data.students}</span>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <span className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
-            <span className="text-sm">Mentors</span>
-          </div>
-          <span className="text-sm font-medium">{data.mentors}</span>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <span className="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
-            <span className="text-sm">Programs</span>
-          </div>
-          <span className="text-sm font-medium">{data.programs}</span>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <span className="w-3 h-3 bg-gray-500 rounded-full mr-2"></span>
-            <span className="text-sm">Others</span>
-          </div>
-          <span className="text-sm font-medium">{data.others}</span>
-        </div>
-      </div>
-    </div>
+    </motion.div>
   );
 }

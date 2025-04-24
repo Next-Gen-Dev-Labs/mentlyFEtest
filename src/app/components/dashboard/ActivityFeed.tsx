@@ -1,6 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { BiDotsVertical } from "react-icons/bi";
+import Menu from "../../../../public/images/icons/programMenu.svg";
+import Adeati from "../../../../public/images/images/adeati.jpg";
+import Kyc from "../../../../public/images/images/kyc.jpg";
+import NewUser from "../../../../public/images/images/newUser.png";
 
 export default function ActivityFeed() {
   const activities = [
@@ -10,7 +16,7 @@ export default function ActivityFeed() {
       title: "KYC Verification",
       description: "45 new persons just signed up on Mentfy.",
       time: "25 minutes Ago",
-      icon: "badge",
+      avatar: Kyc,
     },
     {
       id: 2,
@@ -18,7 +24,7 @@ export default function ActivityFeed() {
       title: "New User Sign Up!",
       description: "45 new persons just signed up on Mentfy.",
       time: "25 minutes Ago",
-      icon: "user",
+      avatar: NewUser,
     },
     {
       id: 3,
@@ -26,129 +32,93 @@ export default function ActivityFeed() {
       title: "Withdrawal Request",
       description: "Mardian requested a withdrawal.",
       time: "25 minutes Ago",
-      icon: "money",
+      avatar: Adeati,
     },
   ];
 
-  const getIcon = (type: string) => {
-    switch (type) {
-      case "kyc_verification":
-        return (
-          <div className="h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-              />
-            </svg>
-          </div>
-        );
-      case "new_user":
-        return (
-          <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              />
-            </svg>
-          </div>
-        );
-      case "withdrawal":
-        return (
-          <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-        );
-      default:
-        return (
-          <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-        );
-    }
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 100 },
+    },
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold flex items-center">
-          <svg
-            className="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+    <div
+      className="bg-white rounded-lg mx-auto p-6 w-full h-full"
+      aria-label="Recent activities panel"
+    >
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center gap-4">
+          <Image src={Menu} alt="programs" className="h-5 w-5" />
+
+          <h2 className="text-xl font-bold text-[#B0B0B0]">
+            Recent Activities
+          </h2>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <a
+            href="#"
+            className="text-[#6F01D0] text-sm font-bold transition-colors"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-            />
-          </svg>
-          Recent Activities
-        </h2>
-        <a href="#" className="text-purple-600 text-sm hover:underline">
-          See all
-        </a>
+            See all
+          </a>
+          <BiDotsVertical className="h-5 w-5" />
+        </div>
       </div>
 
-      <div className="space-y-4">
+      <motion.div
+        // className="p-2"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {activities.map((activity) => (
           <motion.div
             key={activity.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="flex items-start space-x-3 border-b border-gray-100 pb-3 last:border-0"
+            variants={itemVariants}
+            className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+            tabIndex={0}
           >
-            {getIcon(activity.type)}
+            <div className="relative">
+              <Image
+                src={activity.avatar}
+                alt=""
+                className={`h-10 w-10 rounded-full object-cover`}
+                onError={(e) => {
+                  // Fallback if image fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src =
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23d1d5db' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpath d='M12 8v4'%3E%3C/path%3E%3Cpath d='M12 16h.01'%3E%3C/path%3E%3C/svg%3E";
+                }}
+              />
+            </div>
             <div className="flex-1">
-              <h3 className="font-medium text-sm">{activity.title}</h3>
-              <p className="text-xs text-gray-500">{activity.description}</p>
+              <h3 className="font-bold text-sm text-gray-800">
+                {activity.title}
+              </h3>
+              <p className="text-xs text-gray-500 mt-0.5">
+                {activity.description}
+              </p>
               <p className="text-xs text-gray-400 mt-1">{activity.time}</p>
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

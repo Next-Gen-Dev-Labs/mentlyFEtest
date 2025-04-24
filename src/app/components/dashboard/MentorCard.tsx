@@ -1,64 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image, { StaticImageData } from "next/image";
 
-interface MentorCardProps {
-  mentor: {
-    id: number;
-    name: string;
-    title: string;
-    email: string;
-    location?: string;
-    timezone?: string;
-    status: string;
-  };
+interface Mentor {
+  id: number;
+  name: string;
+  title: string;
+  avatar?: StaticImageData;
 }
 
-export default function MentorCard({ mentor }: MentorCardProps) {
+const mentorCardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 24,
+    },
+  },
+};
+export default function MentorCard({ mentor }: { mentor: Mentor }) {
   return (
-    <div className="flex items-center justify-between p-3 border rounded-lg">
-      <div className="flex items-center">
-        <input
-          type="checkbox"
-          className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
-        />
-        <div className="h-10 w-10 rounded-full bg-gray-200 mx-3"></div>
+    <motion.div
+      className="flex items-center justify-between p-2 flex-wrap gap-2"
+      variants={mentorCardVariants}
+    >
+      <div className="w-fit flex items-center gap-3">
+        <div className="relative w-10 h-10 overflow-hidden rounded-full bg-gray-200">
+          {mentor.avatar && (
+            <Image
+              src={mentor.avatar}
+              alt={`${mentor.name}'s avatar`}
+              fill
+              className="object-cover"
+            />
+          )}
+        </div>
         <div>
-          <h3 className="font-medium text-sm">{mentor.name}</h3>
-          <div className="flex items-center text-xs text-gray-500">
-            <span>{mentor.title}</span>
-            {mentor.location && (
-              <>
-                <span className="mx-2 text-gray-300">|</span>
-                <span className="flex items-center">
-                  <span className="inline-block w-4 h-3 bg-green-500 mr-1 rounded-sm"></span>
-                  {mentor.location}
-                </span>
-              </>
-            )}
-            {mentor.timezone && <span className="ml-2">{mentor.timezone}</span>}
-          </div>
-          <p className="text-xs text-gray-500">{mentor.email}</p>
+          <h3 className="font-medium text-gray-800">{mentor.name}</h3>
+          <p className="text-sm text-gray-500">{mentor.title}</p>
         </div>
       </div>
 
-      <div className="flex space-x-2">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-3 py-1 text-xs bg-red-50 text-red-600 rounded"
-        >
-          Reject
-        </motion.button>
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-3 py-1 text-xs bg-purple-600 text-white rounded"
-        >
-          Accept
-        </motion.button>
-      </div>
-    </div>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="px-4 py-1 bg-[#6F01D0] text-white text-sm rounded-full hover:bg-purple-700 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 ml-auto"
+      >
+        Message
+      </motion.button>
+    </motion.div>
   );
 }

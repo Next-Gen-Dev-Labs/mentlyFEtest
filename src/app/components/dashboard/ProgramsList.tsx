@@ -1,97 +1,214 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import ProgramCard from "./ProgramCard";
+import { IoChevronDown, IoSettingsOutline } from "react-icons/io5";
+import { Program } from "@/app/types";
+import { BiDotsVertical } from "react-icons/bi";
+import Menu from "../../../../public/images/icons/programMenu.svg";
+import Image from "next/image";
+import Mentor1 from "../../../../public/images/images/mentor1.png";
+import Mentor2 from "../../../../public/images/images/mentor2.png";
+import Mentor3 from "../../../../public/images/images/maxwell.png";
+import Host from "../../../../public/images/images/host.png";
 
-export default function ProgramsList() {
-  const [activeFilter, setActiveFilter] = useState("active");
+export default function ProgramsList({
+  viewmode,
+}: {
+  viewmode: "grid" | "list";
+}) {
+  const [activeFilter, setActiveFilter] = useState("Active");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const filterRef = useRef<HTMLDivElement>(null);
 
-  const programs = [
+  const programs: Program[] = [
     {
       id: 1,
       title: "Fundamentals of User Interface & Experience",
       description:
-        "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach...",
+        "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
       status: "active",
-      mentors: 3,
+      type: "bootcamp",
+      icon: IoSettingsOutline,
+      image: "/images/images/program1.jpg",
+      mentors: [
+        { id: 1, name: "Mentor 1", avatar: Mentor1 },
+        { id: 2, name: "Mentor 2", avatar: Mentor2 },
+        { id: 3, name: "Mentor 3", avatar: Mentor3 },
+      ],
     },
     {
       id: 2,
       title: "Colour Hack Practical Group Call",
       description:
-        "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach...",
+        "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
       status: "active",
-      mentor: "Faith Odulaja",
+      type: "group-call",
+      image: "/images/images/program2.jpg",
+      host: {
+        id: 4,
+        name: "Faith Obolo",
+        avatar: Host,
+      },
     },
     {
       id: 3,
       title: "Colour Hack Practical Group Call",
       description:
-        "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach...",
+        "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
       status: "active",
-      mentor: "Sol",
+      type: "group-call",
+      image: "/images/images/program2.jpg",
+      host: {
+        id: 5,
+        name: "Sol",
+        avatar: Host,
+      },
+    },
+    {
+      id: 4,
+      title: "Fundamentals of User Interface & Experience",
+      description:
+        "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
+      status: "active",
+      type: "bootcamp",
+      icon: IoSettingsOutline,
+      image: "/images/images/program1.jpg",
+      mentors: [
+        { id: 1, name: "Mentor 1", avatar: Mentor1 },
+        { id: 2, name: "Mentor 2", avatar: Mentor2 },
+        { id: 3, name: "Mentor 3", avatar: Mentor3 },
+      ],
+    },
+    {
+      id: 5,
+      title: "Colour Hack Practical Group Call",
+      description:
+        "This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach",
+      status: "active",
+      type: "group-call",
+      image: "/images/images/program2.jpg",
+      host: {
+        id: 4,
+        name: "Faith Obolo",
+        avatar: Host,
+      },
     },
   ];
 
   const filteredPrograms = programs.filter(
-    (program) => activeFilter === "all" || program.status === activeFilter
+    (program) =>
+      activeFilter.toLowerCase() === "all" ||
+      program.status === activeFilter.toLowerCase()
   );
 
-  return (
-    <div className="bg-white p-4 rounded-lg shadow">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold flex items-center">
-          <svg
-            className="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-            />
-          </svg>
-          Programs
-        </h2>
-        <a href="#" className="text-purple-600 text-sm hover:underline">
-          See all
-        </a>
-      </div>
+  const filters = ["Active", "Completed", "Upcoming", "All"];
 
-      <div className="flex items-center mb-4">
-        <span className="text-sm text-gray-500 mr-2">Filter:</span>
-        <div className="relative">
-          <select
-            className="text-sm border rounded py-1 px-2 appearance-none pr-8 focus:outline-none focus:ring-2 focus:ring-purple-300"
-            value={activeFilter}
-            onChange={(e) => setActiveFilter(e.target.value)}
-            aria-label="Filter programs"
+  const toggleFilter = () => {
+    setIsFilterOpen(!isFilterOpen);
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  return (
+    <div className="w-full mx-auto bg-white p-4 sm:p-6 rounded-lg bg-white h-full">
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center gap-4">
+          <Image src={Menu} alt="programs" className="h-5 w-5" />
+
+          <h2 className="text-xl font-bold text-[#B0B0B0]">Programs</h2>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <a
+            href="#"
+            className="text-[#6F01D0] text-sm font-bold transition-colors"
           >
-            <option value="active">Active</option>
-            <option value="completed">Completed</option>
-            <option value="upcoming">Upcoming</option>
-            <option value="all">All</option>
-          </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-            <svg
-              className="fill-current h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-            </svg>
-          </div>
+            See all
+          </a>
+          <BiDotsVertical className="h-5 w-5" />
         </div>
       </div>
 
-      <div className="space-y-4">
-        {filteredPrograms.map((program) => (
-          <ProgramCard key={program.id} program={program} />
-        ))}
+      <div className="flex items-center mb-6 justify-end">
+        <span className="text-sm text-gray-500 mr-3">Filter</span>
+        <div className="relative" ref={filterRef}>
+          <div
+            className="flex items-center justify-between min-w-[100px] border border-gray-300 rounded-md py-2 px-3 text-sm cursor-pointer"
+            onClick={toggleFilter}
+            aria-expanded={isFilterOpen}
+            aria-haspopup="listbox"
+            role="button"
+            tabIndex={0}
+          >
+            <span>{activeFilter}</span>
+            <IoChevronDown className="h-4 w-4 ml-2 text-gray-500" />
+          </div>
+
+          <AnimatePresence>
+            {isFilterOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg"
+                role="listbox"
+              >
+                {filters.map((filter) => (
+                  <div
+                    key={filter}
+                    className={`px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
+                      filter === activeFilter
+                        ? "bg-purple-50 text-[#6F01D0] font-bold"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      setActiveFilter(filter);
+                      setIsFilterOpen(false);
+                    }}
+                    role="option"
+                    aria-selected={filter === activeFilter}
+                  >
+                    {filter}
+                  </div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+
+      <div
+        className={`${
+          filteredPrograms.length > 3
+            ? "max-h-[725px] overflow-y-auto pr-2 scrollbar-hide"
+            : ""
+        }`}
+      >
+        <motion.div
+          className="space-y-5"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {filteredPrograms.map((program) => (
+            <ProgramCard
+              key={program.id}
+              program={program}
+              viewmode={viewmode}
+            />
+          ))}
+        </motion.div>
       </div>
     </div>
   );
