@@ -1,14 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Student1 from "../assets/maxwell.png";
 import Student4 from "../assets/maxwell4.jpg";
+import flag from "../assets/flag.jpg";
 
 export default function ApplicationSection() {
-  // Add state for checkboxes if needed
-  const [selectedItems, setSelectedItems] = useState([]);
-
   const mentors = [
     {
       id: 1,
@@ -16,6 +12,7 @@ export default function ApplicationSection() {
       email: "maxwellsmith@gmail.com",
       role: "Product Designer",
       experience: "4years Experience",
+      country: flag,
       location: "Lagos, Nigeria",
       timezone: "GMT +1",
       image: Student1
@@ -53,9 +50,9 @@ export default function ApplicationSection() {
     <div className="bg-white">
       <div className="flex justify-between items-center px-4 py-2">
         <h2 className="text-lg text-gray-400 font-normal">Applications</h2>
-        <a href="#" className="text-purple-600 text-sm">
+        <Link href="#" className="text-purple-600 text-sm hover:underline">
           See all
-        </a>
+        </Link>
       </div>
 
       {/* Mentors Section */}
@@ -101,7 +98,15 @@ export default function ApplicationSection() {
                 {mentor.experience}
               </span>
               <span className="px-3 py-1 bg-[#ABBEE0] text-gray-600 text-sm rounded">
-                <span className="inline-block w-4 h-3 bg-green-500 rounded-sm mr-1"></span>
+                <span className="inline-block mr-1 items-center justify-center">
+                  <Image
+                    src={mentor.country}
+                    alt="Nigeria"
+                    width={14}
+                    height={14}
+                    className="object-cover"
+                  />
+                </span>
                 {mentor.location}
               </span>
               <span className="px-3 py-1 bg-[#C8C8C8] text-gray-600 text-sm rounded">

@@ -1,7 +1,8 @@
 import MentorCard from "./MentorCard";
-
+import Link from "next/link";
 import Mentor from "../assets/maxwell.png";
 import Mentor2 from "../assets/maxwell4.jpg";
+import { IoAddCircleOutline } from "react-icons/io5";
 
 export default function MentorSection() {
   const mentors = [
@@ -26,20 +27,7 @@ export default function MentorSection() {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg text-gray-400 font-normal">Mentors</h2>
         <button className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-            ></path>
-          </svg>
+          <IoAddCircleOutline className="text-gray-500" size={24} />
         </button>
       </div>
 
@@ -48,10 +36,10 @@ export default function MentorSection() {
           <MentorCard key={mentor.id} mentor={mentor} />
         ))}
 
-        <div className="flex justify-center">
-          <button className="text-sm text-purple-600 hover:underline">
+        <div className="flex justify-center cursor-pointer">
+          <Link href="#" className="text-purple-600 text-sm hover:underline">
             See all
-          </button>
+          </Link>
         </div>
       </div>
     </div>

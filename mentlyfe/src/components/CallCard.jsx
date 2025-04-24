@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
 import { MdArrowRightAlt } from "react-icons/md";
+
 export default function CallCard({ call }) {
   const getStatusColorClass = (status) => {
     switch (status) {
@@ -34,7 +35,6 @@ export default function CallCard({ call }) {
               <Image
                 src={call.image}
                 alt={call.title}
-                layout="fill"
                 className="w-full h-full rounded-lg object-cover"
               />
             </div>

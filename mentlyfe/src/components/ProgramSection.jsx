@@ -1,9 +1,7 @@
-"use client";
-
-import { memo, useState } from "react";
+import { memo } from "react";
+import Link from "next/link";
 import ProgramCard from "./ProgramCard";
 import interfaceBG from "../assets/programBG.jpg";
-import program2 from "../assets/program2.jpg";
 import hostAvatar from "../assets/hostAvatar.png";
 import Image1 from "../assets/groupcall1.jpg";
 import userinterface1 from "../assets/userinterface1.png";
@@ -12,9 +10,6 @@ import userinterface3 from "../assets/userinterface3.png";
 
 // Using memo to prevent unnecessary re-renders
 const ProgramSection = memo(function ProgramSection() {
-  const [showAll, setShowAll] = useState(true);
-
-  // Define programs array outside of the component render to ensure it's not recreated on each render
   const programs = [
     {
       id: 1,
@@ -56,28 +51,20 @@ const ProgramSection = memo(function ProgramSection() {
     }
   ];
 
-  // Get visible programs based on showAll state
-  const visiblePrograms = showAll ? programs : [programs[0]];
-
   return (
     <div className="flex flex-col h-full">
-      {/* Fixed header section */}
+      {/* header*/}
       <div className="p-4 border-b border-gray-100">
         <div className="flex justify-between items-center">
           <h2 className="text-lg text-gray-400 font-normal">Programs</h2>
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="text-sm text-purple-600 hover:text-purple-700 font-normal transition-colors"
-          >
-            {showAll ? "Show Less" : "See All"}
-          </button>
+          <Link href="#" className="text-purple-600 text-sm hover:underline">
+            See all
+          </Link>
         </div>
       </div>
-
-      {/* Scrollable content area */}
-      <div className="flex-1 p-3">
+      <div className="flex-1 p-4">
         <div className="flex flex-col gap-2">
-          {visiblePrograms.map((program) => (
+          {programs.map((program) => (
             <ProgramCard
               key={program.id}
               program={program}

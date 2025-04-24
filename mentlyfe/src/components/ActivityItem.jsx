@@ -17,7 +17,7 @@ export default function ActivityItem({ activity }) {
       >
         <Image
           src={activity.image}
-          alt={activity.name}
+          alt={activity.type}
           width={32}
           height={32}
           className="rounded-full object-cover"

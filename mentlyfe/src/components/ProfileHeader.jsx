@@ -1,15 +1,14 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
-export default function ProfileHeader() {
+
+export default function ProfileHeader({ toggleWidgetPanel }) {
   return (
     <>
       <div className="bg-white">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top navigation bar */}
-          <div className="flex justify-between items-center bg-white rounded-md shadow h-16 w-full">
+          <div className="flex justify-between items-center bg-white rounded-md shadow h-16">
             <div className="flex-1"></div>
             <div className="flex items-center space-x-4">
               {/* Notification bell */}
@@ -18,7 +17,7 @@ export default function ProfileHeader() {
               </button>
 
               {/* User profile info */}
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 pr-4">
                 <div className="flex flex-col items-end text-sm">
                   <span className="font-medium text-purple-700">
                     Techrity Foundation
@@ -42,7 +41,10 @@ export default function ProfileHeader() {
         <div className="flex items-center justify-between py-4">
           <div className="flex-1"></div>
           <div className="flex items-center space-x-2">
-            <button className="p-2 border border-gray-200 rounded flex items-center space-x-2 text-gray-600 hover:bg-gray-50">
+            <button
+              onClick={toggleWidgetPanel}
+              className="p-2 border border-gray-200 rounded flex items-center space-x-2 text-gray-600 hover:bg-gray-50"
+            >
               <BiMenuAltLeft className="w-6 h-6" />
               <span>Manage Widgets</span>
             </button>
@@ -50,7 +52,7 @@ export default function ProfileHeader() {
         </div>
 
         {/* Welcome banner */}
-        <div className="mb-4 bg-purple-800 text-white rounded-md px-6 py-3 flex items-center justify-between">
+        <div className="mb-4 bg-[#6F01D0] text-white rounded-md px-6 py-3 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <h2 className="text-xl font-bold">Welcome Aboard, Blessing</h2>
             <span className="text-xl">👋</span>

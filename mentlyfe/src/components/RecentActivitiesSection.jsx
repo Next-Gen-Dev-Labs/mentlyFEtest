@@ -1,5 +1,5 @@
 import ActivityItem from "./ActivityItem";
-
+import Link from "next/link";
 import Image1 from "../assets/maxwell2.jpg";
 import Image2 from "../assets/maxwell3.png";
 import Image3 from "../assets/maxwell4.jpg";
@@ -36,9 +36,12 @@ export default function RecentActivitiesSection() {
     <div className="p-6">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg text-gray-400 font-normal">Recent Activities</h2>
-        <a href="#" className="text-purple-600 text-sm hover:underline">
+        <Link
+          href="#"
+          className="text-purple-600 text-sm hover:underline cursor-pointer"
+        >
           See all
-        </a>
+        </Link>
       </div>
 
       <div className="space-y-4">

@@ -5,6 +5,7 @@ import Image3 from "../assets/groupcall3.jpg";
 import Mentor1 from "../assets/userinterface1.png";
 import Mentor2 from "../assets/userinterface2.png";
 import Mentor3 from "../assets/userinterface3.png";
+import Link from "next/link";
 
 export default function GroupCallSection() {
   const calls = [
@@ -47,6 +48,9 @@ export default function GroupCallSection() {
           <div className="flex items-center">
             <h2 className="text-lg text-gray-400 font-normal">Group Calls</h2>
           </div>
+          <Link href="#" className="text-purple-600 text-sm hover:underline">
+            See all
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
