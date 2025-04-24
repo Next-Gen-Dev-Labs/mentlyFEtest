@@ -9,10 +9,10 @@ export default function Application() {
                 <div className="grid gap-2 pb-6 xl:pb-2 2xl:pb-6 border-b border-[#DBDBDB]">
                     <div className="flex items-center gap-2 justify-between">
                         <div className="flex items-center gap-2">
-                            <span className="border border-[#A5A5A5] rounded-[2px] w-3.5 h-3.5" />
-                            <Avatar 
+                            <input type="checkbox" className="checkbox" />
+                            <Avatar
                                 size="md"
-                                images={[{ src: "/profile3.webp", alt: "Maxwell Smith", tooltip: "Maxwell Smith" }]} 
+                                images={[{ src: "/profile3.webp", alt: "Maxwell Smith", tooltip: "Maxwell Smith" }]}
                             />
                             <div className="grid content-between">
                                 <p className="text-[#4F4F4F] font-bold text-[16px]">Maxwell Smith</p>
@@ -49,11 +49,11 @@ export default function Application() {
                 <span className="text-[12px] font-[400] text-[#7D8DA6] pl-5.5">Students</span>
                 {applicationItems.map(student => (
                     <div key={student.id} className="flex items-center gap-2 pb-6 xl:pb-2 2xl:pb-6 border-b border-[#DBDBDB]">
-                        <span className="border border-[#A5A5A5] rounded-[2px] w-3.5 h-3.5" />
+                        <input type="checkbox" className="checkbox" />
                         <div className="flex items-center gap-2 flex-grow">
-                            <Avatar 
+                            <Avatar
                                 size="md"
-                                images={[{ src: student.image, alt: student.name, tooltip: student.name }]} 
+                                images={[{ src: student.image, alt: student.name, tooltip: student.name }]}
                             />
                             <div className="grid content-between flex-grow">
                                 <p className="text-[#4F4F4F] font-bold text-[16px]">{student.name}</p>
