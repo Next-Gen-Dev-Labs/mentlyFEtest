@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --primary-light: #6f01d0;
+  --primary-bg: #340260;
+  --primary: #1f0954;
+  --primary-3: #53547b;
+  --rich-black: #011627;
+  --grey: #b0b0b0;
+  --grey-2: #4f4f4f;
+  --grey-4: #c2c2c2;
+}
+
+* {
+  /* outline: 1px solid red; */
+  @apply duration-300 transition-all ease-in-out;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+html {
+  font-family: "Chivo", Arial, Helvetica, sans-serif;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+.pri-btn {
+  @apply bg-[var(--primary-light)] text-white;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
