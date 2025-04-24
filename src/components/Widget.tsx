@@ -33,17 +33,17 @@ export default function Widget({ widget }: { widget: WidgetItem }) {
                 {!isUser ? (
                     <>
                         <div className="flex items-center gap-2">
-                            <HiBars4 />
-                            <h4 className="text-[#B0B0B0] text-[16px] font-medium">{widget.label}</h4>
+                            <HiBars4 size={18} />
+                            <h4 className="text-[#B0B0B0] text-lg font-bold">{widget.label}</h4>
                         </div>
                         <div className="flex items-center gap-2">
                             {!isMentor ? (
                                 <button className="text-[#6F01D0] text-[12px] font-[600] bg-transparent border-none cursor-pointer hover:underline">
                                     See all
                                 </button>
-                            ) : <HiOutlinePlusCircle />}
+                            ) : <HiOutlinePlusCircle size={24} color="#9D92A6" />}
                             <button className="p-1 cursor-pointer hover:bg-gray-100 rounded">
-                                <HiEllipsisVertical className="text-gray-500" />
+                                <HiEllipsisVertical className="text-black" />
                             </button>
                         </div>
                     </>
