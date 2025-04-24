@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch Component matches snapshot in off state 1`] = `
+<DocumentFragment>
+  <div
+    aria-checked="false"
+    class="w-10 h-4 flex items-center bg-white rounded-full p-0.5  cursor-pointer transition-colors duration-300 bg-gray-300"
+    role="switch"
+    tabindex="0"
+  >
+    <div
+      class="bg-[#1F0954] w-3 h-3 rounded-full shadow-md transform transition-transform duration-300 translate-x-0"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Switch Component matches snapshot in on state 1`] = `
+<DocumentFragment>
+  <div
+    aria-checked="true"
+    class="w-10 h-4 flex items-center bg-white rounded-full p-0.5  cursor-pointer transition-colors duration-300 bg-blue-500"
+    role="switch"
+    tabindex="0"
+  >
+    <div
+      class="bg-[#1F0954] w-3 h-3 rounded-full shadow-md transform transition-transform duration-300 translate-x-6"
+    />
+  </div>
+</DocumentFragment>
+`;
