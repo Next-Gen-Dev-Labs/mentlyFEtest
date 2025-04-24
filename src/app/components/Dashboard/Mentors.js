@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 const Mentors = () => {
     return (
-        <div className='col-start-3 col-end-4 row-start-2 row-end-3 rounded shadow-md p-4 bg-white'>
+        <div className='lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-3 rounded shadow-md p-4 bg-white'>
             <div className="flex justify-between items-center">
                 <Image src="/menu.svg" alt="Menu" width={16} height={16} />
 
-                <div className="flex items-center justify-between gap-[13rem]">
+                <div className="flex items-center justify-between gap-[7rem] md:gap-[13rem]">
                     <h1 className="text-left text-[#B0B0B0] text-base font-bold">Mentors</h1>
                     <button>
                         <Image src="/add.svg" alt="add-icon" width={24} height={24} />

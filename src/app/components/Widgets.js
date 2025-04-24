@@ -22,7 +22,7 @@ const Widgets = ({ widget, setWidget }) => {
 
         <hr className='border-[#D7D7D7] mb-4' />
         <div className='mb-6'>
-            <h1 className='text-[2rem] font-bold text-[#1F0954] mb-2'>Manage Widgets</h1>
+            <h1 className='text-[1rem] md:text-[1.5rem] lg:text-[2rem] font-bold text-[#1F0954] mb-2'>Manage Widgets</h1>
             <p className='text-xs text-gray-600'>
                 Personalize your dashboard by managing widgets — add, remove, or reorder them to fit your workflow.
             </p>
@@ -63,10 +63,10 @@ const Widgets = ({ widget, setWidget }) => {
 
         {/* Action Buttons */}
         <div className='flex justify-between gap-4 mt-[4rem]'>
-            <button className='bg-[#6F01D0] text-white font-bold py-2 px-2 rounded-md w-full'>
+            <button className='bg-[#6F01D0] text-white font-bold py-2 px-2 rounded-md w-full text-xs lg:text-base'>
                 Save Changes
             </button>
-            <button className='text-[#6F01D0] border border-[#6F01D0] font-bold py-2 px-2 rounded-md w-full'>
+            <button className='text-[#6F01D0] border border-[#6F01D0] font-bold py-2 px-2 rounded-md w-full text-xs lg:text-base'>
                 Reset to Default
             </button>
         </div>

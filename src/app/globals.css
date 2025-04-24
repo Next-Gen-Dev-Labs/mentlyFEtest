@@ -36,6 +36,10 @@ body{
   border-bottom: 0.5px groove #F3F3F3;
 }
 
+/* .transformer{
+  transition: all 2s ease-in-out;
+} */
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

@@ -24,12 +24,12 @@ const RecentActivities = () => {
     ]
 
     return (
-        <div className='col-start-3 col-end-4 row-start-3 row-end-4 rounded shadow-md p-4 bg-white'>
+        <div className='lg:col-start-3 lg:col-end-4 lg:row-start-3 lg:row-end-4 rounded shadow-md p-4 bg-white'>
             {/* Header */}
             <div className="flex justify-between items-center mb-4">
                 <Image src="/menu.svg" alt="Menu" width={16} height={16} />
 
-                <div className="flex items-center gap-[9rem]">
+                <div className="flex items-center gap-[2.5rem] md:gap-[9rem]">
                     <h1 className="text-left text-[#B0B0B0] text-base font-bold">Recent Activities</h1>
                     <button className="font-semibold text-xs text-[#6F01D0]">See All</button>
                 </div>
@@ -46,7 +46,7 @@ const RecentActivities = () => {
                         </div>
                         <div>
                             <h2 className="font-bold text-sm text-[#011627]">{item.title}</h2>
-                            <p className="text-xs text-[#707991]">{item.content}</p>
+                            <p className="text-[10px] md:text-xs text-[#707991]">{item.content}</p>
                             <p className="text-xs text-[#707991] font-light">{item.time}</p>
                         </div>
                     </div>
