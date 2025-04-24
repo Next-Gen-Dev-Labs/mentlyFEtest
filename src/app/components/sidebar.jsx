@@ -74,7 +74,7 @@ function SideMenu({}) {
 
            
             
-            <div className='text-center bg-[#4C2073] p-2 mt-6 space-y-4'>
+            <div className='text-center bg-[#4C2073] p-2 mt-6 space-y-4 w-fit'>
               <div className='text-center flex self-center place-content-center'>
                 <MdOutlinePersonPin/>
 

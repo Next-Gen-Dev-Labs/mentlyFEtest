@@ -14,7 +14,7 @@ function Hero() {
     <section className='flex mt-10 self-center place-content-center space-x-4 w-[99%] mx-auto max-md:flex-col space-y-4'>
         <div className='w-3/6 bg-white dark:bg-gray-800 shadow-md px-4 py-3 flex flex-col space-y-4 max-md:w-[99%]'>
             <Programs/>
-            <div className='mt-5 bg-white shadow-md'>
+            <div className='mt-5 bg-white shadow-md dark:bg-gray-800'>
               <div className='flex place-content-between p-3'>
                   <div className='flex space-x-3 text-gray-500'>
                     
