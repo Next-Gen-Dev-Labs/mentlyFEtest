@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+
+:root {
+  --primary: #5e17eb;
+  --primary-dark: #4810c0;
+  --secondary: #ededed;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  @apply bg-gray-50;
+}
+
+.sidebar-link {
+  @apply flex items-center py-3 px-6 text-white hover:bg-purple-800 transition-all duration-200 rounded-md my-1;
+}
+
+.sidebar-link.active {
+  @apply bg-purple-800;
+}
+
+.section-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.section-title {
+  @apply text-lg font-medium flex items-center gap-2;
+}
+
+.card {
+  @apply rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+/* Add to your CSS */
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: auto !important;
+}
+
+/* Fix navigation buttons positioning */
+.swiper-button-next, 
+.swiper-button-prev {
+  color: #6F01D0;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #6F01D0;
+}
