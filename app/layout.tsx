@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Chivo, Chivo_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const chivoSans = Chivo({
+  variable: "--font-chivo-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const chivoMono = Chivo_Mono({
+  variable: "--font-chivo-mono",
   subsets: ["latin"],
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${chivoSans.variable} ${chivoMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
