@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --main: #340260;
+  --primary: #6f01d0;
+  --secondary: #4c2073;
+  --light: #ddd6fb;
+  --light-brown: #ffeded;
+  --brown: #d09696;
+  --color: #1f0954;
+  --grey: #c2c2c2;
+  --tertiary: #f0c074;
+  --purple: #f4f5fa;
+  --darkGrey: #b0b0b0;
+  --Grey-200: #595564;
+  --Grey-100: #e1e7ec;
+  --Grey-300: #a3a3a3;
+}
+.font-custom{
+  font-family: "Chivo", sans-serif;
+}
+
+@font-face {
+  font-family: "Chivo Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Chivo Regular"),
+    url("../assets/fonts/Chivo-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Chivo Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Chivo Bold"),
+    url("../assets/fonts/Chivo-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Chivo Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Chivo Light"),
+    url("../assets/fonts/Chivo-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Chivo Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Chivo Bold Italic"),
+    url("../assets/fonts/Chivo-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Chivo Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Chivo Italic"),
+    url("../assets/fonts/Chivo-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Chivo Light Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Chivo Light Italic"),
+    url("../assets/fonts/Chivo-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Chivo Black";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Chivo Black"),
+    url("../assets/fonts/Chivo-Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Chivo Black Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Chivo Black Italic"),
+    url("../assets/fonts/Chivo-BlackItalic.woff") format("woff");
+}
