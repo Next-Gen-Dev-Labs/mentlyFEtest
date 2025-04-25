@@ -52,6 +52,7 @@ export default function Header() {
 				type="button"
 				className="rounded-sm px-2 font-bold text-[#1f0954] outline-1 outline-transparent transition hover:bg-current/2.5 focus-visible:outline-current/50 active:scale-98"
 				onClick={openWidgetsManager}
+				data-testid="widget-manager-dialog-show-button"
 			>
 				Manage Widgets
 			</button>

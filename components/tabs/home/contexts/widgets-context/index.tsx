@@ -18,7 +18,7 @@ type HomeWidgetsType = {
 
 const HomeWidgets = createContext<HomeWidgetsType | null>(null);
 
-const defaultHomeWidgets: HomeWidgetsKeys[] = [
+export const defaultHomeWidgets: HomeWidgetsKeys[] = [
 	"programs-widget",
 	"group-calls-widget",
 	"users-widget",

@@ -29,6 +29,11 @@ export default function Page() {
 								data-testid="loading-spinner"
 								icon="svg-spinners:blocks-scale"
 								className="suspense-fallback"
+								style={
+									{
+										"--anchor-position": "--layout-main-wrapper",
+									} as CSSProperties
+								}
 							/>
 						}
 					>

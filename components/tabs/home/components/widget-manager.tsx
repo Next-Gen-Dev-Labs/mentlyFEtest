@@ -86,6 +86,7 @@ export default function WidgetManager() {
 
 	return (
 		<dialog
+			data-testid="widget-manager-dialog"
 			ref={widgetManagerDialogRef}
 			onClose={closeWidgetsManager}
 			className="fixed top-0 right-0 bottom-0 left-auto h-full max-h-none w-full max-w-md translate-x-full overflow-x-clip overflow-y-auto bg-white opacity-0 transition-all transition-discrete duration-250 backdrop:bg-transparent backdrop:backdrop-blur-xs backdrop:transition-all backdrop:transition-discrete backdrop:duration-250 open:translate-x-0 open:opacity-100 open:backdrop:opacity-100 starting:translate-x-full starting:opacity-0 starting:open:backdrop:opacity-0"
@@ -96,6 +97,7 @@ export default function WidgetManager() {
 						type="button"
 						className="ml-auto text-2xl"
 						onClick={closeWidgetsManager}
+						data-testid="widget-manager-dialog-hide-button"
 					>
 						<Icon icon="hugeicons:multiplication-sign" />
 					</button>

@@ -99,6 +99,6 @@
 @utility suspense-fallback {
 	@apply fixed text-5xl;
 	color: #6f01d0;
-	position-anchor: --layout-main-wrapper;
+	position-anchor: var(--anchor-position);
 	position-area: center;
 }

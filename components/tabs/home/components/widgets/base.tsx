@@ -28,7 +28,12 @@ export default function WidgetBase(props: PropsWithChildren<WidgetBase>) {
 				"flex flex-col items-stretch overflow-auto rounded-xl bg-white p-5",
 				props.className,
 			)}
-			style={props.style}
+			style={
+				{
+					...props.style,
+					anchorName: `--eskelebe-ti-o-lebe-${key}`,
+				} as CSSProperties
+			}
 		>
 			<header className="sticky flex items-center gap-3 bg-gradient-to-b from-white to-transparent pb-5">
 				<button type="button" className="cursor-grab active:cursor-grabbing">
