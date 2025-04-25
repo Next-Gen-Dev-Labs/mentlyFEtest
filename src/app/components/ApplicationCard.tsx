@@ -1,5 +1,4 @@
 // components/ApplicationCard.tsx
-import { BadgeCheck, Mail } from "lucide-react";
 import Image from "next/image";
 
 interface ApplicationCardProps {
@@ -24,38 +23,45 @@ export default function ApplicationCard({
   isMentor = false,
 }: ApplicationCardProps) {
   return (
-    <div className="flex items-start justify-between py-4 border-b">
-      <div className="flex items-start gap-3">
-        <input type="checkbox" className="mt-2" />
+    <div className="flex items-center justify-between gap-4 py-4 border-b border-gray-200">
+      <div className="flex items-center gap-3 w-10">
+        {/* Checkbox */}
+        <input type="checkbox" className="accent-purple-600" />
+
+        {/* Avatar */}
         <Image
           src={avatar}
           alt={name}
           width={40}
           height={40}
-          className="rounded-full object-cover mt-1"
+          className="rounded-full object-contain"
         />
-        <div>
-          <h4 className="text-base font-semibold">{name}</h4>
-          <p className="text-sm text-muted-foreground">{email}</p>
+
+        {/* Info */}
+        <div className="flex flex-col justify-center">
+          <h4 className="text-sm font-semibold text-gray-900 leading-none">{name}</h4>
+          <p className="text-sm text-gray-500 leading-none mt-1">{email}</p>
+
+          {/* Tags (only for mentors) */}
           {isMentor && (
-            <div className="flex flex-wrap gap-2 mt-2">
+            <div className="flex flex-nowrap gap-1 mt-2 overflow-x-auto no-scrollbar">
               {role && (
-                <span className="text-xs font-size-[9px] bg-purple-100 text-purple-800 px-2 py-1 rounded-full border border-purple-200">
+                <span className="text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full border border-purple-200 whitespace-nowrap">
                   {role}
                 </span>
               )}
               {experience && (
-                <span className="text-xs bg-teal-100 text-teal-800 px-2 py-1 rounded-full border border-teal-200">
+                <span className="text-[10px] bg-teal-100 text-teal-700 px-2 py-0.5 rounded-full border border-teal-200 whitespace-nowrap">
                   {experience}
                 </span>
               )}
               {location && (
-                <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full border border-blue-200 flex items-center gap-1">
+                <span className="text-[10px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full border border-blue-200 flex items-center gap-1 whitespace-nowrap">
                   🇳🇬 {location}
                 </span>
               )}
               {timezone && (
-                <span className="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full border border-gray-300">
+                <span className="text-[10px] bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full border border-gray-300 whitespace-nowrap">
                   {timezone}
                 </span>
               )}
@@ -63,11 +69,13 @@ export default function ApplicationCard({
           )}
         </div>
       </div>
-      <div className="flex items-center gap-2">
-        <button className="text-red-600 border border-red-300 px-4 py-2 text-sm rounded-lg bg-red-50">
+
+      {/* Buttons */}
+      <div className="flex items-center gap-2 shrink-0">
+        <button className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-2 hover:bg-red-100">
           Reject
         </button>
-        <button className="text-white bg-[#7F1AE5] px-4 py-2 text-sm rounded-lg">
+        <button className="text-sm text-white bg-[#7F1AE5] rounded-lg px-4 py-2 hover:bg-purple-700">
           Accept
         </button>
       </div>

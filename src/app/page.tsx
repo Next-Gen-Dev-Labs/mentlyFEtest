@@ -22,8 +22,24 @@ export default function Dashboard() {
             <ProgramCard
               title="Fundamentals of User interface & Experience"
               description="This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach"
-              image="/program1.jpg"
-              mentors={["/avatar1.png", "/avatar2.png", "/avatar3.png"]}
+              image="/assets/program1.png"
+              mentors={["/assets/user1.png", "/assets/user2.png", "/assets/user1.png"]}
+            />
+            <ProgramCard
+              title="Colour Hack Practical Group Call"
+              badge="Group Call"
+              description="This  program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach"
+              image="/assets/program2.png"
+              mentors={["/assets/user1.png"]}
+              host='Hosted By: Faith Okolo'
+            />
+            <ProgramCard
+              title="Colour Hack Practical Group Call"
+              badge='Group Call'
+              description="This  program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical approach"
+              image="/assets/program2.png"
+              mentors={["/assets/user2.png"]}
+              host='Hosted By: Faith Okolo'
             />
 
             </div>
@@ -50,7 +66,7 @@ export default function Dashboard() {
                 title="Weekly Meeting - Product Demo Review with Testers"
                 tag="Ongoing"
                 date="Mon, Jul 30, 2024"
-                time="9:00 - 11:00AM"
+                time="mentors9:00 - 11:00AM"
               />
             </div>
           </section>
@@ -67,7 +83,7 @@ export default function Dashboard() {
                 <ApplicationCard
                   name="Maxwell Smith"
                   email="maxwellsmith@gmail.com"
-                  avatar="/avatars/avatar1.png"
+                  avatar="/assets/user1.png"
                   isMentor
                   role="Product Designer"
                   experience="4years Experience"
@@ -81,22 +97,22 @@ export default function Dashboard() {
                 <ApplicationCard
                   name="Adeati Samuel"
                   email="maxwellsmith@gmail.com"
-                  avatar="/avatars/avatar2.png"
+                  avatar="/assets/user2.png"
                 />
                 <ApplicationCard
                   name="Maxwell Smith"
                   email="maxwellsmith@gmail.com"
-                  avatar="/avatars/avatar1.png"
+                  avatar="/assets/user1.png"
                 />
                 <ApplicationCard
                   name="Adeati Samuel"
                   email="maxwellsmith@gmail.com"
-                  avatar="/avatars/avatar2.png"
+                  avatar="/assets/user2.png"
                 />
                 <ApplicationCard
                   name="Maxwell Smith"
                   email="maxwellsmith@gmail.com"
-                  avatar="/avatars/avatar1.png"
+                  avatar="/assets/user1.png"
                 />
               </div>
             </section>
