@@ -30,11 +30,7 @@ export default function Programs({ style }: { style?: CSSProperties }) {
 							id="programs-widget-filter"
 							className="field-sizing-content appearance-none rounded-sm border border-gray-200 px-2.5 py-0.5 pr-8"
 						>
-							{selectOptions.map((o) => (
-								<option key={o.key} value={o.key}>
-									{o.label}
-								</option>
-							))}
+							<option value="">All</option>
 						</select>
 						<Icon
 							icon="tabler:chevron-down"
@@ -49,12 +45,6 @@ export default function Programs({ style }: { style?: CSSProperties }) {
 		</WidgetBase>
 	);
 }
-
-const selectOptions = [
-	{ key: "", label: "All" },
-	{ key: "active", label: "Active" },
-	{ key: "inactive", label: "Inactive" },
-];
 
 enum BadgeTitles {
 	bootcamp = "Bootcamp",

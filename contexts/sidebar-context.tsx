@@ -1,6 +1,6 @@
 "use client";
 
-import transitionViewIfSupported from "@/utils/transitionViewIfSupported";
+// import transitionViewIfSupported from "@/utils/transitionViewIfSupported";
 import {
 	createContext,
 	FC,
@@ -19,10 +19,20 @@ interface SidebarContextType {
 
 const SidebarContext = createContext<SidebarContextType | null>(null);
 
+const LOCAL_STORAGE_KEY = "techrityIsSidebarShown";
+
 export const SidebarContextProvider: FC<{ children: ReactNode }> = ({
 	children,
 }) => {
-	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+	const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(() => {
+		if (typeof window !== "undefined") {
+			const storedSidebarState = localStorage.getItem(LOCAL_STORAGE_KEY);
+			if (storedSidebarState !== null) {
+				return JSON.parse(storedSidebarState);
+			}
+		}
+		return false;
+	});
 
 	useEffect(() => {
 		if (typeof window === "undefined") return;
@@ -36,14 +46,21 @@ export const SidebarContextProvider: FC<{ children: ReactNode }> = ({
 		return () => window.removeEventListener("resize", updateSidebarState);
 	}, []);
 
-	const openSidebar = () =>
-		transitionViewIfSupported(() => setIsSidebarOpen(true));
+	const openSidebar = () => {
+		setIsSidebarOpen(true);
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(true));
+	};
 
-	const closeSidebar = () =>
-		transitionViewIfSupported(() => setIsSidebarOpen(false));
+	const closeSidebar = () => {
+		setIsSidebarOpen(false);
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(false));
+	};
 
 	const toggleSidebar = () =>
-		transitionViewIfSupported(() => setIsSidebarOpen((prev) => !prev));
+		setIsSidebarOpen((prev) => {
+			localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(!prev));
+			return !prev;
+		});
 
 	return (
 		<SidebarContext.Provider

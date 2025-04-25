@@ -24,7 +24,7 @@ export default function Header() {
 					<label
 						key={layout.key}
 						htmlFor={layout.key}
-						className="rounded-xs text-3xl text-[#a4a5b8] transition has-checked:cursor-default has-checked:text-[#6f01d0]"
+						className="rounded-xs text-3xl text-[#a4a5b8] transition not-[:has(:checked)]:hover:text-[#6f01d0]/50 has-checked:cursor-default has-checked:text-[#6f01d0]"
 						style={
 							{
 								anchorName: `--home-layout-item-${layout.key}${layout.key === homeLayout ? ", --active-home-layout" : ""}`,
@@ -50,7 +50,7 @@ export default function Header() {
 			</div>
 			<button
 				type="button"
-				className="font-bold text-[#1f0954]"
+				className="rounded-sm px-2 font-bold text-[#1f0954] outline-1 outline-transparent transition hover:bg-current/2.5 focus-visible:outline-current/50 active:scale-98"
 				onClick={openWidgetsManager}
 			>
 				Manage Widgets

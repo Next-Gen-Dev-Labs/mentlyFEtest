@@ -16,7 +16,14 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
-import React, { ChangeEvent, FormEvent, memo, useEffect, useRef } from "react";
+import React, {
+	ChangeEvent,
+	CSSProperties,
+	FormEvent,
+	memo,
+	useEffect,
+	useRef,
+} from "react";
 import { useWidgetManagerContext } from "../contexts/widget-manager-context";
 import {
 	HomeWidgetsKeys,
@@ -197,10 +204,10 @@ const SortableItem = memo(
 		const { attributes, listeners, setNodeRef, transform, transition } =
 			useSortable({ id });
 
-		const style = {
+		const style: CSSProperties = {
 			transform: CSS.Transform.toString(transform),
 			transition,
-			viewTransitionName: `widget-item-${id}`,
+			// viewTransitionName: `widget-item-${id}`,
 		};
 
 		return (

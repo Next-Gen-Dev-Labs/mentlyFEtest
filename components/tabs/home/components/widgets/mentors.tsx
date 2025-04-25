@@ -14,7 +14,7 @@ export default function Mentors({ style }: { style?: CSSProperties }) {
 				<button
 					key="mentors-widget-add-something-button"
 					type="button"
-					className="rounded-full border p-1.25 text-sm text-[#9d92a6]"
+					className="rounded-full border p-1.25 text-sm text-[#9d92a6] outline-0 transition hover:bg-[#9d92a6] hover:text-white focus-visible:bg-[#9d92a6] focus-visible:text-white"
 				>
 					<Icon icon="ic:outline-plus" className="-m-px" />
 				</button>,

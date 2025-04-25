@@ -155,7 +155,7 @@ const BaseApplication = memo(
 			<label htmlFor={`applicant-${id}`} className="grid place-items-center">
 				<input
 					id={`applicant-${id}`}
-					className="widget-checkbox rounded-xs border-1 text-sm checked:border-2"
+					className="widget-checkbox rounded-xs border-1 text-sm outline-offset-0 checked:border-2"
 					type="checkbox"
 				/>
 			</label>
@@ -170,14 +170,17 @@ const BaseApplication = memo(
 				<p className="font-bold">{name}</p>
 				<p>{email}</p>
 			</div>
-			<div className="flex items-center gap-1.5 *:grid *:place-items-center *:rounded-sm *:border *:px-3 *:py-2.5 @md/applications-widget:*:px-6 @md/applications-widget:*:[&>iconify-icon]:hidden *:[&>span]:hidden @md/applications-widget:*:[&>span]:inline">
-				<button type="button" className="border-current bg-red-50 text-red-600">
+			<div className="flex items-center gap-1.5 *:grid *:place-items-center *:rounded-sm *:border *:px-3 *:py-2.5 *:outline-0 *:*:transition *:transition *:hover:*:scale-105 *:focus-visible:*:scale-105 *:active:*:scale-95 @md/applications-widget:*:px-6 @md/applications-widget:*:[&>iconify-icon]:hidden *:[&>span]:hidden @md/applications-widget:*:[&>span]:inline">
+				<button
+					type="button"
+					className="border-current bg-red-50 text-red-600 hover:border-red-600 hover:bg-red-600 hover:text-white focus-visible:border-red-600 focus-visible:bg-red-600 focus-visible:text-white"
+				>
 					<Icon icon="icon-park-outline:reject" />
 					<span>Reject</span>
 				</button>
 				<button
 					type="button"
-					className="border-[#6f01d0] bg-[#6f01d0] text-white"
+					className="border-[#6f01d0] bg-[#6f01d0] text-white hover:bg-white hover:text-[#6f01d0] focus-visible:bg-white focus-visible:text-[#6f01d0]"
 				>
 					<Icon icon="icon-park-outline:accept-email" />
 					<span>Accept</span>

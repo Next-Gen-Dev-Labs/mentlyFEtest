@@ -12,13 +12,33 @@ type TabContextType = {
 
 const TabContext = createContext<TabContextType | null>(null);
 
+const LOCAL_STORAGE_KEY = "techrityActiveTab";
+
 export const TabContextProvider: FC<{ children: ReactNode }> = ({
 	children,
 }) => {
-	const [activeTab, setActiveTab] = useState<TabKeys>(tabItems[0].key);
+	const [activeTab, setActiveTab] = useState<TabKeys>(() => {
+		if (typeof window !== "undefined") {
+			const storedTab = localStorage.getItem(LOCAL_STORAGE_KEY);
+			if (storedTab !== null) {
+				const parsedTab = JSON.parse(storedTab) as TabKeys;
+				if (tabItems.some((item) => item.key === parsedTab)) {
+					return parsedTab;
+				}
+			}
+		}
+		return tabItems[0].key;
+	});
+
+	const handleSetActiveTab = (tab: TabKeys) => {
+		setActiveTab(tab);
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tab));
+	};
 
 	return (
-		<TabContext.Provider value={{ activeTab, setActiveTab }}>
+		<TabContext.Provider
+			value={{ activeTab, setActiveTab: handleSetActiveTab }}
+		>
 			{children}
 		</TabContext.Provider>
 	);
