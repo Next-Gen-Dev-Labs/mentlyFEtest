@@ -1,0 +1,269 @@
+/* Existing imports and variables remain unchanged */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: rgb(var(--ring) / 0.5);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Scrollbar styles */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container:active {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--muted);
+}
+
+.scroll-container:active::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container:active::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+.scroll-container:active::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: var(--radius);
+}
+
+.scroll-container:active::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-foreground);
+}
+
+/* Optionally, you can remove padding on the left specifically */
+.dashboard-grid {
+  padding-left: 0;
+  /* Remove left padding */
+  padding-right: 1rem;
+  /* Keep right padding if needed */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "programs group-calls group-calls"
+      "programs applications mentors"
+      "users applications recent-activities";
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "programs"
+      "group-calls"
+      "applications"
+      "mentors"
+      "users"
+      "recent-activities";
+  }
+}
+
+.dashboard-grid.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Widget-specific grid areas */
+.programs {
+  grid-area: programs;
+}
+
+.group-calls {
+  grid-area: group-calls;
+}
+
+.applications {
+  grid-area: applications;
+}
+
+.mentors {
+  grid-area: mentors;
+}
+
+.users {
+  grid-area: users;
+}
+
+.recent-activities {
+  grid-area: recent-activities;
+}
+
+/* Ensure widgets take full space */
+.programs,
+.group-calls,
+.applications,
+.mentors,
+.users,
+.recent-activities {
+  width: 100%;
+  height: 100%;
+}
+
+/* Header responsiveness */
+.headerdashboard {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .headerdashboard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Group calls mobile responsiveness */
+.groupcallsmobile {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .groupcallsmobile {
+    flex-direction: column;
+  }
+}
+
+/* Drag handle styles */
+.drag-handle {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.drag-handle[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.drag-handle:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Widget styles */
+.widget {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.widget:hover .drag-handle {
+  opacity: 1;
+}
+
+.widget-header {
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom Scrollbar Class for Horizontal Scrolling */
+.custom-scrollbar {
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  overflow-y: hidden;
+  /* Disable vertical scrolling */
+  scrollbar-width: none;
+  /* Hide scrollbar by default (Firefox) */
+  -ms-overflow-style: none;
+  /* Hide scrollbar by default (IE and Edge) */
+}
+
+/* Webkit browsers (Chrome, Safari) */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 0;
+  /* Hide scrollbar by default */
+  width: 0;
+  /* Prevent vertical scrollbar */
+}
+
+/* Make scrollbar thumb visible on hover */
+.custom-scrollbar:hover::-webkit-scrollbar {
+  height: 8px;
+  /* Height of the horizontal scrollbar */
+}
+
+/* Scrollbar track (invisible) */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  /* Invisible track */
+}
+
+/* Scrollbar thumb (visible on hover) */
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #6B21A8;
+  /* Purple thumb color */
+  border-radius: 4px;
+  /* Rounded thumb */
+}
+
+/* Hide scrollbar arrows/buttons (Webkit) */
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
+  /* Hide arrows at both ends */
+}
