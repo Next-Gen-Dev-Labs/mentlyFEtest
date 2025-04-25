@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-
+import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 const nextConfig: NextConfig = {
   /* config options here */
   eslint: {
@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  webpack: (config) => {
+    config.plugins.push(new CaseSensitivePathsPlugin());
+    return config;
   },
 };
 

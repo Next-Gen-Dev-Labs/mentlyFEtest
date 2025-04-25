@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "lint": "next lint"
   },
   "dependencies": {
     "lucide-react": "^0.503.0",
@@ -20,17 +19,24 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/case-sensitive-paths-webpack-plugin": "^2.1.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/webpack": "^5.28.5",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
   "eslintConfig": {
-    "extends": ["next", "eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended"],
+    "extends": [
+      "next",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
     "rules": {
       "react/display-name": "off",
       "react/no-unescaped-entities": "off",
