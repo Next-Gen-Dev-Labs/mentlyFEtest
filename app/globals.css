@@ -18,17 +18,23 @@
 	:root {
 		@apply bg-background text-foreground h-full;
 		body {
-			@apply font-chivo flex h-full *:h-full *:overflow-auto;
+			@apply font-chivo h-full;
 
 			button:not([aria-disabled="true"]):not(:disabled),
 			label:has(input:not([aria-disabled="true"]):not(:disabled)),
 			[role="button"]:not([aria-disabled="true"]):not(:disabled) {
-				@apply cursor-pointer;
+				@apply cursor-pointer **:pointer-events-none;
 			}
 
 			button:has(iconify-icon:only-child),
 			label:has(input.sr-only + iconify-icon:last-child) {
 				@apply grid aspect-square place-items-center;
+			}
+
+			iconify-icon {
+				display: inline-block;
+				width: 1em;
+				height: 1em;
 			}
 
 			.homePageWidgetsWrapper {
@@ -62,38 +68,11 @@
 				}
 			}
 		}
-
-		/* ::view-transition-group(.tab-items) {
-			z-index: 1;
-		}
-
-		::view-transition-group(active-tab-indicator) {
-			animation-duration: 375ms;
-			animation-timing-function: var(--animate-overshoot-inOut-smooth);
-		} */
 	}
-}
-
-.dashboard-homepage > :first-child ~ * {
-	view-transition-class: all-the-widgets;
-}
-
-::view-transition-group(all-the-widgets) {
-	z-index: 1;
 }
 
 @utility widget-checkbox {
 	@apply relative isolate ml-auto size-[1em] cursor-pointer appearance-none rounded-sm border-2 border-black/50 text-lg outline-1 outline-offset-1 outline-transparent transition before:absolute before:bottom-0 before:left-1/2 before:flex before:h-2/3 before:w-[calc(100%-4px)] before:origin-top before:-translate-x-1/2 before:scale-75 before:items-center before:justify-center before:align-middle before:invert before:transition-all before:transition-discrete checked:border-[#07c500] checked:bg-[#07c500] checked:before:scale-100 checked:before:content-(--licide--check) hover:scale-105 focus-visible:scale-105 focus-visible:outline-current active:scale-95 starting:checked:before:scale-75 starting:checked:before:opacity-0;
-}
-
-@utility clone-anchor {
-	@apply fixed inset-auto -z-1 m-auto;
-	width: anchor-size(width);
-	height: anchor-size(height);
-	top: anchor(top);
-	right: anchor(right);
-	bottom: anchor(bottom);
-	left: anchor(left);
 }
 
 @utility suspense-fallback {

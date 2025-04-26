@@ -1,13 +1,12 @@
 "use client";
 
-import { useSidebarContext } from "@/contexts/sidebar-context";
+import { useSidebar } from "@/contexts/dashboard/sidebar";
 import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
 import Image from "next/image";
-import { CSSProperties } from "react";
 
 export default function Header() {
-	const { toggleSidebar, isSidebarOpen } = useSidebarContext();
+	const { toggleSidebar, isSidebarOpen } = useSidebar();
 
 	return (
 		<header className="bg-[#fdfdfd] shadow">
@@ -25,29 +24,15 @@ export default function Header() {
 				<div className="ml-auto flex items-center gap-11">
 					<button
 						type="button"
-						className="rounded-full p-1 text-2xl ring-offset-1 outline-1 outline-transparent transition hover:scale-105 hover:bg-current/3 focus-visible:scale-105 focus-visible:outline-current/50 active:scale-95 [&:hover+*]:animate-ping"
+						className="relative isolate rounded-full p-1 text-2xl ring-offset-1 outline-1 outline-transparent transition before:absolute before:top-1 before:right-2 before:size-2 before:rounded-full before:bg-[#ff3e3e] hover:scale-105 hover:bg-current/3 hover:before:animate-ping focus-visible:scale-105 focus-visible:outline-current/50 active:scale-95"
 						popoverTarget="notifications-dropdown"
-						style={
-							{
-								anchorName: "--notifications-dropdown-toggle-button",
-							} as CSSProperties
-						}
 					>
 						<Icon icon="solar:bell-linear" />
 					</button>
-					<i
-						inert
-						className="fixed inset-auto top-[anchor(top)] right-[anchor(right)] isolate z-0 m-auto mt-1 mr-2 size-2 rounded-full bg-[#ff3e3e]"
-						style={
-							{
-								positionAnchor: "--notifications-dropdown-toggle-button",
-							} as CSSProperties
-						}
-					/>
 					<div
 						popover=""
 						id="notifications-dropdown"
-						className="inset-auto top-[anchor(bottom)] m-0 h-80 w-full max-w-xs [justify-self:anchor-center] rounded-md shadow-md"
+						className="inset-auto top-[anchor(bottom)] left-[anchor(left)] m-0 -ml-[calc(anchor-size(width)*2)] hidden h-80 w-full max-w-xs -translate-y-4 scale-90 rounded-md opacity-0 shadow-md transition-discrete duration-200 open:block open:translate-y-0 open:scale-100 open:opacity-100 md:left-auto md:-ml-0 md:[justify-self:anchor-center] starting:scale-90 starting:opacity-0"
 					></div>
 					<div className="flex items-center gap-2">
 						<div className="grid size-11 place-items-center rounded-full bg-[#8b72fc]">
