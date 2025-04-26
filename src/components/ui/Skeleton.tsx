@@ -1,8 +1,4 @@
-interface SkeletonProps {
-  className?: string;
-}
-
-const Skeleton = ({ className }: SkeletonProps) => {
+const Skeleton = ({ className = "" }: { className?: string }) => {
   return (
     <div
       className={`animate-pulse bg-gray-200 rounded ${className}`}

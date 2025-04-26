@@ -10,6 +10,10 @@ import WelcomeMessage from "@/components/layout/WelcomeMessage";
 import WidgetWrapper from "@/components/widgets/WidgetWrapper";
 import ApplicationsSkeleton from "@/components/skeletons/ApplicationSkeleton";
 import GroupCallSkeleton from "@/components/skeletons/GroupCallSkeleton";
+import ProgramsSkeleton from "@/components/skeletons/ProgramsSkeleton";
+import UsersSkeleton from "@/components/skeletons/UsersSkeleton";
+import RecentActivitiesSkeleton from "@/components/skeletons/RecentActivitiesSkeleton";
+import MentorsSkeleton from "@/components/skeletons/MentorsSkeleton";
 import { useState } from "react";
 
 
@@ -27,10 +31,10 @@ const [isLoading, setIsLoading] = useState(true);
         {/* Left Column - only applies on desktop */}
         <div className="lg:col-span-5 grid lg:grid-rows-2 gap-4 h-full">
           <div className="h-[400px] lg:h-full">
-            <Programs />
+            {isLoading ? <ProgramsSkeleton /> : <Programs />}
           </div>
           <div className="h-[300px] lg:h-full">
-            <UsersChart />
+            {isLoading ? <UsersSkeleton /> : <UsersChart />}
           </div>
         </div>
 
@@ -51,10 +55,10 @@ const [isLoading, setIsLoading] = useState(true);
             {/* Mentors and Recent Activities */}
             <div className="lg:col-span-3 grid lg:grid-rows-2 gap-4 h-full">
               <div className="h-[250px] lg:h-full">
-                <Mentors />
+                {isLoading ? <MentorsSkeleton /> : <Mentors />}
               </div>
               <div className="h-[300px] mb-5 lg:h-full">
-                <RecentActivities />
+                {isLoading ? <RecentActivitiesSkeleton /> : <RecentActivities />}
               </div>
             </div>
           </div>
