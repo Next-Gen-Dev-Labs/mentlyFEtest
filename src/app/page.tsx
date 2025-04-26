@@ -8,8 +8,15 @@ import UsersChart from "@/components/widgets/Users";
 import GroupCall from "@/components/widgets/GroupCall";
 import WelcomeMessage from "@/components/layout/WelcomeMessage";
 import WidgetWrapper from "@/components/widgets/WidgetWrapper";
+import ApplicationsSkeleton from "@/components/skeletons/ApplicationSkeleton";
+import GroupCallSkeleton from "@/components/skeletons/GroupCallSkeleton";
+import { useState } from "react";
+
+
 
 export default function Home() {
+  // In your component:
+const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="h-screen p-4">
       <WidgetWrapper />
@@ -31,14 +38,14 @@ export default function Home() {
         <div className="lg:col-span-7 grid lg:grid-rows-[30%_70%] gap-4 h-full">
           {/* Group Calls */}
           <div className="h-[450px] lg:h-full">
-            <GroupCall />
+            {isLoading ? <GroupCallSkeleton /> : <GroupCall />}
           </div>
 
           {/* Bottom Content */}
           <div className="grid grid-cols-1 lg:grid-cols-7 gap-4 h-full">
             {/* Applications */}
             <div className="h-[400px] lg:h-full lg:col-span-4">
-              <Applications />
+              {isLoading ? <ApplicationsSkeleton /> : <Applications />}
             </div>
             
             {/* Mentors and Recent Activities */}

@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import { NextConfig } from 'next';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 const nextConfig: NextConfig = {
   /* config options here */
