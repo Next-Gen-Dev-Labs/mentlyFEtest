@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 
-const Programs = () => {
+const Programs = ({className}) => {
     const [filter, setFilter] = useState('all')
 
     const programItems = [
@@ -38,12 +38,12 @@ const Programs = () => {
     })
 
     return (
-        <div className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 p-4 shadow-md bg-white rounded-lg">
+        <div className={`${className}`}>
 
             <div className="flex justify-between items-center">
                 <Image src="/menu.svg" alt="Menu" width={16} height={16} />
 
-                <div className="flex items-center gap-[5rem] md:gap-[8rem] lg:gap-[190px]">
+                <div className="flex items-center gap-[5rem] md:gap-[30rem] lg:gap-[190px]">
                     <h1 className="text-left text-[#B0B0B0] text-base font-bold">Programs</h1>
                     <button className="font-semibold text-xs text-[#6F01D0]">See All</button>
                 </div>
@@ -85,9 +85,9 @@ const Programs = () => {
                                     height={70}
                                     className="w-full h-auto rounded"
                                 />
-                                <div className="absolute md:bottom-4 bottom-2 md:left-4 left-2">
-                                    <p className='font-bold text-xs lg:text-base my-0.5 text-white break-normal lg:leading-[1.3rem]'>{title}</p>
-                                    <p className={`text-[4px] md:text-[8px] font-bold mt-1 px-0.5 py-0.15 md:px-2 md:py-0.5 w-fit rounded-full ${item.theme==='• Bootstrap'? 'text-[#0077FF] bg-[#D4E0F3]' : 'text-[#008000] bg-[#D4F3D4]'}`}>
+                                <div className="absolute md:bottom-8 bottom-2 md:left-4 lg:bottom-4 left-2">
+                                    <p className='font-bold text-xs md:text-3xl lg:text-base my-0.5 text-white break-normal lg:leading-[1.3rem]'>{title}</p>
+                                    <p className={`text-[4px] md:text-[10px] lg:text-[8px] font-bold mt-1 px-0.5 py-0.15 md:px-2 md:py-0.5 w-fit rounded-full md:mt-[1rem] ${item.theme==='• Bootstrap'? 'text-[#0077FF] bg-[#D4E0F3]' : 'text-[#008000] bg-[#D4F3D4]'}`}>
                                         {theme}
                                     </p>
                                 </div>
@@ -96,7 +96,7 @@ const Programs = () => {
                             <p className="text-xs mt-3">{content}</p>
 
                             <div className="flex justify-between items-center mt-4">
-                                <div className="items-center gap-2 hidden lg:flex">
+                                <div className="items-center gap-2 hidden md:flex">
                                     <Image
                                         src={hostImg}
                                         alt="host"

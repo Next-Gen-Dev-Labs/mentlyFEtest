@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const Applications = () => {
+const Applications = ({className}) => {
     const applicationItems = [
         {
             name: 'Maxwell Smith',
@@ -39,10 +39,22 @@ const Applications = () => {
             mail: 'maxwellsmith@gmail.com',
             role: 'student',
         },
+        {
+            name: 'Adeati Samuel',
+            picture: '/samuel.svg',
+            mail: 'maxwellsmith@gmail.com',
+            role: 'student',
+        },
+        {
+            name: 'Adeati Samuel',
+            picture: '/samuel.svg',
+            mail: 'maxwellsmith@gmail.com',
+            role: 'student',
+        },
     ];
 
     const renderApplications = (role) => (
-        <div className="mt-7">
+        <div className="mt-7 md:mx-auto md:max-w-[32rem] lg:w-full">
             <h2 className="text-[10px] font-semibold text-[#7D8DA6] mb-2">
                 {role === 'mentor' ? 'Mentors' : 'Students'}
             </h2>
@@ -80,11 +92,11 @@ const Applications = () => {
     );
 
     return (
-        <div className='lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-5 p-4 shadow-md bg-white rounded-md max-h-[44.3rem] md:mt-[40rem] lg:mt-0 h-full'>
+        <div className={`${className}`}>
             <div className="flex justify-between items-center">
                 <Image src="/menu.svg" alt="Menu" width={16} height={16} />
 
-                <div className="flex items-center gap-[4rem] md:gap-[7rem] lg:gap-[9rem]">
+                <div className="flex items-center gap-[4rem] md:gap-[28rem] lg:gap-[9rem]">
                     <h1 className="text-left text-[#B0B0B0] text-base font-bold">Applications</h1>
                     <button className="font-semibold text-xs text-[#6F01D0]">See All</button>
                 </div>

@@ -36,6 +36,70 @@ body{
   border-bottom: 0.5px groove #F3F3F3;
 }
 
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-template-areas: 
+    "programs group-calls group-calls"
+    "programs applications mentors"
+    "users applications recent-activities";
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Child areas */
+.programs { grid-area: programs; }
+.group-calls { grid-area: group-calls; }
+.applications { grid-area: applications; }
+.mentors { grid-area: mentors; }
+.users { grid-area: users; }
+.recent-activities { grid-area: recent-activities; }
+
+/* Make sure each child inside grid is flexible */
+.container > div {
+  min-width: 0;
+}
+
+/* ========= RESPONSIVE BREAKPOINTS ========= */
+
+/* Tablet view (1024px and down) */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "programs programs"
+      "group-calls group-calls"
+      "applications mentors"
+      "users recent-activities";
+  }
+}
+
+/* Mobile view (768px and down) */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "programs"
+      "group-calls"
+      "applications"
+      "mentors"
+      "users"
+      "recent-activities";
+  }
+}
+
+/* Super tiny mobile screens (like 450px phones) */
+@media (max-width: 450px) {
+  .container {
+    gap: 6px; /* even tighter spacing if needed */
+    padding: 5px;
+  }
+}
+
+
 /* .transformer{
   transition: all 2s ease-in-out;
 } */

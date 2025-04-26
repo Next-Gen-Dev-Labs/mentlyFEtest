@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 
-const Mentors = () => {
+const Mentors = ({className}) => {
     return (
-        <div className='lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-3 rounded shadow-md p-4 bg-white'>
+        <div className={`${className}`}>
             <div className="flex justify-between items-center">
                 <Image src="/menu.svg" alt="Menu" width={16} height={16} />
 
-                <div className="flex items-center justify-between gap-[7rem] md:gap-[13rem]">
+                <div className="flex items-center justify-between gap-[7rem] md:gap-[31rem] lg:gap-[13rem]">
                     <h1 className="text-left text-[#B0B0B0] text-base font-bold">Mentors</h1>
                     <button>
                         <Image src="/add.svg" alt="add-icon" width={24} height={24} />
@@ -44,7 +44,7 @@ const Mentors = () => {
                     Message
                 </button>
             </div>
-            <button className='text-sm font-semibold mt-12 p-3 bg-[#DDD6FB] text-[#6F01D0] rounded-full w-full'>
+            <button className='text-sm font-semibold mt-12 p-3 bg-[#DDD6FB] text-[#6F01D0] rounded-full mx-auto md:max-w-[32rem] w-full flex justify-center'>
                 See All
             </button>
         </div>

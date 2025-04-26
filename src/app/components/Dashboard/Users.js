@@ -13,13 +13,13 @@ const data = [
 
 const total = data.reduce((sum, item) => sum + item.value, 0);
 
-const Users = () => {
+const Users = ({className}) => {
     return (
-        <div className="lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4 shadow-md p-4 bg-[rgba(231,221,255,0.3)] rounded-lg md:mt-[15rem] lg:mt-0">
+        <div className={`${className}`}>
             <div className="flex justify-between items-center mb-4 down">
                 <Image src="/menu.svg" alt="Menu" width={16} height={16} />
 
-                <div className="flex items-center justify-between gap-[7rem] md:gap-[10rem] lg:gap-[14rem]">
+                <div className="flex items-center justify-between gap-[7rem] md:gap-[31rem] lg:gap-[14rem]">
                     <h1 className="text-left text-[#595564] text-base font-bold">Users</h1>
                     <button className="font-semibold text-xs text-[#6F01D0]">See All</button>
                 </div>
@@ -27,7 +27,7 @@ const Users = () => {
                 <Image src="/more.svg" alt="More" width={18} height={18} />
             </div>
 
-            <div className="flex items-center justify-between mt-5">
+            <div className="flex items-center md:justify-center lg:justify-between mt-[3rem]">
                 <PieChart width={200} height={200}>
                     <Pie
                         data={data}

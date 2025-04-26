@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const GroupCalls = () => {
+const GroupCalls = ({className}) => {
     const groupCallsItems = [
         {
             banner: '/bannerr.svg',
@@ -43,8 +43,7 @@ const GroupCalls = () => {
     ]
 
     return (
-        <div className='lg:col-start-2 lg:col-end-4 lg:row-start-1 lg:row-end-2 p-4 bg-white shadow-md rounded-lg relative z-[-5] w-full'>
-            {/* Header */}
+        <div className={`${className}`}>
             <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
                     <Image src="/menu.svg" alt="Menu" width={16} height={16} />
@@ -58,7 +57,7 @@ const GroupCalls = () => {
             </div>
 
             {/* Cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2rem] lg:gap-[5rem] mt-5 relative z-[-5] w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[2rem] md:gap-[12rem] lg:gap-[5rem] mt-5 relative z-[-5]  ">
                 {groupCallsItems.map((item, index) => {
                     const { banner, status, topic, date, time, mentors, dateLogo, timeLogo, strategy, strategyLogo } = item
                     const isOngoing = status.includes('Ongoing')

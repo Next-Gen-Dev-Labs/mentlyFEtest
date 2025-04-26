@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const RecentActivities = () => {
+const RecentActivities = ({className}) => {
     const list = [
         {
             title: "KYC Verification",
@@ -24,12 +24,11 @@ const RecentActivities = () => {
     ]
 
     return (
-        <div className='lg:col-start-3 lg:col-end-4 lg:row-start-3 lg:row-end-4 rounded shadow-md p-4 bg-white'>
-            {/* Header */}
+        <div className={`${className}`}>
             <div className="flex justify-between items-center mb-4">
                 <Image src="/menu.svg" alt="Menu" width={16} height={16} />
 
-                <div className="flex items-center gap-[2.5rem] md:gap-[9rem]">
+                <div className="flex items-center gap-[2.5rem] md:gap-[27rem] lg:gap-[9rem]">
                     <h1 className="text-left text-[#B0B0B0] text-base font-bold">Recent Activities</h1>
                     <button className="font-semibold text-xs text-[#6F01D0]">See All</button>
                 </div>
@@ -38,7 +37,7 @@ const RecentActivities = () => {
             </div>
 
             {/* List */}
-            <div className="space-y-4 mt-10">
+            <div className="space-y-4 mt-[3.5rem]">
                 {list.map((item, index) => (
                     <div key={index} className="flex gap-4 items-start pb-4 border-b border-[#D0D5DD] last:border-0">
                         <div className="w-10 h-10 rounded-full overflow-hidden">
