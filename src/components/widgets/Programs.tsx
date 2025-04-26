@@ -28,11 +28,11 @@ const Programs = () => {
             <div className="flex justify-end items-center gap-3 mx-6">
               <p className="text-[#918C9C] text-xs font-medium">Filter</p>
               <div className="relative inline-flex items-center">
-                <select className="text-xs border appearance-none pr-8 rounded py-1">
+                <select className="text-sm border border-gray-300 py-2 px-1 rounded-md bg-transparent outline-none text-gray-500">
                   <option value="Active">Active</option>
                   <option value="Inactive">Inactive</option>
                 </select>
-                <ChevronDown className="absolute right-2 pointer-events-none" size={16} />
+                {/* <ChevronDown className="absolute right-2 pointer-events-none" size={16} /> */}
               </div>
             </div>
           </div>
