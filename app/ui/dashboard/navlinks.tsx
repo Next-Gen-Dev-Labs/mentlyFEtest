@@ -35,13 +35,13 @@ export default function NavLinks() {
                         key={link.name}
                         href={link.href}
                         className={clsx(
-                            ' rounded-md text-md lg:text-lg font-medium text-grey hover:bg-white hover:text-purple md:flex-none md:justify-start',
+                            ' rounded-md text-base lg:text-lg text-grey hover:bg-white hover:text-purple md:flex-none md:justify-start mx-2',
                             {
                             ' bg-white text-purple': pathname === link.href,
                             },
                         )}          
                     >
-                    <button className="flex gap-6 w-full mx-auto items-center px-8 text-lg py-2 font-light">
+                    <button className="flex gap-8 px-[15%] items-center py-2.5 font-light">
                         <LinkIcon className="w-6" />
                         <p className=" md:block">{link.name}</p>
                     </button>

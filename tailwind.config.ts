@@ -17,12 +17,14 @@ export default {
       },
       backgroundColor: {
         'purple' : '#340260',
+        'l-purple' : '#E7DDFF4D',
         'light-purple' : '#DDD6FB',
         'grey' : '#E1E7EC',
         'light-grey' : '#FDFDFD',
         '' : '#255C99',
         'light-red': '#FFEDED',
-        'green': '#2AC10033',
+        'green': '#D4F3D4',
+        'blue' : '#D4E0F3',
       },
       spacing: {
         '50' : '50px',
@@ -36,11 +38,12 @@ export default {
         '100vh' : 'calc( 100vh - 20px )',
       },
       fontSize: {
-        'sm' : '12px',
+        'sm' : '10px',
+        'md' : '12px',
         'base' : '15px',
         'lg' : '17px',
         'xl' : '20px',
-        '2xl' : '3vw',
+        '2xl' : '27px',
         '25px': '25px',
         '30px': '30px',
         '3xl' : '5vw',
@@ -52,10 +55,18 @@ export default {
       textColor: {
         'dark' : '#4F4F4F',
         'purple' : '#1F0954',
+        'l-purple' : '#6F01D0',
         'grey' : '#BDBDBD',
         'grey2' : '#595564',
+        'grey3' : '#A3A3A3',
         'yellow' : '#F0C074',
+        'blue' : '#0077FF',
+        'green' : '#008000',
 
+      },
+      borderColor: {
+        'purple' : '#1F0954',
+        'grey' : '#E1E7EC',
       }
     },
   },
