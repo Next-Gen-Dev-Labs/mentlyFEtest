@@ -14,13 +14,22 @@ import ProgramsSkeleton from "@/components/skeletons/ProgramsSkeleton";
 import UsersSkeleton from "@/components/skeletons/UsersSkeleton";
 import RecentActivitiesSkeleton from "@/components/skeletons/RecentActivitiesSkeleton";
 import MentorsSkeleton from "@/components/skeletons/MentorsSkeleton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 
 export default function Home() {
-  // In your component:
-const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    // Cleanup the timeout if the component unmounts
+    return () => clearTimeout(timer);
+  }, []); 
+
   return (
     <div className="h-screen p-4">
       <WidgetWrapper />
