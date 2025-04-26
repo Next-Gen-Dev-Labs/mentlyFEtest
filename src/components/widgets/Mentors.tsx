@@ -1,11 +1,14 @@
+"use client"
 import React from "react";
 import Card from "@/components/ui/Card";
 import { ApplicationsData } from "@/db/dataBase";
 import Image from "next/image";
 import { CiMenuKebab } from "react-icons/ci";
 import { CirclePlus, Menu } from 'lucide-react';
+import { useRouter } from "next/navigation";
 
 const Mentors = () => {
+  const router = useRouter();
   return (
     <Card className="h-full relative">
       <div className="flex items-center justify-between px-3 py-2">
@@ -50,7 +53,7 @@ const Mentors = () => {
           ))}
         </div>
 
-        <button className="w-full mb-4 py-3 text-center text-[#6F01D0] text-xs font-semibold bg-[#DDD6FB] rounded-3xl transition-all duration-300 cursor-pointer hover:bg-[#cdc3f9]">
+        <button onClick={() => router.push('/mentors')} className="w-full mb-4 py-3 text-center text-[#6F01D0] text-xs font-semibold bg-[#DDD6FB] rounded-3xl transition-all duration-300 cursor-pointer hover:bg-[#cdc3f9]">
           See all
         </button>
       </main>

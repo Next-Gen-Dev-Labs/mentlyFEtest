@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Card from "@/components/ui/Card";
 import { programs } from "@/db/dataBase";
@@ -7,8 +8,10 @@ import ButtonPurple from "../ui/ButtonPurple";
 import { ChevronDown, Menu } from "lucide-react";
 import { CiMenuKebab } from "react-icons/ci";
 import { Settings } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Programs = () => {
+  const router = useRouter();
   return (
     <Card className="h-full relative">
       <div className="rounded-lg">
@@ -20,7 +23,7 @@ const Programs = () => {
                 <h1 className="text-[#B0B0B0] text-base font-bold">Programs</h1>
               </div>
               <div className="flex items-center gap-2">
-                <h2 className="text-[#6F01D0] font-semibold text-xs">See all</h2>
+                <button onClick={() => router.push('/programs')} className="text-[#6F01D0] cursor-pointer font-semibold text-xs">See all</button>
                 <CiMenuKebab />
               </div>
             </div>

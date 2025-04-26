@@ -1,11 +1,14 @@
+"use client"
 import React from "react";
 import Card from "@/components/ui/Card";
 import { CiMenuKebab } from "react-icons/ci";
 import { Menu } from "lucide-react";
 import { RecentActivitiesData } from "@/db/dataBase";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const RecentActivities = () => {
+  const router = useRouter();
   return (
     <Card className="h-full relative">
       <div className="flex px-2 py-4 justify-between items-center">
@@ -14,7 +17,7 @@ const RecentActivities = () => {
           <h1 className="text-[#B0B0B0] text-base font-bold">Recent Activities</h1>
         </div>
         <div className="flex items-center gap-2">
-          <h2 className="text-[#6F01D0] font-semibold text-xs">See all</h2>
+          <button onClick={() => router.push('/activities')} className="text-[#6F01D0] cursor-pointer font-semibold text-xs">See all</button>
           <CiMenuKebab />
         </div>
       </div>

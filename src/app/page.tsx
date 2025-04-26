@@ -57,7 +57,7 @@ export default function Home() {
           {/* Bottom Content */}
           <div className="grid grid-cols-1 lg:grid-cols-7 gap-4 h-full">
             {/* Applications */}
-            <div className="h-[400px] lg:h-[655px] lg:col-span-4">
+            <div className="h-[400px] lg:h-full lg:col-span-4">
               {isLoading ? <ApplicationsSkeleton /> : <Applications />}
             </div>
             
@@ -66,7 +66,7 @@ export default function Home() {
               <div className="h-[250px] lg:h-full">
                 {isLoading ? <MentorsSkeleton /> : <Mentors />}
               </div>
-              <div className="h-[300px] lg:h-[310px]">
+              <div className="h-[300px] mb-5 lg:h-full">
                 {isLoading ? <RecentActivitiesSkeleton /> : <RecentActivities />}
               </div>
             </div>

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Card from "@/components/ui/Card";
 import { CiMenuKebab } from "react-icons/ci";
@@ -6,8 +7,10 @@ import Image from "next/image";
 import { ApplicationsData } from "@/db/dataBase";
 import ButtonPurple from "../ui/ButtonPurple";
 import ButtonRedBorder from "../ui/ButtonRedBorder";
+import { useRouter } from "next/navigation";
 
 const Applications = () => {
+  const router = useRouter();
   return (
     <Card className="h-full relative">
       <div className="flex justify-between items-center p-4">
@@ -16,7 +19,7 @@ const Applications = () => {
           <h1 className="text-[#B0B0B0] text-base font-bold">Applications</h1>
         </div>
         <div className="flex items-center gap-2">
-          <h2 className="text-[#6F01D0] font-semibold text-xs">See all</h2>
+          <button onClick={() => router.push('/applications')} className="text-[#6F01D0] cursor-pointer font-semibold text-xs">See all</button>
           <CiMenuKebab />
         </div>
       </div>

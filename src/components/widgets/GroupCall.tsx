@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Card from "@/components/ui/Card";
 import ButtonPurple from "../ui/ButtonPurple";
@@ -8,8 +9,10 @@ import { CiMenuKebab } from "react-icons/ci";
 import Image from "next/image";
 import { GroupCalls } from "@/db/dataBase";
 import { GroupCallIcon } from "@/components/svgIcons/SvgIcons";
+import { useRouter } from "next/navigation";
 
 const GroupCall = () => {
+  const router = useRouter();
   return (
     <Card className="h-full relative">
       <div className="flex px-4 py-2 justify-between items-center">
@@ -18,7 +21,7 @@ const GroupCall = () => {
           <h1 className="text-[#B0B0B0] text-base font-bold">Group Calls</h1>
         </div>
         <div className="flex items-center gap-4">
-          <h2 className="text-[#6F01D0] font-semibold text-xs">See all</h2>
+          <button onClick={() => router.push('/group-calls')} className="text-[#6F01D0] cursor-pointer font-semibold text-xs">See all</button>
           <CiMenuKebab />
         </div>
       </div>
