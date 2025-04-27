@@ -25,6 +25,7 @@ Your task is to build a frontend page based on the designs (Website and Mobile R
 ## Submission
 
 Please submit your code within the time allotted (2-3 days) via a PR to this repo.
+{https://mently-f-etest-flame.vercel.app/}
 
 ## Evaluation Criteria
 
