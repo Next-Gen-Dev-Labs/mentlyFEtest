@@ -6,6 +6,7 @@ import Applications from './Applications';
 import Mentors from './Mentors';
 import DonutChart from './Users';
 import { CiMenuBurger } from "react-icons/ci";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 function Hero() {
   
@@ -16,17 +17,23 @@ function Hero() {
             <Programs/>
             <div className='mt-5 bg-white shadow-md dark:bg-gray-800'>
               <div className='flex place-content-between p-3'>
-                  <div className='flex space-x-3 text-gray-500'>
+                  <div className='flex space-x-3 text-gray-500 mt-2'>
                     
                       <p>Users</p>
       
                   </div>
-                  <div className='flex space-x-2 cursor-pointer'>
-                      <p className='text-purple-700'>See all</p>
-                      <p>:</p>
+                  <button className='px-3 py-2 border-2 border-gray-300 rounded-md flex space-x-2 bg-white dark:bg-gray-900 text-black dark:text-white cursor-pointer'>
+                    <p className='text-xs text-black dark:text-white'>All</p>
+                    <RiArrowDropDownLine/>
+                    
+                  </button>
+
+
       
-                  </div>
-      
+              </div>
+              
+              <div className='mt-2 border-b-2 border-gray-200'>
+
               </div>
               <div className='mt-1'>
                 <DonutChart />

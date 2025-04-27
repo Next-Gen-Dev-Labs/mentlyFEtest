@@ -29,7 +29,7 @@ const options = {
 
 export default function DonutChart() {
   return (
-    <div className="relative w-[300px] h-[310px] bg-white dark:bg-gray-800 rounded-xl p-4">
+    <div className="relative w-[300px] h-[310px] bg-white dark:bg-gray-800 rounded-xl p-4 max-sm:w-[200px]">
 
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="text-center">
@@ -37,7 +37,7 @@ export default function DonutChart() {
           <p className="text-sm text-gray-500 dark:text-gray-300">Users</p>
         </div>
       </div>
-      <div className='flex space-x-5'>
+      <div className='flex space-x-5 max-sm:space-x-1'>
         <Doughnut data={data} options={options} />
         <div className="mt-15 space-y-10 text-sm">
             {data.labels.map((label, idx) => (

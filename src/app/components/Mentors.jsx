@@ -5,9 +5,12 @@ import { CiCirclePlus } from "react-icons/ci";
 import { mentors } from '../utilis';
 import { CiMenuBurger } from "react-icons/ci";
 import RecentActivities from './RecentActivities';
-
+import { useState } from 'react';
 
 function Mentors() {
+    const [click, setClick] = useState(false)
+
+    const items = !click ? mentors.slice(2) : mentors
   return (
         <div className="relative shadow-md sm:rounded-lg w-3/5 mt-3 h-fit p-2 max-md:w-full">
             <div className='flex place-content-between p-3'>
@@ -30,7 +33,7 @@ function Mentors() {
                     
                 <tbody>
 
-                    {mentors.map((item) =>{
+                    {items.map((item) =>{
                         return(
                             <tr key={item.id}
                             className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -64,13 +67,14 @@ function Mentors() {
                 </tbody>
             </table>
             <div className='self-center flex place-content-center mt-2 w-[90%] ml-2'>
-                <button 
+                <button
+                    onClick={()=>{setClick(!click)}} 
                     type="button" 
                     className="text-purple-500 bg-purple-200 hover:bg-purple-800 
                     focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-xs 
                     px-5 py-2.5 text-center mb-2 dark:bg-purple-800 
-                    dark:hover:bg-purple-700 dark:focus:ring-purple-900 w-full">
-                        See all
+                    dark:hover:bg-purple-700 dark:focus:ring-purple-900 w-full cursor-pointer">
+                        {click ? 'See less' : 'See all'}
                 </button>
             </div>
 

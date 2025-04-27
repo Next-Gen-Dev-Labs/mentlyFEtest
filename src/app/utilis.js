@@ -255,6 +255,18 @@ export const mentors = [
         name: "Adeati Samuel",
         title: "Product Designer"
     },
+    {
+        id: 3,
+        image: maxwell,
+        name: "Maxwell Smith",
+        title: "Product Designer"
+    },
+    {
+        id: 4,
+        image: samuel,
+        name: "Adeati Samuel",
+        title: "Product Designer"
+    },
 
 ]
 
